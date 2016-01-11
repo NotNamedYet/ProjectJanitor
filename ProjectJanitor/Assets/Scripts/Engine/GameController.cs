@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System;
 using GalacticJanitor.Persistency;
+using UnityEngine.SceneManagement;
 
 namespace GalacticJanitor.Engine
 {
@@ -84,7 +85,7 @@ namespace GalacticJanitor.Engine
         {
             Registery = LoadRegisteryFromFile(snap);
             Registery.snapshot.UpdateTime();
-            Application.LoadLevel(snap.lastScene);
+            SceneManager.LoadScene(snap.lastScene);
         }
 
 
