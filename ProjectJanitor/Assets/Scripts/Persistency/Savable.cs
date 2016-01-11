@@ -28,26 +28,5 @@ namespace GalacticJanitor.Persistency
                 savableObject.Save();
             }
         }
-
-        public void RegisterData()
-        {
-            if (savableObject != null)
-            {
-                savableObject.uniqueId = uniqueID;
-
-                Registery r = GameController.Controller.Registery;
-
-                if (r.objectData.ContainsKey(savableObject.uniqueId))
-                {
-                    r.objectData[savableObject.uniqueId] = savableObject.GetData();
-                }
-                else
-                {
-                    r.objectData.Add(savableObject.uniqueId, savableObject.GetData());
-                }
-
-            }
-        }
-
     } 
 }
