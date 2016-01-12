@@ -168,8 +168,10 @@ public class EditorMenu
             Debug.LogError("MainCamera Tag not found... Let's create it");
             obj = new GameObject("Main Camera");
             obj.tag = "MainCamera";
-            
         }
+
+        //CHECKING CAMERA...
+
         Camera cam = obj.GetComponent<Camera>();
 
         if (cam == null)
@@ -180,7 +182,24 @@ public class EditorMenu
             cam = obj.GetComponent<Camera>();
         }
 
-        Debug.Log("Camera setup started for Galactic Janitor Game environnement...");
+        //CHECKING OTHER COMPONENTS...
+
+        if (!cam.GetComponent<GUILayer>())
+        {
+            obj.AddComponent<GUILayer>();
+        }
+
+        if (!cam.GetComponent<FlareLayer>())
+        {
+            obj.AddComponent<FlareLayer>();
+        }
+
+        if (!cam.GetComponent<AudioListener>())
+        {
+            obj.AddComponent<AudioListener>();
+        }
+
+        
 
         cam.transform.localPosition = new Vector3(0f, 10f, 0f);
         cam.transform.localRotation = Quaternion.Euler(90f, 0, 0);
@@ -195,6 +214,10 @@ public class EditorMenu
         cam.renderingPath = RenderingPath.UsePlayerSettings;
         cam.targetTexture = null;
         cam.backgroundColor = Color.black;
+
+        Debug.Log("Camera setup Done !");
+
+
     }
 
 }
