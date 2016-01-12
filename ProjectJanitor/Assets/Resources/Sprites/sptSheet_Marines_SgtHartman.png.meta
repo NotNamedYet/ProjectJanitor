@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 5198003f3e6929441841ed3fe48d354d
+timeCreated: 1452600270
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BaseChest
+    21300002: Head
+    21300004: ShoulderLeft
+    21300006: ShoulderRight
+    21300008: ArmLeft
+    21300010: ArmRight
+    21300012: ForearmRight
+    21300014: AssaultRifle
+    21300016: ForearmLeft
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BaseChest
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 55
+        width: 63
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 33.5}
+        - {x: -31.5, y: 26.5}
+        - {x: -31.5, y: -17.5}
+        - {x: -23.5, y: -33.5}
+        - {x: 25.5, y: -33.5}
+        - {x: 31.5, y: -16.5}
+        - {x: 31.5, y: 29.5}
+        - {x: 22.5, y: 33.5}
+    - name: Head
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 80
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 20.5}
+        - {x: -19.5, y: -20.5}
+        - {x: 19.5, y: -20.5}
+        - {x: 19.5, y: 20.5}
+    - name: ShoulderLeft
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 60
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 31}
+        - {x: -24, y: 25}
+        - {x: -24, y: -19}
+        - {x: -17, y: -27}
+        - {x: -12, y: -31}
+        - {x: 24, y: -31}
+        - {x: 24, y: 29}
+        - {x: 23, y: 31}
+    - name: ShoulderRight
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 60
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 31}
+        - {x: -24, y: 30}
+        - {x: -24, y: -29}
+        - {x: -23, y: -31}
+        - {x: 22, y: -31}
+        - {x: 24, y: -22}
+        - {x: 24, y: 22}
+        - {x: 15, y: 31}
+    - name: ArmLeft
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 7
+        width: 24
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.017706871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmRight
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 21
+        width: 24
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.01770687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ForearmRight
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 40
+        width: 21
+        height: 30
+      alignment: 9
+      pivot: {x: 0.47349983, y: 0.02035313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: AssaultRifle
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 12
+        width: 16
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ForearmLeft
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 6
+        width: 21
+        height: 30
+      alignment: 9
+      pivot: {x: 0.51514256, y: 0.020353127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
