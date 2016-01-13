@@ -7,7 +7,7 @@ namespace GalacticJanitor.UI
 {
     public class PanelSaveButton : MonoBehaviour
     {
-// dédé test
+//test
         public Text label;
         public RegisterySnapshot linkedSnap;
         public PanelSaveSystem panel;

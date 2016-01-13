@@ -10,11 +10,8 @@ public class TestTrois : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		blabla*=3
-		
-		int b = blabla*5;
-		int c = blabla%b;
-		
+        blabla = 12;
+        traaaa = 15f;
 	}
 	
 	// Update is called once per frame
