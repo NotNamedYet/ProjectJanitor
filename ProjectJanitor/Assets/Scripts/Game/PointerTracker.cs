@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Camera))]
 public class PointerTracker : MonoBehaviour {
 
-    // Real time updated mouse cursor position.
+    // Another comment...
     public static Vector3 MousePosition { get;  private set; }
     Camera mainCam;
 
