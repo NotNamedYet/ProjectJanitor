@@ -8,7 +8,8 @@ public class TestTrois : MonoBehaviour {
     public float traaaa;
 	// Use this for initialization
 	void Start () {
-	
+        blabla = 12;
+        traaaa = 15f;
 	}
 	
 	// Update is called once per frame
