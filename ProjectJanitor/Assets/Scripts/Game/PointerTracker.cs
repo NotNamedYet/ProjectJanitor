@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Camera))]
 public class PointerTracker : MonoBehaviour {
 
+    // Another beautiful comment...
     public static Vector3 MousePosition { get;  private set; }
     Camera mainCam;
 
