@@ -204,7 +204,7 @@ public class EditorMenu
         cam.transform.localPosition = new Vector3(0f, 10f, 0f);
         cam.transform.localRotation = Quaternion.Euler(90f, 0, 0);
         cam.orthographic = true;
-        cam.orthographicSize = 5;
+        cam.orthographicSize = 20;
         cam.nearClipPlane = .3f;
         cam.farClipPlane = 100;
         cam.depth = -1f;
