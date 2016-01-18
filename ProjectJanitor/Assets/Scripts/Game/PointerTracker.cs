@@ -14,7 +14,16 @@ public class PointerTracker : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        Plane virtualGround = new Plane(Vector3.up, Vector3.zero);
+        float rayDistance;
+
+        if (virtualGround.Raycast(ray, out rayDistance))
+        {
+            MousePosition = ray.GetPoint(rayDistance);
+            Debug.DrawLine(ray.origin, MousePosition, Color.red);
+        }
 	}
 }
