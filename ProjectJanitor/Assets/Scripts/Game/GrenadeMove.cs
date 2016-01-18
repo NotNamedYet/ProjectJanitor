@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
-    public class BulletMove : MonoBehaviour
+    public class GrenadeMove : MonoBehaviour
     {
         public float speed = 500f;
 
@@ -24,7 +24,7 @@ namespace GalacticJanitor.Game
 
         private void MoveForward()
         {
-            transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);  
+            transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
         }
-    }
+    } 
 }
