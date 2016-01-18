@@ -4,6 +4,7 @@ using UnityEngine;
 using GalacticJanitor.Persistency;
 using GalacticJanitor.Engine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class EditorMenu
 {
@@ -149,13 +150,13 @@ public class EditorMenu
                 Debug.LogWarning("Duplicated GUI for Savable " + s.gameObject.name + " GUID: " + s.uniqueID);
                 warn++;
             }
-            Debug.LogError(duplicated.Count + " Duplicated GuiD waiting to be fixed under _Savables#GUID_Duplicated in hierarchy");
+            Debug.Log(duplicated.Count + " Duplicated GuiD waiting to be fixed under _Savables#GUID_Duplicated in hierarchy");
         }
         
         if (allFine)
             Debug.Log("Savables checking : Success \n" + (warn > 0 ? "("+warn+") warnings" : "(OK)" ));
         else
-            Debug.LogError("Savables checking : Failed " + (warn > 0 ? "(" + warn + ") warnings" : ""));
+            Debug.Log("Savables checking : Failed " + (warn > 0 ? "(" + warn + ") warnings" : ""));
 
     }
 
@@ -165,7 +166,7 @@ public class EditorMenu
         GameObject obj = GameObject.FindGameObjectWithTag("MainCamera");
         if (obj == null)
         {
-            Debug.LogError("MainCamera Tag not found... Let's create it");
+            Debug.Log("MainCamera Tag not found... Let's create it");
             obj = new GameObject("Main Camera");
             obj.tag = "MainCamera";
         }
@@ -199,7 +200,10 @@ public class EditorMenu
             obj.AddComponent<AudioListener>();
         }
 
-        
+        if (!cam.GetComponent<PixelScaling>())
+        {
+            obj.AddComponent<PixelScaling>();
+        }
 
         cam.transform.localPosition = new Vector3(0f, 10f, 0f);
         cam.transform.localRotation = Quaternion.Euler(90f, 0, 0);
@@ -217,6 +221,17 @@ public class EditorMenu
 
         Debug.Log("Camera setup Done !");
 
+
+    }
+
+    [MenuItem("GalacticJanitor/NavMesh Parent")]
+    static void SetupNavmeshParent()
+    {
+        GameObject parent = new GameObject("_Navmeshes-" + SceneManager.GetActiveScene().name);
+        GameObject planes = new GameObject("_NavPlanes");
+        GameObject obstac = new GameObject("_NavObstacles");
+        planes.transform.SetParent(parent.transform);
+        obstac.transform.SetParent(parent.transform);
 
     }
 
