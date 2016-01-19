@@ -5,45 +5,31 @@ using GalacticJanitor.Persistency;
 using GalacticJanitor.Engine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using GalacticJanitor.Game;
 
 public class EditorMenu
 {
 
-    [MenuItem("GalacticJanitor/Add GameController")]
+    [MenuItem("GalacticJanitor/Add.../Engine")]
     static void CreateGameController()
     {
-        GameObject parent = GameObject.Find("_Engine");
+        GameObject engine = GameObject.Find("_Engine");
 
-        if (parent == null)
+        if (engine == null)
         {
-            parent = new GameObject("_Engine");
-            parent.transform.position = new Vector3(0, 0, 0);
+            engine = new GameObject("_Engine");
+            engine.transform.position = new Vector3(0, 0, 0);
         }
 
-        bool b = false;
-        GameObject go;
-        GameController ctrl = Object.FindObjectOfType<GameController>();
-
-        if (ctrl != null)
+        if (!engine.GetComponent<GameController>())
         {
-            go = ctrl.gameObject;
-            go.name = "GameController";
-            Debug.LogWarning("Already existing GameController, let's fix it...");
-            b = true;
-        }
-        else
-        {
-            go = new GameObject("GameController");
-            go.AddComponent<GameController>();
+            engine.AddComponent<GameController>();
         }
 
-        go.transform.position = new Vector3(0, 0, 0);
-        go.transform.SetParent(parent.transform);
-        Debug.Log("GameController " + (!b ? "added !" : "fixed !"));
 
     }
 
-    [MenuItem("GalacticJanitor/Add Savable")]
+    [MenuItem("GalacticJanitor/Add.../Savable")]
     static void CreateSavable()
     {
 
@@ -61,6 +47,37 @@ public class EditorMenu
         go.transform.SetParent(parent.transform);
         go.AddComponent<Savable>();
 
+    }
+
+    [MenuItem("GalacticJanitor/Add.../Teleporter")]
+    static void AddTeleporter()
+    {
+        GameObject parent = GameObject.Find("_Teleporters");
+
+        if (parent == null)
+        {
+            parent = new GameObject("_Teleporters");
+            parent.transform.position = new Vector3(0, 0, 0);
+        }
+
+        int index = 1;
+
+        while (GameObject.Find("Teleporter#"+index) != null)
+        {
+            index++;
+        }
+
+        GameObject go = new GameObject("Teleporter#" + index);
+
+        go.transform.position = new Vector3(0, 0, 0);
+        go.transform.SetParent(parent.transform);
+
+        SphereCollider col = go.AddComponent<SphereCollider>();
+        col.isTrigger = true;
+
+        go.AddComponent<Teleporter>();
+
+        Debug.Log("Teleporter Added ! Set it as you wish now...");
     }
 
     [MenuItem("GalacticJanitor/Check Scene")]
@@ -205,6 +222,11 @@ public class EditorMenu
             obj.AddComponent<PixelScaling>();
         }
 
+        if (!cam.GetComponent<PointerTracker>())
+        {
+            obj.AddComponent<PointerTracker>();
+        }
+
         cam.transform.localPosition = new Vector3(0f, 10f, 0f);
         cam.transform.localRotation = Quaternion.Euler(90f, 0, 0);
         cam.orthographic = true;
@@ -221,6 +243,40 @@ public class EditorMenu
 
         Debug.Log("Camera setup Done !");
 
+        CheckWorldDirectory();
+    }
+
+    private static void CheckWorldDirectory()
+    {
+        GameObject _world = GameObject.Find("_World");
+
+        if (_world == null)
+        {
+            _world = new GameObject("_World");
+        }
+
+        CheckSubDirectory("_Grounds", _world);
+        CheckSubDirectory("_Walls", _world);
+        CheckSubDirectory("_Statics", _world);
+
+    }
+
+    private static void CheckSubDirectory(string name, GameObject parent)
+    {
+        GameObject obj = GameObject.Find(name);
+
+        if (obj != null)
+        {
+            if (obj.transform.parent != parent.transform)
+            {
+                obj.transform.parent = parent.transform;
+            }
+        }
+        else
+        {
+            obj = new GameObject(name);
+            obj.transform.parent = parent.transform;
+        }
 
     }
 
@@ -234,5 +290,7 @@ public class EditorMenu
         obstac.transform.SetParent(parent.transform);
 
     }
+
+    
 
 }

@@ -25,7 +25,7 @@ namespace GalacticJanitor.Engine
 
             if (Controller == null)
             {
-                DontDestroyOnLoad(gameObject);
+                DontDestroyOnLoad(transform.root.gameObject);
                 Controller = this;
 
                 if (Registery == null)
