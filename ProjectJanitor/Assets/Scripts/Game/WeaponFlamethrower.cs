@@ -80,10 +80,9 @@ namespace GalacticJanitor.Game
                 }
                 else
                 {
-                    flame.transform.parent = transform; // Attach the GameObject with the effect particle (and maybe collider?) to the weapon
+                    flame.transform.parent = chokes.transform; // Attach the GameObject with the effect particle (and maybe collider?) to the weapon
                     flameIsActive = true;
                 }
-                //magazine--; TODO
             }
             else
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponFlameThrower");
