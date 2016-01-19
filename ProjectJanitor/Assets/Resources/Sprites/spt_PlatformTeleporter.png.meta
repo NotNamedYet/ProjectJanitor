@@ -1,0 +1,277 @@
+fileFormatVersion: 2
+guid: e77bf0eeaf6940d4881dc6cf82f0b39b
+timeCreated: 1453173708
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BaseOff
+    21300002: Void1
+    21300004: VoidOff
+    21300006: BaseOn
+    21300008: Void2
+    21300010: Lights
+    21300012: Grid
+    21300014: Void3
+    21300016: Spots
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BaseOff
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: 68}
+        - {x: 30, y: 112}
+        - {x: -29, y: 112}
+        - {x: -64, y: 88}
+        - {x: -109, y: 33}
+        - {x: -111, y: 26}
+        - {x: -111, y: -28}
+        - {x: -89, y: -65}
+        - {x: -32, y: -113}
+        - {x: 31, y: -113}
+        - {x: 83, y: -67}
+        - {x: 112, y: -31}
+        - {x: 112, y: 31}
+    - name: Void1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 79}
+        - {x: -72, y: 69}
+        - {x: -80, y: 49}
+        - {x: -80, y: -27}
+        - {x: -66, y: -66}
+        - {x: -57, y: -80}
+        - {x: 47, y: -80}
+        - {x: 80, y: -67}
+        - {x: 80, y: 39}
+        - {x: 44, y: 79}
+    - name: VoidOff
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58, y: 77}
+        - {x: -77, y: 42}
+        - {x: -77, y: -33}
+        - {x: -73, y: -45}
+        - {x: -39, y: -77}
+        - {x: 33, y: -77}
+        - {x: 45, y: -75}
+        - {x: 77, y: -56}
+        - {x: 77, y: 67}
+        - {x: 45, y: 77}
+    - name: BaseOn
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: 68}
+        - {x: 30, y: 112}
+        - {x: -29, y: 112}
+        - {x: -64, y: 88}
+        - {x: -109, y: 33}
+        - {x: -111, y: 26}
+        - {x: -111, y: -28}
+        - {x: -89, y: -65}
+        - {x: -32, y: -113}
+        - {x: 31, y: -113}
+        - {x: 83, y: -67}
+        - {x: 112, y: -31}
+        - {x: 112, y: 31}
+    - name: Void2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 79}
+        - {x: -72, y: 69}
+        - {x: -80, y: 49}
+        - {x: -80, y: -27}
+        - {x: -66, y: -66}
+        - {x: -57, y: -80}
+        - {x: 47, y: -80}
+        - {x: 80, y: -67}
+        - {x: 80, y: 39}
+        - {x: 44, y: 79}
+    - name: Lights
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75, y: 85}
+        - {x: -65, y: 85}
+        - {x: -85, y: 63}
+        - {x: -85, y: -69}
+        - {x: -62, y: -84}
+        - {x: -50, y: -85}
+        - {x: 51, y: -85}
+        - {x: 77, y: -81}
+        - {x: 85, y: -59}
+        - {x: 85, y: 64}
+    - name: Grid
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+    - name: Void3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 79}
+        - {x: -72, y: 69}
+        - {x: -80, y: 49}
+        - {x: -80, y: -27}
+        - {x: -66, y: -66}
+        - {x: -57, y: -80}
+        - {x: 47, y: -80}
+        - {x: 80, y: -67}
+        - {x: 80, y: 39}
+        - {x: 44, y: 79}
+    - name: Spots
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -70, y: -63}
+        - {x: -67, y: -70}
+        - {x: -54, y: -70}
+        - {x: -44, y: -63}
+        - {x: -44, y: -53}
+        - {x: -50, y: -44}
+        - {x: -58, y: -44}
+        - {x: -70, y: -51}
+      - - {x: 52, y: -44}
+        - {x: 43, y: -53}
+        - {x: 43, y: -58}
+        - {x: 55, y: -70}
+        - {x: 60, y: -70}
+        - {x: 69, y: -61}
+        - {x: 69, y: -56}
+        - {x: 57, y: -44}
+      - - {x: -61, y: 69}
+        - {x: -70, y: 60}
+        - {x: -70, y: 55}
+        - {x: -58, y: 43}
+        - {x: -53, y: 43}
+        - {x: -44, y: 52}
+        - {x: -44, y: 57}
+        - {x: -56, y: 69}
+      - - {x: 55, y: 69}
+        - {x: 43, y: 57}
+        - {x: 43, y: 52}
+        - {x: 52, y: 43}
+        - {x: 57, y: 43}
+        - {x: 69, y: 55}
+        - {x: 69, y: 60}
+        - {x: 60, y: 69}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
