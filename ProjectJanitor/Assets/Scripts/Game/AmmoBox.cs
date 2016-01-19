@@ -8,7 +8,10 @@ namespace GalacticJanitor.Game
     public class AmmoBox : MonoBehaviour
     {
 
-        [Range(0, 10)]
+        [Tooltip("Bullet = 0, Grenade and fuel = 1")]
+        public AmmoType ammoType;
+
+        [Range(0, 50)]
         public int amount;
 
         private string uniqueID;
@@ -16,7 +19,7 @@ namespace GalacticJanitor.Game
         // Use this for initialization
         void Start()
         {
-
+            
         }
 
         // Update is called once per frame
@@ -27,7 +30,10 @@ namespace GalacticJanitor.Game
                 Destroy(gameObject);
             }
         }
-
-
+    }
+    
+    public enum AmmoType
+    {
+        AmmoType0 = 0, AmmoType1
     } 
 }

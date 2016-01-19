@@ -3,6 +3,9 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
+    /// <summary>
+    /// Inventory ammo, handle also collision with AmmoBox
+    /// </summary>
     public class PlayerAmmo : MonoBehaviour
     {
         public int ammoCarriedType0;
@@ -45,23 +48,23 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// Used to refile ammo when ammo box picked up
         /// </summary>
-        private void PickUp(string ammoType, int amount)
+        private void PickUp(AmmoType ammoType, int amount)
         {
-            if (ammoType == "AmmoType0")
+            if (ammoType == AmmoType.AmmoType0)
                 ammoCarriedType0 += amount;
             else
                 ammoCarriedType1 += amount;
         }
 
-        void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "AmmoBox")
+            if (other.tag == "Ammo Box")
             {
-                //Debug.Log("I touch something and i like it : it was a ammoBox");
+                Debug.Log("I touch something and i like it : it was an ammoBox");
 
-                //AmmoInBox ammo = other.gameObject.GetComponent<AmmoInBox>();
-                //PickUp(ammo.ammoType, ammo.amount);
-                //Destroy(other.gameObject); // Destroy the ammo box.
+                AmmoBox box = other.gameObject.GetComponent<AmmoBox>();
+                PickUp(box.ammoType, box.amount);
+                box.amount = 0; 
             }
         }
     } 

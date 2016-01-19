@@ -53,7 +53,10 @@ namespace GalacticJanitor.Game
 
             if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
             {
-                flamethrower.ReleaseFireKeyFlamethrower();
+                if (indexActiveWeapon == 1)
+                {
+                    flamethrower.ReleaseFireKeyFlamethrower(); 
+                }
             }
         }
 
