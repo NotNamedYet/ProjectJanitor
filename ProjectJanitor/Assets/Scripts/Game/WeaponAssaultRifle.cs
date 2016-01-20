@@ -13,11 +13,11 @@ namespace GalacticJanitor.Game
         public int magazineBullet;
         public readonly int magazineSizeBullet = 75;
 
-        [Range(0, 10)]
+        [Range(0, 1)]
         public int magazineGrenade;
-        public readonly int magazineSizeGrenade = 10;
+        public readonly int magazineSizeGrenade = 1;
 
-        public GameObject chokes; // From where the bullet go out the gun
+        public Transform chokes; // From where the bullet go out the gun
 
         public float timerActive = 0f; // Timer in real time
         public float timer = 0.5f; // Timer set, changes in the function LaunchTimer()
@@ -87,7 +87,7 @@ namespace GalacticJanitor.Game
             if (CheckMagazineBullet())
             {
                 Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
-                Instantiate(projectileBullet, chokes.transform.position, chokes.transform.rotation);
+                Instantiate(projectileBullet, chokes.position, chokes.rotation);
                 magazineBullet--;
                 canConstantFireNextBullet = false;
                 //Play a nice badass sound
@@ -104,7 +104,7 @@ namespace GalacticJanitor.Game
             if (CheckMagazineGrenade())
             {
                 Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
-                Instantiate(projectileGrenade, chokes.transform.position, chokes.transform.rotation);
+                Instantiate(projectileGrenade, chokes.position, chokes.rotation);
                 magazineGrenade--;
                 //Play a nice badass sound
             }

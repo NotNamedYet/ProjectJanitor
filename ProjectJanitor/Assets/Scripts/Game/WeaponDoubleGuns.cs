@@ -37,15 +37,15 @@ namespace GalacticJanitor.Game
                 if (activeChokes)
                 {
                     Debug.Log("i pulled the trigger with the left gun in \"WeaponDoubleGun\"");
-                    GameObject bul = Instantiate(bullet, chokes1.position, chokes1.rotation) as GameObject;
-                    //bul.transform.SetParent(chokes1);
+                    Instantiate(bullet, chokes1.position, chokes1.rotation);
+                    
                     magazine--;
                 }
                 else
                 {
                     Debug.Log("i pulled the trigger with the right gun in \"WeaponDoubleGun\"");
-                    GameObject bul = Instantiate(bullet, chokes2.position, chokes2.rotation) as GameObject;
-                    //bul.transform.SetParent(chokes2);
+                    Instantiate(bullet, chokes2.position, chokes2.rotation);
+                    
                     magazine--;
                 }
 

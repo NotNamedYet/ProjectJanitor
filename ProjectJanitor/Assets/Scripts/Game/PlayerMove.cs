@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Deprecated
+/// </summary>
 namespace GalacticJanitor.Game
 {
     public class PlayerMove : MonoBehaviour
