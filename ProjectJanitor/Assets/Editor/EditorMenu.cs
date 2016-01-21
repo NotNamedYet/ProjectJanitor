@@ -75,9 +75,9 @@ public class EditorMenu
         SphereCollider col = go.AddComponent<SphereCollider>();
         col.isTrigger = true;
 
-        go.AddComponent<Teleporter>();
+        go.AddComponent<TeleporterController>();
 
-        Debug.Log("Teleporter Added ! Set it as you wish now...");
+        Debug.Log(go.name + " Added !");
     }
 
     [MenuItem("GalacticJanitor/Check Scene")]
