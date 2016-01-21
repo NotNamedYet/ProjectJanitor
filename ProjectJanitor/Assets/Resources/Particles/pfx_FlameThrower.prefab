@@ -27,6 +27,8 @@ GameObject:
   - 4: {fileID: 424646}
   - 198: {fileID: 19858788}
   - 199: {fileID: 19957988}
+  - 65: {fileID: 6524444}
+  - 114: {fileID: 11495398}
   m_Layer: 0
   m_Name: pfx_FlameThrower
   m_TagString: Untagged
@@ -59,6 +61,32 @@ Transform:
   - {fileID: 408422}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6524444
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.425163, y: 6.3222213, z: 14.176535}
+  m_Center: {x: 0.0000076293945, y: 0.040499926, z: 6.928012}
+--- !u!114 &11495398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b9befdf0b2f7f4fb2dba155af84640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flameDmg: 0
+  timer: 0
+  targetsBurning: 
 --- !u!198 &19832632
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3155,7 +3183,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190324}

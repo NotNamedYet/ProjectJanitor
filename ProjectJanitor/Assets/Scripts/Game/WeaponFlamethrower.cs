@@ -17,6 +17,8 @@ namespace GalacticJanitor.Game
         public int magazine;
         public readonly int magazineSize = 300;
 
+        public int flameDmg = 1;
+
         public Transform chokes; // From where the flame go out the flamethrower
 
         public PlayerAmmo playerAmmo;
@@ -81,6 +83,8 @@ namespace GalacticJanitor.Game
                 else
                 {
                     flame.transform.parent = chokes.transform; // Attach the GameObject with the effect particle (and maybe collider?) to the weapon
+                    flame.GetComponent<FlameController>().flameDmg = this.flameDmg;
+                    flame.GetComponent<FlameController>().timer = this.timer;
                     flameIsActive = true;
                 }
             }

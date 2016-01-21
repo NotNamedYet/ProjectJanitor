@@ -38,7 +38,7 @@ namespace GalacticJanitor.Game
                 SwitchWeapon();
             }
 
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 Reload();
             }

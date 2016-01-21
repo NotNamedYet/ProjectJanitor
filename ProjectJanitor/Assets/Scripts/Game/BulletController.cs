@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
-    public class BulletMove : MonoBehaviour
+    public class BulletController : MonoBehaviour
     {
 
         public float speed = 10f;
@@ -11,6 +11,8 @@ namespace GalacticJanitor.Game
 
         [Tooltip("Set time to destroy the gameobject if no collide")]
         public float destroyTime = 2.5f;
+
+        public int bulletDmg;
 
         // Use this for initialization
         void Start()
@@ -20,7 +22,7 @@ namespace GalacticJanitor.Game
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             MoveForward();
         }
@@ -28,17 +30,31 @@ namespace GalacticJanitor.Game
         private void MoveForward()
         {
             body.AddRelativeForce(Vector3.forward * speed, ForceMode.VelocityChange);
-            // transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
         }
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Wall" || other.tag == "Alien" || other.tag == "Indestructible Box") // Not finish
+            if (other.tag == "Wall" || other.tag == "Alien" || other.tag == "Indestructible Box") // Not finish, see if other tags must be add
             {
                 Debug.Log("Im a bullet and i touch : " + other.tag.ToString() + ", i must be dead now");
+                if (other.GetComponent<LivingEntity>() != null)
+                {
+                    LivingEntity target = other.GetComponent<LivingEntity>();
+                    target.TakeDirectDamage(DoDamage());
+                }
+
+                //Debug
+                if (other.GetComponent<LivingEntity>() == null && other.tag == "Alien")
+                {
+                    Debug.Log("We have a problem with an invincible alien in BulletController, wtf");
+                }
                 Destroy(gameObject);
-            }
-                
+            }  
+        }
+
+        int DoDamage()
+        {
+            return bulletDmg;
         }
     }
 }
