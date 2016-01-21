@@ -10,6 +10,7 @@ namespace GalacticJanitor.Game
         [Range(0, 30)] // Must be equal to magazineSize
         public int magazine;
         public readonly int magazineSize = 30;
+        public int bulletsDmg = 1;
 
         public Transform chokes1; // From where the bullet go out the gun
         public Transform chokes2;
@@ -37,15 +38,17 @@ namespace GalacticJanitor.Game
                 if (activeChokes)
                 {
                     Debug.Log("i pulled the trigger with the left gun in \"WeaponDoubleGun\"");
-                    Instantiate(bullet, chokes1.position, chokes1.rotation);
-                    
+                    GameObject bul = Instantiate(bullet, chokes1.position, chokes1.rotation) as GameObject;
+                    bul.GetComponent<BulletController>().bulletDmg = bulletsDmg;
+
                     magazine--;
                 }
                 else
                 {
                     Debug.Log("i pulled the trigger with the right gun in \"WeaponDoubleGun\"");
-                    Instantiate(bullet, chokes2.position, chokes2.rotation);
-                    
+                    GameObject bul = Instantiate(bullet, chokes2.position, chokes2.rotation) as GameObject;
+                    bul.GetComponent<BulletController>().bulletDmg = bulletsDmg;
+
                     magazine--;
                 }
 

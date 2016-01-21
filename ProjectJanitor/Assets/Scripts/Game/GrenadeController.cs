@@ -3,14 +3,17 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
-    public class BulletMove : MonoBehaviour
+    public class GrenadeController : MonoBehaviour
     {
 
+        public GameObject explosion;
         public float speed = 10f;
         Rigidbody body;
 
         [Tooltip("Set time to destroy the gameobject if no collide")]
         public float destroyTime = 2.5f;
+
+        public int grenadeDmg;
 
         // Use this for initialization
         void Start()
@@ -33,12 +36,14 @@ namespace GalacticJanitor.Game
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Wall" || other.tag == "Alien" || other.tag == "Indestructible Box") // Not finish
+            if (other.tag == "Wall" || other.tag == "Alien" || other.tag == "Indestructible Box") // Not finish, see if other tags must be add
             {
-                Debug.Log("Im a bullet and i touch : " + other.tag.ToString() + ", i must be dead now");
+                Debug.Log("Im a grenade and i touch : " + other.tag.ToString() + ", i must be dead now");
+                GameObject explo = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
+                explo.GetComponent<GrenadeExplosion>().explosionDmg = grenadeDmg;
                 Destroy(gameObject);
             }
-                
+
         }
-    }
+    } 
 }

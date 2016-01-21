@@ -47,8 +47,6 @@ namespace GalacticJanitor.Game
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 10, player.position.z), 1f);
             }      
         }
-
-        
     }
 
 }
