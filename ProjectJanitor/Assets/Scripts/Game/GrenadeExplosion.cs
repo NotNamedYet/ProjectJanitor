@@ -13,11 +13,5 @@ namespace GalacticJanitor.Game
             explosion = gameObject.GetComponent<ParticleSystem>();
             Destroy(gameObject, explosion.duration);
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    } 
+    }
 }

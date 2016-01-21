@@ -21,7 +21,7 @@ namespace GalacticJanitor.Game
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             MoveForward();
         }
