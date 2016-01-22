@@ -10,9 +10,14 @@ namespace GalacticJanitor.Game
         public GameObject[] rigWeaponAndArms; // 0 = Double guns ; 1 = Flamethrower
         public WeaponDoubleGuns doubleGuns;
         public WeaponFlamethrower flamethrower;
+        public PlayerAmmo playerAmmo;
+
+        [Range(0, 1)]
         public int indexActiveWeapon; // 0 = Double guns ; 1 = Flamethrower
 
-        public PlayerAmmo playerAmmo;
+        public bool playerCanShoot = true;
+        public float timerActive = 0f; // Timer in real time
+        public float timer = 2f; // Timer set. TODO : match with the sound's time of reloading
 
         // Use this for initialization
         void Start()
@@ -21,37 +26,58 @@ namespace GalacticJanitor.Game
             doubleGuns = gameObject.GetComponent<WeaponDoubleGuns>();
             flamethrower = gameObject.GetComponent<WeaponFlamethrower>();
 
-            if (rigWeaponAndArms != null && rigWeaponAndArms.Length > 1)
-            {
-                //Use the double gun at start
-                indexActiveWeapon = 0;
-                rigWeaponAndArms[0].SetActive(true);
-                rigWeaponAndArms[1].SetActive(false);
-            }
+            StartWeaponDoubleGuns();  // TODO : Change this maybe with savegames
         }
 
         // Update is called once per frame
         void Update()
         {
+            UpdateReloadTimer();
+
             if (Input.GetKeyDown(KeyCode.F))
             {
-                SwitchWeapon();
+                if (playerCanShoot)
+                {
+                    SwitchIndexWeapon();
+                    playerCanShoot = false; // TODO : Put it or not ? Game design choice
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                Reload();
+                if (playerCanShoot)
+                {
+                    Reload();
+                    playerCanShoot = false; 
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
             {
-                if (indexActiveWeapon == 0)
-                    doubleGuns.Fire();
-                else
-                    flamethrower.Fire();
+                if (playerCanShoot)
+                {
+                    if (indexActiveWeapon == 0)
+                        doubleGuns.Fire();
+                    else
+                        flamethrower.Fire(); 
+                }
             }
 
-            if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                if (playerCanShoot)
+                {
+                    if (indexActiveWeapon == 1)
+                    {
+                        if (!flamethrower.flameIsActive)
+                        {
+                            flamethrower.Fire();
+                        }
+                    }
+                }
+            }
+
+                if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
             {
                 if (indexActiveWeapon == 1)
                 {
@@ -59,23 +85,10 @@ namespace GalacticJanitor.Game
                 }
             }
         }
-
-        public void SwitchWeapon()
-        {
-            if (rigWeaponAndArms[0].activeSelf) // If double guns equiped
-            {
-                rigWeaponAndArms[0].SetActive(false);
-                rigWeaponAndArms[1].SetActive(true);
-                indexActiveWeapon = 1;
-            }
-            else // If flamethrower equiped
-            {
-                rigWeaponAndArms[0].SetActive(true);
-                rigWeaponAndArms[1].SetActive(false);
-                indexActiveWeapon = 0;
-            }
-        }
-
+        
+        /// <summary>
+        /// Just call the reload magazine of both weapon.
+        /// </summary>
         public void Reload()
         {
             if (indexActiveWeapon == 0) // Reload double guns
@@ -83,7 +96,58 @@ namespace GalacticJanitor.Game
             else // Flamethrower
                 flamethrower.ReloadMagazine();
         }
- 
+
+        /// <summary>
+        /// Use to the first game.
+        /// </summary>
+        public void StartWeaponDoubleGuns()
+        {
+            indexActiveWeapon = 0;
+            UpdateWeapon();
+        }
+
+        /// <summary>
+        /// Check index and active game object with weapon (and chokes) in consequence.
+        /// </summary>
+        public void UpdateWeapon()
+        {
+            if (indexActiveWeapon == 0) // If double guns must be equiped
+            {
+                rigWeaponAndArms[0].SetActive(true);
+                rigWeaponAndArms[1].SetActive(false);
+            }
+            else // If flamethrower must be equiped
+            {
+                rigWeaponAndArms[0].SetActive(false);
+                rigWeaponAndArms[1].SetActive(true);
+            }
+        }
+
+        void SwitchIndexWeapon()
+        {
+            indexActiveWeapon = indexActiveWeapon == 0 ? 1 : 0; // Protect if index != 0 or 1
+            // Furvent est content parce qu'il a fait une ternaire, bravo c'est illisible maintenant.
+            // J'aime pas les ternaires, c'est naze, c'est un truc pour faire genre "je suis un pgm du code",
+            // et franchement, pour Galactic Janitor, ce que l'on gagne en visibilit� on le perds en compr�hension.
+            // Sinon j'aime le poulet frit halal. Sign� : Rachid.
+            UpdateWeapon();
+        }
+
+        /// <summary>
+        /// Use to prevent player to shoot after reloading or something else.
+        /// </summary>
+        void UpdateReloadTimer()
+        {
+            if (!playerCanShoot)
+            {
+                timerActive += Time.deltaTime;
+                if (timerActive >= timer)
+                {
+                    timerActive = 0;
+                    playerCanShoot = true;
+                }
+            }
+        }
     }
 
     public enum MarinesType

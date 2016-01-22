@@ -47,11 +47,6 @@ namespace GalacticJanitor.Game
             }
         }
 
-        void UpdateTargets()
-        {
-
-        }
-
         int DoDamage()
         {
             return flameDmg;

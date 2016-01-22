@@ -7,6 +7,7 @@ namespace GalacticJanitor.Game
     {
         public GameObject jetFlame;
         private GameObject flame;
+        private WeaponControllerCarter controller;
 
         // The three next variables are used to handle the flame consumption of ammo
         public bool flameIsActive = false;
@@ -26,6 +27,7 @@ namespace GalacticJanitor.Game
         // Use this for initialization
         void Start()
         {
+            controller = gameObject.GetComponent<WeaponControllerCarter>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
         }
 
@@ -33,6 +35,7 @@ namespace GalacticJanitor.Game
         void Update()
         {
             FlameHandle();
+            CheckIfPlayerCanShoot();
         }
 
         public bool CheckMagazine()
@@ -70,6 +73,9 @@ namespace GalacticJanitor.Game
             }
         }
 
+        /// <summary>
+        /// Instantiate the flame, pass damage and timer.
+        /// </summary>
         public void Fire()
         {
             if (CheckMagazine())
@@ -92,6 +98,9 @@ namespace GalacticJanitor.Game
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponFlameThrower");
         }
 
+        /// <summary>
+        /// Destroy the game object flame
+        /// </summary>
         public void ReleaseFireKeyFlamethrower()
         {
             Debug.Log("I'm in ReleaseTrigger of WeaponFlameThrower");
@@ -102,6 +111,9 @@ namespace GalacticJanitor.Game
             }
         }
 
+        /// <summary>
+        /// Destroy flame if no ammo, otherwise consume ammo.
+        /// </summary>
         public void FlameHandle()
         {
             if (flameIsActive)
@@ -125,6 +137,9 @@ namespace GalacticJanitor.Game
             }
         }
 
+        /// <summary>
+        /// Use with the timer to handle munition.
+        /// </summary>
         private void FlameConsumeAmmoTimer()
         {
             if (flameIsActive)
@@ -135,6 +150,18 @@ namespace GalacticJanitor.Game
                     timerActive = 0f;
                     magazine--;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Use to stop the flame when the player reload.
+        /// </summary>
+        public void CheckIfPlayerCanShoot()
+        {
+            if(!controller.playerCanShoot)
+            {
+                Destroy(flame);
+                flameIsActive = false;
             }
         }
     } 
