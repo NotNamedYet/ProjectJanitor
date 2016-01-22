@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   maxLifetime: 3
   baseDamage: 2
   baseSpeed: 25
@@ -125,7 +125,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colliderMask.m_Bits
-      value: 256
+      value: 768
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -820,10 +820,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 169664, guid: 7816dafdb465e1746a05af8b1cc91e71, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7816dafdb465e1746a05af8b1cc91e71, type: 2}
   m_IsPrefabParent: 0
@@ -3847,25 +3843,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 433058, guid: b5b1186af3ed20b45bf2cc8053fd3726, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 433058, guid: b5b1186af3ed20b45bf2cc8053fd3726, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 198190, guid: b5b1186af3ed20b45bf2cc8053fd3726, type: 2}
       propertyPath: m_Name
       value: pfb_WallW_Corner (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 175024, guid: b5b1186af3ed20b45bf2cc8053fd3726, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 141646, guid: b5b1186af3ed20b45bf2cc8053fd3726, type: 2}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5b1186af3ed20b45bf2cc8053fd3726, type: 2}
@@ -4449,7 +4429,6 @@ GameObject:
   - 4: {fileID: 1244600796}
   - 65: {fileID: 1244600795}
   - 54: {fileID: 1244600797}
-  - 114: {fileID: 1244600798}
   - 135: {fileID: 1244600799}
   - 114: {fileID: 1244600800}
   m_Layer: 8
@@ -4500,19 +4479,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!114 &1244600798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1244600794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19f390393c0e45418501ef9e4d9efbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3
-  freeze: 0
 --- !u!135 &1244600799
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 498724}
   - 65: {fileID: 6511064}
   - 54: {fileID: 5415562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -141,6 +141,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
