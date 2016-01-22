@@ -77,8 +77,8 @@ namespace GalacticJanitor.Game
 
                             if (frozenAfterJump > 0)
                             {
-                                //? frozen = other.GetComponent<?>();
-                                //if (frozen != null) frozen.MovementCooldown = frozenAfterJump;
+                                PlayerController frozen = other.GetComponent<PlayerController>();
+                                if (frozen != null) frozen.MovementCooldown = frozenAfterJump;
                             }
 
                             LocalTeleport(other.gameObject, localDestination.transform);
