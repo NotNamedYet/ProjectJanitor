@@ -52,6 +52,7 @@ namespace GalacticJanitor.Game
 
         void Update()
         {
+            rotate.ForceLookAt();
             UpdateCooldown();
         }
 
@@ -66,7 +67,7 @@ namespace GalacticJanitor.Game
 
         void Movement()
         {
-            rotate.ForceLookAt();
+            
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             body.AddRelativeForce(move * speed, ForceMode.VelocityChange); // For Forcemode see 2
         }

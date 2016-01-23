@@ -18,6 +18,6 @@ public class PixelScaling : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        cam.orthographicSize = (float)Math.Round(Screen.height / pixelToUnit / 2, 4);
-	}
+        cam.orthographicSize = (float)Math.Round(Screen.height / pixelToUnit / 2, 2);
+    }
 }

@@ -75,12 +75,13 @@ GameObject:
   - 114: {fileID: 11460442}
   - 114: {fileID: 11457006}
   - 114: {fileID: 11465632}
-  - 65: {fileID: 6570928}
   - 54: {fileID: 5423960}
   - 114: {fileID: 11433848}
-  m_Layer: 0
+  - 114: {fileID: 11435770}
+  - 135: {fileID: 13561322}
+  m_Layer: 8
   m_Name: pfb_SgtHartman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -506,18 +507,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!65 &6570928
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119372}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.3835654, y: 1, z: 6.58033}
-  m_Center: {x: -0.0000009536743, y: 0, z: 1.4584961}
 --- !u!114 &11433848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -543,6 +532,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d8a8f82247d324386d1360398949a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11435770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7b242f5df71174785cff8b806bab0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  armorPoint: 50
+  maxArmorPoint: 50
+  armorDamageReduction: 3
+  alive: 1
+  destroyOnDeath: 0
 --- !u!114 &11457006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -596,6 +603,18 @@ MonoBehaviour:
   timer: 0.2
   timerBase: 0.2
   timerAmplitude: 0.1
+--- !u!135 &13561322
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.91
+  m_Center: {x: 0, y: 0, z: 0.45}
 --- !u!212 &21211674
 SpriteRenderer:
   m_ObjectHideFlags: 1
