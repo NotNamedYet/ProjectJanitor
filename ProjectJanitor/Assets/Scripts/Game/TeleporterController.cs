@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 
 namespace GalacticJanitor.Game
