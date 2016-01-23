@@ -44,7 +44,7 @@ namespace GalacticJanitor.Game
         {
             if (player != null)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 10, player.position.z), 1f);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 10, player.position.z), 25f * Time.deltaTime);
             }      
         }
     }
