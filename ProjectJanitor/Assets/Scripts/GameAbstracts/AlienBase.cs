@@ -60,26 +60,9 @@ namespace GalacticJanitor.Game
             UpdateState();
         }
 
-        
-
         void FixedUpdate()
         {
             CalculateBehavior();
-        }
-        
-        void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.tag == "Player")
-                OnAggro(other.transform);
-                
-        }
-
-        void OnAggro(Transform trackableTarget)
-        {
-            if (target == null)
-            {
-                target = trackableTarget;
-            }
         }
 
         /// <summary>
