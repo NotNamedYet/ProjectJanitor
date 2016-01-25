@@ -71,6 +71,10 @@ namespace GalacticJanitor.Game
                     }
                 }
             }
+            else
+            {
+                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadMagazine() of weaponFlamethrower");
+            }
         }
 
         /// <summary>

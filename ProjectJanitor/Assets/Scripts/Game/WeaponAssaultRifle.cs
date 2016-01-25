@@ -22,10 +22,13 @@ namespace GalacticJanitor.Game
 
         public Transform chokes; // From where the bullet go out the gun
 
-        public float timerActive = 0f; // Timer in real time
-        public float timer = 0.5f; // Timer set, changes in the function LaunchTimer()
-        public float timerBase = 0.5f; // Base timer
-        public float timerAmplitude = 0.1f; // Use to make a random effect with the timer
+        private float nextBulletTimerActive = 0f; // Timer in real time
+        private float nextBulletTimer = 0.5f; // Timer set, changes in the function LaunchTimer()
+
+        [Tooltip("Time between two bullets.")]
+        public float nextBulletTimerBase = 0.5f; // Base timer
+        [Tooltip("Amplitude use on. Set to zero if you don't want to.")]
+        public float nextBulletTimerAmplitude = 0.1f; // Use to make a random effect with the timer
         private bool canConstantFireNextBullet = true;
 
         // Use this for initialization
@@ -47,12 +50,12 @@ namespace GalacticJanitor.Game
         {
             if (!canConstantFireNextBullet)
             {
-                timerActive += Time.deltaTime;
-                if (timerActive >= timer)
+                nextBulletTimerActive += Time.deltaTime;
+                if (nextBulletTimerActive >= nextBulletTimer)
                 {
-                    timerActive = 0f;
+                    nextBulletTimerActive = 0f;
                     canConstantFireNextBullet = true;
-                    timer = Random.Range(timerBase - timerAmplitude, timerBase + timerAmplitude);
+                    nextBulletTimer = Random.Range(nextBulletTimerBase - nextBulletTimerAmplitude, nextBulletTimerBase + nextBulletTimerAmplitude);
                 }
             }
         }
@@ -82,7 +85,7 @@ namespace GalacticJanitor.Game
         public void ReleaseTrigger()
         {
             canConstantFireNextBullet = true;
-            timerActive = 0f;
+            nextBulletTimerActive = 0f;
         }
 
         public void Fire()
@@ -152,7 +155,7 @@ namespace GalacticJanitor.Game
                 }
             }
             else
-                Debug.Log("Magazine is fulled up of ammo, stupid player, i'm in ReloadBullet() of WeaponAssaultRifle");
+                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadBullet() of WeaponAssaultRifle");
         }
 
         private void ReloadGrenade()
@@ -181,7 +184,7 @@ namespace GalacticJanitor.Game
                 }
             }
             else
-                Debug.Log("Magazine is fulled up of ammo, stupid player, i'm in ReloadGrenade() of WeaponAssaultRifle");
+                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadGrenade() of WeaponAssaultRifle");
         }
     } 
 }

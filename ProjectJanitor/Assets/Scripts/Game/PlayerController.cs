@@ -4,7 +4,6 @@ using System.Collections;
 namespace GalacticJanitor.Game
 {
 
-
     /*
         For the player, the rigidbody's Interpolation has to be set to "Interpolate".
 
@@ -18,9 +17,16 @@ namespace GalacticJanitor.Game
       * It is recommended to turn on interpolation for the main character but disable it for everything else.
 
     */
+    [RequireComponent(typeof(LivingEntity))]
+    [RequireComponent(typeof(PlayerAmmo))]
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
     {
+
+        public MarinesType marinesType;
+
+        public LivingEntity livingEntity;
+        public PlayerAmmo playerAmmo;
 
         public float speed = 10;
         public bool freeze;
@@ -47,6 +53,8 @@ namespace GalacticJanitor.Game
         // Use this for initialization
         void Start()
         {
+            livingEntity = gameObject.GetComponent<LivingEntity>();
+            playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             body = gameObject.GetComponent<Rigidbody>();
         }
 
@@ -85,5 +93,10 @@ namespace GalacticJanitor.Game
             }
             freeze = _movementCooldown > 0;
         }
+    }
+
+    public enum MarinesType
+    {
+        MajCarter, SgtHartman
     }
 }
