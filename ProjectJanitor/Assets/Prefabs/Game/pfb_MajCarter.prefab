@@ -111,6 +111,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450352}
   - 212: {fileID: 21219882}
+  - 114: {fileID: 11402214}
   m_Layer: 0
   m_Name: ArmWithGunRight
   m_TagString: Untagged
@@ -312,6 +313,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414154}
   - 212: {fileID: 21250708}
+  - 114: {fileID: 11417484}
   m_Layer: 0
   m_Name: ArmWithGunLeft
   m_TagString: Untagged
@@ -650,6 +652,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!114 &11402214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032cac26d7b9ea242a5504e2ca70c8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAngle: 15
 --- !u!114 &11404998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -661,6 +675,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d8a8f82247d324386d1360398949a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11417484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032cac26d7b9ea242a5504e2ca70c8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAngle: -15
 --- !u!114 &11428304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -708,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73dcee5eea31b648a2a47c2ff16bd27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 178482, guid: 77c7896ca4c132a4e8ccc3d7b896042a, type: 2}
+  bullet: {fileID: 11490528, guid: 77c7896ca4c132a4e8ccc3d7b896042a, type: 2}
   magazine: 30
   bulletsDmg: 1
   chokes1: {fileID: 419786}

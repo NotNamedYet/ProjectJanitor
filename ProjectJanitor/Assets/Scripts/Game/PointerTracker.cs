@@ -16,6 +16,12 @@ namespace GalacticJanitor.Game
         // Use this for initialization
         void Start()
         {
+            if (player == null)
+            {
+                GameObject go = GameObject.FindGameObjectWithTag("Player");
+                if (go != null)
+                    player = go.transform;
+            }
             mainCam = GetComponent<Camera>();
         }
 

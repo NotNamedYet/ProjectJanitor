@@ -1,15 +1,18 @@
+using GalacticJanitor.Persistency;
 using UnityEngine;
 
 namespace GalacticJanitor.Game
 {
+    [RequireComponent(typeof(SavableAlien))]
     [RequireComponent(typeof(LivingEntity))]
     [RequireComponent(typeof(NavMeshAgent))]
     public class AlienBase : MonoBehaviour
     {
         protected NavMeshAgent pathfinder;
-        protected LivingEntity entity;
+        public LivingEntity entity;
         EnemyState state = EnemyState.IDLE;
 
+        public string AlienName;
         public Transform sensor;
         public Animator rigging;
         public Transform target;
@@ -147,7 +150,7 @@ namespace GalacticJanitor.Game
             {
                 if (target != null)
                 {
-                    if (Vector3.Distance(transform.position, target.position) < maxAttackRange)
+                    if (GetDistanceFromTarget() < maxAttackRange)
                     {
                         state = EnemyState.ATTACK;
                     }
@@ -169,6 +172,11 @@ namespace GalacticJanitor.Game
                     }
                 }
             }
+        }
+
+        public float GetDistanceFromTarget()
+        {
+            return Vector3.Distance(transform.position, target.position);
         }
 
         /// <summary>
@@ -203,4 +211,5 @@ namespace GalacticJanitor.Game
     } 
 
     public enum EnemyState { ATTACK, FOLLOW, IDLE, RETURN, PATROL}
+
 }

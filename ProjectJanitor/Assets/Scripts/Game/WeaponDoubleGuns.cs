@@ -5,7 +5,7 @@ namespace GalacticJanitor.Game
 {
     public class WeaponDoubleGuns : MonoBehaviour
     {
-        public GameObject bullet;
+        public BulletController bullet;
 
         [Range(0, 30)] // Must be equal to magazineSize
         public int magazine;
@@ -15,7 +15,7 @@ namespace GalacticJanitor.Game
         public Transform chokes1; // From where the bullet go out the gun
         public Transform chokes2;
 
-        private bool activeChokes; // True = chokes1, false = chokes2
+        private bool activeChokes = true; // True = chokes1, false = chokes2
 
         public PlayerAmmo playerAmmo;
 
@@ -35,22 +35,24 @@ namespace GalacticJanitor.Game
         {
             if (CheckMagazine())
             {
+                BulletController bul = null;
+
                 if (activeChokes)
                 {
                     Debug.Log("i pulled the trigger with the left gun in \"WeaponDoubleGun\"");
-                    GameObject bul = Instantiate(bullet, chokes1.position, chokes1.rotation) as GameObject;
-                    bul.GetComponent<BulletController>().bulletDmg = bulletsDmg;
-
-                    magazine--;
+                    bul = Instantiate(bullet, chokes1.position, chokes1.rotation) as BulletController;
+                    
                 }
                 else
                 {
                     Debug.Log("i pulled the trigger with the right gun in \"WeaponDoubleGun\"");
-                    GameObject bul = Instantiate(bullet, chokes2.position, chokes2.rotation) as GameObject;
-                    bul.GetComponent<BulletController>().bulletDmg = bulletsDmg;
+                    bul = Instantiate(bullet, chokes2.position, chokes2.rotation) as BulletController;
 
-                    magazine--;
                 }
+
+                bul.bulletDmg = bulletsDmg;
+                bul.SetSource(gameObject);
+                magazine--;
 
                 //Play a nice badass sound
                 activeChokes = !activeChokes;

@@ -120,7 +120,11 @@ public class EditorMenu
                     s.gameObject.name = n;
                 }
                 warn++;
-
+            }
+            else
+            {
+                s.name = "sv." + s.savableObject.name;
+                
             }
 
             if (!guids.Contains(s.uniqueID))

@@ -38,6 +38,7 @@ namespace GalacticJanitor.Persistency
     public abstract class ObjectData
     {
         public string uniqueId;
+        public bool canSpawn = true;
 
         public ObjectData(string uniqueId)
         {

@@ -27,6 +27,10 @@ namespace GalacticJanitor.Persistency
         {
             AmmoBoxData data = new AmmoBoxData(uniqueId);
             data.amountInBox = box.amount;
+            if (box.amount <= 0)
+            {
+                data.canSpawn = false;
+            }
             return data;
         }
 
