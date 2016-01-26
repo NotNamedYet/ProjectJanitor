@@ -91,7 +91,9 @@ namespace GalacticJanitor.Game
             {
                 Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
                 GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
-                bullet.GetComponent<BulletController>().bulletDmg = bulletsDmg;
+                BulletController bctrl = bullet.GetComponent<BulletController>();
+                bctrl.bulletDmg = bulletsDmg;
+                bctrl.SetSource(gameObject);
                 magazineBullet--;
                 canConstantFireNextBullet = false;
                 //Play a nice badass sound
