@@ -7,6 +7,7 @@ namespace GalacticJanitor.Game
         
         public AlienSpit projectile;
         float nextAttack;
+        
 
         protected override void Attack()
         {
@@ -21,5 +22,7 @@ namespace GalacticJanitor.Game
                 nextAttack = Time.time + (enraged? attackPerSecond / enrageModifier : attackPerSecond);
             } 
         }
+
+        
     } 
 }
