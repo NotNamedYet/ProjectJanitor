@@ -32,6 +32,7 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void Update()
         {
+
             UpdateReloadTimer();
 
             if (Input.GetKeyDown(KeyCode.F))

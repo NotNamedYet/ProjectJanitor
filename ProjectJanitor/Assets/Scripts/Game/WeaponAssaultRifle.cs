@@ -24,7 +24,6 @@ namespace GalacticJanitor.Game
 
         private float nextBulletTimerActive = 0f; // Timer in real time
         private float nextBulletTimer = 0.5f; // Timer set, changes in the function LaunchTimer()
-
         [Tooltip("Time between two bullets.")]
         public float nextBulletTimerBase = 0.5f; // Base timer
         [Tooltip("Amplitude use on. Set to zero if you don't want to.")]
@@ -92,11 +91,19 @@ namespace GalacticJanitor.Game
         {
             if (CheckMagazineBullet())
             {
-                Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
-                GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
-                bullet.GetComponent<BulletController>().bulletDmg = bulletsDmg;
-                magazineBullet--;
-                canConstantFireNextBullet = false;
+                gameObject.GetComponent<PlayerController>().justHaveShoot = true;
+                gameObject.GetComponent<Animator>().SetBool("playerShoot", true); // Launch the fire animation
+
+                if (gameObject.GetComponent<PlayerController>().timerActiveJustHaveShoote >= 0.1f) // To be sure that the assault rifle shoot in front of the player (yes it's a fucking bad code)
+                {
+                    Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
+                    GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
+                    bullet.GetComponent<BulletController>().bulletDmg = bulletsDmg;
+                    magazineBullet--;
+                    canConstantFireNextBullet = false;
+                    gameObject.GetComponent<PlayerController>().timerActiveJustHaveShoote = 0f;
+                }
+
                 //Play a nice badass sound
             }
             else
@@ -110,10 +117,13 @@ namespace GalacticJanitor.Game
         {
             if (CheckMagazineGrenade())
             {
+                gameObject.GetComponent<Animator>().SetBool("playerShoot", true);
+
                 Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
                 GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
                 grenade.GetComponent<GrenadeController>().grenadeDmg = grenadesDmg;
                 magazineGrenade--;
+
                 //Play a nice badass sound
             }
             else

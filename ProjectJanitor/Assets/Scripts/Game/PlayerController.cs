@@ -17,6 +17,7 @@ namespace GalacticJanitor.Game
       * It is recommended to turn on interpolation for the main character but disable it for everything else.
 
     */
+    [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(LivingEntity))]
     [RequireComponent(typeof(PlayerAmmo))]
     [RequireComponent(typeof(Rigidbody))]
@@ -33,6 +34,14 @@ namespace GalacticJanitor.Game
 
         Rigidbody body;
         public PlayerRotation rotate; // Ref to the gameObject that must rotate, with the script PlayerRotation
+
+        public Animator anim;
+        //[HideInInspector]
+        public bool justHaveShoot = false;
+        [HideInInspector]
+        public float timerActiveJustHaveShoote = 0; // public, need to be accessible in weapon's script, but must be hide in inspector
+        [Tooltip("Timer handle fire animation, time before switch to still or move animations.")]
+        public float timerJustHaveShoot;
 
         private float _movementCooldown = 0;
         public float MovementCooldown
@@ -56,12 +65,14 @@ namespace GalacticJanitor.Game
             livingEntity = gameObject.GetComponent<LivingEntity>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             body = gameObject.GetComponent<Rigidbody>();
+            anim = gameObject.GetComponent<Animator>();
         }
 
         void Update()
         {
             rotate.ForceLookAt();
             UpdateCooldown();
+            UpdateTimerPlayerAnimShoot();
         }
 
         // Update is called once per frame
@@ -78,6 +89,16 @@ namespace GalacticJanitor.Game
             
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             body.AddRelativeForce(move * speed, ForceMode.VelocityChange); // For Forcemode see 2
+
+            if(Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)
+            {
+                anim.SetBool("playerMove", true);
+            }
+
+            else
+            {
+                anim.SetBool("playerMove", false);
+            }
         }
 
         void FreezeVelocity()
@@ -92,6 +113,20 @@ namespace GalacticJanitor.Game
                 _movementCooldown -= Time.deltaTime;
             }
             freeze = _movementCooldown > 0;
+        }
+
+        void UpdateTimerPlayerAnimShoot()
+        {
+            if (justHaveShoot)
+            {
+                timerActiveJustHaveShoote += Time.deltaTime;
+                if (timerActiveJustHaveShoote >= timerJustHaveShoot)
+                {
+                    timerActiveJustHaveShoote = 0f;
+                    justHaveShoot = false;
+                    anim.SetBool("playerShoot", false);
+                }
+            }
         }
     }
 

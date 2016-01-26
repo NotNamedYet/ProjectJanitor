@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea670600fc1aa24c8a92d164fecbcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marinesType: 0
+  marinesType: 1
   livingEntity: {fileID: 0}
   playerAmmo: {fileID: 0}
   speed: 15
@@ -906,6 +906,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: marinesType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
