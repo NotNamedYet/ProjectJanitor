@@ -15,9 +15,7 @@ namespace GalacticJanitor.Persistency
         // Use this for initialization
         void Start()
         {
-            savableObject = Instantiate(savableObject, transform.position, transform.rotation) as SavableObject;
-            savableObject.uniqueId = uniqueID;
-            savableObject.transform.SetParent(gameObject.transform);
+            SpawnObject();
         }
 
         // Update is called once per frame
@@ -25,7 +23,35 @@ namespace GalacticJanitor.Persistency
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                savableObject.Save();
+                if (savableObject != null) savableObject.Save();
+            }
+        }
+
+        void SpawnObject()
+        {
+            if (GameController.Controller != null)
+            {
+                bool canSpan = true;
+                ObjectData data = null;
+
+                if (GameController.Controller.Registery.objectData.ContainsKey(uniqueID))
+                {
+                    data = GameController.Controller.Registery.objectData[uniqueID];
+                    canSpan = data.canSpawn;
+                }
+                
+                if (canSpan)
+                {
+                    savableObject = Instantiate(savableObject, transform.position, transform.rotation) as SavableObject;
+                    savableObject.uniqueId = uniqueID;
+                    savableObject.transform.SetParent(gameObject.transform);
+                    if (data != null)
+                    {
+                        savableObject.SetData(data);
+                    }
+                       
+                }
+
             }
         }
     } 
