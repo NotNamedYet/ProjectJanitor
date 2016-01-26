@@ -97,8 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bccd5b737524f409754b3178b46d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   destroyTime: 2.5
+  bulletDmg: 0
 --- !u!212 &21273316
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,7 +139,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
