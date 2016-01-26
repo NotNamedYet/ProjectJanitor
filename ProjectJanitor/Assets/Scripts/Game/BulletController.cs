@@ -13,6 +13,7 @@ namespace GalacticJanitor.Game
         public float destroyTime = 2.5f;
 
         public int bulletDmg;
+        public GameObject damageSource;
 
         // Use this for initialization
         void Start()
@@ -27,9 +28,14 @@ namespace GalacticJanitor.Game
             MoveForward();
         }
 
+        public void SetSource(GameObject source)
+        {
+            damageSource = source;
+        }
+
         private void MoveForward()
         {
-            body.AddRelativeForce(Vector3.forward * speed, ForceMode.VelocityChange);
+            body.AddRelativeForce(Vector3.forward * speed, ForceMode.Impulse);
         }
 
         void OnTriggerEnter(Collider other)
@@ -41,6 +47,14 @@ namespace GalacticJanitor.Game
                 {
                     LivingEntity target = other.GetComponent<LivingEntity>();
                     target.TakeDirectDamage(DoDamage());
+
+                    if (other.tag == "Alien" && damageSource != null)
+                    {
+                        if (other.GetComponent<AlienBase>().target == null)
+                        {
+                            other.GetComponent<AlienBase>().target = damageSource.transform;
+                        }
+                    }
                 }
 
                 //Debug
