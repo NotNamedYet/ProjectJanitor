@@ -156,7 +156,7 @@ GameObject:
   - 114: {fileID: 11415924}
   - 54: {fileID: 5419912}
   - 114: {fileID: 11452148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pfb_AlienAlpha
   m_TagString: Alien
   m_Icon: {fileID: 0}
@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495412}
+  - 95: {fileID: 9538344}
   m_Layer: 0
   m_Name: pfb_Rig_AlienAlpha
   m_TagString: Untagged
@@ -406,6 +407,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.79, y: 1.38, z: 5.33}
   m_Center: {x: 0, y: 0, z: -2.41}
+--- !u!95 &9538344
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178510}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64d928448ab34f64599d843c1370a4e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11409996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,6 +442,7 @@ MonoBehaviour:
   armorDamageReduction: 3
   alive: 1
   destroyOnDeath: 1
+  optionalAnimator: {fileID: 9538344}
 --- !u!114 &11415924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,10 +455,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  AlienName: 
+  AlienName: Alpha
   sensor: {fileID: 489386}
-  rigging: {fileID: 0}
+  rigging: {fileID: 9538344}
   target: {fileID: 0}
+  lineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 768
   maxAttackRange: 25
   maxDistanceFromSpawn: 70
   patrol: 0
@@ -449,7 +471,6 @@ MonoBehaviour:
   remainingHealthToEnrage: 10
   enrageModifier: 2
   projectile: {fileID: 11401256, guid: d7874fb3f17d3b840aafb24ecf755f19, type: 2}
-  popsOnDeath: []
 --- !u!114 &11452148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -777,6 +798,14 @@ Prefab:
       propertyPath: popsOnDeath.Array.data[1]
       value: 
       objectReference: {fileID: 168570, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroyOnDeath
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166484}
