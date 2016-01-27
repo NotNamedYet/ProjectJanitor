@@ -79,6 +79,7 @@ GameObject:
   - 114: {fileID: 11428304}
   - 114: {fileID: 11460320}
   - 135: {fileID: 13546560}
+  - 95: {fileID: 9588384}
   m_Layer: 8
   m_Name: pfb_MajCarter
   m_TagString: Player
@@ -652,6 +653,23 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!95 &9588384
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c32e736e89621b54194e8c7c7a65529b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11402214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -698,9 +716,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea670600fc1aa24c8a92d164fecbcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marinesType: 0
+  livingEntity: {fileID: 0}
+  playerAmmo: {fileID: 0}
   speed: 10
   freeze: 0
   rotate: {fileID: 11404998}
+  anim: {fileID: 0}
+  justHaveShoot: 0
+  timerActiveJustHaveShoote: 0
+  timerJustHaveShoot: 0.1
 --- !u!114 &11437482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -712,7 +737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71727b4cb99138549ac4b2e96132ae82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marinesType: 0
   rigWeaponAndArms:
   - {fileID: 157922}
   - {fileID: 173084}
@@ -771,6 +795,7 @@ MonoBehaviour:
   armorDamageReduction: 3
   alive: 1
   destroyOnDeath: 0
+  invincible: 0
 --- !u!114 &11477690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -784,12 +809,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jetFlame: {fileID: 190324, guid: 9c63e8ce184df2f48b07014972c175c3, type: 2}
   flameIsActive: 0
-  timerActive: 0
   timer: 0.1
   magazine: 300
   flameDmg: 1
   chokes: {fileID: 439710}
-  playerAmmo: {fileID: 0}
 --- !u!135 &13546560
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1138,7 +1161,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c32e736e89621b54194e8c7c7a65529b, type: 2}
+    - target: {fileID: 0}
+      propertyPath: timerJustHaveShoot
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114808}

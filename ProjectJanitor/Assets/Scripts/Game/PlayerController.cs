@@ -36,12 +36,12 @@ namespace GalacticJanitor.Game
         public PlayerRotation rotate; // Ref to the gameObject that must rotate, with the script PlayerRotation
 
         public Animator anim;
-        //[HideInInspector]
+        [HideInInspector]
         public bool justHaveShoot = false;
         [HideInInspector]
         public float timerActiveJustHaveShoote = 0; // public, need to be accessible in weapon's script, but must be hide in inspector
-        [Tooltip("Timer handle fire animation, time before switch to still or move animations.")]
-        public float timerJustHaveShoot;
+        [Tooltip("Timer handle fire animation, time before switch to still or move animations. 0.5f to Hartman, 0.1f to Carter")]
+        public float timerJustHaveShoot = 0.5f; // 0.5f to Hartman, 0.1f to Carter
 
         private float _movementCooldown = 0;
         public float MovementCooldown
