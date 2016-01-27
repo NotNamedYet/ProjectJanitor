@@ -22,10 +22,12 @@ namespace GalacticJanitor.Game
 
         public Transform chokes; // From where the bullet go out the gun
 
-        public float timerActive = 0f; // Timer in real time
-        public float timer = 0.5f; // Timer set, changes in the function LaunchTimer()
-        public float timerBase = 0.5f; // Base timer
-        public float timerAmplitude = 0.1f; // Use to make a random effect with the timer
+        private float nextBulletTimerActive = 0f; // Timer in real time
+        private float nextBulletTimer = 0.5f; // Timer set, changes in the function LaunchTimer()
+        [Tooltip("Time between two bullets.")]
+        public float nextBulletTimerBase = 0.5f; // Base timer
+        [Tooltip("Amplitude use on. Set to zero if you don't want to.")]
+        public float nextBulletTimerAmplitude = 0.1f; // Use to make a random effect with the timer
         private bool canConstantFireNextBullet = true;
 
         // Use this for initialization
@@ -47,12 +49,12 @@ namespace GalacticJanitor.Game
         {
             if (!canConstantFireNextBullet)
             {
-                timerActive += Time.deltaTime;
-                if (timerActive >= timer)
+                nextBulletTimerActive += Time.deltaTime;
+                if (nextBulletTimerActive >= nextBulletTimer)
                 {
-                    timerActive = 0f;
+                    nextBulletTimerActive = 0f;
                     canConstantFireNextBullet = true;
-                    timer = Random.Range(timerBase - timerAmplitude, timerBase + timerAmplitude);
+                    nextBulletTimer = Random.Range(nextBulletTimerBase - nextBulletTimerAmplitude, nextBulletTimerBase + nextBulletTimerAmplitude);
                 }
             }
         }
@@ -82,20 +84,28 @@ namespace GalacticJanitor.Game
         public void ReleaseTrigger()
         {
             canConstantFireNextBullet = true;
-            timerActive = 0f;
+            nextBulletTimerActive = 0f;
         }
 
         public void Fire()
         {
             if (CheckMagazineBullet())
             {
-                Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
-                GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
-                BulletController bctrl = bullet.GetComponent<BulletController>();
-                bctrl.bulletDmg = bulletsDmg;
-                bctrl.SetSource(gameObject);
-                magazineBullet--;
-                canConstantFireNextBullet = false;
+                gameObject.GetComponent<PlayerController>().justHaveShoot = true;
+                gameObject.GetComponent<Animator>().SetBool("playerShoot", true); // Launch the fire animation
+
+                if (gameObject.GetComponent<PlayerController>().timerActiveJustHaveShoote >= 0.1f) // To be sure that the assault rifle shoot in front of the player (yes it's a fucking bad code)
+                {
+                    Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
+                    GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
+					BulletController bctrl = bullet.GetComponent<BulletController>(); // Add by dédé
+					bctrl.bulletDmg = bulletsDmg; // ...
+					bctrl.SetSource(gameObject); // ...
+                    magazineBullet--;
+                    canConstantFireNextBullet = false;
+                    gameObject.GetComponent<PlayerController>().timerActiveJustHaveShoote = 0f;
+                }
+
                 //Play a nice badass sound
             }
             else
@@ -109,10 +119,13 @@ namespace GalacticJanitor.Game
         {
             if (CheckMagazineGrenade())
             {
+                gameObject.GetComponent<Animator>().SetBool("playerShoot", true);
+
                 Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
                 GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
                 grenade.GetComponent<GrenadeController>().grenadeDmg = grenadesDmg;
                 magazineGrenade--;
+
                 //Play a nice badass sound
             }
             else
@@ -154,7 +167,7 @@ namespace GalacticJanitor.Game
                 }
             }
             else
-                Debug.Log("Magazine is fulled up of ammo, stupid player, i'm in ReloadBullet() of WeaponAssaultRifle");
+                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadBullet() of WeaponAssaultRifle");
         }
 
         private void ReloadGrenade()
@@ -183,7 +196,7 @@ namespace GalacticJanitor.Game
                 }
             }
             else
-                Debug.Log("Magazine is fulled up of ammo, stupid player, i'm in ReloadGrenade() of WeaponAssaultRifle");
+                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadGrenade() of WeaponAssaultRifle");
         }
     } 
 }

@@ -3,10 +3,10 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
+
     // TODO : Maybe put a little time of waiting between shoot one by one and rafale
     public class WeaponControllerHartman : MonoBehaviour
     {
-        public MarinesType marinesType;
 
         public WeaponAssaultRifle assaultRifle;
         public PlayerAmmo playerAmmo;

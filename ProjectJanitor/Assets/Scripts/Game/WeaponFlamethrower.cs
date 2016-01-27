@@ -11,7 +11,7 @@ namespace GalacticJanitor.Game
 
         // The three next variables are used to handle the flame consumption of ammo
         public bool flameIsActive = false;
-        public float timerActive = 0f; // Timer in real time
+        private float timerActive = 0f; // Timer in real time
         public float timer = 0.1f; // Timer set
 
         [Range(0, 300)] // Must be equal to magazineSize
@@ -70,6 +70,10 @@ namespace GalacticJanitor.Game
                         playerAmmo.ammoCarriedType1 = 0;
                     }
                 }
+            }
+            else
+            {
+                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadMagazine() of weaponFlamethrower");
             }
         }
 
