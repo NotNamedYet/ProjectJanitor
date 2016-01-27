@@ -518,6 +518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea670600fc1aa24c8a92d164fecbcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marinesType: 1
+  livingEntity: {fileID: 0}
+  playerAmmo: {fileID: 0}
   speed: 15
   freeze: 0
   rotate: {fileID: 11434664}
@@ -574,7 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c817966f7cb97e745a1b57bcba56b2cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marinesType: 1
   assaultRifle: {fileID: 0}
   playerAmmo: {fileID: 0}
   playerCanShoot: 1
@@ -599,10 +601,8 @@ MonoBehaviour:
   bulletsDmg: 1
   grenadesDmg: 2
   chokes: {fileID: 400326}
-  timerActive: 0
-  timer: 0.2
-  timerBase: 0.2
-  timerAmplitude: 0.1
+  nextBulletTimerBase: 0.5
+  nextBulletTimerAmplitude: 0.1
 --- !u!135 &13561322
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -903,6 +903,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: timer
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: marinesType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -3,9 +3,9 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
+
     public class WeaponControllerCarter : MonoBehaviour
     {
-        public MarinesType marinesType;
 
         public GameObject[] rigWeaponAndArms; // 0 = Double guns ; 1 = Flamethrower
         public WeaponDoubleGuns doubleGuns;
@@ -32,6 +32,7 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void Update()
         {
+
             UpdateReloadTimer();
 
             if (Input.GetKeyDown(KeyCode.F))
@@ -148,10 +149,5 @@ namespace GalacticJanitor.Game
                 }
             }
         }
-    }
-
-    public enum MarinesType
-    {
-        MajCarter, SgtHartman
     }
 }
