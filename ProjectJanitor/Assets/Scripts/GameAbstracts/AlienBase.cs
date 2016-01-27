@@ -18,6 +18,7 @@ namespace GalacticJanitor.Game
         public Transform target;
 
         [Header("Behavior", order = 0)]
+        public LayerMask lineOfSightMask;
         public float maxAttackRange;
         public float maxDistanceFromSpawn;
         float baseSpeed;
@@ -46,6 +47,11 @@ namespace GalacticJanitor.Game
 
         void Update()
         {
+            if (rigging)
+            {
+                rigging.SetBool("enraged", enraged);
+                rigging.SetFloat("magnitude", pathfinder.velocity.magnitude);
+            }
             //Enrage state check.
             if (entity.health <= remainingHealthToEnrage)
             {
@@ -124,9 +130,9 @@ namespace GalacticJanitor.Game
             Ray ray = new Ray(transform.position, target.position - transform.position);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, maxAttackRange, lineOfSightMask, QueryTriggerInteraction.Collide))
             {
-                Debug.DrawLine(ray.origin, hit.point, Color.blue);
+/*DBG*/         Debug.DrawLine(ray.origin, hit.point, Color.blue);
 
                 if (hit.collider.transform == target)
                 {

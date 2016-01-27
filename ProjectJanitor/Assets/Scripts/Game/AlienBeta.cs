@@ -9,11 +9,17 @@ namespace GalacticJanitor.Game
         public int damagePerHit;
         public float dammageDistanceOffset;
         float nextAttack;
+        bool firstAttack;
 
         protected override void Attack()
         {
             if (Time.time > nextAttack)
             {
+                if (rigging)
+                {
+                    rigging.SetTrigger((firstAttack) ? "attack1" : "attack2");
+                    firstAttack ^= true;
+                }
                 if (target.gameObject.tag == "Player")
                 {
                     LivingEntity entity = target.GetComponent<LivingEntity>();

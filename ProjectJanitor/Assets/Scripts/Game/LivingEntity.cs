@@ -27,6 +27,9 @@ namespace GalacticJanitor.Game
         public bool invincible = false; // Use in Death()
 
 
+        [Tooltip("Animator passed as reference should have a trigger called 'hitted' to fire damage animation")]
+        public Animator optionalAnimator;
+
         /// <summary>
         /// Inflict the specified amount of damage to this entity. If the entity health falls to 0, the entity die.
         /// <br>
@@ -61,6 +64,11 @@ namespace GalacticJanitor.Game
                 }
 
                 health -= damage;
+
+                //If an animator exists.
+                if (optionalAnimator)
+                    optionalAnimator.SetTrigger("hitted");
+
                 if (health <= 0)
                 {
                     health = 0;
