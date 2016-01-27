@@ -21,7 +21,7 @@ namespace GalacticJanitor.Game
         float timerCancelFireAfterReloadActive = 0f; // Timer in real time
 
         [Tooltip("Time before the player can shoot again after reloaded")]
-        public float timerCancelFireAfterReload = 2f; // Timer set. TODO : match with the sound's time of reloading
+        public float timerCancelFireAfterReload = 0.5f; // Timer set. TODO : match with the sound's time of reloading
 
         // Use this for initialization
         void Start()
