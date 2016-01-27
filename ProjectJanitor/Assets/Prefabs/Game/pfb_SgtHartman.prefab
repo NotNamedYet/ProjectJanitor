@@ -524,6 +524,10 @@ MonoBehaviour:
   speed: 15
   freeze: 0
   rotate: {fileID: 11434664}
+  anim: {fileID: 0}
+  justHaveShoot: 0
+  timerActiveJustHaveShoote: 0
+  timerJustHaveShoot: 0
 --- !u!114 &11434664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,6 +557,7 @@ MonoBehaviour:
   armorDamageReduction: 3
   alive: 1
   destroyOnDeath: 0
+  invincible: 0
 --- !u!114 &11457006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -601,8 +606,11 @@ MonoBehaviour:
   bulletsDmg: 1
   grenadesDmg: 2
   chokes: {fileID: 400326}
+  canBurstTimer: 0.75
+  canBurstTimerActive: 0
+  burstModeIsActive: 0
   nextBulletTimerBase: 0.5
-  nextBulletTimerAmplitude: 0.1
+  nextBulletTimerAmplitude: 0.03
 --- !u!135 &13561322
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -911,6 +919,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: marinesType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: nextBulletTimerBase
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: nextBulletTimerAmplitude
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

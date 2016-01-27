@@ -89,16 +89,7 @@ namespace GalacticJanitor.Game
             
             Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             body.AddRelativeForce(move * speed, ForceMode.VelocityChange); // For Forcemode see 2
-
-            if(Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)
-            {
-                anim.SetBool("playerMove", true);
-            }
-
-            else
-            {
-                anim.SetBool("playerMove", false);
-            }
+            MovementAnim();
         }
 
         void FreezeVelocity()
@@ -115,17 +106,42 @@ namespace GalacticJanitor.Game
             freeze = _movementCooldown > 0;
         }
 
+        /// <summary>
+        /// When the flag justHaveShoot is active, play the fire animation.
+        /// </summary>
         void UpdateTimerPlayerAnimShoot()
         {
             if (justHaveShoot)
             {
                 timerActiveJustHaveShoote += Time.deltaTime;
+                anim.SetBool("playerShoot", true);
                 if (timerActiveJustHaveShoote >= timerJustHaveShoot)
                 {
                     timerActiveJustHaveShoote = 0f;
                     justHaveShoot = false;
                     anim.SetBool("playerShoot", false);
                 }
+            }
+        }
+
+        void MovementAnim()
+        {
+            if (marinesType == MarinesType.MajCarter)
+            {
+                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0 && GetComponent<WeaponControllerCarter>().indexActiveWeapon == 1)
+                    anim.SetBool("playerMove", true);
+
+                else
+                    anim.SetBool("playerMove", false);
+            }
+            
+            else // Hartman
+            {
+                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)
+                    anim.SetBool("playerMove", true);
+                
+                else
+                    anim.SetBool("playerMove", false);
             }
         }
     }
