@@ -61,6 +61,18 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft/ForearmeLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -24.461199}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -102,7 +114,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: -1.176, y: 0.521, z: 0}
+        value: {x: -1.1760006, y: 0.52099985, z: -8.881784e-13}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -194,6 +206,12 @@ AnimationClip:
       customType: 14
       isPPtrCurve: 0
     - path: 620683672
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1494160525
       attribute: 4
       script: {fileID: 0}
       classID: 4
@@ -496,7 +514,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -1.176
+        value: -1.1760006
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -511,7 +529,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0.521
+        value: 0.52099985
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -526,7 +544,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: -8.881784e-13
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -625,6 +643,51 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
     path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft/ForearmeLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -24.461199
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -746,6 +809,36 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft/ForearmeLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: BaseRotation/pfb_Rig_MajCarter/ChestBase/Arms with flamethrower/Left/ArmLeft
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

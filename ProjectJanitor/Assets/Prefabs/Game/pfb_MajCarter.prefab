@@ -744,9 +744,8 @@ MonoBehaviour:
   flamethrower: {fileID: 0}
   playerAmmo: {fileID: 0}
   indexActiveWeapon: 0
-  playerCanShoot: 1
-  timerActive: 0
-  timer: 0.5
+  playerCanShootAfterReload: 1
+  timerCancelFireAfterReload: 0.5
 --- !u!114 &11449848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1169,6 +1168,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: timerJustHaveShoot
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timerCancelFireAfterReload
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
