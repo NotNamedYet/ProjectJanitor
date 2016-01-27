@@ -132,7 +132,7 @@ namespace GalacticJanitor.Game
 
             if (Physics.Raycast(ray, out hit, maxAttackRange, lineOfSightMask, QueryTriggerInteraction.Collide))
             {
-                Debug.DrawLine(ray.origin, hit.point, Color.blue);
+/*DBG*/         Debug.DrawLine(ray.origin, hit.point, Color.blue);
 
                 if (hit.collider.transform == target)
                 {
