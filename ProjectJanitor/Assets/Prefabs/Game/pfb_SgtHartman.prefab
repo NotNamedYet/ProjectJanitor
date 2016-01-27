@@ -79,6 +79,7 @@ GameObject:
   - 114: {fileID: 11433848}
   - 114: {fileID: 11435770}
   - 135: {fileID: 13561322}
+  - 95: {fileID: 9516860}
   m_Layer: 8
   m_Name: pfb_SgtHartman
   m_TagString: Player
@@ -507,6 +508,23 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!95 &9516860
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 379c93383fb6f5c44996a96d32172bff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11433848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,6 +542,10 @@ MonoBehaviour:
   speed: 15
   freeze: 0
   rotate: {fileID: 11434664}
+  anim: {fileID: 0}
+  justHaveShoot: 0
+  timerActiveJustHaveShoote: 0
+  timerJustHaveShoot: 0.5
 --- !u!114 &11434664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,6 +575,7 @@ MonoBehaviour:
   armorDamageReduction: 3
   alive: 1
   destroyOnDeath: 0
+  invincible: 0
 --- !u!114 &11457006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,7 +616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e7f518844ac0e4ebbb6ff1bf3127e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAmmo: {fileID: 0}
   projectileBullet: {fileID: 178482, guid: 77c7896ca4c132a4e8ccc3d7b896042a, type: 2}
   projectileGrenade: {fileID: 182990, guid: 1c82d868fd840844688fa78b5d83c8a5, type: 2}
   magazineBullet: 75
@@ -601,8 +623,11 @@ MonoBehaviour:
   bulletsDmg: 1
   grenadesDmg: 2
   chokes: {fileID: 400326}
-  nextBulletTimerBase: 0.5
-  nextBulletTimerAmplitude: 0.1
+  canBurstTimer: 0.2
+  canBurstTimerActive: 0
+  burstModeIsActive: 0
+  nextBulletTimerBase: 0.1
+  nextBulletTimerAmplitude: 0.02
 --- !u!135 &13561322
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -911,6 +936,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: marinesType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: nextBulletTimerBase
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: nextBulletTimerAmplitude
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 379c93383fb6f5c44996a96d32172bff, type: 2}
+    - target: {fileID: 0}
+      propertyPath: timerJustHaveShoot
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: canBurstTimer
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

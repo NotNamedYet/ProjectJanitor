@@ -11,9 +11,13 @@ namespace GalacticJanitor.Game
         public WeaponAssaultRifle assaultRifle;
         public PlayerAmmo playerAmmo;
 
-        public bool playerCanShoot = true;
-        public float timerActive = 0f; // Timer in real time
-        public float timer = 0.5f; // Timer set
+        [HideInInspector]
+        public bool playerCanShootAfterReload = true;
+
+        float timerCancelFireAfterReloadActive = 0f; // Timer in real time
+
+        [Tooltip("Time before the player can shoot again after reloaded")]
+        public float timerCancelFireAfterReload = 0.5f; // Timer set
 
         // Use this for initialization
         void Start()
@@ -29,23 +33,23 @@ namespace GalacticJanitor.Game
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                 {
                     assaultRifle.ReloadMagazine();
-                    playerCanShoot = false; 
+                    playerCanShootAfterReload = false; 
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse0)) // One left click
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                     assaultRifle.Fire();
 
             }
 
             if (Input.GetKey(KeyCode.Mouse0))  // Hold click
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                     assaultRifle.ConstantFire();
             }
 
@@ -56,7 +60,7 @@ namespace GalacticJanitor.Game
 
             if (Input.GetKeyDown(KeyCode.Mouse1)) // One right click
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                     assaultRifle.FireGrenade();
             }
         }
@@ -66,13 +70,13 @@ namespace GalacticJanitor.Game
         /// </summary>
         void UpdateReloadTimer()
         {
-            if (!playerCanShoot)
+            if (!playerCanShootAfterReload)
             {
-                timerActive += Time.deltaTime;
-                if (timerActive >= timer)
+                timerCancelFireAfterReloadActive += Time.deltaTime;
+                if (timerCancelFireAfterReloadActive >= timerCancelFireAfterReload)
                 {
-                    timerActive = 0;
-                    playerCanShoot = true;
+                    timerCancelFireAfterReloadActive = 0;
+                    playerCanShootAfterReload = true;
                 }
             }
         }

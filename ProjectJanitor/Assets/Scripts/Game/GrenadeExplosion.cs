@@ -12,34 +12,46 @@ namespace GalacticJanitor.Game
         public int explosionDmg;
         ParticleSystem explosion;
 
-        List<int> targetsAlreadyTouched;
+        List<int> targetsAlreadyTouched; // Use to manage damage on target, the purpose is that target can only be damageable one time
         bool takedDmg;
 
-        public float timerSet = 1.3f;
+        [Tooltip("How much time the explosion can do damage, related to the particule explosion")]
+        public float timerSet = 0.75f;
         float timer;
+
+        public GameObject damageSource;
         
         // Use this for initialization
         void Start()
         {
             timer = Time.time + timerSet;
-            // Debug.Log("Time.time : " + Time.time);
-            // Debug.Log("timer : " + timer);
 
             targetsAlreadyTouched = new List<int>();
             explosion = gameObject.GetComponent<ParticleSystem>();
             Destroy(gameObject, explosion.duration);
         }
 
+        public void SetSource(GameObject source)
+        {
+            damageSource = source;
+        }
+
         void OnTriggerEnter(Collider other)
         {
-            // Debug.Log(Time.time + " -- " + timer);
             if (Time.time < timer)
             {
-                // Debug.Log("YOLO : " + other.gameObject.name);
                 if (!targetsAlreadyTouched.Contains(other.gameObject.GetInstanceID()) && other.GetComponent<LivingEntity>() != null)
                 {
                     targetsAlreadyTouched.Add(other.gameObject.GetInstanceID());
                     other.GetComponent<LivingEntity>().TakeDirectDamage(DoDamage());
+
+                    if (other.tag == "Alien" && damageSource != null)
+                    {
+                        if (other.GetComponent<AlienBase>().target == null)
+                        {
+                            other.GetComponent<AlienBase>().target = damageSource.transform;
+                        }
+                    }
                 }
             }
         }

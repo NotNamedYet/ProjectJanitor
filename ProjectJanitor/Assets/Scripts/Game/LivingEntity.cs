@@ -23,6 +23,9 @@ namespace GalacticJanitor.Game
 
         public bool alive = true;
         public bool destroyOnDeath = false;
+        [Tooltip("Use it to make test")]
+        public bool invincible = false; // Use in Death()
+
 
         /// <summary>
         /// Inflict the specified amount of damage to this entity. If the entity health falls to 0, the entity die.
@@ -103,9 +106,12 @@ namespace GalacticJanitor.Game
         /// </summary>
         public void Die()
         {
-            alive = false;
-            if (destroyOnDeath)
-                Destroy(gameObject);
+            if (!invincible)
+            {
+                alive = false;
+                if (destroyOnDeath)
+                    Destroy(gameObject); 
+            }
         }
     } 
 }

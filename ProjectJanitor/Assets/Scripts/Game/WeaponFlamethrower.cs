@@ -5,6 +5,10 @@ namespace GalacticJanitor.Game
 {
     public class WeaponFlamethrower : MonoBehaviour
     {
+
+        PlayerController playerController;
+        PlayerAmmo playerAmmo;
+
         public GameObject jetFlame;
         private GameObject flame;
         private WeaponControllerCarter controller;
@@ -22,12 +26,11 @@ namespace GalacticJanitor.Game
 
         public Transform chokes; // From where the flame go out the flamethrower
 
-        public PlayerAmmo playerAmmo;
-
         // Use this for initialization
         void Start()
         {
             controller = gameObject.GetComponent<WeaponControllerCarter>();
+            playerController = gameObject.GetComponent<PlayerController>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
         }
 
@@ -122,6 +125,8 @@ namespace GalacticJanitor.Game
         {
             if (flameIsActive)
             {
+                playerController.justHaveShoot = true; // Use to anim
+                playerController.timerActiveJustHaveShoote = 0f;
                 if (CheckMagazine())
                 {
                     FlameConsumeAmmoTimer();
@@ -162,7 +167,7 @@ namespace GalacticJanitor.Game
         /// </summary>
         public void CheckIfPlayerCanShoot()
         {
-            if(!controller.playerCanShoot)
+            if(!controller.playerCanShootAfterReload)
             {
                 Destroy(flame);
                 flameIsActive = false;
