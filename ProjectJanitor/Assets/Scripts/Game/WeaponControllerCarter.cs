@@ -15,9 +15,13 @@ namespace GalacticJanitor.Game
         [Range(0, 1)]
         public int indexActiveWeapon; // 0 = Double guns ; 1 = Flamethrower
 
-        public bool playerCanShoot = true;
-        public float timerActive = 0f; // Timer in real time
-        public float timer = 2f; // Timer set. TODO : match with the sound's time of reloading
+        [HideInInspector]
+        public bool playerCanShootAfterReload = true;
+
+        float timerCancelFireAfterReloadActive = 0f; // Timer in real time
+
+        [Tooltip("Time before the player can shoot again after reloaded")]
+        public float timerCancelFireAfterReload = 2f; // Timer set. TODO : match with the sound's time of reloading
 
         // Use this for initialization
         void Start()
@@ -37,25 +41,25 @@ namespace GalacticJanitor.Game
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                 {
                     SwitchIndexWeapon();
-                    playerCanShoot = false; // TODO : Put it or not ? Game design choice
+                    playerCanShootAfterReload = false; // TODO : Put it or not ? Game design choice
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                 {
                     Reload();
-                    playerCanShoot = false; 
+                    playerCanShootAfterReload = false; 
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                 {
                     if (indexActiveWeapon == 0)
                         doubleGuns.Fire();
@@ -66,7 +70,7 @@ namespace GalacticJanitor.Game
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                if (playerCanShoot)
+                if (playerCanShootAfterReload)
                 {
                     if (indexActiveWeapon == 1)
                     {
@@ -139,13 +143,13 @@ namespace GalacticJanitor.Game
         /// </summary>
         void UpdateReloadTimer()
         {
-            if (!playerCanShoot)
+            if (!playerCanShootAfterReload)
             {
-                timerActive += Time.deltaTime;
-                if (timerActive >= timer)
+                timerCancelFireAfterReloadActive += Time.deltaTime;
+                if (timerCancelFireAfterReloadActive >= timerCancelFireAfterReload)
                 {
-                    timerActive = 0;
-                    playerCanShoot = true;
+                    timerCancelFireAfterReloadActive = 0;
+                    playerCanShootAfterReload = true;
                 }
             }
         }

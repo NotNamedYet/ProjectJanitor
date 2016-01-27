@@ -15,6 +15,8 @@ namespace GalacticJanitor.Game
 
         public int grenadeDmg;
 
+        public GameObject damageSource;
+
         // Use this for initialization
         void Start()
         {
@@ -31,7 +33,11 @@ namespace GalacticJanitor.Game
         private void MoveForward()
         {
             body.AddRelativeForce(Vector3.forward * speed, ForceMode.VelocityChange);
-            // transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
+        }
+
+        public void SetSource(GameObject source)
+        {
+            damageSource = source;
         }
 
         void OnTriggerEnter(Collider other)
@@ -40,7 +46,10 @@ namespace GalacticJanitor.Game
             {
                 Debug.Log("Im a grenade and i touch : " + other.tag.ToString() + ", i must be dead now");
                 GameObject explo = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
-                explo.GetComponent<GrenadeExplosion>().explosionDmg = grenadeDmg;
+                GrenadeExplosion gexplo = explo.GetComponent<GrenadeExplosion>();
+                gexplo.explosionDmg = grenadeDmg;
+                gexplo.damageSource = damageSource;
+
                 Destroy(gameObject);
             }
 
