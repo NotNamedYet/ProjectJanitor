@@ -128,8 +128,16 @@ namespace GalacticJanitor.Game
         {
             if (marinesType == MarinesType.MajCarter)
             {
-                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0 && GetComponent<WeaponControllerCarter>().indexActiveWeapon == 1)
-                    anim.SetBool("playerMove", true);
+                if (GetComponent<WeaponControllerCarter>().indexActiveWeapon == 1) // If Carter is equiped with flamethrower
+                {
+                    if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)
+                    {
+                        anim.SetBool("playerMove", true);
+                    }
+
+                    else
+                        anim.SetBool("playerMove", false);
+                }
 
                 else
                     anim.SetBool("playerMove", false);

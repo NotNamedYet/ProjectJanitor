@@ -40,6 +40,7 @@ namespace GalacticJanitor.Game
 
         void OnTriggerStay(Collider other)
         {
+
             if (!targetsBurning.Contains(other.gameObject.GetInstanceID()) && other.GetComponent<LivingEntity>())
             {
                 targetsBurning.Add(other.gameObject.GetInstanceID());
