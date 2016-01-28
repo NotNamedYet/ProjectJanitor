@@ -11,16 +11,18 @@ namespace GalacticJanitor.Game
         // Another beautiful comment...
         public static Vector3 MousePosition { get; private set; }
         Camera mainCam;
-        public Transform player;
+        public Transform target;
+        public float targetTrackingSpeed = 25f;
+        public float trackingBoostRange = 5f;
 
         // Use this for initialization
         void Start()
         {
-            if (player == null)
+            if (target == null)
             {
                 GameObject go = GameObject.FindGameObjectWithTag("Player");
                 if (go != null)
-                    player = go.transform;
+                    target = go.transform;
             }
             mainCam = GetComponent<Camera>();
         }
@@ -48,9 +50,17 @@ namespace GalacticJanitor.Game
 
         void FollowPlayer()
         {
-            if (player != null)
+            if (target != null)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 10, player.position.z), 25f * Time.deltaTime);
+                float speed = targetTrackingSpeed;
+                float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+
+                if (distanceToTarget > trackingBoostRange)
+                {
+                    speed *= distanceToTarget * 0.2f;
+                }
+
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, 10, target.position.z), speed * Time.deltaTime);
             }      
         }
     }
