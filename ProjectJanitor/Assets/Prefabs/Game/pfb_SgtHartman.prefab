@@ -576,6 +576,7 @@ MonoBehaviour:
   alive: 1
   destroyOnDeath: 0
   invincible: 0
+  optionalAnimator: {fileID: 9516860}
 --- !u!114 &11457006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -602,9 +603,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assaultRifle: {fileID: 0}
   playerAmmo: {fileID: 0}
-  playerCanShoot: 1
-  timerActive: 0
-  timer: 0.5
+  playerCanShootAfterReload: 1
+  timerCancelFireAfterReload: 0.5
 --- !u!114 &11465632
 MonoBehaviour:
   m_ObjectHideFlags: 1
