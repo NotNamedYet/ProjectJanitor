@@ -62,10 +62,10 @@ namespace GalacticJanitor.Game
         // Use this for initialization
         void Start()
         {
+            anim = gameObject.GetComponent<Animator>();
             livingEntity = gameObject.GetComponent<LivingEntity>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             body = gameObject.GetComponent<Rigidbody>();
-            anim = gameObject.GetComponent<Animator>();
         }
 
         void Update()
@@ -128,8 +128,10 @@ namespace GalacticJanitor.Game
         {
             if (marinesType == MarinesType.MajCarter)
             {
-                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0 && GetComponent<WeaponControllerCarter>().indexActiveWeapon == 1)
+                if (GetComponent<WeaponControllerCarter>().indexActiveWeapon == 1 && (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)) // If Carter is equiped with flamethrower
+                {
                     anim.SetBool("playerMove", true);
+                }
 
                 else
                     anim.SetBool("playerMove", false);

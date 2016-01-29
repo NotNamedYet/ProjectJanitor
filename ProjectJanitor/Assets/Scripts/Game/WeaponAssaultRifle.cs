@@ -114,21 +114,9 @@ namespace GalacticJanitor.Game
             if (CheckMagazineBullet())
             {
                 playerController.justHaveShoot = true; // Launch the fire animation
+                Invoke("InvokeBullet", 0.05f)
+;            }
 
-                if (playerController.timerActiveJustHaveShoote >= 0.1f) // To be sure that the assault rifle shoot in front of the player (yes it's a fucking bad code)
-                {
-                    Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
-                    GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
-					BulletController bctrl = bullet.GetComponent<BulletController>();
-					bctrl.bulletDmg = bulletsDmg;
-					bctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
-                    magazineBullet--;
-                    canConstantFireNextBullet = false;
-                    playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
-                }
-
-                //Play a nice badass sound
-            }
             else
             {
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponAssaultRifle");
@@ -141,25 +129,40 @@ namespace GalacticJanitor.Game
             if (CheckMagazineGrenade())
             {
                 playerController.justHaveShoot = true; // Launch the fire animation
-
-                if (playerController.timerActiveJustHaveShoote >= 0.05f)
-                {
-                    Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
-                    GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
-                    GrenadeController gctrl = grenade.GetComponent<GrenadeController>();
-                    gctrl.grenadeDmg = grenadesDmg;
-                    gctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
-                    magazineGrenade--;
-                    playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
-                }
-
-                //Play a nice badass sound
+                Invoke("InvokeGrenade", 0.05f);
             }
             else
             {
                 Debug.Log("OUT OF AMMO and i'm in function AlternateFire (GRENADE) of WeaponAssaultRifle");
                 // Play empty magazine sound
             }
+        }
+
+        void InvokeGrenade()
+        {
+            Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
+            GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
+            GrenadeController gctrl = grenade.GetComponent<GrenadeController>();
+            gctrl.grenadeDmg = grenadesDmg;
+            gctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
+            magazineGrenade--;
+            playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
+
+            //Play a nice badass sound
+        }
+
+        void InvokeBullet()
+        {
+            Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
+            GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
+            BulletController bctrl = bullet.GetComponent<BulletController>();
+            bctrl.bulletDmg = bulletsDmg;
+            bctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
+            magazineBullet--;
+            canConstantFireNextBullet = false;
+            playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
+
+            //Play a nice badass sound
         }
 
         public void ReloadMagazine()
