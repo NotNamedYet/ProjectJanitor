@@ -149,7 +149,7 @@ namespace GalacticJanitor.Game
             if (armorPoint >= maxArmorPoint)
                 return false;
 
-            armorPoint += maxArmorPoint;
+            armorPoint += amount;
 
             if (armorPoint > maxArmorPoint)
                 armorPoint = maxArmorPoint;
