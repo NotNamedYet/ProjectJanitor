@@ -114,7 +114,7 @@ namespace GalacticJanitor.Game
             if (CheckMagazineBullet())
             {
                 playerController.justHaveShoot = true; // Launch the fire animation
-                Invoke("InvokeBullet", 0.05f)
+                Invoke("InvokeBullet", 0.1f)
 ;            }
 
             else
@@ -129,7 +129,7 @@ namespace GalacticJanitor.Game
             if (CheckMagazineGrenade())
             {
                 playerController.justHaveShoot = true; // Launch the fire animation
-                Invoke("InvokeGrenade", 0.05f);
+                Invoke("InvokeGrenade", 0.1f);
             }
             else
             {
@@ -147,20 +147,34 @@ namespace GalacticJanitor.Game
             gctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
             magazineGrenade--;
             playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
+            ReloadGrenade();
+            gameObject.GetComponent<WeaponControllerHartman>().playerCanShootAfterReload = false;
 
             //Play a nice badass sound
         }
 
         void InvokeBullet()
         {
-            Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
-            GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
-            BulletController bctrl = bullet.GetComponent<BulletController>();
-            bctrl.bulletDmg = bulletsDmg;
-            bctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
-            magazineBullet--;
-            canConstantFireNextBullet = false;
-            playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
+            if (playerController.anim.GetCurrentAnimatorClipInfo(0).Length != 0)
+            {
+                AnimatorClipInfo[] clipInfo = playerController.anim.GetCurrentAnimatorClipInfo(0);
+                if (clipInfo.Length == 1)
+                {
+                    if (clipInfo[0].clip.name == "anm_Hartman_Fire") // Check if the player is in the good animation
+                    {
+                        Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
+                        GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
+                        BulletController bctrl = bullet.GetComponent<BulletController>();
+                        bctrl.bulletDmg = bulletsDmg;
+                        bctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
+                        magazineBullet--;
+                        canConstantFireNextBullet = false;
+                        playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController 
+                    }
+                }
+                //Debug.Log("clipinfo lengt : " + clipInfo.Length);
+            }
+            
 
             //Play a nice badass sound
         }
