@@ -26,6 +26,9 @@ namespace GalacticJanitor.Game
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             assaultRifle = gameObject.GetComponent<WeaponAssaultRifle>();
             playerController = gameObject.GetComponent<PlayerController>();
+
+            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+            playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
         }
 
         // Update is called once per frame
