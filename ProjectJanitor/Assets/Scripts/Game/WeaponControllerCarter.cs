@@ -33,6 +33,9 @@ namespace GalacticJanitor.Game
             playerController = gameObject.GetComponent<PlayerController>();
 
             StartWeaponDoubleGuns();  // TODO : Change this maybe with savegames
+
+            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+            playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
         }
 
         // Update is called once per frame
