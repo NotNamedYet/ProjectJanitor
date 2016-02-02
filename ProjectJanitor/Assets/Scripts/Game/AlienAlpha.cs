@@ -13,6 +13,10 @@ namespace GalacticJanitor.Game
         {
             if (Time.time > nextAttack)
             {
+                /* SOUNDS */
+                if (onAttackSound) onAttackSound.Play();
+
+                //Attack...
                 AlienSpit proj = Instantiate(projectile, sensor.position, sensor.rotation) as AlienSpit;
                 if (enraged)
                 {

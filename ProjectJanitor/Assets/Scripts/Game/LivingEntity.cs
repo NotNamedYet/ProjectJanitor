@@ -47,6 +47,11 @@ namespace GalacticJanitor.Game
         public AudioSource onHealSound;
         public AudioSource onRepairSound;
 
+        void Start()
+        {
+            UpdateDisplay();
+        }
+
         /// <summary>
         /// Inflict the specified amount of damage to this entity. If the entity health falls to 0, the entity die.
         /// <br>

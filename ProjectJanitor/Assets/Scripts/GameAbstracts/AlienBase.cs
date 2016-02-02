@@ -1,3 +1,12 @@
+/*
+    Optional DIRECTIVES : (not required to work well)  
+       - Commented as SOUND for every line calling an optional audiosource.
+       - Commented as UI or GUI for every line about UI/GUI
+       - Commented as ANIM for animator variable trigger/param update.
+    
+    REQUIERED 
+       - onDamageSound has to loop.
+*/
 using GalacticJanitor.Persistency;
 using UnityEngine;
 
@@ -35,6 +44,13 @@ namespace GalacticJanitor.Game
         public int remainingHealthToEnrage;
         public int enrageModifier;
 
+        [Header("Sounds")]
+        public AudioSource onAttackSound;
+        public AudioSource onMoveSound;
+        public AudioSource onAggroSound;
+        public AudioSource onEnrageSound;
+
+        private bool moveSoundLooping;
         private Vector3 spawn;
 
         void Start()
@@ -52,6 +68,10 @@ namespace GalacticJanitor.Game
                 rigging.SetBool("enraged", enraged);
                 rigging.SetFloat("magnitude", pathfinder.velocity.magnitude);
             }
+
+            /*SOUND*/
+            MoveSoundUpdate();
+            
             //Enrage state check.
             if (entity.health <= remainingHealthToEnrage)
             {
@@ -174,7 +194,6 @@ namespace GalacticJanitor.Game
                     else
                     {
                         state = EnemyState.IDLE;
-                        
                     }
                 }
             }
@@ -192,6 +211,10 @@ namespace GalacticJanitor.Game
         {
             if (!enraged)
             {
+                if (onEnrageSound) onEnrageSound.Play();
+                if (onMoveSound) onMoveSound.volume = onMoveSound.volume * enrageModifier;
+                if (onAttackSound) onAttackSound.volume = onAttackSound.volume * enrageModifier;
+
                 enraged = true;
                 pathfinder.speed = baseSpeed * enrageModifier;
             }
@@ -204,8 +227,42 @@ namespace GalacticJanitor.Game
         {
             if (enraged)
             {
+                if (onMoveSound) onMoveSound.volume = onMoveSound.volume / enrageModifier;
+                if (onAttackSound) onAttackSound.volume = onAttackSound.volume / enrageModifier;
+
                 enraged = false;
                 pathfinder.speed = baseSpeed;
+            }
+        }
+
+        void MoveSoundUpdate()
+        {
+            if (!moveSoundLooping) return;
+
+            if (pathfinder.velocity.magnitude != 0)
+            {
+                if (!moveSoundLooping)
+                    MoveSoundEnable();
+            }
+            else
+            {
+                if (moveSoundLooping)
+                    MoveSoundDisable();
+            }
+        }
+
+        void MoveSoundEnable()
+        {
+            onMoveSound.Play();
+            moveSoundLooping = true;
+        }
+
+        void MoveSoundDisable()
+        {
+            if (moveSoundLooping)
+            {
+                onMoveSound.Stop();
+                moveSoundLooping = false;
             }
         }
 
