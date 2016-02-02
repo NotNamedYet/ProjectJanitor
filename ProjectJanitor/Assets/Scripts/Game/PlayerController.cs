@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using GalacticJanitor.UI;
 
 namespace GalacticJanitor.Game
 {
@@ -20,6 +21,7 @@ namespace GalacticJanitor.Game
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(LivingEntity))]
     [RequireComponent(typeof(PlayerAmmo))]
+    [RequireComponent(typeof(PlayerStateDisplay))]
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
     {
@@ -28,6 +30,7 @@ namespace GalacticJanitor.Game
 
         public LivingEntity livingEntity;
         public PlayerAmmo playerAmmo;
+        PlayerStateDisplay display;
 
         public float speed = 10;
         public bool freeze;
@@ -65,6 +68,7 @@ namespace GalacticJanitor.Game
             anim = gameObject.GetComponent<Animator>();
             livingEntity = gameObject.GetComponent<LivingEntity>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
+            display = gameObject.GetComponent<PlayerStateDisplay>();
             body = gameObject.GetComponent<Rigidbody>();
         }
 
@@ -145,6 +149,33 @@ namespace GalacticJanitor.Game
                 else
                     anim.SetBool("playerMove", false);
             }
+        }
+
+        public void DisplayInfoWeapon1(int ammoCarried, int ammoInMagazine)
+        {
+            /*display.ammoCarriedType1 = playerAmmo.ammoCarriedType0;
+
+            if (marinesType == MarinesType.MajCarter)
+                display.ammoInMagazineWeapon1 = gameObject.GetComponent<WeaponControllerCarter>().doubleGuns.magazine;
+
+            else
+                display.ammoInMagazineWeapon1 = gameObject.GetComponent<WeaponControllerHartman>().assaultRifle.magazineBullet;*/
+            display.ammoCarriedType1 = ammoCarried;
+            display.ammoInMagazineWeapon1 = ammoInMagazine;
+
+        }
+
+        public void DisplayInfoWeapon2(int ammoCarried, int ammoInMagazine)
+        {
+            /* display.ammoCarriedType2 = playerAmmo.ammoCarriedType1;
+
+             if (marinesType == MarinesType.MajCarter)
+                 display.ammoInMagazineWeapon2 = gameObject.GetComponent<WeaponControllerCarter>().flamethrower.magazine;
+
+             else
+                 display.ammoInMagazineWeapon2 = gameObject.GetComponent<WeaponControllerHartman>().assaultRifle.magazineGrenade;*/
+            display.ammoCarriedType2 = ammoCarried;
+            display.ammoInMagazineWeapon2 = ammoInMagazine;
         }
     }
 

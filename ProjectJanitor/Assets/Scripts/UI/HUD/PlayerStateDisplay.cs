@@ -3,19 +3,20 @@ using System.Collections;
 
 namespace GalacticJanitor.UI
 {
-    public class PlayerStateDisplay : MonoBehaviour
+    public class PlayerStateDisplay : EntityResourceDisplay
     {
 
-        // Use this for initialization
-        void Start()
-        {
+        //[HideInInspector]
+        public int ammoCarriedType1;
 
-        }
+        //[HideInInspector]
+        public int ammoCarriedType2;
 
-        // Update is called once per frame
-        void Update()
-        {
+        //[HideInInspector]
+        public int ammoInMagazineWeapon1;
 
-        }
+        //[HideInInspector]
+        public int ammoInMagazineWeapon2;
+
     } 
 }

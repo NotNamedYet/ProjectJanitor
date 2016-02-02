@@ -10,6 +10,7 @@ namespace GalacticJanitor.Game
 
         public WeaponAssaultRifle assaultRifle;
         public PlayerAmmo playerAmmo;
+        PlayerController playerController;
 
         [HideInInspector]
         public bool playerCanShootAfterReload = true;
@@ -24,6 +25,7 @@ namespace GalacticJanitor.Game
         {
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             assaultRifle = gameObject.GetComponent<WeaponAssaultRifle>();
+            playerController = gameObject.GetComponent<PlayerController>();
         }
 
         // Update is called once per frame
@@ -36,21 +38,29 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     assaultRifle.ReloadMagazine();
-                    playerCanShootAfterReload = false; 
+                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                    playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                    playerCanShootAfterReload = false;
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse0)) // One left click
             {
                 if (playerCanShootAfterReload)
+                {
                     assaultRifle.Fire();
+                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                }
 
             }
 
             if (Input.GetKey(KeyCode.Mouse0))  // Hold click
             {
                 if (playerCanShootAfterReload)
+                {
                     assaultRifle.ConstantFire();
+                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                }
             }
 
             if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
@@ -61,7 +71,10 @@ namespace GalacticJanitor.Game
             if (Input.GetKeyDown(KeyCode.Mouse1)) // One right click
             {
                 if (playerCanShootAfterReload)
+                {
                     assaultRifle.FireGrenade();
+                    playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                }
             }
         }
 

@@ -11,6 +11,7 @@ namespace GalacticJanitor.Game
         public WeaponDoubleGuns doubleGuns;
         public WeaponFlamethrower flamethrower;
         public PlayerAmmo playerAmmo;
+        PlayerController playerController;
 
         [Range(0, 1)]
         public int indexActiveWeapon; // 0 = Double guns ; 1 = Flamethrower
@@ -29,6 +30,7 @@ namespace GalacticJanitor.Game
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             doubleGuns = gameObject.GetComponent<WeaponDoubleGuns>();
             flamethrower = gameObject.GetComponent<WeaponFlamethrower>();
+            playerController = gameObject.GetComponent<PlayerController>();
 
             StartWeaponDoubleGuns();  // TODO : Change this maybe with savegames
         }
@@ -53,7 +55,13 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     Reload();
-                    playerCanShootAfterReload = false; 
+                    if (indexActiveWeapon == 0)
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+
+                    else
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+
+                    playerCanShootAfterReload = false;
                 }
             }
 
@@ -62,9 +70,16 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     if (indexActiveWeapon == 0)
+                    {
                         doubleGuns.Fire();
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+                    }
+
                     else
-                        flamethrower.Fire(); 
+                    {
+                        flamethrower.Fire();
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                    }
                 }
             }
 
@@ -78,6 +93,8 @@ namespace GalacticJanitor.Game
                         {
                             flamethrower.Fire();
                         }
+
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                     }
                 }
             }
