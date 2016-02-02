@@ -22,6 +22,9 @@ namespace GalacticJanitor.Game
             if (alien.target == null)
             {
                 alien.target = trackableTarget;
+
+                /*SOUND*/
+                alien.onAggroSound.Play();
             }
         }
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
-    public class AlienBeta : AlienBase
+    public class AlienBee : AlienBase
     {
 
         public int damagePerHit;
