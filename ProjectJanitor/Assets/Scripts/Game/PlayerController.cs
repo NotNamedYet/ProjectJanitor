@@ -21,7 +21,6 @@ namespace GalacticJanitor.Game
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(LivingEntity))]
     [RequireComponent(typeof(PlayerAmmo))]
-    [RequireComponent(typeof(PlayerStateDisplay))]
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
     {
@@ -30,7 +29,7 @@ namespace GalacticJanitor.Game
 
         public LivingEntity livingEntity;
         public PlayerAmmo playerAmmo;
-        PlayerStateDisplay display;
+
 
         public float speed = 10;
         public bool freeze;
@@ -45,6 +44,9 @@ namespace GalacticJanitor.Game
         public float timerActiveJustHaveShoote = 0; // public, need to be accessible in weapon's script, but must be hide in inspector
         [Tooltip("Timer handle fire animation, time before switch to still or move animations. 0.5f to Hartman, 0.1f to Carter")]
         public float timerJustHaveShoot = 0.5f; // 0.5f to Hartman, 0.1f to Carter
+
+        [Header("GUI")]
+        public PlayerStateDisplay display;
 
         private float _movementCooldown = 0;
         public float MovementCooldown
@@ -68,7 +70,6 @@ namespace GalacticJanitor.Game
             anim = gameObject.GetComponent<Animator>();
             livingEntity = gameObject.GetComponent<LivingEntity>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
-            display = gameObject.GetComponent<PlayerStateDisplay>();
             body = gameObject.GetComponent<Rigidbody>();
         }
 
@@ -160,8 +161,14 @@ namespace GalacticJanitor.Game
 
             else
                 display.ammoInMagazineWeapon1 = gameObject.GetComponent<WeaponControllerHartman>().assaultRifle.magazineBullet;*/
-            display.ammoCarriedType1 = ammoCarried;
-            display.ammoInMagazineWeapon1 = ammoInMagazine;
+            /*
+                        if (display)
+                        {
+                            display.ammoCarriedType1 = ammoCarried;
+                            display.ammoInMagazineWeapon1 = ammoInMagazine; 
+                        }
+            */
+            if (display) display.DisplayInfoWeapon1(ammoCarried, ammoInMagazine);
 
         }
 
@@ -174,8 +181,14 @@ namespace GalacticJanitor.Game
 
              else
                  display.ammoInMagazineWeapon2 = gameObject.GetComponent<WeaponControllerHartman>().assaultRifle.magazineGrenade;*/
-            display.ammoCarriedType2 = ammoCarried;
-            display.ammoInMagazineWeapon2 = ammoInMagazine;
+            /*
+            if (display)
+            {
+                display.ammoCarriedType2 = ammoCarried;
+                display.ammoInMagazineWeapon2 = ammoInMagazine; 
+            }
+            */
+            if (display) display.DisplayInfoWeapon2(ammoCarried, ammoInMagazine);
         }
     }
 
