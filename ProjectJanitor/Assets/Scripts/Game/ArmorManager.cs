@@ -3,8 +3,7 @@ using System.Collections;
 
 namespace GalacticJanitor.Game
 {
-
-    public class HeartManager : MonoBehaviour
+    public class ArmorManager : MonoBehaviour
     {
 
         public int amount;
@@ -24,8 +23,6 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void Update()
         {
-            transform.Rotate(new Vector3(0, 1, 0));
-
             if (amount <= 0)
             {
                 Destroy(gameObject);
@@ -37,15 +34,15 @@ namespace GalacticJanitor.Game
             if (other.tag == "Player" && other.GetComponent<LivingEntity>())
             {
                 LivingEntity target = other.GetComponent<LivingEntity>();
-                if (target.Heal(amount))
+                if (target.RepairArmor(amount))
                 {
                     Destroy(gameObject);
-                    Debug.Log("I was a heart and i healed a marine with " + amount + " hp");
+                    Debug.Log("I was an armor and i give to the marine " + amount + " AP");
                 }
 
                 else
                 {
-                    Debug.Log("Marine is full life");
+                    Debug.Log("Marine is full armor");
                 }
             }
         }
