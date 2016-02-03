@@ -11,15 +11,20 @@ namespace GalacticJanitor.Game
         [Tooltip("Bullet = 0, Grenade and fuel = 1")]
         public AmmoType ammoType;
 
-        [Range(0, 50)]
-        public int amount;
+        [Range(0, 300)]
+        public int amount = 0;
+
+        [Tooltip("Check it if you want a random number, use min and maxRangeToRandom")]
+        public bool useRandomAmount;
+        public int minRangeToRandom;
+        public int maxRangeToRandom;
 
         private string uniqueID;
 
         // Use this for initialization
         void Start()
         {
-            
+            if (useRandomAmount) amount = MakeRandomAmount(minRangeToRandom, maxRangeToRandom);
         }
 
         // Update is called once per frame
@@ -30,10 +35,16 @@ namespace GalacticJanitor.Game
                 Destroy(gameObject);
             }
         }
+
+        public int MakeRandomAmount(int min, int max)
+        {
+            int result = Random.Range(min - 1, max + 1);
+            return result;
+        }
     }
     
     public enum AmmoType
     {
         AmmoType0 = 0, AmmoType1
-    } 
+    }
 }

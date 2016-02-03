@@ -140,24 +140,31 @@ namespace GalacticJanitor.Game
 
         void InvokeGrenade()
         {
-            Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
-            GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
-            GrenadeController gctrl = grenade.GetComponent<GrenadeController>();
-            gctrl.grenadeDmg = grenadesDmg;
-            gctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
-            magazineGrenade--;
-            playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
-            ReloadGrenade();
-            gameObject.GetComponent<WeaponControllerHartman>().playerCanShootAfterReload = false;
+            AnimatorClipInfo[] clipInfo = playerController.anim.GetCurrentAnimatorClipInfo(0);
+            if (clipInfo.Length != 0)
+            {
+                if (clipInfo[0].clip.name == "anm_Hartman_Fire")
+                {
+                    Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
+                    GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
+                    GrenadeController gctrl = grenade.GetComponent<GrenadeController>();
+                    gctrl.grenadeDmg = grenadesDmg;
+                    gctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
+                    magazineGrenade--;
+                    playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
+                    ReloadGrenade();
+                    gameObject.GetComponent<WeaponControllerHartman>().playerCanShootAfterReload = false;
+                }
+            }
 
             //Play a nice badass sound
         }
 
         void InvokeBullet()
         {
-            if (playerController.anim.GetCurrentAnimatorClipInfo(0).Length != 0)
+            AnimatorClipInfo[] clipInfo = playerController.anim.GetCurrentAnimatorClipInfo(0);
+            if (clipInfo.Length != 0)
             {
-                AnimatorClipInfo[] clipInfo = playerController.anim.GetCurrentAnimatorClipInfo(0);
                 if (clipInfo.Length == 1)
                 {
                     if (clipInfo[0].clip.name == "anm_Hartman_Fire" && CheckMagazineBullet()) // Check if the player is in the good animation and re check ammo
