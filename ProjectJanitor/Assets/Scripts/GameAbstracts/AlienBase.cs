@@ -44,7 +44,7 @@ namespace GalacticJanitor.Game
         public int remainingHealthToEnrage;
         public int enrageModifier;
 
-        [Header("Sounds")]
+        [Header("Sounds", order = 3)]
         public AudioSource onAttackSound;
         public AudioSource onMoveSound;
         public AudioSource onAggroSound;

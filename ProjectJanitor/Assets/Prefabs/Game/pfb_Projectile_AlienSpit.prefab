@@ -177,7 +177,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   maxLifetime: 3
-  baseDamage: 2
+  baseDamage: 10
   baseSpeed: 15
 --- !u!198 &19857984
 ParticleSystem:
@@ -1792,7 +1792,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: baseDamage
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: baseSpeed
