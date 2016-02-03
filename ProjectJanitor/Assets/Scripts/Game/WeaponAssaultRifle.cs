@@ -160,7 +160,7 @@ namespace GalacticJanitor.Game
                 AnimatorClipInfo[] clipInfo = playerController.anim.GetCurrentAnimatorClipInfo(0);
                 if (clipInfo.Length == 1)
                 {
-                    if (clipInfo[0].clip.name == "anm_Hartman_Fire") // Check if the player is in the good animation
+                    if (clipInfo[0].clip.name == "anm_Hartman_Fire" && CheckMagazineBullet()) // Check if the player is in the good animation and re check ammo
                     {
                         Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
                         GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
