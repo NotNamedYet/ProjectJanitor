@@ -13,15 +13,23 @@ namespace GalacticJanitor.Game
         public PlayerAmmo playerAmmo;
         PlayerController playerController;
 
-        [Range(0, 1)]
-        public int indexActiveWeapon; // 0 = Double guns ; 1 = Flamethrower
+        private int indexActiveWeapon; // 0 = Double guns ; 1 = Flamethrower
+        public int IndexActiveWeapon
+        {
+            get { return indexActiveWeapon; }
+            private set 
+            {
+                if (value == 1) indexActiveWeapon = 1;
+                else indexActiveWeapon = 0;
+            }
+        }
 
         [HideInInspector]
         public bool playerCanShootAfterReload = true;
 
         float timerCancelFireAfterReloadActive = 0f; // Timer in real time
 
-        [Tooltip("Time before the player can shoot again after reloaded")]
+        [Tooltip("Time before the player can shoot again after reloading")]
         public float timerCancelFireAfterReload = 0.5f; // Timer set. TODO : match with the sound's time of reloading
 
         // Use this for initialization
@@ -34,8 +42,10 @@ namespace GalacticJanitor.Game
 
             StartWeaponDoubleGuns();  // TODO : Change this maybe with savegames
 
+            /*GUI*/
             playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
             playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+            playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
         }
 
         // Update is called once per frame
@@ -50,6 +60,9 @@ namespace GalacticJanitor.Game
                 {
                     SwitchIndexWeapon();
                     playerCanShootAfterReload = false; // TODO : Put it or not ? Game design choice
+
+                    /*GUI*/
+                    playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
                 }
             }
 
@@ -58,13 +71,16 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     Reload();
+                    playerCanShootAfterReload = false;
+
+                    /*GUI*/
                     if (indexActiveWeapon == 0)
+
                         playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
 
                     else
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
 
-                    playerCanShootAfterReload = false;
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                 }
             }
 
@@ -75,12 +91,16 @@ namespace GalacticJanitor.Game
                     if (indexActiveWeapon == 0)
                     {
                         doubleGuns.Fire();
+
+                        /*GUI*/
                         playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
                     }
 
                     else
                     {
                         flamethrower.Fire();
+
+                        /*GUI*/
                         playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                     }
                 }
@@ -97,6 +117,7 @@ namespace GalacticJanitor.Game
                             flamethrower.Fire();
                         }
 
+                        /*GUI*/
                         playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                     }
                 }
@@ -151,10 +172,6 @@ namespace GalacticJanitor.Game
         void SwitchIndexWeapon()
         {
             indexActiveWeapon = indexActiveWeapon == 0 ? 1 : 0; // Protect if index != 0 or 1
-            // Furvent est content parce qu'il a fait une ternaire, bravo c'est illisible maintenant.
-            // J'aime pas les ternaires, c'est naze, c'est un truc pour faire genre "je suis un pgm du code",
-            // et franchement, pour Galactic Janitor, ce que l'on gagne en visibilit� on le perds en compr�hension.
-            // Sinon j'aime le poulet frit halal. Sign� : Rachid.
             UpdateWeapon();
         }
 
