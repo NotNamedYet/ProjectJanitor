@@ -1019,6 +1019,7 @@ MonoBehaviour:
   armorDamageReduction: 3
   alive: 1
   destroyOnDeath: 1
+  invincible: 0
   optionalAnimator: {fileID: 9556846}
 --- !u!114 &11454444
 MonoBehaviour:
@@ -1804,8 +1805,24 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: popers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: popers.Array.data[0].pop
+      value: 
+      objectReference: {fileID: 190718, guid: f10d8d32576b3c04c9efbc3fde063e9b, type: 2}
+    - target: {fileID: 0}
+      propertyPath: popers.Array.data[0].maxNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: popers.Array.data[0].randomPop
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

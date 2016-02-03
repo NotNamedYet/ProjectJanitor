@@ -5,7 +5,7 @@ namespace GalacticJanitor.Game
 {
     public class AlienBeta : AlienBase
     {
-
+        [Header("CaC damage", order = 2)]
         public int damagePerHit;
         public float dammageDistanceOffset;
         float nextAttack;
