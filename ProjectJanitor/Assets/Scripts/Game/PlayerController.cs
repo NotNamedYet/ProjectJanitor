@@ -133,7 +133,7 @@ namespace GalacticJanitor.Game
         {
             if (marinesType == MarinesType.MajCarter)
             {
-                if (GetComponent<WeaponControllerCarter>().indexActiveWeapon == 1 && (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)) // If Carter is equiped with flamethrower
+                if (GetComponent<WeaponControllerCarter>().IndexActiveWeapon == 1 && (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)) // If Carter is equiped with flamethrower
                 {
                     anim.SetBool("playerMove", true);
                 }
@@ -189,6 +189,22 @@ namespace GalacticJanitor.Game
             }
             */
             if (display) display.DisplayInfoWeapon2(ammoCarried, ammoInMagazine);
+        }
+
+        /// <summary>
+        /// Display info about which weapon MajCarter is equiped.
+        /// Send false if player is SgtHartman.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public void DisplayInfoIndexWeapon(int index)
+        {
+            if (marinesType == MarinesType.MajCarter)
+            {
+                if (display) display.DisplayInfoIndexWeapon(index, true);
+            }
+
+            else display.DisplayInfoIndexWeapon(0, false);
         }
     }
 

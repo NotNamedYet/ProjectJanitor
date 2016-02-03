@@ -27,6 +27,7 @@ namespace GalacticJanitor.Game
             assaultRifle = gameObject.GetComponent<WeaponAssaultRifle>();
             playerController = gameObject.GetComponent<PlayerController>();
 
+            /* GUI */
             playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
             playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
         }
@@ -41,9 +42,11 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     assaultRifle.ReloadMagazine();
+                    playerCanShootAfterReload = false;
+
+                    /*GUI*/
                     playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
                     playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
-                    playerCanShootAfterReload = false;
                 }
             }
 
@@ -52,6 +55,8 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     assaultRifle.Fire();
+
+                    /*GUI*/
                     playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
                 }
 
@@ -62,6 +67,8 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     assaultRifle.ConstantFire();
+
+                    /*GUI*/
                     playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
                 }
             }
@@ -76,6 +83,8 @@ namespace GalacticJanitor.Game
                 if (playerCanShootAfterReload)
                 {
                     assaultRifle.FireGrenade();
+
+                    /*GUI*/
                     playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
                 }
             }
