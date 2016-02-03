@@ -312,10 +312,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 428112}
   - 54: {fileID: 5419924}
-  - 65: {fileID: 6543816}
+  - 114: {fileID: 11407692}
+  - 135: {fileID: 13531960}
   m_Layer: 10
   m_Name: pfb_AlienBeta_UnderGrid
-  m_TagString: Alien
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -595,7 +596,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.65, y: 0, z: 5.5}
+  m_LocalPosition: {x: 5.37, y: 0, z: 0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432764}
@@ -909,18 +910,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!65 &6543816
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170794}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.05, y: 1, z: 3.17}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9595106
 Animator:
   serializedVersion: 3
@@ -938,6 +927,33 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11407692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ec423f872715f49b67648754608972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrivalPoint: {fileID: 0}
+  rig: {fileID: 9595106}
+  speed: 10
+  gogoYoungAlien: 0
+--- !u!135 &13531960
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &21200774
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1672,6 +1688,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
