@@ -16,9 +16,10 @@ namespace GalacticJanitor.Persistency
         void Start()
         {
             alien = GetComponent<AlienBase>();
+            RestoreObjectState();
         }
 
-        public override ObjectData GetData()
+        protected override ObjectData BuildData()
         {
             AlienData data = new AlienData(base.uniqueId);
             data.positionData = Serializer.Serializevector3(alien.transform.position);
@@ -33,13 +34,15 @@ namespace GalacticJanitor.Persistency
             return data;
         }
 
-        public override void SetData(ObjectData data)
+        protected override void RestoreObjectState()
         {
-            AlienData source = data as AlienData;
+            AlienData source = LoadDataFromRegistery() as AlienData;
             if (source != null)
             {
                 Vector3 pos = Serializer.DeserializeVector3(source.positionData);
                 Quaternion rot = Serializer.DeserializeQuaternion(source.rotationData);
+
+                if (alien == null) alien = GetComponent<AlienBase>();
 
                 alien.transform.position = pos;
                 alien.transform.rotation = rot;

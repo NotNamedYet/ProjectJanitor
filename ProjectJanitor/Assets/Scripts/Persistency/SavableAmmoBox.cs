@@ -15,15 +15,10 @@ namespace GalacticJanitor.Persistency
         void Start()
         {
             box = gameObject.GetComponent<AmmoBox>();
+            RestoreObjectState();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public override ObjectData GetData()
+        protected override ObjectData BuildData()
         {
             AmmoBoxData data = new AmmoBoxData(uniqueId);
             data.amountInBox = box.amount;
@@ -34,9 +29,9 @@ namespace GalacticJanitor.Persistency
             return data;
         }
 
-        public override void SetData(ObjectData data)
+        protected override void RestoreObjectState()
         {
-            AmmoBoxData bridge = data as AmmoBoxData;
+            AmmoBoxData bridge = LoadDataFromRegistery() as AmmoBoxData;
             if (bridge != null)
             {
                 box.amount = bridge.amountInBox;

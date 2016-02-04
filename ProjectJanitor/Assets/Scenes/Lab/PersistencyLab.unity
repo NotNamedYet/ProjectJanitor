@@ -320,8 +320,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1986242656}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1895450878
@@ -351,45 +350,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2111789276}
   m_RootOrder: 2
---- !u!1 &1986242654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1986242656}
-  - 114: {fileID: 1986242655}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1986242655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1986242654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e3290df80817f42a68126d36a01af1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1986242656
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1986242654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.265705, y: -7.635502, z: 15.0860405}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1699332785}
-  m_RootOrder: 0
 --- !u!1 &2102627966
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,13 +377,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a817792a10cfbb4b9c0881f7b06a507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trackerCamera: {fileID: 642504133}
+  spawnPlayerInScene: 1
   hartmanPrefab: {fileID: 11433848, guid: 801d9416cc333264f9a719e5d5e09767, type: 2}
   carterPrefab: {fileID: 11428304, guid: 6ee4c0d7b8a294c4b82111a87cbc3359, type: 2}
-  spawnPlayerInScene: 1
   playerType: 0
+  levelDisplayName: 
   playerStartPos: {x: 5.22, y: 0, z: 1.57}
   playerStartRot: {x: 0, y: 0, z: 0}
-  camera: {fileID: 642504133}
 --- !u!4 &2102627968
 Transform:
   m_ObjectHideFlags: 0
