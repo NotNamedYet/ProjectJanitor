@@ -84,6 +84,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoType: 1
   amount: 5
+  useRandomAmount: 1
+  minRangeToRandom: 4
+  maxRangeToRandom: 6
 --- !u!114 &11419990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,6 +159,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minRangeToRandom
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxRangeToRandom
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: useRandomAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
