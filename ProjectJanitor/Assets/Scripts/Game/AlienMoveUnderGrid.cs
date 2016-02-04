@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace GalacticJanitor.Game
 {
@@ -24,19 +24,25 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void Update()
         {
-            runBabie();
+            RunBabieRun();
         }
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.name == "Arrival point") Destroy(gameObject);
+            if (other.gameObject.name == "Arrival point") KillBabie();
         }
 
-        void runBabie()
+        void RunBabieRun()
         {
             transform.LookAt(arrivalPoint);
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             rig.SetFloat("magnitude", 1);
+        }
+
+        void KillBabie()
+        {
+            gameObject.GetComponentInParent<AlienPatrolUnderGridManager>().patrol.Remove(this);
+            Destroy(gameObject);
         }
     }
 

@@ -1,22 +1,25 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace GalacticJanitor.Game
 {
+
     public class AlienPatrolUnderGridManager : MonoBehaviour
     {
 
         [Tooltip("Manage there the ref to aliens you want in the patrol")]
-        public AlienMoveUnderGrid[] patrol;
+        public List<AlienMoveUnderGrid> patrol;
 
-        void OnTriggerEnter(Collider other)
+        void Update()
         {
-            if (other.tag == "Player") RunBabiesRun();
+            if (patrol.Count == 0) Destroy(gameObject); // Each alien have a function to remove itself from patrol List, when it reaches its goal
         }
 
-        void RunBabiesRun()
+        public void RunBabiesRun()
         {
             foreach (AlienMoveUnderGrid babie in patrol){ babie.gameObject.SetActive(true); }
         }
+
     } 
+
 }

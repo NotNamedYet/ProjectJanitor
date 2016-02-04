@@ -1,110 +1,111 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &175476
+--- !u!1 &145890
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 441640}
-  - 212: {fileID: 21237218}
+  - 4: {fileID: 465602}
+  - 212: {fileID: 21227436}
   m_Layer: 0
-  m_Name: spt_Container_Bullets
+  m_Name: spt_Container_Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &192166
+--- !u!1 &170048
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 424230}
-  - 114: {fileID: 11441094}
-  - 114: {fileID: 11492042}
-  - 65: {fileID: 6547580}
+  - 4: {fileID: 422656}
+  - 114: {fileID: 11488324}
+  - 114: {fileID: 11431722}
+  - 65: {fileID: 6595378}
   m_Layer: 0
-  m_Name: pfb_AmmoBoxBullet
+  m_Name: pfb_AmmoBoxFuel
   m_TagString: Ammo Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &424230
+--- !u!4 &422656
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192166}
+  m_GameObject: {fileID: 170048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 441640}
+  - {fileID: 465602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &441640
+--- !u!4 &465602
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 175476}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_GameObject: {fileID: 145890}
+  m_LocalRotation: {x: 0.69111586, y: -0.14952934, z: 0.14952932, w: 0.69111574}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 424230}
+  m_Father: {fileID: 422656}
   m_RootOrder: 0
---- !u!65 &6547580
+--- !u!65 &6595378
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192166}
+  m_GameObject: {fileID: 170048}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.0014725, y: 1, z: 2.196317}
-  m_Center: {x: 0.13351822, y: 0, z: 0.016022086}
---- !u!114 &11441094
+  m_Size: {x: 3.2167048, y: 1, z: 1.9834666}
+  m_Center: {x: 0.054636, y: 0, z: 0.5229547}
+--- !u!114 &11431722
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192166}
+  m_GameObject: {fileID: 170048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffcf5347e06a90a46a7eda4286750e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
+  ammoType: 1
+  amount: 50
+  useRandomAmount: 1
+  minRangeToRandom: 50
+  maxRangeToRandom: 100
+--- !u!114 &11488324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170048}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c2b60e613d7cf41ad029a6230790f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueId: 
---- !u!114 &11492042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffcf5347e06a90a46a7eda4286750e60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoType: 0
-  amount: 15
-  useRandomAmount: 1
-  minRangeToRandom: 20
-  maxRangeToRandom: 30
---- !u!212 &21237218
+--- !u!212 &21227436
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 175476}
+  m_GameObject: {fileID: 145890}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -125,7 +126,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d610ae0d611446f49ae9234fbbc306a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73c1e56e77864a84f94bdaea3a39ebfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,18 +162,22 @@ Prefab:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: isFuel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: useRandomAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: minRangeToRandom
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxRangeToRandom
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 192166}
+  m_RootGameObject: {fileID: 170048}
   m_IsPrefabParent: 1
