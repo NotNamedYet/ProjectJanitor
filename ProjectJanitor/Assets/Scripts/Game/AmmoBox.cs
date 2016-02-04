@@ -9,7 +9,7 @@ namespace GalacticJanitor.Game
     {
 
         SpriteRenderer spriteRenderer;
-        MarinesType marineType;
+        public MarinesType marineType; // TODO : public temporary, private when currentDataLoader will be put in the scene
 
         [Tooltip("Put here sprites you want use to")] // 3 sprites for the moment
         public Sprite[] sprites;
@@ -30,7 +30,7 @@ namespace GalacticJanitor.Game
         // Use this for initialization
         void Start()
         {
-            marineType = GalacticJanitor.Engine.GameController.Controller.currentDataLoader.playerType;
+            //marineType = GalacticJanitor.Engine.GameController.Controller.currentDataLoader.playerType; // TODO remove comment
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             RenderSprite();
 
