@@ -9,16 +9,23 @@ namespace GalacticJanitor.Engine
 {
     public class SceneDataLoader : MonoBehaviour
     {
+        
+
+        public PointerTracker trackerCamera;
+
+        [Header("Player Specific")]
+        public bool spawnPlayerInScene;
         public PlayerController hartmanPrefab;
         public PlayerController carterPrefab;
-
-        public bool spawnPlayerInScene;
         public MarinesType playerType;
-
+        
+        [Header("Scene Specific")]
+        public string levelDisplayName;
         public Vector3 playerStartPos;
         public Vector3 playerStartRot;
 
-        public PointerTracker camera;
+
+        
 
         GameController controller;
         Scene scene;
@@ -57,10 +64,10 @@ namespace GalacticJanitor.Engine
                         controller.player.transform.rotation = lastPlayerRot;
                     }
 
-                    if (camera)
+                    if (trackerCamera)
                     {
-                        camera.target = controller.player.transform;
-                        camera.transform.position = controller.player.transform.position;
+                        trackerCamera.target = controller.player.transform;
+                        trackerCamera.transform.position = controller.player.transform.position;
                     }
 
                 }
@@ -94,7 +101,21 @@ namespace GalacticJanitor.Engine
         public void ChangeScene(int index)
         {
             RegisterScene();
+            SavePlayer();
             SceneManager.LoadScene(index);
+
+        }
+
+        void SavePlayer()
+        {
+            if (GameController.Controller)
+            {
+                PlayerController pc = GameController.Controller.player;
+                if (pc)
+                {
+                    GameController.Controller.Registery.playerData = pc.GetPlayerData();
+                }
+            }
         }
 
         void RegisterScene()

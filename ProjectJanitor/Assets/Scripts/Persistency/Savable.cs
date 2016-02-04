@@ -44,12 +44,7 @@ namespace GalacticJanitor.Persistency
                 {
                     savableObject = Instantiate(savableObject, transform.position, transform.rotation) as SavableObject;
                     savableObject.uniqueId = uniqueID;
-                    savableObject.transform.SetParent(gameObject.transform);
-                    if (data != null)
-                    {
-                        savableObject.SetData(data);
-                    }
-                       
+                    savableObject.transform.SetParent(gameObject.transform);  
                 }
 
             }

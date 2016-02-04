@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using GalacticJanitor.UI;
+using GalacticJanitor.Persistency;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
@@ -206,6 +208,71 @@ namespace GalacticJanitor.Game
 
             else display.DisplayInfoIndexWeapon(0, false);
         }
+
+        void LoadPlayerData()
+        {
+            if (GameController.Controller == null)
+                return;
+
+            PlayerData data = GameController.Controller.Registery.playerData;
+
+            playerAmmo.ammoCarriedType0 = data.inventoryAmmo0;
+            playerAmmo.ammoCarriedType1 = data.inventoryAmmo1;
+
+            if (marinesType == MarinesType.MajCarter)
+            {
+                WeaponControllerCarter wpc = GetComponent<WeaponControllerCarter>();
+                wpc.IndexActiveWeapon = data.weaponIndex;
+                wpc.doubleGuns.magazine = data.magazineAmmo0;
+                wpc.flamethrower.magazine = data.magazineAmmo1;
+            }
+            else
+            {
+                WeaponControllerHartman wph = GetComponent<WeaponControllerHartman>();
+                wph.assaultRifle.magazineBullet = data.magazineAmmo0;
+                wph.assaultRifle.magazineGrenade = data.magazineAmmo1;
+            }
+
+            livingEntity.health = data.playerHealth;
+            livingEntity.maxHealth = data.playerMaxHealth;
+            livingEntity.armorPoint = data.playerArmor;
+            livingEntity.maxArmorPoint = data.playerMaxArmor;
+        }
+
+        public PlayerData GetPlayerData()
+        {
+            PlayerData data = new PlayerData();
+
+            data.playerType = marinesType;
+            data.inventoryAmmo0 = playerAmmo.ammoCarriedType0;
+            data.inventoryAmmo1 = playerAmmo.ammoCarriedType1;
+
+            if (marinesType == MarinesType.MajCarter)
+            {
+                WeaponControllerCarter wpc = GetComponent<WeaponControllerCarter>();
+                data.weaponIndex = wpc.IndexActiveWeapon;
+                data.magazineAmmo0 = wpc.doubleGuns.magazine;
+                data.magazineAmmo1 = wpc.flamethrower.magazine;
+            }
+            else
+            {
+                WeaponControllerHartman wph = GetComponent<WeaponControllerHartman>();
+                data.magazineAmmo0 = wph.assaultRifle.magazineBullet;
+                data.magazineAmmo1 = wph.assaultRifle.magazineGrenade;
+            }
+
+            data.playerHealth = livingEntity.health;
+            data.playerMaxHealth = livingEntity.maxHealth;
+            data.playerArmor = livingEntity.armorPoint;
+            data.playerMaxArmor = livingEntity.maxArmorPoint;
+
+            return data;
+        }
+        
+        public void UpdateData()
+        {
+            GameController.Controller.Registery.playerData = GetPlayerData();
+        } 
     }
 
     public enum MarinesType

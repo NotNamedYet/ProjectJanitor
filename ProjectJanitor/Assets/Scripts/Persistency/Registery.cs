@@ -96,10 +96,10 @@ namespace GalacticJanitor.Persistency
         public int playerArmor;
         public int playerMaxArmor;
 
+        public int inventoryAmmo0;
         public int inventoryAmmo1;
-        public int inventoryAmmo2;
+        public int magazineAmmo0;
         public int magazineAmmo1;
-        public int magazineAmmo2;
 
         public int weaponIndex;
     }
