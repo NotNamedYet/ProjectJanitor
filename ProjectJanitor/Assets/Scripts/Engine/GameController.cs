@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using GalacticJanitor.Persistency;
 using UnityEngine.SceneManagement;
+using GalacticJanitor.Game;
 
 namespace GalacticJanitor.Engine
 {
@@ -19,6 +20,12 @@ namespace GalacticJanitor.Engine
 
         [Tooltip("New game starting scene")]
         public string startingScene;
+
+        [HideInInspector]
+        public PlayerController player;
+
+        //[HideInInspector]
+        public SceneDataLoader currentDataLoader;
 
         void Awake()
         {

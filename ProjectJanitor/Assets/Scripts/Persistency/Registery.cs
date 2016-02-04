@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using GalacticJanitor.Engine;
+using UnityEngine.SceneManagement;
+using GalacticJanitor.Game;
 
 namespace GalacticJanitor.Persistency
 {
@@ -11,6 +14,7 @@ namespace GalacticJanitor.Persistency
 
         public PlayerData playerData;
         public Dictionary<string, ObjectData> objectData;
+        public Dictionary<string, SceneData> scenesData;
 
         public Registery(string startingScene)
         {
@@ -19,6 +23,8 @@ namespace GalacticJanitor.Persistency
             snapshot.lastScene = startingScene;
 
             objectData = new Dictionary<string, ObjectData>();
+            scenesData = new Dictionary<string, SceneData>();
+            
         }
 
     }
@@ -80,9 +86,48 @@ namespace GalacticJanitor.Persistency
     }
 
     [Serializable]
-    public struct PlayerData
+    public class PlayerData
     {
         public string playerName;
-        public float playerHealth;
-    } 
+        public MarinesType playerType;
+
+        public int playerHealth;
+        public int playerMaxHealth;
+        public int playerArmor;
+        public int playerMaxArmor;
+
+        public int inventoryAmmo1;
+        public int inventoryAmmo2;
+        public int magazineAmmo1;
+        public int magazineAmmo2;
+
+        public int weaponIndex;
+    }
+
+    [Serializable]
+    public class SceneData
+    {
+        public string sceneName;
+        public bool discovered;
+        public SerializedVector3 lastPlayerLocation;
+        public SerializedQuaternion lastPlayerRotation;
+
+        public SceneData(string sceneName)
+        {
+            this.sceneName = sceneName;
+
+            lastPlayerLocation = new SerializedVector3();
+            lastPlayerLocation.x = 0;
+            lastPlayerLocation.y = 0;
+            lastPlayerLocation.z = 0;
+
+            lastPlayerRotation = new SerializedQuaternion();
+            lastPlayerRotation.x = 0;
+            lastPlayerRotation.y = 0;
+            lastPlayerRotation.z = 0;
+            lastPlayerRotation.w = 0;
+
+            discovered = false;
+        }
+    }
 }
