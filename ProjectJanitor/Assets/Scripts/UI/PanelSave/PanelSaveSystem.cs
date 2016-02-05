@@ -13,7 +13,7 @@ namespace GalacticJanitor.UI
         public GameObject dynamicContentHolder;
         public Button contentButton;
         public Button validationButton;
-        public Text headerLabel;
+        //public Text headerLabel;
         public Text validationButtonLabel;
 
         [HideInInspector]
@@ -28,13 +28,13 @@ namespace GalacticJanitor.UI
         {
             if (saveContext())
             {
-                headerLabel.text = "Save Game";
-                validationButtonLabel.text = "Save";
+                //headerLabel.text = "save game";
+                validationButtonLabel.text = "save";
             }
             else if (loadContext())
             {
-                headerLabel.text = "Load Game";
-                validationButtonLabel.text = "Load";
+                //headerLabel.text = "load game";
+                validationButtonLabel.text = "load";
             }
 
             PopupateList();
@@ -98,7 +98,7 @@ namespace GalacticJanitor.UI
                 PanelSaveButton psb = button.GetComponent<PanelSaveButton>();
                 psb.panel = this;
                 psb.newSave = true;
-                psb.label.text = "New Save";
+                psb.label.text = "new Save";
             }
             GenerateSnapshotButtons();
         }
