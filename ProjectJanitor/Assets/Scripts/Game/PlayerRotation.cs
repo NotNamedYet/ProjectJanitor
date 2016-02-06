@@ -18,7 +18,7 @@ namespace GalacticJanitor.Game
         /// </summary>
         public void ForceLookAt()
         {
-            transform.LookAt(PointerTracker.MousePosition);
+            if(!GalacticJanitor.Engine.GameController.Controller.isInPause) transform.LookAt(PointerTracker.MousePosition);
         }
     }
 

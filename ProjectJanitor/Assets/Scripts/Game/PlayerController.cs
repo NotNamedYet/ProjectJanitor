@@ -36,8 +36,6 @@ namespace GalacticJanitor.Game
         public float speed = 10;
         public bool freeze;
 
-        public bool isPause;
-
         Rigidbody body;
         public PlayerRotation rotate; // Ref to the gameObject that must rotate, with the script PlayerRotation
 

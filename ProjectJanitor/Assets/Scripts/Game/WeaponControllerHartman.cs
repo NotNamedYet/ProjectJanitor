@@ -37,56 +37,59 @@ namespace GalacticJanitor.Game
         {
             UpdateReloadTimer();
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (!GalacticJanitor.Engine.GameController.Controller.isInPause)
             {
-                if (playerCanShootAfterReload)
+                if (Input.GetKeyDown(KeyCode.R))
                 {
-                    assaultRifle.ReloadMagazine();
-                    playerCanShootAfterReload = false;
+                    if (playerCanShootAfterReload)
+                    {
+                        assaultRifle.ReloadMagazine();
+                        playerCanShootAfterReload = false;
 
-                    /*GUI*/
-                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
-                    playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.Mouse0)) // One left click
-            {
-                if (playerCanShootAfterReload)
-                {
-                    assaultRifle.Fire();
-
-                    /*GUI*/
-                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                        playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                    }
                 }
 
-            }
-
-            if (Input.GetKey(KeyCode.Mouse0))  // Hold click
-            {
-                if (playerCanShootAfterReload)
+                if (Input.GetKeyDown(KeyCode.Mouse0)) // One left click
                 {
-                    assaultRifle.ConstantFire();
+                    if (playerCanShootAfterReload)
+                    {
+                        assaultRifle.Fire();
 
-                    /*GUI*/
-                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                    }
+
                 }
-            }
 
-            if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
-            {
-                assaultRifle.ReleaseTrigger();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Mouse1)) // One right click
-            {
-                if (playerCanShootAfterReload)
+                if (Input.GetKey(KeyCode.Mouse0))  // Hold click
                 {
-                    assaultRifle.FireGrenade();
+                    if (playerCanShootAfterReload)
+                    {
+                        assaultRifle.ConstantFire();
 
-                    /*GUI*/
-                    playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                    }
                 }
+
+                if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
+                {
+                    assaultRifle.ReleaseTrigger();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Mouse1)) // One right click
+                {
+                    if (playerCanShootAfterReload)
+                    {
+                        assaultRifle.FireGrenade();
+
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                    }
+                } 
             }
         }
 

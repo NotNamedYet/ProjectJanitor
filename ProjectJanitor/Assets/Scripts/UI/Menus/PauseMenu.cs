@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 //using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
+using GalacticJanitor.Engine;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -40,6 +41,7 @@ public class PauseMenu : MonoBehaviour {
         Debug.Log("Enter to Toggle Pause Menu");
         if (!pauseMenu.activeInHierarchy) pauseMenu.SetActive(true);
         else pauseMenu.SetActive(false);
+        GameController.Controller.isInPause = !GameController.Controller.isInPause;
         ToggleTimeScale();
     }
     
