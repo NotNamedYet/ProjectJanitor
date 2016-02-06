@@ -81,6 +81,8 @@ namespace GalacticJanitor.Engine
 
         public bool isInPause = false;
 
+        public bool isInPause = false;
+
         void Awake()
         {
 

@@ -41,7 +41,7 @@ namespace GalacticJanitor.Game
             UpdateReloadTimer();
 
             if (!Engine.GameController.IsPause())
-            {
+			{
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     if (playerCanShootAfterReload)
@@ -94,7 +94,7 @@ namespace GalacticJanitor.Game
                     }
                 } 
             }
-        }
+		}
 
         /// <summary>
         /// Use to prevent player to shoot after reloading or something else.
@@ -110,6 +110,11 @@ namespace GalacticJanitor.Game
                     playerCanShootAfterReload = true;
                 }
             }
+        }
+
+        void UpdtateInput()
+        {
+            
         }
 
     }

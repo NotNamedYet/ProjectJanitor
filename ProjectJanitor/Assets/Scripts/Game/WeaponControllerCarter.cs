@@ -54,12 +54,11 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void Update()
         {
-
             UpdateReloadTimer();
 
-        if (!Engine.GameController.IsPause())
-            {
-                if (Input.GetKeyDown(KeyCode.F))
+			if (!Engine.GameController.IsPause())
+			{
+				if (Input.GetKeyDown(KeyCode.F))
                 {
                     if (playerCanShootAfterReload)
                     {
@@ -127,16 +126,8 @@ namespace GalacticJanitor.Game
                         }
                     }
                 }
-
-                if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
-                {
-                    if (indexActiveWeapon == 1)
-                    {
-                        flamethrower.ReleaseFireKeyFlamethrower();
-                    }
-                } 
-            }
-        }
+			}
+		}
         
         /// <summary>
         /// Just call the reload magazine of both weapon.
