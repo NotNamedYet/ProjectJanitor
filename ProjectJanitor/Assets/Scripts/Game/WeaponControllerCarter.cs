@@ -56,9 +56,11 @@ namespace GalacticJanitor.Game
         {
 
             UpdateReloadTimer();
+            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdateInput();
+        }
 
-        if (!Engine.GameController.IsPause())
-            {
+        void UpdateInput()
+        {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     if (playerCanShootAfterReload)
@@ -135,7 +137,6 @@ namespace GalacticJanitor.Game
                         flamethrower.ReleaseFireKeyFlamethrower();
                     }
                 } 
-            }
         }
         
         /// <summary>
