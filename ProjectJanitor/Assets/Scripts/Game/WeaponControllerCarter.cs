@@ -54,6 +54,11 @@ namespace GalacticJanitor.Game
 
             UpdateReloadTimer();
 
+            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdateInput();
+        }
+
+        void UpdateInput()
+        {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 if (playerCanShootAfterReload)
@@ -123,11 +128,11 @@ namespace GalacticJanitor.Game
                 }
             }
 
-                if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
+            if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
             {
                 if (indexActiveWeapon == 1)
                 {
-                    flamethrower.ReleaseFireKeyFlamethrower(); 
+                    flamethrower.ReleaseFireKeyFlamethrower();
                 }
             }
         }
