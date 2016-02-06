@@ -27,6 +27,8 @@ namespace GalacticJanitor.Engine
         //[HideInInspector]
         public SceneDataLoader currentDataLoader;
 
+        public bool isInPause = false;
+
         void Awake()
         {
 
@@ -147,7 +149,10 @@ namespace GalacticJanitor.Engine
             return registery;
         }
 
-
+        public static bool IsPause()
+        {
+            return Controller.isInPause;
+        }
 
     } 
 }

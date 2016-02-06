@@ -3,13 +3,15 @@ using UnityEngine.UI;
 using System.Collections;
 //using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
+using GalacticJanitor.Engine;
 
 public class PauseMenu : MonoBehaviour {
 
-    public Canvas pauseMenu;
+    //public Canvas pauseMenu;
 
-    public Image savePanel;
-    public Image loadPanel;
+    public GameObject pauseMenu;
+    public GameObject savePanel;
+    public GameObject loadPanel;
 
     public Button resumeButton;
     public Button saveButton;
@@ -19,74 +21,59 @@ public class PauseMenu : MonoBehaviour {
 
     public Animator pauseButtonsAnimator;
 
-    /* Test 
-    public Texture2D cursorTexture;
-    public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 hotSpot = Vector2.zero;
-    /* Test */
+    void OnEnable()
+    {
+        PauseManager.OnPause += TogglePauseMenu;
+    }
+
+    void OnDisable()
+    {
+        PauseManager.OnPause -= TogglePauseMenu;
+    }
 
 	// Use this for initialization
 	void Start () {
-        pauseMenu.enabled = false;
+        pauseMenu.SetActive(false);
+        savePanel.SetActive(false);
+        loadPanel.SetActive(false);
     }
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown("escape"))
-        {
-            savePanel.enabled = false;
-            loadPanel.enabled = false;
-            TogglePauseMenu();
-        }
-    }
-
     void TogglePauseMenu()
     {
-        pauseMenu.enabled = !pauseMenu.enabled;
+        Debug.Log("Enter to Toggle Pause Menu");
+        if (!pauseMenu.activeInHierarchy) pauseMenu.SetActive(true);
+        else pauseMenu.SetActive(false);
+        GameController.Controller.isInPause = !GameController.Controller.isInPause;
         ToggleTimeScale();
-    }
-
-    void ToggleSavePanel()
-    {
-        savePanel.enabled = !savePanel.enabled;
-    }
-
-    void ToggleLoadPanel()
-    {
-        loadPanel.enabled = !loadPanel.enabled;
     }
     
     void ToggleTimeScale()
     {
-        if (pauseMenu.enabled)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        if (pauseMenu.activeInHierarchy) Time.timeScale = 0;
+        else Time.timeScale = 1;
     }
 
-    public void TestLeft()
+    public void SavePress()
     {
         int pos = -1;
         pauseButtonsAnimator.SetInteger("Position", pos);
-        ToggleSavePanel();
+        savePanel.SetActive(true);
+        if (loadPanel.activeInHierarchy) loadPanel.SetActive(false);
     }
 
-    public void TestRight()
+    public void LoadPress()
     {
         int pos = 1;
         pauseButtonsAnimator.SetInteger("Position", pos);
-        ToggleLoadPanel();
+        loadPanel.SetActive(true);
+        if (savePanel.activeInHierarchy) savePanel.SetActive(false);
     }
 
     public void ResumePress()
     {
         int pos = 0;
         pauseButtonsAnimator.SetInteger("Position", pos);
-        TogglePauseMenu();
+        PauseManager.Pause();
     }
 
     public void QuitPress()

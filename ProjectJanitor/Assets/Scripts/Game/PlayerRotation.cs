@@ -8,18 +8,32 @@ namespace GalacticJanitor.Game
     /// </summary>
     public class PlayerRotation : MonoBehaviour
     {
-        /*void Update()
-        {
-            transform.LookAt(PointerTracker.MousePosition);
-        }*/
+        bool pause;
 
         /// <summary>
         /// Used by PlayerController to avoid the alzheimer's bug
         /// </summary>
         public void ForceLookAt()
         {
-            transform.LookAt(PointerTracker.MousePosition);
+            //if (!GalacticJanitor.Engine.GameController.Controller.isInPause) transform.LookAt(PointerTracker.MousePosition);
+            if (!pause) transform.LookAt(PointerTracker.MousePosition);
         }
+
+        void OnEnable()
+        {
+            PauseManager.OnPause += ToggleRotation;
+        }
+
+        void OnDisable()
+        {
+            PauseManager.OnPause -= ToggleRotation;
+        }
+
+        void ToggleRotation()
+        {
+            pause ^= true;
+        }
+
     }
 
 }
