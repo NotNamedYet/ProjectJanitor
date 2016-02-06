@@ -39,7 +39,7 @@ namespace GalacticJanitor.Game
         void Update()
         {
             UpdateReloadTimer();
-<<<<<<< HEAD
+			
             if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdtateInput();
         }
 
@@ -61,11 +61,6 @@ namespace GalacticJanitor.Game
 
         void UpdtateInput()
         {
-=======
-
-            if (Input.GetKeyDown(KeyCode.R))
->>>>>>> Add blood pfb, backup on script to avoid conflicts
-            {
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     if (playerCanShootAfterReload)
@@ -117,8 +112,7 @@ namespace GalacticJanitor.Game
                         playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
                     }
                 } 
-            }
-        }
+		}
 
         /// <summary>
         /// Use to prevent player to shoot after reloading or something else.
@@ -134,6 +128,11 @@ namespace GalacticJanitor.Game
                     playerCanShootAfterReload = true;
                 }
             }
+        }
+
+        void UpdtateInput()
+        {
+            
         }
 
     }
