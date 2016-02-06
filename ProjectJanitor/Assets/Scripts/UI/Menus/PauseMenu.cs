@@ -21,6 +21,16 @@ public class PauseMenu : MonoBehaviour {
 
     public Animator pauseButtonsAnimator;
 
+    void OnEnable()
+    {
+        PauseManager.OnPause += TogglePauseMenu;
+    }
+
+    void OnDisable()
+    {
+        PauseManager.OnPause -= TogglePauseMenu;
+    }
+
 	// Use this for initialization
 	void Start () {
         pauseMenu.SetActive(false);
@@ -28,14 +38,6 @@ public class PauseMenu : MonoBehaviour {
         loadPanel.SetActive(false);
     }
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown("escape"))
-        {
-            TogglePauseMenu();
-        }
-    }
-
     void TogglePauseMenu()
     {
         Debug.Log("Enter to Toggle Pause Menu");
@@ -71,7 +73,7 @@ public class PauseMenu : MonoBehaviour {
     {
         int pos = 0;
         pauseButtonsAnimator.SetInteger("Position", pos);
-        TogglePauseMenu();
+        PauseManager.Pause();
     }
 
     public void QuitPress()

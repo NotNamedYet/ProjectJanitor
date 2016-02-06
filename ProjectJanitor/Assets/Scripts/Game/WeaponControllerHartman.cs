@@ -37,7 +37,7 @@ namespace GalacticJanitor.Game
         {
             UpdateReloadTimer();
 
-            if (!GalacticJanitor.Engine.GameController.Controller.isInPause)
+            if (!Engine.GameController.IsPause())
             {
                 if (Input.GetKeyDown(KeyCode.R))
                 {

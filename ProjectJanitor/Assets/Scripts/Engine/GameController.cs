@@ -149,7 +149,10 @@ namespace GalacticJanitor.Engine
             return registery;
         }
 
-
+        public static bool IsPause()
+        {
+            return Controller.isInPause;
+        }
 
     } 
 }
