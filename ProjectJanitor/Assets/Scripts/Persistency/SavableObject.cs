@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using GalacticJanitor.Engine;
+using System.Collections.Generic;
 
 namespace GalacticJanitor.Persistency
 {
@@ -9,8 +10,20 @@ namespace GalacticJanitor.Persistency
 
         [HideInInspector] public string uniqueId;
 
-        public abstract ObjectData GetData();
-        public abstract void SetData(ObjectData data);
+        protected abstract ObjectData BuildData();
+        protected abstract void RestoreObjectState();
+
+        protected ObjectData LoadDataFromRegistery()
+        {
+            try
+            {
+                return GameController.Controller.Registery.objectData[uniqueId];
+            }
+            catch(KeyNotFoundException)
+            {
+                return null;
+            }
+        }
 
         public void Save()
         {
@@ -18,11 +31,11 @@ namespace GalacticJanitor.Persistency
 
             if (reg.objectData.ContainsKey(uniqueId))
             {
-                reg.objectData[uniqueId] = GetData();
+                reg.objectData[uniqueId] = BuildData();
             }
             else
             {
-                reg.objectData.Add(uniqueId, GetData());
+                reg.objectData.Add(uniqueId, BuildData());
             }
 
         }

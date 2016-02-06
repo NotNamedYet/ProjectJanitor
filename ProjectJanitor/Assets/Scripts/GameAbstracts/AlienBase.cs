@@ -7,6 +7,7 @@
     REQUIERED 
        - onDamageSound has to loop.
 */
+using GalacticJanitor.Engine;
 using GalacticJanitor.Persistency;
 using UnityEngine;
 

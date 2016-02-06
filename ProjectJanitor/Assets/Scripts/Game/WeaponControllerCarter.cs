@@ -17,7 +17,7 @@ namespace GalacticJanitor.Game
         public int IndexActiveWeapon
         {
             get { return indexActiveWeapon; }
-            private set 
+            set 
             {
                 if (value == 1) indexActiveWeapon = 1;
                 else indexActiveWeapon = 0;
