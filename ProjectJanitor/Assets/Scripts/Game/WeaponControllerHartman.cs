@@ -55,18 +55,6 @@ namespace GalacticJanitor.Game
                     }
                 }
 
-                if (Input.GetKeyDown(KeyCode.Mouse0)) // One left click
-                {
-                    if (playerCanShootAfterReload)
-                    {
-                        assaultRifle.Fire();
-
-                        /*GUI*/
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
-                    }
-
-                }
-
                 if (Input.GetKey(KeyCode.Mouse0))  // Hold click
                 {
                     if (playerCanShootAfterReload)
@@ -110,11 +98,6 @@ namespace GalacticJanitor.Game
                     playerCanShootAfterReload = true;
                 }
             }
-        }
-
-        void UpdtateInput()
-        {
-            
         }
 
     }
