@@ -54,11 +54,6 @@ namespace GalacticJanitor.Game
 
             UpdateReloadTimer();
 
-            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdateInput();
-        }
-
-        void UpdateInput()
-        {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 if (playerCanShootAfterReload)
@@ -136,7 +131,7 @@ namespace GalacticJanitor.Game
                 }
             }
         }
-        
+
         /// <summary>
         /// Just call the reload magazine of both weapon.
         /// </summary>

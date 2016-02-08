@@ -27,8 +27,6 @@ namespace GalacticJanitor.Engine
         //[HideInInspector]
         public SceneDataLoader currentDataLoader;
 
-        public bool isInPause = false;
-
         void Awake()
         {
 

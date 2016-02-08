@@ -37,27 +37,6 @@ namespace GalacticJanitor.Game
         {
             UpdateReloadTimer();
 
-            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdtateInput();
-        }
-
-        /// <summary>
-        /// Use to prevent player to shoot after reloading or something else.
-        /// </summary>
-        void UpdateReloadTimer()
-        {
-            if (!playerCanShootAfterReload)
-            {
-                timerCancelFireAfterReloadActive += Time.deltaTime;
-                if (timerCancelFireAfterReloadActive >= timerCancelFireAfterReload)
-                {
-                    timerCancelFireAfterReloadActive = 0;
-                    playerCanShootAfterReload = true;
-                }
-            }
-        }
-
-        void UpdtateInput()
-        {
             if (Input.GetKeyDown(KeyCode.R))
             {
                 if (playerCanShootAfterReload)
@@ -107,6 +86,22 @@ namespace GalacticJanitor.Game
 
                     /*GUI*/
                     playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Use to prevent player to shoot after reloading or something else.
+        /// </summary>
+        void UpdateReloadTimer()
+        {
+            if (!playerCanShootAfterReload)
+            {
+                timerCancelFireAfterReloadActive += Time.deltaTime;
+                if (timerCancelFireAfterReloadActive >= timerCancelFireAfterReload)
+                {
+                    timerCancelFireAfterReloadActive = 0;
+                    playerCanShootAfterReload = true;
                 }
             }
         }
