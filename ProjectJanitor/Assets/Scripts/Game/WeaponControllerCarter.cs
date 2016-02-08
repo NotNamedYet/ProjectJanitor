@@ -58,11 +58,10 @@ namespace GalacticJanitor.Game
             if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdateInput();
         }
 
-<<<<<<< HEAD
         void UpdateInput()
         {
-				if (Input.GetKeyDown(KeyCode.F))
-                {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
                     if (playerCanShootAfterReload)
                     {
                         SwitchIndexWeapon();
@@ -71,25 +70,23 @@ namespace GalacticJanitor.Game
                         /*GUI*/
                         playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
                     }
-                }
+			}
 
-                if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+				if (playerCanShootAfterReload)
                 {
-                    if (playerCanShootAfterReload)
-                    {
-                        Reload();
-                        playerCanShootAfterReload = false;
+					Reload();
+                    playerCanShootAfterReload = false;
 
-                        /*GUI*/
-                        if (indexActiveWeapon == 0)
+                    /*GUI*/
+                    if (indexActiveWeapon == 0)
+                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
 
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
-
-                        else
-
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
-                    }
-                }
+                    else
+					playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+				}
+            }
 
                 if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
                 {
@@ -139,7 +136,6 @@ namespace GalacticJanitor.Game
                 } 
 		}
         
->>>>>>> Add bool to handle pause
         /// <summary>
         /// Just call the reload magazine of both weapon.
         /// </summary>
