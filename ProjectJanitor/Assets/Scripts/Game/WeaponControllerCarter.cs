@@ -61,7 +61,9 @@ namespace GalacticJanitor.Game
 
         void UpdateInput()
         {
-                if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (playerCanShootAfterReload)
                 {
                     if (playerCanShootAfterReload)
                     {
@@ -72,6 +74,7 @@ namespace GalacticJanitor.Game
                         playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
                     }
                 }
+			}
 
                 if (Input.GetKeyDown(KeyCode.R))
                 {
@@ -138,7 +141,7 @@ namespace GalacticJanitor.Game
                     }
                 } 
         }
-        
+
         /// <summary>
         /// Just call the reload magazine of both weapon.
         /// </summary>
