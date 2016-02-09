@@ -137,7 +137,7 @@ namespace GalacticJanitor.Game
                 } 
             }
         }
-        
+
         /// <summary>
         /// Just call the reload magazine of both weapon.
         /// </summary>
