@@ -4,13 +4,14 @@ using GalacticJanitor.Game;
 
 namespace GalacticJanitor.Engine
 {
+
     public class StageLoader : MonoBehaviour
     {
 
         public PlayerController hartman;
         public PlayerController carter;
         public bool disallowPlayer;
-        public MarinesType marines;
+        public MarinesType marines; 
 
         public Vector3 playerPosition;
         Quaternion playerRotation;
@@ -100,7 +101,6 @@ namespace GalacticJanitor.Engine
 
                 playerPosition = pTransform.position;
                 playerRotation = pTransform.rotation;
-
             }
 
             SaveSystem.GetActiveSceneData().stageData = new StageData(playerPosition, playerRotation, disallowPlayer);

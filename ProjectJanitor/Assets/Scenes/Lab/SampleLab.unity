@@ -1179,7 +1179,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 6.06
+  orthographic size: 13.95
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3737,13 +3737,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 1948643649}
-  delayedActivation: 0
-  delay: 0
-  isLocal: 1
+  active: 1
+  delayedActivation: 1
+  delay: 5
+  isLocal: 0
   localDestination: {fileID: 1326829566}
   cooldownAfterJump: 7
   frozenAfterJump: 3
-  sceneDestinationName: 
+  sceneDestinationName: Level2_QuarterWest
 --- !u!135 &836356808
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4481,6 +4482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 1991209426}
+  active: 1
   delayedActivation: 1
   delay: 3
   isLocal: 0
@@ -5681,7 +5683,7 @@ MonoBehaviour:
   carter: {fileID: 11428304, guid: 6ee4c0d7b8a294c4b82111a87cbc3359, type: 2}
   disallowPlayer: 0
   marines: 1
-  playerPosition: {x: 0, y: 0, z: 0}
+  playerPosition: {x: -3.58, y: 0, z: 0}
 --- !u!4 &1241904838
 Transform:
   m_ObjectHideFlags: 0
@@ -6223,10 +6225,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 681454407}
+  active: 0
   delayedActivation: 1
   delay: 5
-  isLocal: 1
-  localDestination: {fileID: 836356807}
+  isLocal: 0
+  localDestination: {fileID: 0}
   cooldownAfterJump: 7
   frozenAfterJump: 3
   sceneDestinationName: 

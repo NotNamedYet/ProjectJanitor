@@ -12,7 +12,7 @@ using System;
 
 namespace GalacticJanitor.Game
 {
-    public class LivingEntity : Entity
+    public abstract class LivingEntity : Entity
     {
         [Header("Living Behavior")]
         [Tooltip("Current Health point")]
@@ -52,7 +52,6 @@ namespace GalacticJanitor.Game
         protected override void Start()
         {
             base.Start();
-            LoadData();
             UpdateDisplay();
         }
 
@@ -264,14 +263,9 @@ namespace GalacticJanitor.Game
 
         public override ObjectData CreateData()
         {
-            LivingEntityData data = new LivingEntityData();
-            data.UniqueId = UniqueId;
-            data.canSpawn = alive;
-            data.health = health;
-            data.maxHealth = maxHealth;
-            data.armorPoint = armorPoint;
-            data.maxArmorPoint = maxArmorPoint;
-            data.RegisterPosition(transform.position, transform.rotation);
+            LivingEntityData data = new LivingEntityData(UniqueId);
+            data.RegisterBaseData(alive, transform.position, transform.rotation);
+            data.RegisterEntityData(health, maxHealth, armorPoint, maxArmorPoint);
 
             return data;
         }
@@ -298,4 +292,14 @@ public class LivingEntityData : ObjectData
     public int maxHealth;
     public int armorPoint;
     public int maxArmorPoint;
+
+    public LivingEntityData(string UniqueId) : base(UniqueId){}
+
+    public void RegisterEntityData(int HP, int maxHP, int AP, int maxAP)
+    {
+        health = HP;
+        maxHealth = maxHP;
+        armorPoint = AP;
+        maxArmorPoint = maxAP;
+    }
 }

@@ -96,6 +96,7 @@ namespace GalacticJanitor.Game
         protected override void Start()
         {
             base.Start();
+            LoadData();
         }
 
         void Update()
@@ -237,10 +238,7 @@ namespace GalacticJanitor.Game
             PlayerData data = new PlayerData();
 
             //Living...
-            data.health = health;
-            data.maxHealth = maxHealth;
-            data.armorPoint = armorPoint;
-            data.maxArmorPoint = maxArmorPoint;
+            data.RegisterEntityData(health, maxHealth, armorPoint, maxArmorPoint);
 
             data.marines = marinesType;
             data.ammo1 = playerAmmo.ammoCarriedType0;
@@ -270,10 +268,6 @@ namespace GalacticJanitor.Game
             if (data == null)
             {
                 return;
-            }
-            else
-            {
-                objectData = data;
             }
 
             health = data.health;
@@ -307,8 +301,6 @@ namespace GalacticJanitor.Game
         {
             BuildData();
             SaveSystem.SavePlayer(objectData as PlayerData);
-            //SaveSystem.GetActiveSceneData().UpdateLastPlayerLocation(transform);
-
         }
     }    
 }
@@ -328,4 +320,6 @@ public class PlayerData : LivingEntityData
     public int stockAmmo1;
     public int stockAmmo2;
     public PlayerController.PlayerScore score;
+
+    public PlayerData() : base(null) {}
 }

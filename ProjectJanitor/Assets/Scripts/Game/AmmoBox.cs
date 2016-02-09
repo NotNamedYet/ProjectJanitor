@@ -82,12 +82,9 @@ namespace GalacticJanitor.Game
 
         public override ObjectData CreateData()
         {
-            AmmoBoxData data = new AmmoBoxData();
-            data.canSpawn = amount > 0;
-            data.UniqueId = UniqueId;
+            AmmoBoxData data = new AmmoBoxData(UniqueId);
+            data.RegisterBaseData(amount > 0, transform.position, transform.rotation);
             data.amount = amount;
-            data.RegisterPosition(transform.position, transform.rotation);
-
             return data;
         }
 
@@ -112,4 +109,6 @@ public enum AmmoType
 public class AmmoBoxData : ObjectData
 {
     public int amount;
+
+    public AmmoBoxData(string UniqueId) : base(UniqueId) { }
 }

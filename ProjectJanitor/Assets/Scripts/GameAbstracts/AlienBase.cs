@@ -54,6 +54,7 @@ namespace GalacticJanitor.Game
             base.Start();
             baseSpeed = pathfinder.speed;
             spawn = transform.position;
+            LoadData();
         }
 
         void Update()

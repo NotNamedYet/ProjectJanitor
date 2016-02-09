@@ -84,8 +84,14 @@ public abstract class ObjectData
     public SerializedVector3 position;
     public SerializedQuaternion rotation;
 
-    public void RegisterPosition(Vector3 position, Quaternion rotation)
+    public ObjectData(string UniqueId)
     {
+        this.UniqueId = UniqueId;
+    }
+
+    public void RegisterBaseData(bool canSpawn, Vector3 position, Quaternion rotation)
+    {
+        this.canSpawn = canSpawn;
         this.position = Serializer.Serializevector3(position);
         this.rotation = Serializer.SerializeQuaternion(rotation);
     }
