@@ -649,6 +649,46 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 405336, guid: 41ed0f7124c2ae84aabaa3866eeb239e, type: 2}
   m_PrefabInternal: {fileID: 1251220350}
+--- !u!1 &51294922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 51294924}
+  - 114: {fileID: 51294923}
+  m_Layer: 0
+  m_Name: _SaveSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &51294923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 51294922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f8db1239046d346b2b62340542cfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstGameSceneName: 
+--- !u!4 &51294924
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 51294922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!4 &54542195 stripped
 Transform:
   m_PrefabParentObject: {fileID: 410678, guid: d9416502daebaa845918dda7082c8a81, type: 2}
@@ -1325,33 +1365,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 418948, guid: 7816dafdb465e1746a05af8b1cc91e71, type: 2}
   m_PrefabInternal: {fileID: 971970726}
---- !u!1 &104089221
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 104089222}
-  m_Layer: 0
-  m_Name: _Savables
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &104089222
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 104089221}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1001 &104374398
 Prefab:
   m_ObjectHideFlags: 0
@@ -17654,7 +17667,7 @@ GameObject:
   - 114: {fileID: 1073023796}
   - 114: {fileID: 1073023795}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: TopDownCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17701,7 +17714,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 15.42
+  orthographic size: 13.95
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17738,9 +17751,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f010d41b885b694393b8cacd87354db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   targetTrackingSpeed: 25
   trackingBoostRange: 5
+  trackPlayerOnStart: 1
+  fixedTarget: 0
 --- !u!114 &1073023796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19592,10 +19606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88992a41d185e84f84e77bbc87ac6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambassador: {fileID: 0}
-  startingScene: 
-  player: {fileID: 0}
-  currentDataLoader: {fileID: 0}
+  isInPause: 0
 --- !u!4 &1173575623
 Transform:
   m_ObjectHideFlags: 0
@@ -19607,7 +19618,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!4 &1176570362 stripped
 Transform:
   m_PrefabParentObject: {fileID: 499626, guid: 446e529d8b6ec7f4a96a4452c6537702, type: 2}
@@ -31239,7 +31250,7 @@ GameObject:
   - 4: {fileID: 1916356479}
   - 114: {fileID: 1916356478}
   m_Layer: 0
-  m_Name: _SceneDataLoader
+  m_Name: _StageLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31253,17 +31264,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1916356477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a817792a10cfbb4b9c0881f7b06a507, type: 3}
+  m_Script: {fileID: 11500000, guid: 01c8ce3f43775d84e8d76124ef962cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackerCamera: {fileID: 1073023795}
-  spawnPlayerInScene: 1
-  hartmanPrefab: {fileID: 11433848, guid: 801d9416cc333264f9a719e5d5e09767, type: 2}
-  carterPrefab: {fileID: 11428304, guid: 6ee4c0d7b8a294c4b82111a87cbc3359, type: 2}
-  playerType: 1
-  levelDisplayName: Level 2 - Quarter West
-  playerStartPos: {x: 0, y: 0, z: 0}
-  playerStartRot: {x: 0, y: 0, z: 0}
+  hartman: {fileID: 11433848, guid: 801d9416cc333264f9a719e5d5e09767, type: 2}
+  carter: {fileID: 11428304, guid: 6ee4c0d7b8a294c4b82111a87cbc3359, type: 2}
+  disallowPlayer: 0
+  marines: 1
+  playerPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1916356479
 Transform:
   m_ObjectHideFlags: 0
@@ -31275,7 +31283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!4 &1919082812 stripped
 Transform:
   m_PrefabParentObject: {fileID: 410678, guid: d9416502daebaa845918dda7082c8a81, type: 2}
