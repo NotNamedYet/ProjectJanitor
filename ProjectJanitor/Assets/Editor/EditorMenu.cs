@@ -1,7 +1,6 @@
 using UnityEditor;
 using System.Collections;
 using UnityEngine;
-using GalacticJanitor.Persistency;
 using GalacticJanitor.Engine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -10,7 +9,45 @@ using GalacticJanitor.Game;
 public class EditorMenu
 {
 
-    [MenuItem("GalacticJanitor/Add.../Engine")]
+    [MenuItem("GameObject/Persistency/Add PeristentSpawner", false, 0)]
+    static void AddPersistentSpawner()
+    {
+        GameObject parent = GameObject.Find("_Persistents");
+
+        if (parent == null)
+        {
+            parent = new GameObject("_Persistents");
+            parent.transform.position = new Vector3(0, 0, 0);
+        }
+
+        GameObject go = new GameObject("PersistentSpawner");
+
+        go.transform.position = new Vector3(0, 0, 0);
+        go.transform.SetParent(parent.transform);
+        go.AddComponent<PersistentSpawner>();
+
+        Selection.activeGameObject = go;
+    }
+    
+
+    [MenuItem("GameObject/Persistency/Add SaveSystem", false, 0)]
+    static void CreateSaveSystem()
+    {
+        GameObject engine = GameObject.Find("_SaveSystem");
+
+        if (engine == null)
+        {
+            engine = new GameObject("_SaveSystem");
+            engine.transform.position = new Vector3(0, 0, 0);
+        }
+
+        if (!engine.GetComponent<SaveSystem>())
+        {
+            engine.AddComponent<SaveSystem>();
+        }
+    }
+
+    [MenuItem("GameObject/GalacticJanitor/Add Engine", false, 0)]
     static void CreateGameController()
     {
         GameObject engine = GameObject.Find("_Engine");
@@ -25,31 +62,9 @@ public class EditorMenu
         {
             engine.AddComponent<GameController>();
         }
-
-
     }
 
-    [MenuItem("GalacticJanitor/Add.../Savable")]
-    static void CreateSavable()
-    {
-
-        GameObject parent = GameObject.Find("_Savables");
-
-        if (parent == null)
-        {
-            parent = new GameObject("_Savables");
-            parent.transform.position = new Vector3(0, 0, 0);
-        }
-
-        GameObject go = new GameObject("Savable");
-
-        go.transform.position = new Vector3(0, 0, 0);
-        go.transform.SetParent(parent.transform);
-        go.AddComponent<Savable>();
-
-    }
-
-    [MenuItem("GalacticJanitor/Add.../Teleporter")]
+    [MenuItem("GameObject/GalacticJanitor/Add Teleporter", false, 0)]
     static void AddTeleporter()
     {
         GameObject parent = GameObject.Find("_Teleporters");
@@ -62,33 +77,52 @@ public class EditorMenu
 
         int index = 1;
 
-        while (GameObject.Find("Teleporter#"+index) != null)
+        while (GameObject.Find("Teleporter#" + index) != null)
         {
             index++;
         }
 
         GameObject go = new GameObject("Teleporter#" + index);
+        go.AddComponent<TeleporterController>();
 
-        go.transform.position = new Vector3(0, 0, 0);
+        if (Selection.activeGameObject != null)
+        {
+            GameObject selected = Selection.activeGameObject;
+            go.transform.position = selected.transform.position;
+
+            if (selected.GetComponent<TeleporterVisual>() != null)
+            {
+                selected.transform.SetParent(go.transform);
+                go.GetComponent<TeleporterController>().telepoterVisual = selected.GetComponent<TeleporterVisual>();
+            }  
+        }
+        else
+        {
+            go.transform.position = new Vector3(0, 0, 0);
+        }
+
         go.transform.SetParent(parent.transform);
-
         SphereCollider col = go.AddComponent<SphereCollider>();
         col.isTrigger = true;
 
-        go.AddComponent<TeleporterController>();
-
-        Debug.Log(go.name + " Added !");
+        Selection.activeGameObject = go;
     }
 
-    [MenuItem("GalacticJanitor/Check Scene")]
-    static void CheckScene()
+    [MenuItem("GameObject/GalacticJanitor/Add NavMesh Parent", false, 0)]
+    static void SetupNavmeshParent()
     {
-        CheckSavables();
+        GameObject parent = new GameObject("_Navmeshes-" + SceneManager.GetActiveScene().name);
+        GameObject planes = new GameObject("_NavPlanes");
+        GameObject obstac = new GameObject("_NavObstacles");
+        planes.transform.SetParent(parent.transform);
+        obstac.transform.SetParent(parent.transform);
     }
+
+    
 
     private static void CheckSavables()
     {
-        bool allFine = true;
+        /*bool allFine = true;
         int warn = 0;
 
         Debug.Log("CheckIngSavables...");
@@ -179,17 +213,21 @@ public class EditorMenu
         else
             Debug.Log("Savables checking : Failed " + (warn > 0 ? "(" + warn + ") warnings" : ""));
 
-    }
+    */}
 
-    [MenuItem("GalacticJanitor/Setup 3D Camera")]
+    [MenuItem("GameObject/GalacticJanitor/Add TopDownCamera", false, 0)]
     static void Setup3DCamera()
     {
         GameObject obj = GameObject.FindGameObjectWithTag("MainCamera");
         if (obj == null)
         {
             Debug.Log("MainCamera Tag not found... Let's create it");
-            obj = new GameObject("Main Camera");
+            obj = new GameObject("TopDownCamera");
             obj.tag = "MainCamera";
+        }
+        else
+        {
+            obj.name = "TopDownCamera";
         }
 
         //CHECKING CAMERA...
@@ -226,9 +264,9 @@ public class EditorMenu
             obj.AddComponent<PixelScaling>();
         }
 
-        if (!cam.GetComponent<PointerTracker>())
+        if (!cam.GetComponent<TopDownCamera>())
         {
-            obj.AddComponent<PointerTracker>();
+            obj.AddComponent<TopDownCamera>();
         }
 
         cam.transform.localPosition = new Vector3(0f, 10f, 0f);
@@ -248,6 +286,14 @@ public class EditorMenu
         Debug.Log("Camera setup Done !");
 
         CheckWorldDirectory();
+
+        Selection.activeGameObject = obj;
+    }
+
+    [MenuItem("GameObject/GalacticJanitor/Check Scene", false, 0)]
+    static void CheckScene()
+    {
+        CheckSavables();
     }
 
     private static void CheckWorldDirectory()
@@ -284,16 +330,7 @@ public class EditorMenu
 
     }
 
-    [MenuItem("GalacticJanitor/NavMesh Parent")]
-    static void SetupNavmeshParent()
-    {
-        GameObject parent = new GameObject("_Navmeshes-" + SceneManager.GetActiveScene().name);
-        GameObject planes = new GameObject("_NavPlanes");
-        GameObject obstac = new GameObject("_NavObstacles");
-        planes.transform.SetParent(parent.transform);
-        obstac.transform.SetParent(parent.transform);
-
-    }
+    
 
     
 

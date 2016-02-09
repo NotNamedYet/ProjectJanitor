@@ -57,6 +57,11 @@ namespace GalacticJanitor.Engine
         public float x;
         public float y;
         public float z;
+
+        public override string ToString()
+        {
+            return string.Format("({0}, {1}, {2})", x, y, z);
+        }
     }
 
     [Serializable]
@@ -64,6 +69,11 @@ namespace GalacticJanitor.Engine
     {
         public float x;
         public float y;
+
+        public override string ToString()
+        {
+            return string.Format("({0}, {1})", x, y);
+        }
     }
 
     [Serializable]
@@ -73,6 +83,11 @@ namespace GalacticJanitor.Engine
         public float y;
         public float z;
         public float w;
+
+        public override string ToString()
+        {
+            return string.Format("({0}, {1}, {2}, {3})", x,y,z,w);
+        }
     }
 
 }

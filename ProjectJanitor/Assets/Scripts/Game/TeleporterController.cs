@@ -1,3 +1,4 @@
+using GalacticJanitor.Engine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -84,7 +85,7 @@ namespace GalacticJanitor.Game
                     }
                     else
                     {
-                        SceneManager.LoadScene(sceneDestinationName);
+                        GameController.LoadScene(sceneDestinationName);
                     }
                 }
             }

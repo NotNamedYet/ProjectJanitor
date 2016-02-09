@@ -62,5 +62,4 @@ namespace GalacticJanitor.Game
             return result;
         }
     }
-
 }
