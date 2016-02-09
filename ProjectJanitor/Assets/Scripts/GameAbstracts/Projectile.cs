@@ -1,3 +1,4 @@
+using GalacticJanitor.Engine;
 using UnityEngine;
 
 namespace GalacticJanitor.Game
@@ -9,6 +10,11 @@ namespace GalacticJanitor.Game
         public float maxLifetime;
         public int baseDamage;
         public float baseSpeed;
+
+        void Awake()
+        {
+            transform.SetParent(GameController.ProjectileHolder);
+        }
 
         //Destroy the object at the end of his lifetime
         void Start()

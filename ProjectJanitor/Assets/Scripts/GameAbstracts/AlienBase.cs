@@ -8,18 +8,14 @@
        - onDamageSound has to loop.
 */
 using GalacticJanitor.Engine;
-using GalacticJanitor.Persistency;
 using UnityEngine;
 
 namespace GalacticJanitor.Game
 {
-    [RequireComponent(typeof(SavableAlien))]
-    [RequireComponent(typeof(LivingEntity))]
     [RequireComponent(typeof(NavMeshAgent))]
-    public class AlienBase : MonoBehaviour
+    public class AlienBase : LivingEntity
     {
         protected NavMeshAgent pathfinder;
-        public LivingEntity entity;
         EnemyState state = EnemyState.IDLE;
 
         public string AlienName;
@@ -32,12 +28,6 @@ namespace GalacticJanitor.Game
         public float maxAttackRange;
         public float maxDistanceFromSpawn;
         float baseSpeed;
-
-        [Header("Patrol", order = 1)]
-        public bool patrol;
-        public Transform[] patrolMilestones;
-        private int patrolIndex;
-        private short patrolSense;
 
         [Header("Attack behavior", order = 2)]
         public float attackPerSecond;
@@ -54,10 +44,14 @@ namespace GalacticJanitor.Game
         private bool moveSoundLooping;
         private Vector3 spawn;
 
-        void Start()
+        void Awake()
         {
             pathfinder = GetComponent<NavMeshAgent>();
-            entity = GetComponent<LivingEntity>();
+        }
+
+        protected override void Start()
+        {
+            base.Start();
             baseSpeed = pathfinder.speed;
             spawn = transform.position;
         }
@@ -74,7 +68,7 @@ namespace GalacticJanitor.Game
             MoveSoundUpdate();
             
             //Enrage state check.
-            if (entity.health <= remainingHealthToEnrage)
+            if (health <= remainingHealthToEnrage)
             {
                 Enrage();
             }
@@ -168,7 +162,7 @@ namespace GalacticJanitor.Game
         /// </summary>
         void UpdateState()
         {
-            if (Vector3.Distance(transform.position, spawn) > maxDistanceFromSpawn || (!patrol && target == null && Vector3.Distance(transform.position, spawn) > 2))
+            if (Vector3.Distance(transform.position, spawn) > maxDistanceFromSpawn || (target == null && Vector3.Distance(transform.position, spawn) > 2))
             {
                 state = EnemyState.RETURN;
                 target = null;
@@ -188,14 +182,7 @@ namespace GalacticJanitor.Game
                 }
                 else
                 {
-                    if (patrol)
-                    {
-                        state = EnemyState.PATROL;
-                    }
-                    else
-                    {
-                        state = EnemyState.IDLE;
-                    }
+                    state = EnemyState.IDLE;
                 }
             }
         }
@@ -274,6 +261,6 @@ namespace GalacticJanitor.Game
 
     } 
 
-    public enum EnemyState { ATTACK, FOLLOW, IDLE, RETURN, PATROL}
+    public enum EnemyState { ATTACK, FOLLOW, IDLE, RETURN }
 
 }

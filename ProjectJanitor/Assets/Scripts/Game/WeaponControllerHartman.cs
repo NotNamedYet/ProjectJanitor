@@ -20,13 +20,16 @@ namespace GalacticJanitor.Game
         [Tooltip("Time before the player can shoot again after reloaded")]
         public float timerCancelFireAfterReload = 0.5f; // Timer set
 
-        // Use this for initialization
-        void Start()
+        void Awake()
         {
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             assaultRifle = gameObject.GetComponent<WeaponAssaultRifle>();
             playerController = gameObject.GetComponent<PlayerController>();
+        }
 
+        // Use this for initialization
+        void Start()
+        {
             /* GUI */
             playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
             playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);

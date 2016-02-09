@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System;
-using GalacticJanitor.Persistency;
 using UnityEngine.SceneManagement;
 using GalacticJanitor.Game;
 
@@ -13,19 +12,70 @@ namespace GalacticJanitor.Engine
     {
 
         public static GameController Controller { get; private set; }
-        public Registery Registery { get; private set; }
+        private StageLoader _stageLoader;
+        private PlayerController _player;
+        private TopDownCamera _topDownCamera;
+        private GameObject _entityHolder;
+        private GameObject _projectileHolder;
 
-        [Tooltip("Capable of collecting all Savables in a scene")]
-        public Ambassador ambassador;
+        /// <summary>
+        /// Return the gameobject that hold this GameController.
+        /// </summary>
+        public static GameObject asGameObject
+        {
+            get { return Controller.gameObject; }
+        }
 
-        [Tooltip("New game starting scene")]
-        public string startingScene;
+        /// <summary>
+        /// Staticaly return the actual StageLoader for the current scene.
+        /// </summary>
+        public static StageLoader StageLoader
+        {
+            get { return Controller._stageLoader; }
+            set { Controller._stageLoader = value; }
+        }
 
-        [HideInInspector]
-        public PlayerController player;
+        /// <summary>
+        /// Return the player.
+        /// </summary>
+        public static PlayerController Player
+        {
+            get { return Controller._player; }
+            set { Controller._player = value; }
+        }
 
-        //[HideInInspector]
-        public SceneDataLoader currentDataLoader;
+        /// <summary>
+        /// Return the topDownCamera of the actual scene
+        /// </summary>
+        public static TopDownCamera TopDownCamera
+        {
+            get { return Controller._topDownCamera; }
+            set { Controller._topDownCamera = value; }
+        }
+
+        public static Transform EntityHolder
+        {
+            get
+            {
+                if (Controller._entityHolder == null)
+                {
+                    Controller._entityHolder = new GameObject("_Entities");
+                }
+                return Controller._entityHolder.transform;
+            }
+        }
+
+        public static Transform ProjectileHolder
+        {
+            get
+            {
+                if (Controller._projectileHolder == null)
+                {
+                    Controller._projectileHolder = new GameObject("_Projectiles");
+                }
+                return Controller._projectileHolder.transform;
+            }
+        }
 
         public bool isInPause = false;
 
@@ -37,12 +87,6 @@ namespace GalacticJanitor.Engine
                 DontDestroyOnLoad(transform.root.gameObject);
                 Controller = this;
 
-                if (Registery == null)
-                {
-                    Registery = new Registery(startingScene);
-                    Registery.snapshot.UpdateTime();
-                }
-
             }
             else if (Controller != this)
             {
@@ -50,108 +94,49 @@ namespace GalacticJanitor.Engine
             }
         }
 
-        public RegisterySnapshot[] LoadAllSnapshots()
+        public void _DestroyPlayer()
         {
-            List<RegisterySnapshot> list = new List<RegisterySnapshot>();
-
-            BinaryFormatter formatter = new BinaryFormatter();
-
-            foreach (string file in Directory.GetFiles(Application.persistentDataPath))
+            if (Player)
             {
-                if (file.EndsWith(".gjs"))
-                {
-                    FileStream stream = File.Open(file, FileMode.Open);
-                    RegisterySnapshot snap = formatter.Deserialize(stream) as RegisterySnapshot;
-                    if (snap != null)
-                    {
-                        list.Add(snap);
-                    }
-                    stream.Close();
-                }
-            }
-
-            return list.ToArray();
-
-        }
-
-        public void SaveRegistery(bool newFile)
-        {
-            if (newFile)
-            {
-                Registery.snapshot.RefreshIdentifier();
-            }
-            Registery.snapshot.UpdateTimePlayed();
-            WriteRegisteryToFile(Registery.snapshot);
-        }
-
-        public void SaveRegistery(RegisterySnapshot snapshot)
-        {
-            snapshot.UpdateTimePlayed();
-            WriteRegisteryToFile(snapshot);
-        }
-
-        public void LoadGameFromSnapshot(RegisterySnapshot snap)
-        {
-            Registery = LoadRegisteryFromFile(snap);
-            Registery.snapshot.UpdateTime();
-            SceneManager.LoadScene(snap.lastScene);
-        }
-
-
-        private void WriteRegisteryToFile(RegisterySnapshot snapshot)
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream snapFile = File.Create(Application.persistentDataPath + "/" + snapshot.identifier + ".gjs");
-            formatter.Serialize(snapFile, snapshot);
-            snapFile.Close();
-
-            FileStream dataFile = File.Create(Application.persistentDataPath + "/" + snapshot.identifier + ".gjd");
-            formatter.Serialize(dataFile, Registery);
-            dataFile.Close();
-        }
-
-        private Registery LoadRegisteryFromFile(RegisterySnapshot snapshot)
-        {
-            string path = Application.persistentDataPath + "/" + snapshot.identifier + ".gjd";
-
-            Registery registery = null;
-
-            if (File.Exists(path))
-            {
-                BinaryFormatter formatter = new BinaryFormatter();
-                FileStream dataFile = File.Open(path, FileMode.Open);
-
-                try
-                {
-                    registery = (Registery)formatter.Deserialize(dataFile);
-                    return registery;
-                }
-                catch (Exception e)
-                {
-                    Debug.Log(e.StackTrace);
-                    return CreateRegisteryFromSnapshot(snapshot);
-                }
-                finally
-                {
-                    dataFile.Close();
-                }
-            }
-            else
-            {
-                return CreateRegisteryFromSnapshot(snapshot);
+                Destroy(Player.gameObject);
             }
         }
 
-        private Registery CreateRegisteryFromSnapshot(RegisterySnapshot snap)
+        public static void DestroyPlayer()
         {
-            Registery registery = new Registery(startingScene);
-            registery.snapshot = snap;
-            return registery;
+            Controller._DestroyPlayer();
         }
 
         public static bool IsPause()
         {
             return Controller.isInPause;
+        }
+
+        
+        public static void LoadScene(string scene)
+        {
+            SaveSystem.CallForUpdate();
+            SceneManager.LoadScene(scene);
+        }
+
+
+        //EDITOR
+
+        void OnDrawGizmos()
+        {
+            Gizmos.DrawIcon(transform.position, "ico_Config.png", true);
+        }
+
+        void OnGUI()
+        {
+            if (GUI.Button(new Rect(Screen.width - 110, 10, 100, 20), "Save"))
+            {
+                SaveSystem.SaveParty();
+            }
+            if (GUI.Button(new Rect(Screen.width - 110, 40, 100, 20), "Load"))
+            {
+                SaveSystem.LoadParty();
+            }
         }
 
     } 

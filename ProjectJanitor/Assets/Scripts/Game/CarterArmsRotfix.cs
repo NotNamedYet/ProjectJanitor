@@ -15,7 +15,7 @@ namespace GalacticJanitor.Game
 
         void AngleLook(Vector3 forward)
         {
-            float a = Vector3.Distance(transform.parent.position, PointerTracker.MousePosition);
+            float a = Vector3.Distance(transform.parent.position, TopDownCamera.MousePosition);
             float b = transform.localPosition.x;
             float rad = Mathf.Atan2(b, a);
             float deg = rad * Mathf.Rad2Deg;

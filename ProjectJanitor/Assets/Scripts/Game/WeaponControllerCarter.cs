@@ -32,14 +32,17 @@ namespace GalacticJanitor.Game
         [Tooltip("Time before the player can shoot again after reloading")]
         public float timerCancelFireAfterReload = 0.5f; // Timer set. TODO : match with the sound's time of reloading
 
-        // Use this for initialization
-        void Start()
+        void Awake()
         {
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             doubleGuns = gameObject.GetComponent<WeaponDoubleGuns>();
             flamethrower = gameObject.GetComponent<WeaponFlamethrower>();
             playerController = gameObject.GetComponent<PlayerController>();
+        }
 
+        // Use this for initialization
+        void Start()
+        {
             StartWeaponDoubleGuns();  // TODO : Change this maybe with savegames
 
             /*GUI*/
@@ -172,7 +175,7 @@ namespace GalacticJanitor.Game
             }
         }
 
-        void SwitchIndexWeapon()
+        public void SwitchIndexWeapon()
         {
             indexActiveWeapon = indexActiveWeapon == 0 ? 1 : 0; // Protect if index != 0 or 1
             UpdateWeapon();

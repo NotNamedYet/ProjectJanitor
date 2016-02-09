@@ -1,18 +1,15 @@
 using UnityEngine;
 using System.Collections;
-using GalacticJanitor.Persistency;
+using System;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
-    [RequireComponent(typeof(SavableAmmoBox))]
-    public class AmmoBox : MonoBehaviour
+
+    public class AmmoBox : Entity
     {
-
-        SpriteRenderer spriteRenderer;
-        public MarinesType marineType; // TODO : public temporary, private when currentDataLoader will be put in the scene
-
-        [Tooltip("Put here sprites you want use to")] // 3 sprites for the moment
-        public Sprite[] sprites;
+        [Header("Container Elements")]
+        private MarinesType marineType;
 
         [Tooltip("Bullet = 0, Grenade and fuel = 1")]
         public AmmoType ammoType;
@@ -25,50 +22,39 @@ namespace GalacticJanitor.Game
         public int minRangeToRandom;
         public int maxRangeToRandom;
 
-        private string uniqueID;
+        [Header("Render")]
+        public SpriteRenderer visual;
+        [Tooltip("Put here sprites you want use to")] // 3 sprites for the moment
+        public Sprite bulletBox;
+        public Sprite grenadeBox;
+        public Sprite flamethrowerBox;
 
-        // Use this for initialization
-        void Start()
+        protected override void Start()
         {
-            //marineType = GalacticJanitor.Engine.GameController.Controller.currentDataLoader.playerType; // TODO remove comment
-            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            base.Start();
+            marineType = GameController.Player.marinesType;
             RenderSprite();
-
             if (useRandomAmount) amount = MakeRandomAmount(minRangeToRandom, maxRangeToRandom);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (amount <= 0)
-            {
-                Destroy(gameObject);
-            }
+            LoadData();
         }
 
         void RenderSprite()
         {
-            if (ammoType == AmmoType.AmmoType0) GetSprite("spt_Container_Bullets");
-
+            if (ammoType == AmmoType.AmmoType0)
+            {
+                visual.sprite = bulletBox;
+            }
             else
             {
-                if (marineType == MarinesType.MajCarter) GetSprite("spt_Container_Flame");
+                if (marineType == MarinesType.MajCarter) visual.sprite = flamethrowerBox;
 
-                else GetSprite("spt_Container_Grenades");
-            }
-        }
-
-        void GetSprite(string name)
-        {
-            foreach (Sprite spt in sprites)
-            {
-                if (spt.name == name) spriteRenderer.sprite = spt;
+                else visual.sprite = grenadeBox;
             }
         }
 
         public int MakeRandomAmount(int min, int max)
         {
-            int result = Random.Range(min - 1, max + 1);
+            int result = UnityEngine.Random.Range(min - 1, max + 1);
             return result;
         }
 
@@ -81,12 +67,49 @@ namespace GalacticJanitor.Game
                 PlayerAmmo playerInv = other.gameObject.GetComponent<PlayerAmmo>();
                 playerInv.PickUpAmmo(ammoType, amount);
                 amount = 0;
+                Depop();
             }
         }
-    }
-    
-    public enum AmmoType
-    {
-        AmmoType0 = 0, AmmoType1
-    }
+
+        /// <summary>
+        /// Save and Destroy this Object
+        /// </summary>
+        void Depop()
+        {
+            SaveObject();
+            Destroy(gameObject);
+        }
+
+        public override ObjectData CreateData()
+        {
+            AmmoBoxData data = new AmmoBoxData();
+            data.canSpawn = amount > 0;
+            data.UniqueId = UniqueId;
+            data.amount = amount;
+            data.RegisterPosition(transform.position, transform.rotation);
+
+            return data;
+        }
+
+        public override void LoadData()
+        {
+            AmmoBoxData data = SaveSystem.GetObjectData(UniqueId) as AmmoBoxData;
+
+            if (data != null)
+            {
+                amount = data.amount;
+            }
+        }
+    }   
+}
+
+public enum AmmoType
+{
+    AmmoType0 = 0, AmmoType1
+}
+
+[Serializable]
+public class AmmoBoxData : ObjectData
+{
+    public int amount;
 }

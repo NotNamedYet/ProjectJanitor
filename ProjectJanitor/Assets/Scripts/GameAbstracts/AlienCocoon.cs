@@ -1,11 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
-using GalacticJanitor.Persistency;
 
 namespace GalacticJanitor.Game
 {
     [ExecuteInEditMode]
-    [RequireComponent(typeof(LivingEntity))]
     [RequireComponent(typeof(SphereCollider))]
     public class AlienCocoon : MonoBehaviour
     {

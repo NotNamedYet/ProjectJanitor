@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using GalacticJanitor.Persistency;
 using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.UI
@@ -17,7 +16,7 @@ namespace GalacticJanitor.UI
         public Text validationButtonLabel;
 
         [HideInInspector]
-        public RegisterySnapshot selectedSnapshot;
+        public GameRegisterySnapshot selectedSnapshot;
 
         //[HideInInspector]
         public bool newSave;
@@ -59,7 +58,8 @@ namespace GalacticJanitor.UI
         {
             if (selectedSnapshot != null)
             {
-                GameController.Controller.LoadGameFromSnapshot(selectedSnapshot);
+                SaveSystem.LoadParty();
+                //GameController.Controller.LoadGameFromSnapshot(selectedSnapshot);
             }
             else
             {
@@ -69,17 +69,19 @@ namespace GalacticJanitor.UI
 
         void SaveGame()
         {
-            if (newSave)
+            /*if (newSave)
             {
-                GameController.Controller.SaveRegistery(true);
+                //GameController.Controller.SaveRegistery(true);
             }
             else
             {
                 if (selectedSnapshot != null)
                 {
-                    GameController.Controller.SaveRegistery(selectedSnapshot);
+                    //GameController.Controller.SaveRegistery(selectedSnapshot);
                 }
             }
+            */
+            SaveSystem.SaveParty();
         }
 
         public void AllowValidation(bool value)
@@ -89,7 +91,7 @@ namespace GalacticJanitor.UI
 
 
         //LIST STRUCTURE
-
+        
         void PopupateList()
         {
             if (panelContext == PanelContext.SAVE)
@@ -103,9 +105,11 @@ namespace GalacticJanitor.UI
             GenerateSnapshotButtons();
         }
 
+        
         void GenerateSnapshotButtons()
         {
-            RegisterySnapshot[] snaps = GameController.Controller.LoadAllSnapshots();
+            Debug.Log("I want to generate..");
+            GameRegisterySnapshot[] snaps = SaveSystem.Instance.LoadAllSnapshots();
 
             foreach (var snap in snaps)
             {
@@ -113,13 +117,14 @@ namespace GalacticJanitor.UI
 
                 PanelSaveButton psb = button.GetComponent<PanelSaveButton>();
                 psb.panel = this;
-                psb.label.text = snap.identifier;
+                psb.label.text = "GameSave";
                 psb.linkedSnap = snap;
 
                 if (panelContext == PanelContext.SAVE)
                     psb.newSave = false;
             }
         }
+        
 
         Button InstanciateButton()
         {

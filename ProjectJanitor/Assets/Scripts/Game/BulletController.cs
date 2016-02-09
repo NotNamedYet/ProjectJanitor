@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
@@ -15,10 +16,16 @@ namespace GalacticJanitor.Game
         public int bulletDmg;
         public GameObject damageSource;
 
+        void Awake()
+        {
+            transform.SetParent(GameController.ProjectileHolder);
+            body = gameObject.GetComponent<Rigidbody>();
+        }
+
         // Use this for initialization
         void Start()
         {
-            body = gameObject.GetComponent<Rigidbody>();
+            
             Destroy(gameObject, destroyTime);
         }
 

@@ -6,3 +6,9 @@ public class UniqueIdentifierAttribute : PropertyAttribute
     //...
 }
 
+public class DirectiveAttribute : PropertyAttribute
+{
+
+}
+
+
