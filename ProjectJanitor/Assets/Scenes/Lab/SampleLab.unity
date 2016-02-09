@@ -3737,13 +3737,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 1948643649}
-  delayedActivation: 0
-  delay: 0
-  isLocal: 1
+  active: 1
+  delayedActivation: 1
+  delay: 5
+  isLocal: 0
   localDestination: {fileID: 1326829566}
   cooldownAfterJump: 7
   frozenAfterJump: 3
-  sceneDestinationName: 
+  sceneDestinationName: Level2_QuarterWest
 --- !u!135 &836356808
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6223,10 +6224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 681454407}
+  active: 0
   delayedActivation: 1
   delay: 5
-  isLocal: 1
-  localDestination: {fileID: 836356807}
+  isLocal: 0
+  localDestination: {fileID: 0}
   cooldownAfterJump: 7
   frozenAfterJump: 3
   sceneDestinationName: 

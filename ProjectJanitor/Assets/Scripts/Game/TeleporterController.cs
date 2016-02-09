@@ -7,13 +7,13 @@ namespace GalacticJanitor.Game
     [ExecuteInEditMode]
     public class TeleporterController : MonoBehaviour
     {
-
         public TeleporterVisual telepoterVisual;
 
         [Space(8)]
-
+        public bool active = true;
         public bool delayedActivation;
         public float delay;
+        
 
         [Space(8)]
         public bool isLocal;
@@ -64,6 +64,8 @@ namespace GalacticJanitor.Game
 
         void OnTriggerEnter(Collider other)
         {
+            if (!active) return;
+
             if (!stayOff)
             {
                 if (other.gameObject.tag == "Player")
