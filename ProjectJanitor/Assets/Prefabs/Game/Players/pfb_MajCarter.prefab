@@ -716,13 +716,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UniqueId: 
+  IsPersistent: 1
   dynamicPersistency: 0
-  entityDisplayName: 
+  entityDisplayName: Major Carter
   allowOrderInHierachy: 0
-  health: 20
-  maxHealth: 20
-  armorPoint: 0
-  maxArmorPoint: 0
+  health: 50
+  maxHealth: 50
+  armorPoint: 50
+  maxArmorPoint: 50
   armorDamageReduction: 3
   alive: 1
   destroyOnDeath: 0
@@ -1190,6 +1191,26 @@ Prefab:
       propertyPath: optionalAnimator
       value: 
       objectReference: {fileID: 9588384}
+    - target: {fileID: 0}
+      propertyPath: entityDisplayName
+      value: Major Carter
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: armorPoint
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxArmorPoint
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114808}

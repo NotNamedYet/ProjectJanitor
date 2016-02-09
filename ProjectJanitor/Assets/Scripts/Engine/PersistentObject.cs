@@ -9,7 +9,7 @@ public abstract class PersistentObject : MonoBehaviour
 
     [HideInInspector]
     public string UniqueId;
-    //public bool IsPersistent = true;
+    public bool IsPersistent = true;
     public bool dynamicPersistency;
 
     public abstract ObjectData CreateData();
@@ -21,8 +21,12 @@ public abstract class PersistentObject : MonoBehaviour
     /// </summary>
     public virtual void SaveObject()
     {
-        BuildData();
-        SaveSystem.SaveObject(objectData);
+        if (IsPersistent)
+        {
+            BuildData();
+            SaveSystem.SaveObject(objectData);
+            Debug.Log("Saved " + gameObject.name + " can spawn : " + objectData.canSpawn);
+        }
     }
 
     /// <summary>
@@ -34,15 +38,15 @@ public abstract class PersistentObject : MonoBehaviour
     //Event subscribe;
     protected virtual void OnEnable()
     {
-        SaveSystem.OnGameSaveEvent += SaveObject;
-        SaveSystem.OnGameLoadEvent += OnGameLoad;
+        if (IsPersistent) SaveSystem.OnGameSaveEvent += SaveObject;
+        if (IsPersistent) SaveSystem.OnGameLoadEvent += OnGameLoad;
     }
 
     //Event unsubscribe;
     protected virtual void OnDisable()
     {
-        SaveSystem.OnGameSaveEvent -= SaveObject;
-        SaveSystem.OnGameLoadEvent -= OnGameLoad;
+        if (IsPersistent) SaveSystem.OnGameSaveEvent -= SaveObject;
+        if (IsPersistent) SaveSystem.OnGameLoadEvent -= OnGameLoad;
     }
 
     /// <summary>

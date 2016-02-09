@@ -12,9 +12,11 @@ namespace GalacticJanitor.Engine
     {
 
         public static GameController Controller { get; private set; }
+
         private StageLoader _stageLoader;
         private PlayerController _player;
         private TopDownCamera _topDownCamera;
+
         private GameObject _entityHolder;
         private GameObject _projectileHolder;
 

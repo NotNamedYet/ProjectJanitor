@@ -164,7 +164,7 @@ public class SaveSystem : MonoBehaviour {
     /// <param name="data">ObjectData to save</param>
     public static void SaveObject(ObjectData data)
     {
-        if (CanSave)
+        if (CanSave && !string.IsNullOrEmpty(data.UniqueId))
         {
             SceneData scene = GetActiveSceneData();
 
