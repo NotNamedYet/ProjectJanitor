@@ -56,6 +56,14 @@ namespace GalacticJanitor.Game
         {
             UpdateReloadTimer();
 
+            if (!Engine.GameController.IsPause())
+            {
+                UpdateInput(); 
+            }
+        }
+
+        void UpdateInput()
+        {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 if (playerCanShootAfterReload)
@@ -69,62 +77,62 @@ namespace GalacticJanitor.Game
                         playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
                     }
                 }
-			}
+            }
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-				if (playerCanShootAfterReload)
+                if (playerCanShootAfterReload)
                 {
-					Reload();
+                    Reload();
                     playerCanShootAfterReload = false;
 
                     /*GUI*/
                     if (indexActiveWeapon == 0)
-                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
 
                     else
-					playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
-				}
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                }
             }
 
-                if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
+            if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
+            {
+                if (playerCanShootAfterReload)
                 {
-                    if (playerCanShootAfterReload)
+                    if (indexActiveWeapon == 0)
                     {
-                        if (indexActiveWeapon == 0)
-                        {
-                            doubleGuns.Fire();
+                        doubleGuns.Fire();
 
-                            /*GUI*/
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
-                        }
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+                    }
 
-                        else
+                    else
+                    {
+                        flamethrower.Fire();
+
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                    }
+                }
+            }
+
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                if (playerCanShootAfterReload)
+                {
+                    if (indexActiveWeapon == 1)
+                    {
+                        if (!flamethrower.flameIsActive)
                         {
                             flamethrower.Fire();
-
-                            /*GUI*/
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                         }
+
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                     }
                 }
-
-                if (Input.GetKey(KeyCode.Mouse0))
-                {
-                    if (playerCanShootAfterReload)
-                    {
-                        if (indexActiveWeapon == 1)
-                        {
-                            if (!flamethrower.flameIsActive)
-                            {
-                                flamethrower.Fire();
-                            }
-
-                            /*GUI*/
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
-                        }
-                    }
-                }
+            }
 
             if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
             {
