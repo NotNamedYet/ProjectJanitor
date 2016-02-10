@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
@@ -21,12 +22,12 @@ namespace GalacticJanitor.Game
 
         void OnEnable()
         {
-            PauseManager.OnPause += ToggleRotation;
+            GameController.IsPause();
         }
 
         void OnDisable()
         {
-            PauseManager.OnPause -= ToggleRotation;
+            GameController.IsPause();
         }
 
         void ToggleRotation()

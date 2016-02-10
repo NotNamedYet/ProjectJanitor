@@ -79,8 +79,6 @@ namespace GalacticJanitor.Engine
             }
         }
 
-        public bool isInPause = false;
-
         void Awake()
         {
 
@@ -93,6 +91,15 @@ namespace GalacticJanitor.Engine
             else if (Controller != this)
             {
                 Destroy(gameObject);
+            }
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown("escape"))
+            {
+                if (!IsPauseGame) EnterPause();
+                else ExitPause();
             }
         }
 
@@ -111,7 +118,7 @@ namespace GalacticJanitor.Engine
 
         public static bool IsPause()
         {
-            return Controller.isInPause;
+            return IsPauseGame;
         }
 
         
@@ -120,6 +127,42 @@ namespace GalacticJanitor.Engine
             SaveSystem.CallForUpdate();
             SceneManager.LoadScene(scene);
         }
+
+        #region EVENTSMANAGER
+
+        public delegate void PressPauseButton();
+        public static event PressPauseButton EnterPauseEvent;
+        public static event PressPauseButton ExitPauseEvent;
+
+        public static bool IsPauseGame { get; private set; }
+
+        public static void EnterPause()
+        {
+            if (!IsPauseGame)
+            {
+                Time.timeScale = 0;
+                IsPauseGame = true;
+                if(EnterPauseEvent != null)
+                {
+                    EnterPauseEvent();
+                }
+            }
+        }
+
+        public static void ExitPause()
+        {
+            if (IsPauseGame)
+            {
+                Time.timeScale = 1;
+                IsPauseGame = false;
+                if(ExitPauseEvent != null)
+                {
+                    ExitPauseEvent();
+                }
+            }
+        }
+
+        #endregion
 
 
         //EDITOR

@@ -58,6 +58,7 @@ namespace GalacticJanitor.UI
         {
             if (selectedSnapshot != null)
             {
+                GameController.ExitPause();
                 SaveSystem.LoadParty();
                 //GameController.Controller.LoadGameFromSnapshot(selectedSnapshot);
             }
