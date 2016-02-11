@@ -23,35 +23,50 @@ public class PauseMenu : MonoBehaviour {
 
     void OnEnable()
     {
-        PauseManager.OnPause += TogglePauseMenu;
+        //PauseManager.OnPause += TogglePauseMenu;
+        GameController.EnterPauseEvent += ShowPauseMenu;
+        GameController.ExitPauseEvent += HidePauseMenu;
     }
 
     void OnDisable()
     {
-        PauseManager.OnPause -= TogglePauseMenu;
+        //PauseManager.OnPause -= TogglePauseMenu;
+        GameController.EnterPauseEvent -= ShowPauseMenu;
+        GameController.ExitPauseEvent -= HidePauseMenu;
     }
 
-	// Use this for initialization
-	void Start () {
-        pauseMenu.SetActive(false);
+    void Awake()
+    {
+        HidePauseMenu();
         savePanel.SetActive(false);
         loadPanel.SetActive(false);
     }
-	
+
+    // Use this for initialization
+    void Start ()
+    {
+    }
+
+/*	
     void TogglePauseMenu()
     {
         Debug.Log("Enter to Toggle Pause Menu");
         if (!pauseMenu.activeInHierarchy) pauseMenu.SetActive(true);
         else pauseMenu.SetActive(false);
-        GameController.Controller.isInPause = !GameController.Controller.isInPause;
-        ToggleTimeScale();
+        //GameController.Controller.isInPause = !GameController.Controller.isInPause;
     }
+*/
     
-    void ToggleTimeScale()
+    void ShowPauseMenu()
     {
-        if (pauseMenu.activeInHierarchy) Time.timeScale = 0;
-        else Time.timeScale = 1;
+        pauseMenu.SetActive(true);
     }
+
+    void HidePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+    }
+
 
     public void SavePress()
     {
@@ -73,13 +88,13 @@ public class PauseMenu : MonoBehaviour {
     {
         int pos = 0;
         pauseButtonsAnimator.SetInteger("Position", pos);
-        PauseManager.Pause();
+        GameController.ExitPause();
     }
-
+/*
     public void QuitPress()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("scn_MainMenu");
+        GameController.ExitPause();
+        GameController.LoadScene("scn_MainMenu");
     }
-
+*/
 }
