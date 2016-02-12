@@ -47,16 +47,16 @@ public class PauseMenu : MonoBehaviour {
     {
     }
 
-/*	
-    void TogglePauseMenu()
-    {
-        Debug.Log("Enter to Toggle Pause Menu");
-        if (!pauseMenu.activeInHierarchy) pauseMenu.SetActive(true);
-        else pauseMenu.SetActive(false);
-        //GameController.Controller.isInPause = !GameController.Controller.isInPause;
-    }
-*/
-    
+    /*	
+        void TogglePauseMenu()
+        {
+            Debug.Log("Enter to Toggle Pause Menu");
+            if (!pauseMenu.activeInHierarchy) pauseMenu.SetActive(true);
+            else pauseMenu.SetActive(false);
+            //GameController.Controller.isInPause = !GameController.Controller.isInPause;
+        }
+    */
+
     void ShowPauseMenu()
     {
         pauseMenu.SetActive(true);
@@ -90,11 +90,14 @@ public class PauseMenu : MonoBehaviour {
         pauseButtonsAnimator.SetInteger("Position", pos);
         GameController.ExitPause();
     }
-/*
-    public void QuitPress()
-    {
-        GameController.ExitPause();
-        GameController.LoadScene("scn_MainMenu");
-    }
-*/
+    /*
+        public void QuitPress()
+        {
+            GameController.ExitPause();
+            GameController.LoadScene("scn_MainMenu");
+        }
+    */
+
+    // Use this for initialization
+
 }
