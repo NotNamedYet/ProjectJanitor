@@ -39,63 +39,81 @@ namespace GalacticJanitor.Game
         void Update()
         {
             UpdateReloadTimer();
+			
+            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdtateInput();
+        }
 
-            if (!Engine.GameController.IsPause())
+        /// <summary>
+        /// Use to prevent player to shoot after reloading or something else.
+        /// </summary>
+        void UpdateReloadTimer()
+        {
+            if (!playerCanShootAfterReload)
             {
-                if (Input.GetKeyDown(KeyCode.R))
+                timerCancelFireAfterReloadActive += Time.deltaTime;
+                if (timerCancelFireAfterReloadActive >= timerCancelFireAfterReload)
                 {
-                    if (playerCanShootAfterReload)
-                    {
-                        assaultRifle.ReloadMagazine();
-                        playerCanShootAfterReload = false;
+                    timerCancelFireAfterReloadActive = 0;
+                    playerCanShootAfterReload = true;
+                }
+            }
+        }
 
-                        /*GUI*/
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
-                        playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
-                    }
+        void UpdateInput()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (playerCanShootAfterReload)
+                {
+                    assaultRifle.ReloadMagazine();
+                    playerCanShootAfterReload = false;
+
+                    /*GUI*/
+                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                    playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0)) // One left click
+            {
+                if (playerCanShootAfterReload)
+                {
+                    assaultRifle.Fire();
+
+                    /*GUI*/
+                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
                 }
 
-                if (Input.GetKeyDown(KeyCode.Mouse0)) // One left click
+            }
+
+            if (Input.GetKey(KeyCode.Mouse0))  // Hold click
+            {
+                if (playerCanShootAfterReload)
                 {
-                    if (playerCanShootAfterReload)
-                    {
-                        assaultRifle.Fire();
+                    assaultRifle.ConstantFire();
 
-                        /*GUI*/
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
-                    }
-
+                    /*GUI*/
+                    playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
                 }
+            }
 
-                if (Input.GetKey(KeyCode.Mouse0))  // Hold click
+            if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
+            {
+                assaultRifle.ReleaseTrigger();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse1)) // One right click
+            {
+                if (playerCanShootAfterReload)
                 {
-                    if (playerCanShootAfterReload)
-                    {
-                        assaultRifle.ConstantFire();
-
-                        /*GUI*/
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
-                    }
-                }
-
-                if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
-                {
-                    assaultRifle.ReleaseTrigger();
-                }
-
-                if (Input.GetKeyDown(KeyCode.Mouse1)) // One right click
-                {
-                    if (playerCanShootAfterReload)
-                    {
                         assaultRifle.FireGrenade();
 
                         /*GUI*/
                         playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
-                    }
-                } 
+                }
             }
         }
-
+		
         /// <summary>
         /// Use to prevent player to shoot after reloading or something else.
         /// </summary>

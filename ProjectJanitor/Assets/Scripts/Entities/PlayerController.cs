@@ -181,40 +181,12 @@ namespace GalacticJanitor.Game
 
         public void DisplayInfoWeapon1(int ammoCarried, int ammoInMagazine)
         {
-            /*display.ammoCarriedType1 = playerAmmo.ammoCarriedType0;
-
-            if (marinesType == MarinesType.MajCarter)
-                display.ammoInMagazineWeapon1 = gameObject.GetComponent<WeaponControllerCarter>().doubleGuns.magazine;
-
-            else
-                display.ammoInMagazineWeapon1 = gameObject.GetComponent<WeaponControllerHartman>().assaultRifle.magazineBullet;*/
-            /*
-                        if (display)
-                        {
-                            display.ammoCarriedType1 = ammoCarried;
-                            display.ammoInMagazineWeapon1 = ammoInMagazine; 
-                        }
-            */
             if (display) display.DisplayInfoWeapon1(ammoCarried, ammoInMagazine);
 
         }
 
         public void DisplayInfoWeapon2(int ammoCarried, int ammoInMagazine)
         {
-            /* display.ammoCarriedType2 = playerAmmo.ammoCarriedType1;
-
-             if (marinesType == MarinesType.MajCarter)
-                 display.ammoInMagazineWeapon2 = gameObject.GetComponent<WeaponControllerCarter>().flamethrower.magazine;
-
-             else
-                 display.ammoInMagazineWeapon2 = gameObject.GetComponent<WeaponControllerHartman>().assaultRifle.magazineGrenade;*/
-            /*
-            if (display)
-            {
-                display.ammoCarriedType2 = ammoCarried;
-                display.ammoInMagazineWeapon2 = ammoInMagazine; 
-            }
-            */
             if (display) display.DisplayInfoWeapon2(ammoCarried, ammoInMagazine);
         }
 
