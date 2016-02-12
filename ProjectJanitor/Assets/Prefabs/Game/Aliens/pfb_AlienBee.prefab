@@ -75,6 +75,7 @@ GameObject:
   - 195: {fileID: 19517786}
   - 54: {fileID: 5484804}
   - 65: {fileID: 6570804}
+  - 114: {fileID: 11445908}
   m_Layer: 10
   m_Name: pfb_AlienBee
   m_TagString: Alien
@@ -485,17 +486,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fa0fe02adf3c646bcfe3c7d7b8d5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UniqueId: 
-  IsPersistent: 1
-  dynamicPersistency: 0
+  specificName: 
+  bypassBaking: 0
   entityDisplayName: 
-  health: 20
-  maxHealth: 20
-  armorPoint: 0
-  maxArmorPoint: 0
-  armorDamageReduction: 3
-  alive: 1
-  destroyOnDeath: 0
+  m_entity:
+    alive: 1
+    health: 20
+    maxHealth: 20
+    armor: 20
+    maxArmor: 20
+    armorDamageReduction: 2
+  destroyOnDeath: 1
+  saveOnDeath: 1
   invincible: 0
   optionalAnimator: {fileID: 0}
   optionalDisplay: {fileID: 0}
@@ -504,8 +506,6 @@ MonoBehaviour:
   onArmorBreakSound: {fileID: 0}
   onHealSound: {fileID: 0}
   onRepairSound: {fileID: 0}
-  entity: {fileID: 0}
-  AlienName: Bee
   sensor: {fileID: 0}
   rigging: {fileID: 0}
   target: {fileID: 0}
@@ -524,6 +524,18 @@ MonoBehaviour:
   onEnrageSound: {fileID: 0}
   damagePerHit: 1
   dammageDistanceOffset: 2
+--- !u!114 &11445908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93f27016bb5f8147bb17fd8b0b21d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
 --- !u!135 &13537336
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -910,6 +922,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: popers.Array.data[0].maxNumber
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroyOnDeath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

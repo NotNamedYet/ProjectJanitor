@@ -20,7 +20,6 @@ namespace GalacticJanitor.Game
         protected NavMeshAgent pathfinder;
         EnemyState state = EnemyState.IDLE;
 
-        public string AlienName;
         public Transform sensor;
         public Animator rigging;
         public Transform target;
