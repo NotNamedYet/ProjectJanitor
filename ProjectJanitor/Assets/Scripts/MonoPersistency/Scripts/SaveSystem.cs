@@ -154,7 +154,6 @@ namespace MonoPersistency
             {
                 if (file.EndsWith(".gjs"))
                 {
-                    Debug.Log(file);
                     FileStream stream = File.Open(file, FileMode.Open);
                     RegisterySnapshot s = serializer.Deserialize(stream) as RegisterySnapshot;
                     snaps.Add(s);
@@ -353,7 +352,6 @@ namespace MonoPersistency
 
         IEnumerator PlayTimer()
         {
-            Debug.Log("TP start");
             while (true)
             {
                 yield return new WaitForSeconds(1);

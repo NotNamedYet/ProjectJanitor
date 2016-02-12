@@ -60,8 +60,7 @@ namespace GalacticJanitor.UI
             if (selectedSnapshot != null)
             {
                 GameController.ExitPause();
-                SaveSystem.LoadParty();
-                //GameController.Controller.LoadGameFromSnapshot(selectedSnapshot);
+                SaveSystem.LoadGame(selectedSnapshot);
             }
             else
             {
@@ -71,19 +70,17 @@ namespace GalacticJanitor.UI
 
         void SaveGame()
         {
-            /*if (newSave)
+            if (newSave)
             {
-                //GameController.Controller.SaveRegistery(true);
+                SaveSystem.SaveAndWrite(true);
             }
             else
             {
                 if (selectedSnapshot != null)
                 {
-                    //GameController.Controller.SaveRegistery(selectedSnapshot);
+                    SaveSystem.SaveAndWrite(false);
                 }
             }
-            */
-            SaveSystem.UpdateRegistery();
         }
 
         public void AllowValidation(bool value)
@@ -110,7 +107,6 @@ namespace GalacticJanitor.UI
         
         void GenerateSnapshotButtons()
         {
-            Debug.Log("I want to generate..");
             RegisterySnapshot[] snaps = SaveSystem.LoadSnapshots();
 
             foreach (var snap in snaps)
@@ -119,7 +115,7 @@ namespace GalacticJanitor.UI
 
                 PanelSaveButton psb = button.GetComponent<PanelSaveButton>();
                 psb.panel = this;
-                psb.label.text = "GameSave";
+                psb.label.text = snap.m_identifier;
                 psb.linkedSnap = snap;
 
                 if (panelContext == PanelContext.SAVE)

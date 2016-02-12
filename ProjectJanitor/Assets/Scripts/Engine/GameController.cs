@@ -106,12 +106,6 @@ namespace GalacticJanitor.Engine
         {
             return IsPauseGame;
         }
-        
-        public static void LoadScene(string scene)
-        {
-            SaveSystem.CallForUpdate();
-            SceneManager.LoadScene(scene);
-        }
 
         #region EVENTSMANAGER
 

@@ -54,7 +54,6 @@ namespace GalacticJanitor.Engine
         //load from registery info...
         void LoadStage()
         {
-            Debug.Log("LoadStage");
             SceneData dScene = SaveSystem.GetActiveSceneData();
             StageData dStage = dScene.m_stage;
 
