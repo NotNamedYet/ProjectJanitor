@@ -27,7 +27,7 @@ GameObject:
   - 65: {fileID: 6536842}
   - 114: {fileID: 11481962}
   m_Layer: 11
-  m_Name: TeleporterDeck_ExaGrid
+  m_Name: TeleporterDeck_ExaGridW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2074,7 +2074,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: df38ba3842ee60d4cb0fe761047e0a14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc4fafdb51dc3ef48af4fda1d69ee8cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2333,6 +2333,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc4fafdb51dc3ef48af4fda1d69ee8cd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103238}
