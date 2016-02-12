@@ -7,7 +7,9 @@
     REQUIERED 
        - onDamageSound has to loop.
 */
+using System;
 using GalacticJanitor.Engine;
+using MonoPersistency;
 using UnityEngine;
 
 namespace GalacticJanitor.Game
@@ -54,7 +56,6 @@ namespace GalacticJanitor.Game
             base.Start();
             baseSpeed = pathfinder.speed;
             spawn = transform.position;
-            LoadData();
         }
 
         void Update()
@@ -69,7 +70,7 @@ namespace GalacticJanitor.Game
             MoveSoundUpdate();
             
             //Enrage state check.
-            if (health <= remainingHealthToEnrage)
+            if (m_entity.health <= remainingHealthToEnrage)
             {
                 Enrage();
             }
@@ -260,6 +261,18 @@ namespace GalacticJanitor.Game
         /// </summary>
         protected virtual void Attack(){}
 
+        public override void CollectData(DataContainer container)
+        {
+            container.RegisterLocation(transform);
+            container.m_spawnable = m_entity.alive;
+            container.Addvalue("ent", m_entity);
+        }
+
+        public override void LoadData(DataContainer container)
+        {
+            container.RestoreLocation(transform);
+            m_entity = container.GetValue<EntityBook>("ent");
+        }
     } 
 
     public enum EnemyState { ATTACK, FOLLOW, IDLE, RETURN }

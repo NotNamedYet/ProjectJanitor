@@ -5,47 +5,11 @@ using GalacticJanitor.Engine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using GalacticJanitor.Game;
+using MonoPersistency;
+using System.Text;
 
 public class EditorMenu
 {
-
-    [MenuItem("GameObject/Persistency/Add PeristentSpawner", false, 0)]
-    static void AddPersistentSpawner()
-    {
-        GameObject parent = GameObject.Find("_Persistents");
-
-        if (parent == null)
-        {
-            parent = new GameObject("_Persistents");
-            parent.transform.position = new Vector3(0, 0, 0);
-        }
-
-        GameObject go = new GameObject("PersistentSpawner");
-
-        go.transform.position = new Vector3(0, 0, 0);
-        go.transform.SetParent(parent.transform);
-        go.AddComponent<PersistentSpawner>();
-
-        Selection.activeGameObject = go;
-    }
-    
-
-    [MenuItem("GameObject/Persistency/Add SaveSystem", false, 0)]
-    static void CreateSaveSystem()
-    {
-        GameObject engine = GameObject.Find("_SaveSystem");
-
-        if (engine == null)
-        {
-            engine = new GameObject("_SaveSystem");
-            engine.transform.position = new Vector3(0, 0, 0);
-        }
-
-        if (!engine.GetComponent<SaveSystem>())
-        {
-            engine.AddComponent<SaveSystem>();
-        }
-    }
 
     [MenuItem("GameObject/GalacticJanitor/Add Engine", false, 0)]
     static void CreateGameController()
@@ -118,102 +82,6 @@ public class EditorMenu
         obstac.transform.SetParent(parent.transform);
     }
 
-    
-
-    private static void CheckSavables()
-    {
-        /*bool allFine = true;
-        int warn = 0;
-
-        Debug.Log("CheckIngSavables...");
-        Savable[] savables = Object.FindObjectsOfType<Savable>();
-
-        GameObject parent = GameObject.Find("_Savables");
-
-       
-        if (parent == null)
-        {
-            parent = new GameObject("_Savables");
-            parent.transform.position = new Vector3(0, 0, 0);
-            Debug.Log("Missing _Savables holder generated !");
-        }
-
-        List<string> guids = new List<string>(savables.Length);
-        List<Savable> duplicated = null;
-
-        int fixes = 0;
-
-        foreach (Savable s in savables)
-        {
-            if (s.savableObject == null)
-            {
-                Debug.LogWarning("Reference for " + s.gameObject.name + " is null !");
-                if (!s.gameObject.name.Contains("#NULL"))
-                {
-                    string n = s.gameObject.name + "#NULL";
-                    s.gameObject.name = n;
-                }
-                warn++;
-            }
-            else
-            {
-                s.name = "sv." + s.savableObject.name;
-                
-            }
-
-            if (!guids.Contains(s.uniqueID))
-            {
-                guids.Add(s.uniqueID);
-
-                if (s.transform.parent != parent.transform)
-                {
-                    s.transform.SetParent(parent.transform);
-                    fixes++;
-                }
-            }
-            else
-            {
-                if (duplicated == null)
-                {
-                    duplicated = new List<Savable>();
-                }
-                duplicated.Add(s);
-            }
-        }
-
-        if (fixes > 0)
-        {
-            Debug.Log(fixes + " Savable(s) moved under _Savables in hierarchy");
-        }
-
-
-        if (duplicated != null)
-        {
-            allFine = false;
-
-            GameObject dupParent = GameObject.Find("_Savables#GUID_Duplicated");
-
-            if (dupParent == null)
-            {
-                dupParent = new GameObject("_Savables#GUID_Duplicated");
-                dupParent.transform.position = new Vector3(0, 0, 0);
-            }
-
-            foreach (Savable s in duplicated)
-            {
-                s.transform.SetParent(dupParent.transform);
-                Debug.LogWarning("Duplicated GUI for Savable " + s.gameObject.name + " GUID: " + s.uniqueID);
-                warn++;
-            }
-            Debug.Log(duplicated.Count + " Duplicated GuiD waiting to be fixed under _Savables#GUID_Duplicated in hierarchy");
-        }
-        
-        if (allFine)
-            Debug.Log("Savables checking : Success \n" + (warn > 0 ? "("+warn+") warnings" : "(OK)" ));
-        else
-            Debug.Log("Savables checking : Failed " + (warn > 0 ? "(" + warn + ") warnings" : ""));
-
-    */}
 
     [MenuItem("GameObject/GalacticJanitor/Add TopDownCamera", false, 0)]
     static void Setup3DCamera()
@@ -288,12 +156,6 @@ public class EditorMenu
         CheckWorldDirectory();
 
         Selection.activeGameObject = obj;
-    }
-
-    [MenuItem("GameObject/GalacticJanitor/Check Scene", false, 0)]
-    static void CheckScene()
-    {
-        CheckSavables();
     }
 
     private static void CheckWorldDirectory()

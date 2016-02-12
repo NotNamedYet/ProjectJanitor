@@ -1,19 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using GalacticJanitor.Engine;
+using MonoPersistency;
 
 namespace GalacticJanitor.Game
 {
-    public abstract class Entity : PersistentObject
+    public abstract class Entity : MonoPersistent
     {
-
         [Header("Entity")]
         public string entityDisplayName;
-        public bool allowOrderInHierachy = true;
 
-        protected virtual void Start()
-        {
-            if (allowOrderInHierachy) transform.SetParent(GameController.EntityHolder);
-        }
     } 
 }

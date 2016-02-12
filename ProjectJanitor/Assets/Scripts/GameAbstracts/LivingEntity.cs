@@ -14,23 +14,32 @@ namespace GalacticJanitor.Game
 {
     public abstract class LivingEntity : Entity
     {
+
+        [System.Serializable]
+        public class EntityBook
+        {
+            public bool alive = true;
+
+            [Tooltip("Current Health point")]
+            public int health = 20;
+
+            [Tooltip("The maximum healh point")]
+            public int maxHealth = 20;
+
+            [Tooltip("Current armor point")]
+            public int armor = 20;
+
+            [Tooltip("The maximum armor Points")]
+            public int maxArmor = 20;
+
+            [Tooltip("Damages are divided by this number if the entity has at least one armor point")]
+            public int armorDamageReduction = 2;
+        }
+
         [Header("Living Behavior")]
-        [Tooltip("Current Health point")]
-        public int health = 20;
+        [SerializeField]
+        public EntityBook m_entity;
 
-        [Tooltip("The maximum heal point")]
-        public int maxHealth = 20;
-
-        [Tooltip("Current armor point")]
-        public int armorPoint = 0;
-
-        [Tooltip("The maximum armor Points")]
-        public int maxArmorPoint = 0;
-
-        [Tooltip("Damages are divided by this number if the entity has at least one armor point")]
-        public int armorDamageReduction = 3;
-
-        public bool alive = true;
         public bool destroyOnDeath = false;
         public bool saveOnDeath = true;
         public bool invincible = false;
@@ -49,9 +58,8 @@ namespace GalacticJanitor.Game
         public AudioSource onHealSound;
         public AudioSource onRepairSound;
 
-        protected override void Start()
+        protected virtual void Start()
         {
-            base.Start();
             UpdateDisplay();
         }
 
@@ -66,24 +74,24 @@ namespace GalacticJanitor.Game
         {
             if (invincible) return;
 
-            if (alive)
+            if (m_entity.alive)
             {
-                if (armorPoint > 0)
+                if (m_entity.armor > 0)
                 {
-                    if (damage <= armorPoint)
+                    if (damage <= m_entity.armor)
                     {
-                        armorPoint -= damage;
-                        damage /= armorDamageReduction;
+                        m_entity.armor -= damage;
+                        damage /= m_entity.armorDamageReduction;
                     }
                     else
                     {
                         //the damage is greater than armor points so we can take this value to determine how much damage need to be reduced 
-                        int reduced = armorPoint / armorDamageReduction;
+                        int reduced = m_entity.armor / m_entity.armorDamageReduction;
 
                         //The rest represent the full damage to take...
-                        int fullDamage = damage - armorPoint;
+                        int fullDamage = damage - m_entity.armor;
 
-                        armorPoint = 0;
+                        m_entity.armor = 0;
 
                         //Now we can calculate the damage.
                         damage = reduced + fullDamage;
@@ -94,7 +102,7 @@ namespace GalacticJanitor.Game
                     }
                 }
 
-                health -= damage;
+                m_entity.health -= damage;
 
                 /*SOUND*/
                 if (onDamageSound)
@@ -104,9 +112,9 @@ namespace GalacticJanitor.Game
                 if (optionalAnimator)
                     optionalAnimator.SetTrigger("hitted");
 
-                if (health <= 0)
+                if (m_entity.health <= 0)
                 {
-                    health = 0;
+                    m_entity.health = 0;
                     Die();
                 }
 
@@ -122,12 +130,12 @@ namespace GalacticJanitor.Game
         /// <returns>false if the current health value is already at it's maximum</returns>
         public bool Heal(int amount)
         {
-            if (health >= maxHealth)
+            if (m_entity.health >= m_entity.maxHealth)
                 return false;
 
-            health += amount;
-            if (health > maxHealth)
-                health = maxHealth;
+            m_entity.health += amount;
+            if (m_entity.health > m_entity.maxHealth)
+                m_entity.health = m_entity.maxHealth;
 
             /*SOUND*/
             if (onHealSound)
@@ -145,7 +153,7 @@ namespace GalacticJanitor.Game
         /// <returns>false if the current health value is already at it's maximum</returns>
         public bool Heal()
         {
-            return Heal(maxHealth);
+            return Heal(m_entity.maxHealth);
         }
 
         /// <summary>
@@ -154,13 +162,13 @@ namespace GalacticJanitor.Game
         /// <returns>false if the current AP value is already at it's maximum</returns>
         public bool RepairArmor(int amount)
         {
-            if (armorPoint >= maxArmorPoint)
+            if (m_entity.armor >= m_entity.maxArmor)
                 return false;
 
-            armorPoint += amount;
+            m_entity.armor += amount;
 
-            if (armorPoint > maxArmorPoint)
-                armorPoint = maxArmorPoint;
+            if (m_entity.armor > m_entity.maxArmor)
+                m_entity.armor = m_entity.maxArmor;
 
             /*SOUND*/
             if (onRepairSound)
@@ -177,7 +185,7 @@ namespace GalacticJanitor.Game
         /// <returns>false if the current AP value is already at it's maximum</returns>
         public bool RepairArmor()
         {
-            return RepairArmor(maxArmorPoint);
+            return RepairArmor(m_entity.maxArmor);
         }
 
         /// <summary>
@@ -185,9 +193,9 @@ namespace GalacticJanitor.Game
         /// </summary>
         void Die()
         {
-            alive = false;
+            m_entity.alive = false;
 
-            if (saveOnDeath) SaveObject();
+            if (saveOnDeath) Save();
 
             /*SOUND*/
             if (onDieSound)
@@ -256,50 +264,9 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// To call when a GUI update is needed...
         /// </summary>
-        void UpdateDisplay()
+        public void UpdateDisplay()
         {
             if (optionalDisplay) optionalDisplay.UpdateState(this);
         }
-
-        public override ObjectData CreateData()
-        {
-            LivingEntityData data = new LivingEntityData(UniqueId);
-            data.RegisterBaseData(alive, transform.position, transform.rotation);
-            data.RegisterEntityData(health, maxHealth, armorPoint, maxArmorPoint);
-
-            return data;
-        }
-
-        public override void LoadData()
-        {
-            LivingEntityData data = SaveSystem.GetObjectData(UniqueId) as LivingEntityData;
-
-            if (data != null)
-            {
-                health = data.health;
-                maxHealth = data.maxHealth;
-                armorPoint = data.armorPoint;
-                maxArmorPoint = data.maxArmorPoint;
-            }
-        }
     } 
-}
-
-[Serializable]
-public class LivingEntityData : ObjectData
-{
-    public int health;
-    public int maxHealth;
-    public int armorPoint;
-    public int maxArmorPoint;
-
-    public LivingEntityData(string UniqueId) : base(UniqueId){}
-
-    public void RegisterEntityData(int HP, int maxHP, int AP, int maxAP)
-    {
-        health = HP;
-        maxHealth = maxHP;
-        armorPoint = AP;
-        maxArmorPoint = maxAP;
-    }
 }
