@@ -362,6 +362,7 @@ GameObject:
   - 195: {fileID: 19550008}
   - 54: {fileID: 5459570}
   - 65: {fileID: 6544672}
+  - 114: {fileID: 11452352}
   m_Layer: 10
   m_Name: pfb_AlienBeta
   m_TagString: Alien
@@ -981,16 +982,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298474557daa1b441b36c77d3aba259e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UniqueId: 
-  dynamicPersistency: 0
+  specificName: 
+  bypassBaking: 0
   entityDisplayName: 
-  allowOrderInHierachy: 1
-  health: 20
-  maxHealth: 20
-  armorPoint: 0
-  maxArmorPoint: 0
-  armorDamageReduction: 3
-  alive: 1
+  m_entity:
+    alive: 1
+    health: 20
+    maxHealth: 20
+    armor: 20
+    maxArmor: 20
+    armorDamageReduction: 2
   destroyOnDeath: 1
   saveOnDeath: 1
   invincible: 0
@@ -1001,7 +1002,6 @@ MonoBehaviour:
   onArmorBreakSound: {fileID: 0}
   onHealSound: {fileID: 0}
   onRepairSound: {fileID: 0}
-  AlienName: Beta
   sensor: {fileID: 0}
   rigging: {fileID: 9556846}
   target: {fileID: 0}
@@ -1020,6 +1020,18 @@ MonoBehaviour:
   onEnrageSound: {fileID: 0}
   damagePerHit: 10
   dammageDistanceOffset: 2
+--- !u!114 &11452352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93f27016bb5f8147bb17fd8b0b21d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
 --- !u!114 &11454444
 MonoBehaviour:
   m_ObjectHideFlags: 1
