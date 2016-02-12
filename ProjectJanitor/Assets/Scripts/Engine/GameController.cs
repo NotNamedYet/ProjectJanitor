@@ -1,9 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using System;
-using UnityEngine.SceneManagement;
 using GalacticJanitor.Game;
 
 namespace GalacticJanitor.Engine
@@ -43,7 +38,10 @@ namespace GalacticJanitor.Engine
         public static PlayerController Player
         {
             get { return Controller._player; }
-            set { Controller._player = value; }
+            set
+            {
+                Controller._player = value;
+            }
         }
 
         /// <summary>
@@ -53,18 +51,6 @@ namespace GalacticJanitor.Engine
         {
             get { return Controller._topDownCamera; }
             set { Controller._topDownCamera = value; }
-        }
-
-        public static Transform EntityHolder
-        {
-            get
-            {
-                if (Controller._entityHolder == null)
-                {
-                    Controller._entityHolder = new GameObject("_Entities");
-                }
-                return Controller._entityHolder.transform;
-            }
         }
 
         public static Transform ProjectileHolder
@@ -114,31 +100,11 @@ namespace GalacticJanitor.Engine
             return Controller.isInPause;
         }
 
-        
-        public static void LoadScene(string scene)
-        {
-            SaveSystem.CallForUpdate();
-            SceneManager.LoadScene(scene);
-        }
-
-
         //EDITOR
 
         void OnDrawGizmos()
         {
             Gizmos.DrawIcon(transform.position, "ico_Config.png", true);
-        }
-
-        void OnGUI()
-        {
-            if (GUI.Button(new Rect(Screen.width - 110, 10, 100, 20), "Save"))
-            {
-                SaveSystem.SaveParty();
-            }
-            if (GUI.Button(new Rect(Screen.width - 110, 40, 100, 20), "Load"))
-            {
-                SaveSystem.LoadParty();
-            }
         }
 
     } 

@@ -12,8 +12,8 @@ namespace GalacticJanitor.UI
 
         public void UpdateState(LivingEntity entity)
         {
-            if (healthBar) healthBar.UpdateProgress(entity.health, entity.maxHealth);
-            if (energyBar) energyBar.UpdateProgress(entity.armorPoint, entity.maxArmorPoint);
+            if (healthBar) healthBar.UpdateProgress(entity.m_entity.health, entity.m_entity.maxHealth);
+            if (energyBar) energyBar.UpdateProgress(entity.m_entity.armor, entity.m_entity.maxArmor);
         }
         
     } 

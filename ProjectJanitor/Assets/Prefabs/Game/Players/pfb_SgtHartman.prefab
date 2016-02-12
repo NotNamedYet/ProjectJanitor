@@ -535,19 +535,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea670600fc1aa24c8a92d164fecbcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UniqueId: 
-  IsPersistent: 1
-  dynamicPersistency: 0
+  specificName: 
+  bypassBaking: 1
   entityDisplayName: Sergent Hartman
   allowOrderInHierachy: 0
-  health: 50
-  maxHealth: 50
-  armorPoint: 50
-  maxArmorPoint: 50
-  armorDamageReduction: 3
-  alive: 1
+  m_entity:
+    alive: 1
+    health: 100
+    maxHealth: 100
+    armor: 50
+    maxArmor: 50
+    armorDamageReduction: 2
   destroyOnDeath: 0
-  saveOnDeath: 1
+  saveOnDeath: 0
   invincible: 0
   optionalAnimator: {fileID: 9516860}
   optionalDisplay: {fileID: 0}
@@ -989,6 +989,30 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: saveOnDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bypassBaking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_entity.health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_entity.maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_entity.armor
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_entity.maxArmor
       value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
