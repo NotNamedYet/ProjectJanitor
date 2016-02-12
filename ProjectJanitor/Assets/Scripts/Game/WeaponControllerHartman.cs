@@ -40,23 +40,7 @@ namespace GalacticJanitor.Game
         {
             UpdateReloadTimer();
 			
-            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdtateInput();
-        }
-
-        /// <summary>
-        /// Use to prevent player to shoot after reloading or something else.
-        /// </summary>
-        void UpdateReloadTimer()
-        {
-            if (!playerCanShootAfterReload)
-            {
-                timerCancelFireAfterReloadActive += Time.deltaTime;
-                if (timerCancelFireAfterReloadActive >= timerCancelFireAfterReload)
-                {
-                    timerCancelFireAfterReloadActive = 0;
-                    playerCanShootAfterReload = true;
-                }
-            }
+            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdateInput();
         }
 
         void UpdateInput()
