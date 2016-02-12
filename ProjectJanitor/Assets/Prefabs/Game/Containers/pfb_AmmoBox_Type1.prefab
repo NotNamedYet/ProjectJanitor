@@ -84,12 +84,11 @@ MonoBehaviour:
   specificName: AmmoBoxType1
   bypassBaking: 0
   entityDisplayName: Ammunition Box
-  allowOrderInHierachy: 1
   ammoType: 1
   amount: 12
-  useRandomAmount: 0
-  minRangeToRandom: 0
-  maxRangeToRandom: 0
+  useRandomAmount: 1
+  minRangeToRandom: 10
+  maxRangeToRandom: 20
   visual: {fileID: 21226578}
   bulletBox: {fileID: 21300000, guid: d610ae0d611446f49ae9234fbbc306a1, type: 3}
   grenadeBox: {fileID: 21300000, guid: 9e5307547355be04d8423b42d9bac400, type: 3}
@@ -158,6 +157,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Center.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: useRandomAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minRangeToRandom
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxRangeToRandom
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
