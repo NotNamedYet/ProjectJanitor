@@ -55,7 +55,10 @@ namespace GalacticJanitor.Game
         void Update()
         {
             UpdateReloadTimer();
-            if (!GalacticJanitor.Engine.GameController.Controller.isInPause) UpdateInput();
+			if (!Engine.GameController.IsPause())
+            {
+                UpdateInput(); 
+            }
         }
 
         void UpdateInput()
@@ -86,56 +89,77 @@ namespace GalacticJanitor.Game
                     else
 					playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
 				}
+
             }
 
-                if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (playerCanShootAfterReload)
                 {
-                    if (playerCanShootAfterReload)
+                    Reload();
+                    playerCanShootAfterReload = false;
+
+                    /*GUI*/
+                    if (indexActiveWeapon == 0)
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+
+                    else
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
+            {
+                if (playerCanShootAfterReload)
+                {
+                    if (indexActiveWeapon == 0)
                     {
-                        if (indexActiveWeapon == 0)
-                        {
-                            doubleGuns.Fire();
+                        doubleGuns.Fire();
 
-                            /*GUI*/
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
-                        }
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+                    }
 
-                        else
+                    else
+                    {
+                        flamethrower.Fire();
+
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                    }
+                }
+            }
+
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                if (playerCanShootAfterReload)
+                {
+                    if (indexActiveWeapon == 1)
+                    {
+                        if (!flamethrower.flameIsActive)
                         {
                             flamethrower.Fire();
-
-                            /*GUI*/
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                         }
+
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                     }
                 }
+            }
 
-                if (Input.GetKey(KeyCode.Mouse0))
-                {
-                    if (playerCanShootAfterReload)
-                    {
-                        if (indexActiveWeapon == 1)
-                        {
-                            if (!flamethrower.flameIsActive)
-                            {
-                                flamethrower.Fire();
-                            }
-
-                            /*GUI*/
-                            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
-                        }
-                    }
-                }
-
-                if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
+            if (Input.GetKeyUp(KeyCode.Mouse0)) // Release click
+            {
+                if (indexActiveWeapon == 1)
                 {
                     if (indexActiveWeapon == 1)
                     {
                         flamethrower.ReleaseFireKeyFlamethrower();
                     }
-                } 
-		}
-        
+
+                }
+            }
+        }
+
         /// <summary>
         /// Just call the reload magazine of both weapon.
         /// </summary>
