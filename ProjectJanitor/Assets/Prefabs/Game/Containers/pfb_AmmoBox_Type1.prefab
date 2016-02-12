@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 490800}
   - 114: {fileID: 11482806}
-  - 135: {fileID: 13521188}
+  - 65: {fileID: 6580634}
   m_Layer: 0
   m_Name: pfb_AmmoBox_Type1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 73c1e56e77864a84f94bdaea3a39ebfb, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -58,6 +58,18 @@ Transform:
   - {fileID: 406416}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6580634
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &11482806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,32 +81,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcf5347e06a90a46a7eda4286750e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UniqueId: 
-  dynamicPersistency: 0
+  specificName: AmmoBoxType1
+  bypassBaking: 0
   entityDisplayName: Ammunition Box
-  allowOrderInHierachy: 1
-  marineType: 0
   ammoType: 1
   amount: 12
-  useRandomAmount: 0
-  minRangeToRandom: 0
-  maxRangeToRandom: 0
+  useRandomAmount: 1
+  minRangeToRandom: 10
+  maxRangeToRandom: 20
   visual: {fileID: 21226578}
   bulletBox: {fileID: 21300000, guid: d610ae0d611446f49ae9234fbbc306a1, type: 3}
   grenadeBox: {fileID: 21300000, guid: 9e5307547355be04d8423b42d9bac400, type: 3}
   flamethrowerBox: {fileID: 21300000, guid: 73c1e56e77864a84f94bdaea3a39ebfb, type: 3}
---- !u!135 &13521188
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.8897743
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &21226578
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -147,6 +145,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: useRandomAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minRangeToRandom
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxRangeToRandom
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

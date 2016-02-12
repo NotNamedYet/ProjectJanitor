@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using MonoPersistency;
 
 namespace GalacticJanitor.UI
 {
@@ -8,7 +9,7 @@ namespace GalacticJanitor.UI
     {
         
         public Text label;
-        public GameRegisterySnapshot linkedSnap;
+        public RegisterySnapshot linkedSnap;
         public PanelSaveSystem panel;
         public bool newSave = true;
 

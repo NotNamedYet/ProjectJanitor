@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using GalacticJanitor.Engine;
+using MonoPersistency;
 
 namespace GalacticJanitor.UI
 {
@@ -16,7 +17,7 @@ namespace GalacticJanitor.UI
         public Text validationButtonLabel;
 
         [HideInInspector]
-        public GameRegisterySnapshot selectedSnapshot;
+        public RegisterySnapshot selectedSnapshot;
 
         //[HideInInspector]
         public bool newSave;
@@ -82,7 +83,7 @@ namespace GalacticJanitor.UI
                 }
             }
             */
-            SaveSystem.SaveParty();
+            SaveSystem.UpdateRegistery();
         }
 
         public void AllowValidation(bool value)
@@ -110,7 +111,7 @@ namespace GalacticJanitor.UI
         void GenerateSnapshotButtons()
         {
             Debug.Log("I want to generate..");
-            GameRegisterySnapshot[] snaps = SaveSystem.Instance.LoadAllSnapshots();
+            RegisterySnapshot[] snaps = SaveSystem.LoadSnapshots();
 
             foreach (var snap in snaps)
             {

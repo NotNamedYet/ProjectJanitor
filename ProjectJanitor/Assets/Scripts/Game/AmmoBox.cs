@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using GalacticJanitor.Engine;
+using MonoPersistency;
 
 namespace GalacticJanitor.Game
 {
@@ -29,13 +30,15 @@ namespace GalacticJanitor.Game
         public Sprite grenadeBox;
         public Sprite flamethrowerBox;
 
-        protected override void Start()
+        void Awake()
         {
-            base.Start();
+            if (useRandomAmount) amount = MakeRandomAmount(minRangeToRandom, maxRangeToRandom);
+        }
+
+        void Start()
+        {
             marineType = GameController.Player.marinesType;
             RenderSprite();
-            if (useRandomAmount) amount = MakeRandomAmount(minRangeToRandom, maxRangeToRandom);
-            LoadData();
         }
 
         void RenderSprite()
@@ -76,26 +79,19 @@ namespace GalacticJanitor.Game
         /// </summary>
         void Depop()
         {
-            SaveObject();
+            Save();
             Destroy(gameObject);
         }
 
-        public override ObjectData CreateData()
+        public override void CollectData(DataContainer container)
         {
-            AmmoBoxData data = new AmmoBoxData(UniqueId);
-            data.RegisterBaseData(amount > 0, transform.position, transform.rotation);
-            data.amount = amount;
-            return data;
+            container.Addvalue("amount", amount);
+            container.m_spawnable = amount > 0;
         }
 
-        public override void LoadData()
+        public override void LoadData(DataContainer container)
         {
-            AmmoBoxData data = SaveSystem.GetObjectData(UniqueId) as AmmoBoxData;
-
-            if (data != null)
-            {
-                amount = data.amount;
-            }
+            amount = container.GetValue<int>("amount");
         }
     }   
 }
@@ -103,12 +99,4 @@ namespace GalacticJanitor.Game
 public enum AmmoType
 {
     AmmoType0 = 0, AmmoType1
-}
-
-[Serializable]
-public class AmmoBoxData : ObjectData
-{
-    public int amount;
-
-    public AmmoBoxData(string UniqueId) : base(UniqueId) { }
 }

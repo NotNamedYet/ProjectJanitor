@@ -3,6 +3,8 @@ using System.Collections;
 using GalacticJanitor.UI;
 using GalacticJanitor.Engine;
 using GalacticJanitor.Game;
+using MonoPersistency;
+using System;
 
 namespace GalacticJanitor.Game
 {
@@ -77,6 +79,11 @@ namespace GalacticJanitor.Game
             }
         }
 
+        new void Start()
+        {
+            LoadData(SaveSystem.GetPlayerData());
+        }
+
         void Awake()
         {
             anim = gameObject.GetComponent<Animator>();
@@ -90,13 +97,7 @@ namespace GalacticJanitor.Game
 
             GameController.Player = this;
             GameController.TopDownCamera.SetTarget(transform);
-        }
-
-        // Use this for initialization
-        protected override void Start()
-        {
-            base.Start();
-            LoadData();
+            
         }
 
         void Update()
@@ -233,74 +234,74 @@ namespace GalacticJanitor.Game
             else display.DisplayInfoIndexWeapon(0, false);
         }
 
-        public override ObjectData CreateData()
+        public override void CollectData(DataContainer container)
         {
-            PlayerData data = new PlayerData();
 
-            //Living...
-            data.RegisterEntityData(health, maxHealth, armorPoint, maxArmorPoint);
+            Debug.Log("Create player...");
 
-            data.marines = marinesType;
-            data.ammo1 = playerAmmo.ammoCarriedType0;
-            data.ammo2 = playerAmmo.ammoCarriedType1;
+            container.m_spawnable = true;
+
+            container.Addvalue("marine", marinesType);
+            container.Addvalue("ent", m_entity);
+
+            container.Addvalue("stockAmmo0", playerAmmo.ammoCarriedType0);
+            container.Addvalue("stockAmmo1", playerAmmo.ammoCarriedType1);
+
+            if (marinesType == MarinesType.MajCarter)
+            {
+                container.Addvalue("ammo0", weapCCarter.doubleGuns.magazine);
+                container.Addvalue("ammo1", weapCCarter.flamethrower.magazine);
+                container.Addvalue("weapIndex", weapCCarter.IndexActiveWeapon);
+            }
+            else
+            {
+                container.Addvalue("ammo0", weapCHartman.assaultRifle.magazineBullet);
+                container.Addvalue("ammo1", weapCHartman.assaultRifle.magazineGrenade);
+            }
             
-            if (marinesType == MarinesType.MajCarter)
-            {
-                data.weaponIndex = weapCCarter.IndexActiveWeapon;
-                data.stockAmmo1 = weapCCarter.doubleGuns.magazine;
-                data.stockAmmo2 = weapCCarter.flamethrower.magazine;
-            }
-            else
-            {
-                data.stockAmmo1 = weapCHartman.assaultRifle.magazineBullet;
-                data.stockAmmo2 = weapCHartman.assaultRifle.magazineGrenade;
-            }
 
-            data.score = score;
-
-            return data;
+            SaveSystem.GetActiveSceneData().m_stage.RegisterPlayerLocation(transform);
         }
 
-        public override void LoadData()
+        public override void LoadData(DataContainer container)
         {
-            PlayerData data = SaveSystem.GetPlayerData();
-
-            if (data == null)
+            if (container != null)
             {
-                return;
+                Debug.Log("Loading player...");
+                //entity restore
+                m_entity = container.GetValue<EntityBook>("ent");
+
+                //weapon restore
+                playerAmmo.ammoCarriedType0 = container.GetValue<int>("stockAmmo0");
+                playerAmmo.ammoCarriedType1 = container.GetValue<int>("stockAmmo1");
+
+                if (marinesType == MarinesType.MajCarter)
+                {
+                    weapCCarter.doubleGuns.magazine = container.GetValue<int>("ammo0");
+                    weapCCarter.flamethrower.magazine = container.GetValue<int>("ammo1");
+                    if (weapCCarter.IndexActiveWeapon != container.GetValue<int>("weapIndex"))
+                        weapCCarter.SwitchIndexWeapon();
+                }
+                else
+                {
+                    weapCHartman.assaultRifle.magazineBullet = container.GetValue<int>("ammo0");
+                    weapCHartman.assaultRifle.magazineGrenade = container.GetValue<int>("ammo1");
+                }
+
+                //location restore;
+                SaveSystem.GetActiveSceneData().m_stage.RestorePlayerLocation(transform);
             }
-
-            health = data.health;
-            maxHealth = data.maxHealth;
-            armorPoint = data.armorPoint;
-            maxArmorPoint = data.maxArmorPoint;
-
-            playerAmmo.ammoCarriedType0 = data.ammo1;
-            playerAmmo.ammoCarriedType1 = data.ammo2;
-
-            if (marinesType == MarinesType.MajCarter)
-            {
-
-                if (weapCCarter.IndexActiveWeapon != data.weaponIndex)
-                    weapCCarter.SwitchIndexWeapon();
-
-                weapCCarter.doubleGuns.magazine = data.stockAmmo1;
-                weapCCarter.flamethrower.magazine = data.stockAmmo2;
-            }
-            else
-            {
-                weapCHartman.assaultRifle.magazineBullet = data.stockAmmo1;
-                weapCHartman.assaultRifle.magazineGrenade = data.stockAmmo2;
-            }
-
-            score = data.score;
-
+            
         }
 
-        public override void SaveObject()
+        protected override void Save()
         {
-            BuildData();
-            SaveSystem.SavePlayer(objectData as PlayerData);
+            if (m_data == null)
+                m_data = new DataContainer("##");
+
+            Debug.Log("saving player...");
+            CollectData(m_data);
+            SaveSystem.RegisterPlayer(m_data);
         }
     }    
 }
@@ -308,18 +309,4 @@ namespace GalacticJanitor.Game
 public enum MarinesType
 {
     MajCarter, SgtHartman
-}
-
-[System.Serializable]
-public class PlayerData : LivingEntityData
-{
-    public MarinesType marines;
-    public int weaponIndex;
-    public int ammo1;
-    public int ammo2;
-    public int stockAmmo1;
-    public int stockAmmo2;
-    public PlayerController.PlayerScore score;
-
-    public PlayerData() : base(null) {}
 }

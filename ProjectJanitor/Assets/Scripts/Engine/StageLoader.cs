@@ -1,6 +1,6 @@
 using UnityEngine;
-using System.Collections;
 using GalacticJanitor.Game;
+using MonoPersistency;
 
 namespace GalacticJanitor.Engine
 {
@@ -49,34 +49,31 @@ namespace GalacticJanitor.Engine
             GameController.TopDownCamera.JumpToTarget();
         }
 
-        void ReloadStage()
-        {
-            GameController.DestroyPlayer();
-            LoadStage();
-        }
+        
 
         //load from registery info...
         void LoadStage()
         {
+            Debug.Log("LoadStage");
             SceneData dScene = SaveSystem.GetActiveSceneData();
-            StageData dStage = dScene.stageData;
+            StageData dStage = dScene.m_stage;
 
             if (dStage != null)
             {
                 dStage.TranslateLocation(out playerPosition, out playerRotation);
-                disallowPlayer = dStage.disallowPlayer;
+                disallowPlayer = dStage.m_disallowPlayer;
             }
             else
             {
                 dStage = new StageData(playerPosition, playerRotation, disallowPlayer);
-                dScene.stageData = dStage;
+                dScene.m_stage = dStage;
             }
 
-            PlayerData dPlayer = SaveSystem.GetPlayerData();
+            DataContainer dPlayer = SaveSystem.GetPlayerData();
 
             if (dPlayer != null)
             {
-                marines = dPlayer.marines;
+                marines = dPlayer.GetValue<MarinesType>("marine");
             }
 
             if (!disallowPlayer)
@@ -92,7 +89,6 @@ namespace GalacticJanitor.Engine
             }
         }
 
-
         void RegisterStage()
         {
             if (GameController.Player)
@@ -103,19 +99,38 @@ namespace GalacticJanitor.Engine
                 playerRotation = pTransform.rotation;
             }
 
-            SaveSystem.GetActiveSceneData().stageData = new StageData(playerPosition, playerRotation, disallowPlayer);
+            SaveSystem.GetActiveSceneData().m_stage = new StageData(playerPosition, playerRotation, disallowPlayer);
         }
+
+
+        //EVENT RELATED
 
         void OnEnable()
         {
-            SaveSystem.OnGameSaveEvent += RegisterStage;
-            SaveSystem.OnGameLoadEvent += ReloadStage;
+            SaveSystem.OnUpdateRegisteryEvent += OnSave;
+            SaveSystem.OnPreLoadEvent += OnPreLoad;
         }
 
         void OnDisable()
         {
-            SaveSystem.OnGameSaveEvent -= RegisterStage;
-            SaveSystem.OnGameLoadEvent -= ReloadStage;
+            SaveSystem.OnUpdateRegisteryEvent -= OnSave;
+            SaveSystem.OnPreLoadEvent -= OnPreLoad;
+        }
+
+        /// <summary>
+        /// Everything that's need to occure when the PreLoadEvent is fired
+        /// </summary>
+        void OnPreLoad()
+        {
+            GameController.DestroyPlayer();
+        }
+
+        /// <summary>
+        /// Everything that's need to occure when the OnSaveEvent is fired
+        /// </summary>
+        void OnSave()
+        {
+            RegisterStage();
         }
     } 
 }
