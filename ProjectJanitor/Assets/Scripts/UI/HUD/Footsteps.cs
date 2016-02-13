@@ -16,7 +16,7 @@ public class Footsteps : MonoBehaviour {
     void PlayFootsteps()
     {
         //audioSource.PlayOneShot(footsteps[Random.Range(0, footsteps.Length)], 0.2f);
-        audioSource.PlayOneShot(footsteps, 0.2f);
+        audioSource.PlayOneShot(footsteps, 0.02f);
     }
 
 }

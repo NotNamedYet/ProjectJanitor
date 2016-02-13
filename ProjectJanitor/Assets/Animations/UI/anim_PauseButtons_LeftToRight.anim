@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: anim_PauseButtons_SlideRight
+  m_Name: anim_PauseButtons_LeftToRight
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: -300
         inSlope: 300
         outSlope: 300
         tangentMode: 10
-      - time: 1
+      - time: 2
         value: 300
         inSlope: 300
         outSlope: 300
@@ -56,7 +56,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -76,11 +76,11 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: -300
         inSlope: 300
         outSlope: 300
         tangentMode: 10
-      - time: 1
+      - time: 2
         value: 300
         inSlope: 300
         outSlope: 300
@@ -98,13 +98,20 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0
-    functionName: SlidePanel
+    functionName: LongSlidePanel
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1
+    functionName: HideSavePanel
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2
     functionName: ShowLoadPanel
     data: 
     objectReferenceParameter: {fileID: 0}
