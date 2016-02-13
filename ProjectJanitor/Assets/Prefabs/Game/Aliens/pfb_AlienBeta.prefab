@@ -1009,7 +1009,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   maxAttackRange: 5
-  maxDistanceFromSpawn: 70
+  maxDistanceFromSpawn: 200
   attackPerSecond: 1
   enraged: 0
   remainingHealthToEnrage: 10
@@ -1835,6 +1835,10 @@ Prefab:
       propertyPath: optionalAnimator
       value: 
       objectReference: {fileID: 9556846}
+    - target: {fileID: 0}
+      propertyPath: maxDistanceFromSpawn
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 168570}

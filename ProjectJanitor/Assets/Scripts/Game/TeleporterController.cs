@@ -118,6 +118,11 @@ namespace GalacticJanitor.Game
 
             obj.transform.position = new Vector3(x, y, z);
         }
+
+        void OnDrawGizmos()
+        {
+            Gizmos.DrawIcon(transform.position, "ico_Warp01.png", true);
+        }
     } 
 }
 

@@ -21,13 +21,20 @@ namespace GalacticJanitor.UI
         }
 
         // Use this for initialization
-        void Start()
+        void OnEnable()
         {
             StartCoroutine(Trubelize());
         }
 
+        void OnDisable()
+        {
+            textComponent.text = "";
+            fakeText = "";
+        }
+
         IEnumerator Trubelize()
         {
+            
             foreach (char c in charachers)
             {
                 for (int i = 0; i < 2; i++)
