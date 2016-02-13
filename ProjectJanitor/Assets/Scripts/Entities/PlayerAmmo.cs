@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
@@ -40,9 +41,15 @@ namespace GalacticJanitor.Game
         /// </summary>
         public void PickUpAmmo(AmmoType ammoType, int amount)
         {
-            if (ammoType == AmmoType.AmmoType0) ammoCarriedType0 += amount;
-
-            else ammoCarriedType1 += amount;
+            if (ammoType == AmmoType.AmmoType0)
+            {
+                ammoCarriedType0 += amount;
+            }
+            else
+            {
+                ammoCarriedType1 += amount;
+            }
+            GameController.NotifyPlayer("+" + amount + " Ammo !", Color.green, 1);
         }
 
     } 

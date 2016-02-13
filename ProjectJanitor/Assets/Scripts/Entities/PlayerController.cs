@@ -48,6 +48,7 @@ namespace GalacticJanitor.Game
 
         [Header("GUI")]
         public PlayerStateDisplay display;
+        public PlayerHUD m_HUD;
 
         private WeaponControllerCarter weapCCarter;
         private WeaponControllerHartman weapCHartman;
