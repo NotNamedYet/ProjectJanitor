@@ -8,14 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418482}
-  - 114: {fileID: 11439942}
   - 65: {fileID: 6553502}
-  - 65: {fileID: 6560840}
   - 54: {fileID: 5454156}
   m_Layer: 0
-  m_Name: ActivatorConsole
+  m_Name: SmallConsole_Inactive
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: 5c015bf9596f3bc43914ee7c37b8dc77, type: 3}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -85,33 +83,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.76, y: 1, z: 2.3317647}
-  m_Center: {x: 0, y: 0, z: -0.0020589828}
---- !u!65 &6560840
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.34, y: 1, z: 1.48}
-  m_Center: {x: 1.1, y: 0, z: -2}
---- !u!114 &11439942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3660e6fad14f9ab449fbd12ee9829507, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_actor: {fileID: 0}
-  m_keyCode: 101
+  m_Size: {x: 1.73, y: 1, z: 1.11}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &21249818
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,7 +111,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 60d5d9ece3a41024d89f6e5814aeef34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82fd4adfec7134046b6a4250ee80d6f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
