@@ -7,7 +7,7 @@ using System;
 public class PixelScaling : MonoBehaviour {
 
     Camera cam;
-    public float pixelToUnit = 32;
+    public float pixelToUnit = 28;
 
 	// Use this for initialization
 	void Start ()
