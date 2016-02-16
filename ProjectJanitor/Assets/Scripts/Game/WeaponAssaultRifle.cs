@@ -24,6 +24,8 @@ namespace GalacticJanitor.Game
         public int grenadesDmg = 2;
 
         public Transform chokes; // From where the bullet go out the gun
+        [Tooltip("Used by particle named \"pfx_FlashShoot\"")]
+        public GameObject flashShoot;
 
         [Header("Burst deployment", order = 0)]
         [Tooltip("Time during player must hold clic before burst mode is active")]
@@ -31,7 +33,6 @@ namespace GalacticJanitor.Game
 
         //[HideInInspector]
         public float canBurstTimerActive = 0;
-
         public bool burstModeIsActive = false;
 
         [Header("Burst configuration", order = 1)]
@@ -152,6 +153,7 @@ namespace GalacticJanitor.Game
                     gctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
                     magazineGrenade--;
                     playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
+                    PlayFlashShoot();
                     ReloadGrenade();
                     gameObject.GetComponent<WeaponControllerHartman>().playerCanShootAfterReload = false;
                 }
@@ -176,7 +178,8 @@ namespace GalacticJanitor.Game
                         bctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
                         magazineBullet--;
                         canConstantFireNextBullet = false;
-                        playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController 
+                        playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
+                        PlayFlashShoot();
                     }
                 }
                 //Debug.Log("clipinfo lengt : " + clipInfo.Length);
@@ -184,6 +187,16 @@ namespace GalacticJanitor.Game
             
 
             //Play a nice badass sound
+        }
+
+        void PlayFlashShoot()
+        {
+            if (flashShoot != null)
+            {
+                GameObject flash = Instantiate(flashShoot, chokes.position, chokes.rotation) as GameObject;
+                flash.transform.SetParent(chokes.transform);
+                Destroy(flash, 0.11f); 
+            }
         }
 
         public void ReloadMagazine()

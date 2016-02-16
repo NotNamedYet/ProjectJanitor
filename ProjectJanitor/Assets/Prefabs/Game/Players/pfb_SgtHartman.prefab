@@ -538,7 +538,6 @@ MonoBehaviour:
   specificName: 
   bypassBaking: 1
   entityDisplayName: Sergent Hartman
-  allowOrderInHierachy: 0
   m_entity:
     alive: 1
     health: 100
@@ -566,6 +565,7 @@ MonoBehaviour:
   timerActiveJustHaveShoote: 0
   timerJustHaveShoot: 0.5
   display: {fileID: 0}
+  m_HUD: {fileID: 0}
   score:
     enemyKilled: 0
 --- !u!114 &11434664
@@ -625,6 +625,7 @@ MonoBehaviour:
   bulletsDmg: 1
   grenadesDmg: 2
   chokes: {fileID: 400326}
+  flashShoot: {fileID: 127294, guid: 02c51482417645d43af4d0df8730c8da, type: 2}
   canBurstTimer: 0.2
   canBurstTimerActive: 0
   burstModeIsActive: 0
@@ -1015,6 +1016,10 @@ Prefab:
       propertyPath: m_entity.maxArmor
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flashShoot
+      value: 
+      objectReference: {fileID: 127294, guid: 02c51482417645d43af4d0df8730c8da, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119372}
