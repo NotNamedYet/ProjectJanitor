@@ -42,25 +42,130 @@ public class DumbScript : MonoBehaviour {
 	
 	}
 
+    public void ShowDescKeyPanel()
+    {
+        descKeyPanel.SetActive(true);
+    }
+
+    public void HideDescKeyPanel()
+    {
+        descKeyPanel.SetActive(false);
+    }
+
+    public void ShowDescMousePanel()
+    {
+        descMousePanel.SetActive(true);
+    }
+
+    public void HideDescMousePanel()
+    {
+        descMousePanel.SetActive(false);
+    }
+
+
     public void ShowZKey()
     {
         zKeyLink.SetActive(true);
         zText.SetActive(true);
-        descKeyPanel.SetActive(true);
+        ShowDescKeyPanel();
     }
 
     public void HideZKey()
     {
         zKeyLink.SetActive(false);
         zText.SetActive(false);
-        descKeyPanel.SetActive(false);
+        HideDescKeyPanel();
+    }
+
+    public void ShowSKey()
+    {
+        sKeyLink.SetActive(true);
+        sText.SetActive(true);
+        ShowDescKeyPanel();
+    }
+
+    public void HideSKey()
+    {
+        sKeyLink.SetActive(true);
+        sText.SetActive(true);
+        HideDescKeyPanel();
+    }
+
+    public void ShowQKey()
+    {
+        qKeyLink.SetActive(true);
+        sText.SetActive(true);
+        ShowDescKeyPanel();
+    }
+
+    public void HideQKey()
+    {
+        qKeyLink.SetActive(false);
+        qText.SetActive(false);
+        HideDescKeyPanel();
+    }
+
+    public void ShowDKey()
+    {
+        dKeyLink.SetActive(true);
+        dText.SetActive(true);
+        ShowDescKeyPanel();
+    }
+
+    public void HideDKey()
+    {
+        dKeyLink.SetActive(false);
+        dText.SetActive(false);
+        HideDescKeyPanel();
+    }
+
+    public void ShowEKey()
+    {
+        eKeyLink.SetActive(true);
+        eText.SetActive(true);
+        ShowDescKeyPanel();
+    }
+
+    public void HideEKey()
+    {
+        eKeyLink.SetActive(false);
+        eText.SetActive(false);
+        HideDescKeyPanel();
+    }
+
+    public void ShowRKey()
+    {
+        rKeyLink.SetActive(true);
+        rText.SetActive(true);
+        ShowDescKeyPanel();
+    }
+
+    public void HideRKey()
+    {
+        rKeyLink.SetActive(true);
+        rText.SetActive(true);
+        HideDescKeyPanel();
+    }
+
+    public void ShowEscKey()
+    {
+        escKeyLink.SetActive(true);
+        escText.SetActive(true);
+        ShowDescKeyPanel();
+    }
+
+    public void HideEscKey()
+    {
+        escKeyLink.SetActive(false);
+        escText.SetActive(false);
+        HideDescKeyPanel();
     }
 
     public void ShowLB()
     {
         lbLink.SetActive(true);
         lbText.SetActive(true);
-        descMousePanel.SetActive(true);
+        ShowDescMousePanel();
         lbButton.GetComponent<Image>().color = Color.red;
     }
 
@@ -86,7 +191,8 @@ public class DumbScript : MonoBehaviour {
         rbText.SetActive(false);
         descMousePanel.SetActive(false);
         rbButton.GetComponent<Image>().color = new Color(0.280f, 0.280f, 0.280f, 1);
-
     }
+
+
 
 }

@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class CommandsButton : MonoBehaviour {
 
-    public bool isMousePanel;
+    public GameObject link;
+    public Text keyText;
+
 
 	// Use this for initialization
 	void Start () {
