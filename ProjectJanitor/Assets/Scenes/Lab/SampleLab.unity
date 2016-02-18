@@ -6185,6 +6185,14 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 55.7
       objectReference: {fileID: 0}
+    - target: {fileID: 11423028, guid: 9d6b19ecddb44a64b945e9bb92bc34b8, type: 2}
+      propertyPath: textFormat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423028, guid: 9d6b19ecddb44a64b945e9bb92bc34b8, type: 2}
+      propertyPath: prefix
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d6b19ecddb44a64b945e9bb92bc34b8, type: 2}
   m_IsPrefabParent: 0
@@ -7582,8 +7590,8 @@ MonoBehaviour:
   hartman: {fileID: 11433848, guid: 42241aca04d25a7488df090dd16eeb76, type: 2}
   carter: {fileID: 11428304, guid: 6ee4c0d7b8a294c4b82111a87cbc3359, type: 2}
   disallowPlayer: 0
-  marines: 0
-  playerPosition: {x: -3.58, y: 0, z: 0}
+  marines: 1
+  playerPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1241904838
 Transform:
   m_ObjectHideFlags: 0
@@ -8009,7 +8017,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 153646, guid: dc7a8f64efff18645ac781975f21d304, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc7a8f64efff18645ac781975f21d304, type: 2}

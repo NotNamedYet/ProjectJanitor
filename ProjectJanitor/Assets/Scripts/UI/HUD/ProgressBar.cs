@@ -93,6 +93,10 @@ namespace GalacticJanitor.UI
         void UpdateText(float currentValue, float maxValue)
         {
             if (!textComponent) return;
+
+            if (format == null)
+                InitTextComponent();
+
             textComponent.text = string.Format(format, (prefix.Length == 0) ? "" : prefix + " : ", currentValue, maxValue, Mathf.Ceil(currentValue * maxValue / 100));
         }
 
