@@ -47,11 +47,11 @@ namespace GalacticJanitor.Game
         public float timerJustHaveShoot = 0.5f; // 0.5f to Hartman, 0.1f to Carter
 
         [Header("GUI")]
-        public PlayerStateDisplay display;
+        public PlayerStateDisplay playerDisplay;
         public PlayerHUD m_HUD;
 
-        private WeaponControllerCarter weapCCarter;
-        private WeaponControllerHartman weapCHartman;
+        [HideInInspector]public WeaponControllerCarter weapCCarter;
+        [HideInInspector]public WeaponControllerHartman weapCHartman;
 
 
         //SCORE
@@ -87,6 +87,10 @@ namespace GalacticJanitor.Game
 
         void Awake()
         {
+            if (playerDisplay)
+            {
+                entityDisplay = playerDisplay;
+            }
             anim = gameObject.GetComponent<Animator>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             body = gameObject.GetComponent<Rigidbody>();
@@ -182,13 +186,12 @@ namespace GalacticJanitor.Game
 
         public void DisplayInfoWeapon1(int ammoCarried, int ammoInMagazine)
         {
-            if (display) display.DisplayInfoWeapon1(ammoCarried, ammoInMagazine);
-
+            if (playerDisplay) playerDisplay.DisplayInfoWeapon1(ammoCarried, ammoInMagazine);
         }
 
         public void DisplayInfoWeapon2(int ammoCarried, int ammoInMagazine)
         {
-            if (display) display.DisplayInfoWeapon2(ammoCarried, ammoInMagazine);
+            if (playerDisplay) playerDisplay.DisplayInfoWeapon2(ammoCarried, ammoInMagazine);
         }
 
         /// <summary>
@@ -201,10 +204,10 @@ namespace GalacticJanitor.Game
         {
             if (marinesType == MarinesType.MajCarter)
             {
-                if (display) display.DisplayInfoIndexWeapon(index, true);
+                if (playerDisplay) playerDisplay.DisplayInfoIndexWeapon(index, true);
             }
 
-            else display.DisplayInfoIndexWeapon(0, false);
+            else playerDisplay.DisplayInfoIndexWeapon(0, false);
         }
 
         public override void CollectData(DataContainer container)
@@ -275,6 +278,11 @@ namespace GalacticJanitor.Game
             Debug.Log("saving player...");
             CollectData(m_data);
             SaveSystem.RegisterPlayer(m_data);
+        }
+
+        public bool isCarter()
+        {
+            return marinesType == MarinesType.MajCarter;
         }
     }    
 }

@@ -8,7 +8,7 @@ namespace GalacticJanitor.UI
     public class PlayerHUD : MonoBehaviour
     {
 
-        public EntityResourceDisplay display;
+        public PlayerStateDisplay display;
         public GameObject m_intercator;
         public GameObject m_notifierPanel;
         public Text m_notifierText;
@@ -16,12 +16,13 @@ namespace GalacticJanitor.UI
         private Coroutine noticeRoutine;
 
         // Use this for initialization
-        void Start()
+        void Awake()
         {
             GameController.Player.m_HUD = this;
             if (display)
             {
-                GameController.Player.optionalDisplay = display;
+                GameController.Player.entityDisplay = display;
+                GameController.Player.playerDisplay = display;
                 GameController.Player.UpdateDisplay();
             }
         }

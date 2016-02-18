@@ -41,15 +41,37 @@ namespace GalacticJanitor.Game
         /// </summary>
         public void PickUpAmmo(AmmoType ammoType, int amount)
         {
+            PlayerController pc = GameController.Player;
+
             if (ammoType == AmmoType.AmmoType0)
             {
                 ammoCarriedType0 += amount;
+
+                if (pc.isCarter())
+                {
+                    pc.DisplayInfoWeapon1(ammoCarriedType0, pc.weapCCarter.doubleGuns.magazine);
+                }
+                else
+                {
+                    pc.DisplayInfoWeapon1(ammoCarriedType0, pc.weapCHartman.assaultRifle.magazineBullet);
+                }
             }
             else
             {
                 ammoCarriedType1 += amount;
+
+                if (pc.isCarter())
+                {
+                    pc.DisplayInfoWeapon2(ammoCarriedType1, pc.weapCCarter.flamethrower.magazine);
+                }
+                else
+                {
+                    pc.DisplayInfoWeapon2(ammoCarriedType1, pc.weapCHartman.assaultRifle.magazineGrenade);
+                }
             }
+
             GameController.NotifyPlayer("+" + amount + " Ammo !", Color.green, 1);
+            
         }
 
     } 

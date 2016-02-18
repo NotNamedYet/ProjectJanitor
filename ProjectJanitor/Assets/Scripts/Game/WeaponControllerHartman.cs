@@ -31,8 +31,13 @@ namespace GalacticJanitor.Game
         void Start()
         {
             /* GUI */
-            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
-            playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+            if (playerController.playerDisplay)
+            {
+                playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, assaultRifle.magazineBullet);
+                playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, assaultRifle.magazineGrenade);
+                playerController.playerDisplay.ammo1.DisplayBullet();
+                playerController.playerDisplay.ammo2.DisplayGrenade();
+            }
         }
 
         // Update is called once per frame
