@@ -7,6 +7,7 @@ public class MenuScript : MonoBehaviour
 {
 
     public GameObject quitMenu;
+    public GameObject menuButtons;
     public GameObject commandsPanel;
 
     public Button startGame;
@@ -17,8 +18,6 @@ public class MenuScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        commandsPanel.SetActive(false);
-        quitMenu.SetActive(false);
     }
 
     void Update()
@@ -37,6 +36,7 @@ public class MenuScript : MonoBehaviour
             else if (commandsPanel.activeInHierarchy)
             {
                 commandsPanel.SetActive(false);
+                menuButtons.SetActive(true);
             }
             else
             {
@@ -48,6 +48,7 @@ public class MenuScript : MonoBehaviour
     public void CommandsPress()
     {
         commandsPanel.SetActive(true);
+        menuButtons.SetActive(false);
     }
 
     public void QuitGamePress()
@@ -67,7 +68,7 @@ public class MenuScript : MonoBehaviour
     public void NewGamePress()
     {
         //Application.LoadLevel("scn_CharSelection");
-        SceneManager.LoadScene("scn_CharSelection");
+        SceneManager.LoadScene(1);
     }
 
     public void LoadMenu()
@@ -86,10 +87,11 @@ public class MenuScript : MonoBehaviour
         if (commandsPanel.activeInHierarchy)
         {
             commandsPanel.SetActive(false);
+            menuButtons.SetActive(true);
         }
         else
         {
-            SceneManager.LoadScene("scn_MainMenu");
+            SceneManager.LoadScene(0);
         }
     }
 
