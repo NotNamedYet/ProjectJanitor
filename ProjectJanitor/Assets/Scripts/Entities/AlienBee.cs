@@ -6,10 +6,10 @@ namespace GalacticJanitor.Game
     public class AlienBee : AlienBase
     {
 
+        [Header("CaC damage", order = 2)]
         public int damagePerHit;
         public float dammageDistanceOffset;
         float nextAttack;
-        bool firstAttack;
 
         protected override void Attack()
         {
@@ -17,8 +17,7 @@ namespace GalacticJanitor.Game
             {
                 if (rigging)
                 {
-                    rigging.SetTrigger((firstAttack) ? "attack1" : "attack2");
-                    firstAttack ^= true;
+                    rigging.SetTrigger("attack");
 
                     /*SOUND*/
                     if (onAttackSound) onAttackSound.Play();
