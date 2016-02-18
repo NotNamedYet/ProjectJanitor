@@ -49,9 +49,9 @@ namespace GalacticJanitor.Game
         public Animator optionalAnimator;
 
         [Header("GUI")]
-        public EntityResourceDisplay optionalDisplay;
+        public EntityResourceDisplay entityDisplay;
 
-        [Header("Sounds")]
+        [Header("Entity Sounds")]
         public AudioSource onDamageSound;
         public AudioSource onDieSound;
         public AudioSource onArmorBreakSound;
@@ -264,9 +264,9 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// To call when a GUI update is needed...
         /// </summary>
-        public void UpdateDisplay()
+        public virtual void UpdateDisplay()
         {
-            if (optionalDisplay) optionalDisplay.UpdateState(this);
+            if (entityDisplay) entityDisplay.UpdateState(this);
         }
     } 
 }

@@ -7,18 +7,18 @@ namespace GalacticJanitor.UI
 
     public class PlayerStateDisplay : EntityResourceDisplay
     {
-        public Text ammoType1;
-        public Text ammoType2;
-        public SpriteRenderer indexWeapon;
+
+        public AmmoDisplay ammo1;
+        public AmmoDisplay ammo2;
 
         public void DisplayInfoWeapon1(int ammoCarried, int ammoInMagazine)
         {
-            if (ammoType1) ammoType1.text = string.Format("{1}/{0}", ammoCarried, ammoInMagazine);
+            ammo1.UpdateText(ammoInMagazine, ammoCarried);
         }
 
         public void DisplayInfoWeapon2(int ammoCarried, int ammoInMagazine)
         {
-            if (ammoType2) ammoType2.text = string.Format("{1}/{0}", ammoCarried, ammoInMagazine);
+            ammo2.UpdateText(ammoInMagazine, ammoCarried);
         }
 
         /// <summary>

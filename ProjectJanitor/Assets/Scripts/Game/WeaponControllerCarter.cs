@@ -46,9 +46,14 @@ namespace GalacticJanitor.Game
             StartWeaponDoubleGuns();  // TODO : Change this maybe with savegames
 
             /*GUI*/
-            playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
+            if (playerController.playerDisplay)
+            {
+                playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
             playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
             playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
+            playerController.playerDisplay.ammo1.DisplayBullet();
+            playerController.playerDisplay.ammo2.DisplayFlame();
+            }
         }
 
         // Update is called once per frame
@@ -87,25 +92,9 @@ namespace GalacticJanitor.Game
                     playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
 
                     else
-					playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+					playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
 				}
 
-            }
-
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                if (playerCanShootAfterReload)
-                {
-                    Reload();
-                    playerCanShootAfterReload = false;
-
-                    /*GUI*/
-                    if (indexActiveWeapon == 0)
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
-
-                    else
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
-                }
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse0)) // One click
@@ -125,7 +114,7 @@ namespace GalacticJanitor.Game
                         flamethrower.Fire();
 
                         /*GUI*/
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                        playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                     }
                 }
             }
@@ -142,7 +131,7 @@ namespace GalacticJanitor.Game
                         }
 
                         /*GUI*/
-                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                        playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                     }
                 }
             }

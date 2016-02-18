@@ -1,0 +1,3349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: anm_AlienBee_Attack
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -140.7096}
+        outSlope: {x: 0, y: 0, z: -140.7096}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: 0, y: 0, z: -11.7258}
+        inSlope: {x: 0, y: 0, z: 173.06339}
+        outSlope: {x: 0, y: 0, z: 173.06339}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: 0, y: 0, z: 28.843899}
+        inSlope: {x: 0, y: 0, z: 510.1668}
+        outSlope: {x: 0, y: 0, z: 510.1668}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 73.302}
+        inSlope: {x: 0, y: 0, z: 397.53442}
+        outSlope: {x: 0, y: 0, z: 397.53442}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: 0, y: 0, z: 138.6949}
+        inSlope: {x: 0, y: 0, z: 569.89465}
+        outSlope: {x: 0, y: 0, z: 569.89465}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: 0, y: 0, z: 211.8797}
+        inSlope: {x: 0, y: 0, z: 325.41647}
+        outSlope: {x: 0, y: 0, z: 325.41647}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 0, y: 0, z: 155.0335}
+        inSlope: {x: 0, y: 0, z: -683.5829}
+        outSlope: {x: 0, y: 0, z: -683.5829}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: 0, y: 0, z: 60.051697}
+        inSlope: {x: 0, y: 0, z: -1125.2308}
+        outSlope: {x: 0, y: 0, z: -1125.2308}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -32.505}
+        inSlope: {x: 0, y: 0, z: -360.31042}
+        outSlope: {x: 0, y: 0, z: -360.31042}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 390.0598}
+        outSlope: {x: 0, y: 0, z: 390.0598}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.2564}
+        inSlope: {x: 0, y: 0, z: -115.0872}
+        outSlope: {x: 0, y: 0, z: -115.0872}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: 0, y: 0, z: -9.847}
+        inSlope: {x: 0, y: 0, z: -57.5436}
+        outSlope: {x: 0, y: 0, z: -57.5436}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: 0, y: 0, z: -9.847}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -9.847}
+        inSlope: {x: 0, y: 0, z: 76.296005}
+        outSlope: {x: 0, y: 0, z: 76.296005}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0, y: 0, z: 10.4986}
+        inSlope: {x: 0, y: 0, z: -10.899422}
+        outSlope: {x: 0, y: 0, z: -10.899422}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: 0, y: 0, z: -9.847}
+        inSlope: {x: 0, y: 0, z: -87.19543}
+        outSlope: {x: 0, y: 0, z: -87.19543}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: 0, y: 0, z: -9.847}
+        inSlope: {x: 0, y: 0, z: 31.081001}
+        outSlope: {x: 0, y: 0, z: 31.081001}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 0, y: 0, z: 5.6935}
+        inSlope: {x: 0, y: 0, z: 31.081001}
+        outSlope: {x: 0, y: 0, z: 31.081001}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: 0, y: 0, z: 5.6935}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 5.6935}
+        inSlope: {x: 0, y: 0, z: -35.699383}
+        outSlope: {x: 0, y: 0, z: -35.699383}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: 0, z: -0.2564}
+        inSlope: {x: 0, y: 0, z: -71.398766}
+        outSlope: {x: 0, y: 0, z: -71.398766}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.2131}
+        inSlope: {x: 0, y: 0, z: -97.91639}
+        outSlope: {x: 0, y: 0, z: -97.91639}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: 0, y: 0, z: -8.3728}
+        inSlope: {x: 0, y: 0, z: -48.958195}
+        outSlope: {x: 0, y: 0, z: -48.958195}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: 0, y: 0, z: -8.3728}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -8.3728}
+        inSlope: {x: 0, y: 0, z: 91.330505}
+        outSlope: {x: 0, y: 0, z: 91.330505}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0, y: 0, z: 15.981999}
+        inSlope: {x: 0, y: 0, z: -13.047195}
+        outSlope: {x: 0, y: 0, z: -13.047195}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: 0, y: 0, z: -8.3728}
+        inSlope: {x: 0, y: 0, z: -104.3777}
+        outSlope: {x: 0, y: 0, z: -104.3777}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: 0, y: 0, z: -8.3728}
+        inSlope: {x: 0, y: 0, z: 36.889}
+        outSlope: {x: 0, y: 0, z: 36.889}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 0, y: 0, z: 10.0717}
+        inSlope: {x: 0, y: 0, z: 36.889}
+        outSlope: {x: 0, y: 0, z: 36.889}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: 0, y: 0, z: 10.0717}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 10.0717}
+        inSlope: {x: 0, y: 0, z: -61.708775}
+        outSlope: {x: 0, y: 0, z: -61.708775}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: 0, z: -0.2131}
+        inSlope: {x: 0, y: 0, z: -123.41755}
+        outSlope: {x: 0, y: 0, z: -123.41755}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.1371}
+        inSlope: {x: 0, y: 0, z: -94.94159}
+        outSlope: {x: 0, y: 0, z: -94.94159}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: 0, y: 0, z: -8.0489}
+        inSlope: {x: 0, y: 0, z: -47.470795}
+        outSlope: {x: 0, y: 0, z: -47.470795}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: 0, y: 0, z: -8.0489}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -8.0489}
+        inSlope: {x: 0, y: 0, z: 86.595}
+        outSlope: {x: 0, y: 0, z: 86.595}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0, y: 0, z: 15.043099}
+        inSlope: {x: 0, y: 0, z: -12.370705}
+        outSlope: {x: 0, y: 0, z: -12.370705}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: 0, y: 0, z: -8.0489}
+        inSlope: {x: 0, y: 0, z: -98.965706}
+        outSlope: {x: 0, y: 0, z: -98.965706}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: 0, y: 0, z: -8.0489}
+        inSlope: {x: 0, y: 0, z: 45.003197}
+        outSlope: {x: 0, y: 0, z: 45.003197}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 0, y: 0, z: 14.4527}
+        inSlope: {x: 0, y: 0, z: 45.003197}
+        outSlope: {x: 0, y: 0, z: 45.003197}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: 0, y: 0, z: 14.4527}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 14.4527}
+        inSlope: {x: 0, y: 0, z: -87.53876}
+        outSlope: {x: 0, y: 0, z: -87.53876}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: 0, z: -0.1371}
+        inSlope: {x: 0, y: 0, z: -175.07751}
+        outSlope: {x: 0, y: 0, z: -175.07751}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.1533}
+        inSlope: {x: 0, y: 0, z: -166.56958}
+        outSlope: {x: 0, y: 0, z: -166.56958}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: 0, y: 0, z: -14.0341}
+        inSlope: {x: 0, y: 0, z: -83.28479}
+        outSlope: {x: 0, y: 0, z: -83.28479}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: 0, y: 0, z: -14.0341}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -14.0341}
+        inSlope: {x: 0, y: 0, z: 62.439754}
+        outSlope: {x: 0, y: 0, z: 62.439754}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0, y: 0, z: 2.6165}
+        inSlope: {x: 0, y: 0, z: -8.919956}
+        outSlope: {x: 0, y: 0, z: -8.919956}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: 0, y: 0, z: -14.0341}
+        inSlope: {x: 0, y: 0, z: -71.35971}
+        outSlope: {x: 0, y: 0, z: -71.35971}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: 0, y: 0, z: -14.0341}
+        inSlope: {x: 0, y: 0, z: 30.858398}
+        outSlope: {x: 0, y: 0, z: 30.858398}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 0, y: 0, z: 1.3951}
+        inSlope: {x: 0, y: 0, z: 30.858398}
+        outSlope: {x: 0, y: 0, z: 30.858398}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: 0, y: 0, z: 1.3951}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 1.3951}
+        inSlope: {x: 0, y: 0, z: -9.290396}
+        outSlope: {x: 0, y: 0, z: -9.290396}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: 0, z: -0.1533}
+        inSlope: {x: 0, y: 0, z: -18.580791}
+        outSlope: {x: 0, y: 0, z: -18.580791}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.111899994}
+        inSlope: {x: 0, y: 0, z: -144.76318}
+        outSlope: {x: 0, y: 0, z: -144.76318}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: 0, y: 0, z: -12.1755}
+        inSlope: {x: 0, y: 0, z: -72.38159}
+        outSlope: {x: 0, y: 0, z: -72.38159}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: 0, y: 0, z: -12.1755}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -12.1755}
+        inSlope: {x: 0, y: 0, z: 158.52525}
+        outSlope: {x: 0, y: 0, z: 158.52525}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0, y: 0, z: 30.097898}
+        inSlope: {x: 0, y: 0, z: -22.646439}
+        outSlope: {x: 0, y: 0, z: -22.646439}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: 0, y: 0, z: -12.1755}
+        inSlope: {x: 0, y: 0, z: -181.17169}
+        outSlope: {x: 0, y: 0, z: -181.17169}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: 0, y: 0, z: -12.1755}
+        inSlope: {x: 0, y: 0, z: 68.1064}
+        outSlope: {x: 0, y: 0, z: 68.1064}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 0, y: 0, z: 21.877699}
+        inSlope: {x: 0, y: 0, z: 68.1064}
+        outSlope: {x: 0, y: 0, z: 68.1064}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: 0, y: 0, z: 21.877699}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 21.877699}
+        inSlope: {x: 0, y: 0, z: -131.93753}
+        outSlope: {x: 0, y: 0, z: -131.93753}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: 0, z: -0.111899994}
+        inSlope: {x: 0, y: 0, z: -263.87506}
+        outSlope: {x: 0, y: 0, z: -263.87506}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -0.083, z: 0}
+        inSlope: {x: -0.0000009834766, y: 0.0000044703484, z: 0}
+        outSlope: {x: -0.0000009834766, y: 0.0000044703484, z: 0}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: -0.00000008195639, y: -0.082999624, z: 0}
+        inSlope: {x: -0.0000004917383, y: 0.0000022351742, z: 0}
+        outSlope: {x: -0.0000004917383, y: 0.0000022351742, z: 0}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: -0.00000008195639, y: -0.082999624, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.00000008195639, y: -0.082999624, z: 0}
+        inSlope: {x: -0.00005367911, y: 0.000019948931, z: 0}
+        outSlope: {x: -0.00005367911, y: 0.000019948931, z: 0}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: -0.000014396384, y: -0.082994305, z: 0}
+        inSlope: {x: 0.000007668434, y: -0.0000028498434, z: 0}
+        outSlope: {x: 0.000007668434, y: -0.0000028498434, z: 0}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: -0.00000008195639, y: -0.082999624, z: 0}
+        inSlope: {x: 0.00006134754, y: -0.000022798775, z: 0}
+        outSlope: {x: 0.00006134754, y: -0.000022798775, z: 0}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: -0.00000008195639, y: -0.082999624, z: 0}
+        inSlope: {x: -0.0000003799796, y: -0.00000067055225, z: 0}
+        outSlope: {x: -0.0000003799796, y: -0.00000067055225, z: 0}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: -0.0000002719462, y: -0.08299996, z: 0}
+        inSlope: {x: -0.0000003799796, y: -0.00000067055225, z: 0}
+        outSlope: {x: -0.0000003799796, y: -0.00000067055225, z: 0}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: -0.0000002719462, y: -0.08299996, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.0000002719462, y: -0.08299996, z: 0}
+        inSlope: {x: 0.0000016316764, y: -0.00000022351732, z: 0}
+        outSlope: {x: 0.0000016316764, y: -0.00000022351732, z: 0}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: -0.083, z: 0}
+        inSlope: {x: 0.0000032633527, y: -0.00000044703464, z: 0}
+        outSlope: {x: 0.0000032633527, y: -0.00000044703464, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -0.373, z: 0}
+        inSlope: {x: -0.000008940697, y: 0.000021100044, z: 1.1723955e-13}
+        outSlope: {x: -0.000008940697, y: 0.000021100044, z: 1.1723955e-13}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: -0.00000074505806, y: -0.37299824, z: 9.769963e-15}
+        inSlope: {x: -0.0000044703484, y: 0.000010550022, z: 5.8619776e-14}
+        outSlope: {x: -0.0000044703484, y: 0.000010550022, z: 5.8619776e-14}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: -0.00000074505806, y: -0.37299824, z: 9.769963e-15}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.00000074505806, y: -0.37299824, z: 9.769963e-15}
+        inSlope: {x: 0.19500281, y: -0.18000664, z: -3.6637363e-14}
+        outSlope: {x: 0.19500281, y: -0.18000664, z: -3.6637363e-14}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0.052, y: -0.421, z: -0}
+        inSlope: {x: -0.027857512, y: 0.025715202, z: 5.2339013e-15}
+        outSlope: {x: -0.027857512, y: 0.025715202, z: 5.2339013e-15}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: -0.00000074505806, y: -0.37299824, z: 9.769963e-15}
+        inSlope: {x: -0.22286032, y: 0.20572184, z: 4.1871264e-14}
+        outSlope: {x: -0.22286032, y: 0.20572184, z: 4.1871264e-14}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: -0.00000074505806, y: -0.37299824, z: 9.769963e-15}
+        inSlope: {x: 0.0000015944242, y: -0.0000030994415, z: -1.2967405e-13}
+        outSlope: {x: 0.0000015944242, y: -0.0000030994415, z: -1.2967405e-13}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 0.000000052154064, y: -0.3729998, z: -5.5067062e-14}
+        inSlope: {x: 0.0000015944242, y: -0.0000030994415, z: -1.2967405e-13}
+        outSlope: {x: 0.0000015944242, y: -0.0000030994415, z: -1.2967405e-13}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: 0.000000052154064, y: -0.3729998, z: -5.5067062e-14}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0.000000052154064, y: -0.3729998, z: -5.5067062e-14}
+        inSlope: {x: -0.00000031292424, y: -0.000001251697, z: 3.304022e-13}
+        outSlope: {x: -0.00000031292424, y: -0.000001251697, z: 3.304022e-13}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: -0.373, z: 0}
+        inSlope: {x: -0.0000006258485, y: -0.000002503394, z: 6.608044e-13}
+        outSlope: {x: -0.0000006258485, y: -0.000002503394, z: 6.608044e-13}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -0.303, z: 0}
+        inSlope: {x: -0.000021234155, y: 0.000038266182, z: 5.728751e-13}
+        outSlope: {x: -0.000021234155, y: 0.000038266182, z: 5.728751e-13}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: -0.0000017695129, y: -0.3029968, z: 4.773959e-14}
+        inSlope: {x: -0.000010617077, y: 0.000019133091, z: 2.8643754e-13}
+        outSlope: {x: -0.000010617077, y: 0.000019133091, z: 2.8643754e-13}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: -0.0000017695129, y: -0.3029968, z: 4.773959e-14}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.0000017695129, y: -0.3029968, z: 4.773959e-14}
+        inSlope: {x: 0.04500664, y: -0.24376196, z: -1.7902348e-13}
+        outSlope: {x: 0.04500664, y: -0.24376196, z: -1.7902348e-13}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0.012, y: -0.368, z: 0}
+        inSlope: {x: -0.006429512, y: 0.03482312, z: 2.5574757e-14}
+        outSlope: {x: -0.006429512, y: 0.03482312, z: 2.5574757e-14}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: -0.0000017695129, y: -0.3029968, z: 4.773959e-14}
+        inSlope: {x: -0.051436152, y: 0.27858508, z: 2.0459823e-13}
+        outSlope: {x: -0.051436152, y: 0.27858508, z: 2.0459823e-13}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: -0.0000017695129, y: -0.3029968, z: 4.773959e-14}
+        inSlope: {x: 0.0000006109476, y: -0.0000063180923, z: -5.715428e-13}
+        outSlope: {x: 0.0000006109476, y: -0.0000063180923, z: -5.715428e-13}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: -0.0000014640391, y: -0.30299997, z: -2.3803182e-13}
+        inSlope: {x: 0.0000006109476, y: -0.0000063180923, z: -5.715428e-13}
+        outSlope: {x: 0.0000006109476, y: -0.0000063180923, z: -5.715428e-13}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: -0.0000014640391, y: -0.30299997, z: -2.3803182e-13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.0000014640391, y: -0.30299997, z: -2.3803182e-13}
+        inSlope: {x: 0.00000878423, y: -0.00000017881385, z: 1.4281902e-12}
+        outSlope: {x: 0.00000878423, y: -0.00000017881385, z: 1.4281902e-12}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: -0.303, z: 0}
+        inSlope: {x: 0.00001756846, y: -0.0000003576277, z: 2.8563805e-12}
+        outSlope: {x: 0.00001756846, y: -0.0000003576277, z: 2.8563805e-12}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -0.302, z: 0}
+        inSlope: {x: -0.0000371933, y: 0.00006937981, z: 5.779377e-12}
+        outSlope: {x: -0.0000371933, y: 0.00006937981, z: 5.779377e-12}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: -0.0000030994415, y: -0.3019942, z: 4.8161475e-13}
+        inSlope: {x: -0.00001859665, y: 0.000034689903, z: 2.8896885e-12}
+        outSlope: {x: -0.00001859665, y: 0.000034689903, z: 2.8896885e-12}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: -0.0000030994415, y: -0.3019942, z: 4.8161475e-13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.0000030994415, y: -0.3019942, z: 4.8161475e-13}
+        inSlope: {x: -0.078738384, y: -0.24752174, z: -1.8060554e-12}
+        outSlope: {x: -0.078738384, y: -0.24752174, z: -1.8060554e-12}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: -0.021, y: -0.368, z: -0}
+        inSlope: {x: 0.011248328, y: 0.035360232, z: 2.580077e-13}
+        outSlope: {x: 0.011248328, y: 0.035360232, z: 2.580077e-13}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: -0.0000030994415, y: -0.3019942, z: 4.8161475e-13}
+        inSlope: {x: 0.08998671, y: 0.28288198, z: 2.0640631e-12}
+        outSlope: {x: 0.08998671, y: 0.28288198, z: 2.0640631e-12}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: -0.0000030994415, y: -0.3019942, z: 4.8161475e-13}
+        inSlope: {x: 0.00000025331974, y: -0.0000123381615, z: -1.5512036e-12}
+        outSlope: {x: 0.00000025331974, y: -0.0000123381615, z: -1.5512036e-12}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: -0.0000029727817, y: -0.30200037, z: -2.9398706e-13}
+        inSlope: {x: 0.00000025331974, y: -0.0000123381615, z: -1.5512036e-12}
+        outSlope: {x: 0.00000025331974, y: -0.0000123381615, z: -1.5512036e-12}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: -0.0000029727817, y: -0.30200037, z: -2.9398706e-13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.0000029727817, y: -0.30200037, z: -2.9398706e-13}
+        inSlope: {x: 0.00001783668, y: 0.00000232458, z: 1.7639215e-12}
+        outSlope: {x: 0.00001783668, y: 0.00000232458, z: 1.7639215e-12}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: -0.302, z: 0}
+        inSlope: {x: 0.00003567336, y: 0.00000464916, z: 3.527843e-12}
+        outSlope: {x: 0.00003567336, y: 0.00000464916, z: 3.527843e-12}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -0.672, z: 0}
+        inSlope: {x: -0.00009548664, y: 0.00011372566, z: 1.5600854e-11}
+        outSlope: {x: -0.00009548664, y: 0.00011372566, z: 1.5600854e-11}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: -0.00000795722, y: -0.6719905, z: 1.3000712e-12}
+        inSlope: {x: -0.00004774332, y: 0.00005686283, z: 7.800427e-12}
+        outSlope: {x: -0.00004774332, y: 0.00005686283, z: 7.800427e-12}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: -0.00000795722, y: -0.6719905, z: 1.3000712e-12}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.00000795722, y: -0.6719905, z: 1.3000712e-12}
+        inSlope: {x: 0.18377985, y: -0.14628568, z: -4.8752673e-12}
+        outSlope: {x: 0.18377985, y: -0.14628568, z: -4.8752673e-12}
+        tangentMode: 0
+      - time: 0.38333333
+        value: {x: 0.049, y: -0.711, z: 0}
+        inSlope: {x: -0.026254237, y: 0.020897925, z: 6.964659e-13}
+        outSlope: {x: -0.026254237, y: 0.020897925, z: 6.964659e-13}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: -0.00000795722, y: -0.6719905, z: 1.3000712e-12}
+        inSlope: {x: -0.21003409, y: 0.16718361, z: 5.571733e-12}
+        outSlope: {x: -0.21003409, y: 0.16718361, z: 5.571733e-12}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: -0.00000795722, y: -0.6719905, z: 1.3000712e-12}
+        inSlope: {x: -0.00000008195639, y: -0.000027537346, z: -4.8454574e-12}
+        outSlope: {x: -0.00000008195639, y: -0.000027537346, z: -4.8454574e-12}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: -0.000007998198, y: -0.6720043, z: -1.1226575e-12}
+        inSlope: {x: -0.00000008195639, y: -0.000027537346, z: -4.8454574e-12}
+        outSlope: {x: -0.00000008195639, y: -0.000027537346, z: -4.8454574e-12}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: -0.000007998198, y: -0.6720043, z: -1.1226575e-12}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.000007998198, y: -0.6720043, z: -1.1226575e-12}
+        inSlope: {x: 0.000047989168, y: 0.000025749194, z: 6.735942e-12}
+        outSlope: {x: 0.000047989168, y: 0.000025749194, z: 6.735942e-12}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: -0.672, z: 0}
+        inSlope: {x: 0.000095978336, y: 0.000051498388, z: 1.3471884e-11}
+        outSlope: {x: 0.000095978336, y: 0.000051498388, z: 1.3471884e-11}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 19.08, y: 3.72, z: 0}
+        outSlope: {x: 19.08, y: 3.72, z: 0}
+        tangentMode: 0
+      - time: 0.083333336
+        value: {x: 1.59, y: 0.31, z: 0}
+        inSlope: {x: 8.16, y: 10.019999, z: 0}
+        outSlope: {x: 8.16, y: 10.019999, z: 0}
+        tangentMode: 0
+      - time: 0.16666667
+        value: {x: 1.36, y: 1.67, z: -0}
+        inSlope: {x: -9.300001, y: 14.58, z: 0}
+        outSlope: {x: -9.300001, y: 14.58, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0.04, y: 2.74, z: -0}
+        inSlope: {x: -10.42, y: 5.5200005, z: 0}
+        outSlope: {x: -10.42, y: 5.5200005, z: 0}
+        tangentMode: 0
+      - time: 0.5
+        value: {x: -1.21, y: 2.29, z: 0}
+        inSlope: {x: -3.8800006, y: -12.120003, z: 0}
+        outSlope: {x: -3.8800006, y: -12.120003, z: 0}
+        tangentMode: 0
+      - time: 0.5833333
+        value: {x: -1.44, y: 0.42, z: 0}
+        inSlope: {x: 5.3999996, y: -16.600002, z: 0}
+        outSlope: {x: 5.3999996, y: -16.600002, z: 0}
+        tangentMode: 0
+      - time: 0.8333333
+        value: {x: 1.95, y: -2.27, z: 0}
+        inSlope: {x: -9.539991, y: -12.579997, z: 0}
+        outSlope: {x: -9.539991, y: -12.579997, z: 0}
+        tangentMode: 0
+      - time: 0.9166667
+        value: {x: -0.77, y: -3.47, z: 0}
+        inSlope: {x: -22.139994, y: 5.580035, z: 0}
+        outSlope: {x: -22.139994, y: 5.580035, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -1.74, y: -1.339995, z: 0}
+        inSlope: {x: 4.619993, y: 20.82, z: 0}
+        outSlope: {x: 4.619993, y: 20.82, z: 0}
+        tangentMode: 0
+      - time: 1.0833334
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 20.87999, y: 16.079933, z: 0}
+        outSlope: {x: 20.87999, y: 16.079933, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _torso
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 1508955734
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 1936137488
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 360919036
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2811823002
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 1190199922
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2909229081
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2909229081
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1508955734
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1936137488
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 360919036
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 2811823002
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1190199922
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1.0833334
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -140.7096
+        outSlope: -140.7096
+        tangentMode: 10
+      - time: 0.083333336
+        value: -11.7258
+        inSlope: 173.06339
+        outSlope: 173.06339
+        tangentMode: 10
+      - time: 0.16666667
+        value: 28.843899
+        inSlope: 510.1668
+        outSlope: 510.1668
+        tangentMode: 10
+      - time: 0.25
+        value: 73.302
+        inSlope: 397.53442
+        outSlope: 397.53442
+        tangentMode: 10
+      - time: 0.5
+        value: 138.6949
+        inSlope: 569.89465
+        outSlope: 569.89465
+        tangentMode: 10
+      - time: 0.5833333
+        value: 211.8797
+        inSlope: 325.41647
+        outSlope: 325.41647
+        tangentMode: 10
+      - time: 0.8333333
+        value: 155.0335
+        inSlope: -683.5829
+        outSlope: -683.5829
+        tangentMode: 10
+      - time: 0.9166667
+        value: 60.051697
+        inSlope: -1125.2308
+        outSlope: -1125.2308
+        tangentMode: 10
+      - time: 1
+        value: -32.505
+        inSlope: -360.31042
+        outSlope: -360.31042
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 390.0598
+        outSlope: 390.0598
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.2564
+        inSlope: -115.0872
+        outSlope: -115.0872
+        tangentMode: 10
+      - time: 0.083333336
+        value: -9.847
+        inSlope: -57.5436
+        outSlope: -57.5436
+        tangentMode: 10
+      - time: 0.16666667
+        value: -9.847
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -9.847
+        inSlope: 76.296005
+        outSlope: 76.296005
+        tangentMode: 10
+      - time: 0.38333333
+        value: 10.4986
+        inSlope: -10.899422
+        outSlope: -10.899422
+        tangentMode: 10
+      - time: 0.5
+        value: -9.847
+        inSlope: -87.19543
+        outSlope: -87.19543
+        tangentMode: 10
+      - time: 0.5833333
+        value: -9.847
+        inSlope: 31.081001
+        outSlope: 31.081001
+        tangentMode: 10
+      - time: 0.8333333
+        value: 5.6935
+        inSlope: 31.081001
+        outSlope: 31.081001
+        tangentMode: 10
+      - time: 0.9166667
+        value: 5.6935
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 5.6935
+        inSlope: -35.699383
+        outSlope: -35.699383
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.2564
+        inSlope: -71.398766
+        outSlope: -71.398766
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.0000009834766
+        outSlope: -0.0000009834766
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.00000008195639
+        inSlope: -0.0000004917383
+        outSlope: -0.0000004917383
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.00000008195639
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.00000008195639
+        inSlope: -0.00005367911
+        outSlope: -0.00005367911
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0.000014396384
+        inSlope: 0.000007668434
+        outSlope: 0.000007668434
+        tangentMode: 10
+      - time: 0.5
+        value: -0.00000008195639
+        inSlope: 0.00006134754
+        outSlope: 0.00006134754
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.00000008195639
+        inSlope: -0.0000003799796
+        outSlope: -0.0000003799796
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.0000002719462
+        inSlope: -0.0000003799796
+        outSlope: -0.0000003799796
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.0000002719462
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.0000002719462
+        inSlope: 0.0000016316764
+        outSlope: 0.0000016316764
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0.0000032633527
+        outSlope: 0.0000032633527
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.083
+        inSlope: 0.0000044703484
+        outSlope: 0.0000044703484
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.082999624
+        inSlope: 0.0000022351742
+        outSlope: 0.0000022351742
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.082999624
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.082999624
+        inSlope: 0.000019948931
+        outSlope: 0.000019948931
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0.082994305
+        inSlope: -0.0000028498434
+        outSlope: -0.0000028498434
+        tangentMode: 10
+      - time: 0.5
+        value: -0.082999624
+        inSlope: -0.000022798775
+        outSlope: -0.000022798775
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.082999624
+        inSlope: -0.00000067055225
+        outSlope: -0.00000067055225
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.08299996
+        inSlope: -0.00000067055225
+        outSlope: -0.00000067055225
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.08299996
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.08299996
+        inSlope: -0.00000022351732
+        outSlope: -0.00000022351732
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.083
+        inSlope: -0.00000044703464
+        outSlope: -0.00000044703464
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.2131
+        inSlope: -97.91639
+        outSlope: -97.91639
+        tangentMode: 10
+      - time: 0.083333336
+        value: -8.3728
+        inSlope: -48.958195
+        outSlope: -48.958195
+        tangentMode: 10
+      - time: 0.16666667
+        value: -8.3728
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -8.3728
+        inSlope: 91.330505
+        outSlope: 91.330505
+        tangentMode: 10
+      - time: 0.38333333
+        value: 15.981999
+        inSlope: -13.047195
+        outSlope: -13.047195
+        tangentMode: 10
+      - time: 0.5
+        value: -8.3728
+        inSlope: -104.3777
+        outSlope: -104.3777
+        tangentMode: 10
+      - time: 0.5833333
+        value: -8.3728
+        inSlope: 36.889
+        outSlope: 36.889
+        tangentMode: 10
+      - time: 0.8333333
+        value: 10.0717
+        inSlope: 36.889
+        outSlope: 36.889
+        tangentMode: 10
+      - time: 0.9166667
+        value: 10.0717
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 10.0717
+        inSlope: -61.708775
+        outSlope: -61.708775
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.2131
+        inSlope: -123.41755
+        outSlope: -123.41755
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.000008940697
+        outSlope: -0.000008940697
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.00000074505806
+        inSlope: -0.0000044703484
+        outSlope: -0.0000044703484
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.00000074505806
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.00000074505806
+        inSlope: 0.19500281
+        outSlope: 0.19500281
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0.052
+        inSlope: -0.027857512
+        outSlope: -0.027857512
+        tangentMode: 10
+      - time: 0.5
+        value: -0.00000074505806
+        inSlope: -0.22286032
+        outSlope: -0.22286032
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.00000074505806
+        inSlope: 0.0000015944242
+        outSlope: 0.0000015944242
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0.000000052154064
+        inSlope: 0.0000015944242
+        outSlope: 0.0000015944242
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0.000000052154064
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0.000000052154064
+        inSlope: -0.00000031292424
+        outSlope: -0.00000031292424
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: -0.0000006258485
+        outSlope: -0.0000006258485
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.373
+        inSlope: 0.000021100044
+        outSlope: 0.000021100044
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.37299824
+        inSlope: 0.000010550022
+        outSlope: 0.000010550022
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.37299824
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.37299824
+        inSlope: -0.18000664
+        outSlope: -0.18000664
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0.421
+        inSlope: 0.025715202
+        outSlope: 0.025715202
+        tangentMode: 10
+      - time: 0.5
+        value: -0.37299824
+        inSlope: 0.20572184
+        outSlope: 0.20572184
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.37299824
+        inSlope: -0.0000030994415
+        outSlope: -0.0000030994415
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.3729998
+        inSlope: -0.0000030994415
+        outSlope: -0.0000030994415
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.3729998
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.3729998
+        inSlope: -0.000001251697
+        outSlope: -0.000001251697
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.373
+        inSlope: -0.000002503394
+        outSlope: -0.000002503394
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1.1723955e-13
+        outSlope: 1.1723955e-13
+        tangentMode: 10
+      - time: 0.083333336
+        value: 9.769963e-15
+        inSlope: 5.8619776e-14
+        outSlope: 5.8619776e-14
+        tangentMode: 10
+      - time: 0.16666667
+        value: 9.769963e-15
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 9.769963e-15
+        inSlope: -3.6637363e-14
+        outSlope: -3.6637363e-14
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0
+        inSlope: 5.2339013e-15
+        outSlope: 5.2339013e-15
+        tangentMode: 10
+      - time: 0.5
+        value: 9.769963e-15
+        inSlope: 4.1871264e-14
+        outSlope: 4.1871264e-14
+        tangentMode: 10
+      - time: 0.5833333
+        value: 9.769963e-15
+        inSlope: -1.2967405e-13
+        outSlope: -1.2967405e-13
+        tangentMode: 10
+      - time: 0.8333333
+        value: -5.5067062e-14
+        inSlope: -1.2967405e-13
+        outSlope: -1.2967405e-13
+        tangentMode: 10
+      - time: 0.9166667
+        value: -5.5067062e-14
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -5.5067062e-14
+        inSlope: 3.304022e-13
+        outSlope: 3.304022e-13
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 6.608044e-13
+        outSlope: 6.608044e-13
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.1371
+        inSlope: -94.94159
+        outSlope: -94.94159
+        tangentMode: 10
+      - time: 0.083333336
+        value: -8.0489
+        inSlope: -47.470795
+        outSlope: -47.470795
+        tangentMode: 10
+      - time: 0.16666667
+        value: -8.0489
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -8.0489
+        inSlope: 86.595
+        outSlope: 86.595
+        tangentMode: 10
+      - time: 0.38333333
+        value: 15.043099
+        inSlope: -12.370705
+        outSlope: -12.370705
+        tangentMode: 10
+      - time: 0.5
+        value: -8.0489
+        inSlope: -98.965706
+        outSlope: -98.965706
+        tangentMode: 10
+      - time: 0.5833333
+        value: -8.0489
+        inSlope: 45.003197
+        outSlope: 45.003197
+        tangentMode: 10
+      - time: 0.8333333
+        value: 14.4527
+        inSlope: 45.003197
+        outSlope: 45.003197
+        tangentMode: 10
+      - time: 0.9166667
+        value: 14.4527
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 14.4527
+        inSlope: -87.53876
+        outSlope: -87.53876
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.1371
+        inSlope: -175.07751
+        outSlope: -175.07751
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.000021234155
+        outSlope: -0.000021234155
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.0000017695129
+        inSlope: -0.000010617077
+        outSlope: -0.000010617077
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.0000017695129
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.0000017695129
+        inSlope: 0.04500664
+        outSlope: 0.04500664
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0.012
+        inSlope: -0.006429512
+        outSlope: -0.006429512
+        tangentMode: 10
+      - time: 0.5
+        value: -0.0000017695129
+        inSlope: -0.051436152
+        outSlope: -0.051436152
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.0000017695129
+        inSlope: 0.0000006109476
+        outSlope: 0.0000006109476
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.0000014640391
+        inSlope: 0.0000006109476
+        outSlope: 0.0000006109476
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.0000014640391
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.0000014640391
+        inSlope: 0.00000878423
+        outSlope: 0.00000878423
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0.00001756846
+        outSlope: 0.00001756846
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.303
+        inSlope: 0.000038266182
+        outSlope: 0.000038266182
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.3029968
+        inSlope: 0.000019133091
+        outSlope: 0.000019133091
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.3029968
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.3029968
+        inSlope: -0.24376196
+        outSlope: -0.24376196
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0.368
+        inSlope: 0.03482312
+        outSlope: 0.03482312
+        tangentMode: 10
+      - time: 0.5
+        value: -0.3029968
+        inSlope: 0.27858508
+        outSlope: 0.27858508
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.3029968
+        inSlope: -0.0000063180923
+        outSlope: -0.0000063180923
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.30299997
+        inSlope: -0.0000063180923
+        outSlope: -0.0000063180923
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.30299997
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.30299997
+        inSlope: -0.00000017881385
+        outSlope: -0.00000017881385
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.303
+        inSlope: -0.0000003576277
+        outSlope: -0.0000003576277
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 5.728751e-13
+        outSlope: 5.728751e-13
+        tangentMode: 10
+      - time: 0.083333336
+        value: 4.773959e-14
+        inSlope: 2.8643754e-13
+        outSlope: 2.8643754e-13
+        tangentMode: 10
+      - time: 0.16666667
+        value: 4.773959e-14
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 4.773959e-14
+        inSlope: -1.7902348e-13
+        outSlope: -1.7902348e-13
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 2.5574757e-14
+        outSlope: 2.5574757e-14
+        tangentMode: 10
+      - time: 0.5
+        value: 4.773959e-14
+        inSlope: 2.0459823e-13
+        outSlope: 2.0459823e-13
+        tangentMode: 10
+      - time: 0.5833333
+        value: 4.773959e-14
+        inSlope: -5.715428e-13
+        outSlope: -5.715428e-13
+        tangentMode: 10
+      - time: 0.8333333
+        value: -2.3803182e-13
+        inSlope: -5.715428e-13
+        outSlope: -5.715428e-13
+        tangentMode: 10
+      - time: 0.9166667
+        value: -2.3803182e-13
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -2.3803182e-13
+        inSlope: 1.4281902e-12
+        outSlope: 1.4281902e-12
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 2.8563805e-12
+        outSlope: 2.8563805e-12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.1533
+        inSlope: -166.56958
+        outSlope: -166.56958
+        tangentMode: 10
+      - time: 0.083333336
+        value: -14.0341
+        inSlope: -83.28479
+        outSlope: -83.28479
+        tangentMode: 10
+      - time: 0.16666667
+        value: -14.0341
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -14.0341
+        inSlope: 62.439754
+        outSlope: 62.439754
+        tangentMode: 10
+      - time: 0.38333333
+        value: 2.6165
+        inSlope: -8.919956
+        outSlope: -8.919956
+        tangentMode: 10
+      - time: 0.5
+        value: -14.0341
+        inSlope: -71.35971
+        outSlope: -71.35971
+        tangentMode: 10
+      - time: 0.5833333
+        value: -14.0341
+        inSlope: 30.858398
+        outSlope: 30.858398
+        tangentMode: 10
+      - time: 0.8333333
+        value: 1.3951
+        inSlope: 30.858398
+        outSlope: 30.858398
+        tangentMode: 10
+      - time: 0.9166667
+        value: 1.3951
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 1.3951
+        inSlope: -9.290396
+        outSlope: -9.290396
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.1533
+        inSlope: -18.580791
+        outSlope: -18.580791
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.0000371933
+        outSlope: -0.0000371933
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.0000030994415
+        inSlope: -0.00001859665
+        outSlope: -0.00001859665
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.0000030994415
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.0000030994415
+        inSlope: -0.078738384
+        outSlope: -0.078738384
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0.021
+        inSlope: 0.011248328
+        outSlope: 0.011248328
+        tangentMode: 10
+      - time: 0.5
+        value: -0.0000030994415
+        inSlope: 0.08998671
+        outSlope: 0.08998671
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.0000030994415
+        inSlope: 0.00000025331974
+        outSlope: 0.00000025331974
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.0000029727817
+        inSlope: 0.00000025331974
+        outSlope: 0.00000025331974
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.0000029727817
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.0000029727817
+        inSlope: 0.00001783668
+        outSlope: 0.00001783668
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0.00003567336
+        outSlope: 0.00003567336
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.302
+        inSlope: 0.00006937981
+        outSlope: 0.00006937981
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.3019942
+        inSlope: 0.000034689903
+        outSlope: 0.000034689903
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.3019942
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.3019942
+        inSlope: -0.24752174
+        outSlope: -0.24752174
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0.368
+        inSlope: 0.035360232
+        outSlope: 0.035360232
+        tangentMode: 10
+      - time: 0.5
+        value: -0.3019942
+        inSlope: 0.28288198
+        outSlope: 0.28288198
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.3019942
+        inSlope: -0.0000123381615
+        outSlope: -0.0000123381615
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.30200037
+        inSlope: -0.0000123381615
+        outSlope: -0.0000123381615
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.30200037
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.30200037
+        inSlope: 0.00000232458
+        outSlope: 0.00000232458
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.302
+        inSlope: 0.00000464916
+        outSlope: 0.00000464916
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 5.779377e-12
+        outSlope: 5.779377e-12
+        tangentMode: 10
+      - time: 0.083333336
+        value: 4.8161475e-13
+        inSlope: 2.8896885e-12
+        outSlope: 2.8896885e-12
+        tangentMode: 10
+      - time: 0.16666667
+        value: 4.8161475e-13
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 4.8161475e-13
+        inSlope: -1.8060554e-12
+        outSlope: -1.8060554e-12
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0
+        inSlope: 2.580077e-13
+        outSlope: 2.580077e-13
+        tangentMode: 10
+      - time: 0.5
+        value: 4.8161475e-13
+        inSlope: 2.0640631e-12
+        outSlope: 2.0640631e-12
+        tangentMode: 10
+      - time: 0.5833333
+        value: 4.8161475e-13
+        inSlope: -1.5512036e-12
+        outSlope: -1.5512036e-12
+        tangentMode: 10
+      - time: 0.8333333
+        value: -2.9398706e-13
+        inSlope: -1.5512036e-12
+        outSlope: -1.5512036e-12
+        tangentMode: 10
+      - time: 0.9166667
+        value: -2.9398706e-13
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -2.9398706e-13
+        inSlope: 1.7639215e-12
+        outSlope: 1.7639215e-12
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 3.527843e-12
+        outSlope: 3.527843e-12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.111899994
+        inSlope: -144.76318
+        outSlope: -144.76318
+        tangentMode: 10
+      - time: 0.083333336
+        value: -12.1755
+        inSlope: -72.38159
+        outSlope: -72.38159
+        tangentMode: 10
+      - time: 0.16666667
+        value: -12.1755
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -12.1755
+        inSlope: 158.52525
+        outSlope: 158.52525
+        tangentMode: 10
+      - time: 0.38333333
+        value: 30.097898
+        inSlope: -22.646439
+        outSlope: -22.646439
+        tangentMode: 10
+      - time: 0.5
+        value: -12.1755
+        inSlope: -181.17169
+        outSlope: -181.17169
+        tangentMode: 10
+      - time: 0.5833333
+        value: -12.1755
+        inSlope: 68.1064
+        outSlope: 68.1064
+        tangentMode: 10
+      - time: 0.8333333
+        value: 21.877699
+        inSlope: 68.1064
+        outSlope: 68.1064
+        tangentMode: 10
+      - time: 0.9166667
+        value: 21.877699
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 21.877699
+        inSlope: -131.93753
+        outSlope: -131.93753
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.111899994
+        inSlope: -263.87506
+        outSlope: -263.87506
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.00009548664
+        outSlope: -0.00009548664
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.00000795722
+        inSlope: -0.00004774332
+        outSlope: -0.00004774332
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.00000795722
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.00000795722
+        inSlope: 0.18377985
+        outSlope: 0.18377985
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0.049
+        inSlope: -0.026254237
+        outSlope: -0.026254237
+        tangentMode: 10
+      - time: 0.5
+        value: -0.00000795722
+        inSlope: -0.21003409
+        outSlope: -0.21003409
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.00000795722
+        inSlope: -0.00000008195639
+        outSlope: -0.00000008195639
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.000007998198
+        inSlope: -0.00000008195639
+        outSlope: -0.00000008195639
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.000007998198
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.000007998198
+        inSlope: 0.000047989168
+        outSlope: 0.000047989168
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0.000095978336
+        outSlope: 0.000095978336
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.672
+        inSlope: 0.00011372566
+        outSlope: 0.00011372566
+        tangentMode: 10
+      - time: 0.083333336
+        value: -0.6719905
+        inSlope: 0.00005686283
+        outSlope: 0.00005686283
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0.6719905
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0.6719905
+        inSlope: -0.14628568
+        outSlope: -0.14628568
+        tangentMode: 10
+      - time: 0.38333333
+        value: -0.711
+        inSlope: 0.020897925
+        outSlope: 0.020897925
+        tangentMode: 10
+      - time: 0.5
+        value: -0.6719905
+        inSlope: 0.16718361
+        outSlope: 0.16718361
+        tangentMode: 10
+      - time: 0.5833333
+        value: -0.6719905
+        inSlope: -0.000027537346
+        outSlope: -0.000027537346
+        tangentMode: 10
+      - time: 0.8333333
+        value: -0.6720043
+        inSlope: -0.000027537346
+        outSlope: -0.000027537346
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.6720043
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -0.6720043
+        inSlope: 0.000025749194
+        outSlope: 0.000025749194
+        tangentMode: 10
+      - time: 1.0833334
+        value: -0.672
+        inSlope: 0.000051498388
+        outSlope: 0.000051498388
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1.5600854e-11
+        outSlope: 1.5600854e-11
+        tangentMode: 10
+      - time: 0.083333336
+        value: 1.3000712e-12
+        inSlope: 7.800427e-12
+        outSlope: 7.800427e-12
+        tangentMode: 10
+      - time: 0.16666667
+        value: 1.3000712e-12
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 1.3000712e-12
+        inSlope: -4.8752673e-12
+        outSlope: -4.8752673e-12
+        tangentMode: 10
+      - time: 0.38333333
+        value: 0
+        inSlope: 6.964659e-13
+        outSlope: 6.964659e-13
+        tangentMode: 10
+      - time: 0.5
+        value: 1.3000712e-12
+        inSlope: 5.571733e-12
+        outSlope: 5.571733e-12
+        tangentMode: 10
+      - time: 0.5833333
+        value: 1.3000712e-12
+        inSlope: -4.8454574e-12
+        outSlope: -4.8454574e-12
+        tangentMode: 10
+      - time: 0.8333333
+        value: -1.1226575e-12
+        inSlope: -4.8454574e-12
+        outSlope: -4.8454574e-12
+        tangentMode: 10
+      - time: 0.9166667
+        value: -1.1226575e-12
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: -1.1226575e-12
+        inSlope: 6.735942e-12
+        outSlope: 6.735942e-12
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 1.3471884e-11
+        outSlope: 1.3471884e-11
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 19.08
+        outSlope: 19.08
+        tangentMode: 10
+      - time: 0.083333336
+        value: 1.59
+        inSlope: 8.16
+        outSlope: 8.16
+        tangentMode: 10
+      - time: 0.16666667
+        value: 1.36
+        inSlope: -9.300001
+        outSlope: -9.300001
+        tangentMode: 10
+      - time: 0.25
+        value: 0.04
+        inSlope: -10.42
+        outSlope: -10.42
+        tangentMode: 10
+      - time: 0.5
+        value: -1.21
+        inSlope: -3.8800006
+        outSlope: -3.8800006
+        tangentMode: 10
+      - time: 0.5833333
+        value: -1.44
+        inSlope: 5.3999996
+        outSlope: 5.3999996
+        tangentMode: 10
+      - time: 0.8333333
+        value: 1.95
+        inSlope: -9.539991
+        outSlope: -9.539991
+        tangentMode: 10
+      - time: 0.9166667
+        value: -0.77
+        inSlope: -22.139994
+        outSlope: -22.139994
+        tangentMode: 10
+      - time: 1
+        value: -1.74
+        inSlope: 4.619993
+        outSlope: 4.619993
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 20.87999
+        outSlope: 20.87999
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 3.72
+        outSlope: 3.72
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0.31
+        inSlope: 10.019999
+        outSlope: 10.019999
+        tangentMode: 10
+      - time: 0.16666667
+        value: 1.67
+        inSlope: 14.58
+        outSlope: 14.58
+        tangentMode: 10
+      - time: 0.25
+        value: 2.74
+        inSlope: 5.5200005
+        outSlope: 5.5200005
+        tangentMode: 10
+      - time: 0.5
+        value: 2.29
+        inSlope: -12.120003
+        outSlope: -12.120003
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0.42
+        inSlope: -16.600002
+        outSlope: -16.600002
+        tangentMode: 10
+      - time: 0.8333333
+        value: -2.27
+        inSlope: -12.579997
+        outSlope: -12.579997
+        tangentMode: 10
+      - time: 0.9166667
+        value: -3.47
+        inSlope: 5.580035
+        outSlope: 5.580035
+        tangentMode: 10
+      - time: 1
+        value: -1.339995
+        inSlope: 20.82
+        outSlope: 20.82
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 16.079933
+        outSlope: 16.079933
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.083333336
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.16666667
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.5833333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.8333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.9166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.0833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _torso/spt_Alien_Bee_torso01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04/spt_Alien_Bee_sting
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _torso/spt_Alien_Bee_torso01/spt_Alien_Bee_torso02/spt_Alien_Bee_torso03/spt_Alien_Bee_torso04
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _torso
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events: []

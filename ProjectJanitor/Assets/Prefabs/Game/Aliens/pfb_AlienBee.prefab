@@ -107,6 +107,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434736}
+  - 95: {fileID: 9550870}
   m_Layer: 0
   m_Name: BeeRig
   m_TagString: Untagged
@@ -248,7 +249,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194776}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0022374901, w: 0.9999975}
   m_LocalPosition: {x: 0, y: -0.083, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -285,7 +286,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0011963625, w: 0.99999934}
   m_LocalPosition: {x: 0, y: -0.303, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -312,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.16, y: 0, z: 16.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434736}
@@ -337,7 +338,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124536}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0013377386, w: 0.9999991}
   m_LocalPosition: {x: 0, y: -0.302, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -390,7 +391,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116890}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.00097652676, w: 0.9999995}
   m_LocalPosition: {x: 0, y: -0.672, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -402,7 +403,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0018596137, w: 0.99999833}
   m_LocalPosition: {x: 0, y: -0.373, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -463,6 +464,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.73, y: 1, z: 1.27}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9550870
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130486}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a80eff6853141674ea34b21f785b3d59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11403786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -499,16 +517,16 @@ MonoBehaviour:
   destroyOnDeath: 1
   saveOnDeath: 1
   invincible: 0
-  optionalAnimator: {fileID: 0}
-  optionalDisplay: {fileID: 0}
+  optionalAnimator: {fileID: 9550870}
+  entityDisplay: {fileID: 0}
   onDamageSound: {fileID: 0}
   onDieSound: {fileID: 0}
   onArmorBreakSound: {fileID: 0}
   onHealSound: {fileID: 0}
   onRepairSound: {fileID: 0}
-  sensor: {fileID: 0}
-  rigging: {fileID: 0}
   target: {fileID: 0}
+  sensor: {fileID: 0}
+  rigging: {fileID: 9550870}
   lineOfSightMask:
     serializedVersion: 2
     m_Bits: 768
@@ -546,7 +564,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 12.35
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &19517786
 NavMeshAgent:
@@ -556,7 +574,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 118840}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -893,7 +911,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Speed
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
@@ -930,6 +948,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxDistanceFromSpawn
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rigging
+      value: 
+      objectReference: {fileID: 9550870}
+    - target: {fileID: 0}
+      propertyPath: optionalAnimator
+      value: 
+      objectReference: {fileID: 9550870}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -20,10 +20,14 @@ namespace GalacticJanitor.Game
         protected NavMeshAgent pathfinder;
         EnemyState state = EnemyState.IDLE;
 
-        public Transform sensor;
-        public Animator rigging;
+        [HideInInspector]
         public Transform target;
 
+        [Header("Passed params")]
+        public Transform sensor;
+        public Animator rigging;
+        float m_idleOffset;
+        
         [Header("Behavior", order = 0)]
         public LayerMask lineOfSightMask;
         public float maxAttackRange;
@@ -36,7 +40,7 @@ namespace GalacticJanitor.Game
         public int remainingHealthToEnrage;
         public int enrageModifier;
 
-        [Header("Sounds", order = 3)]
+        [Header("Alien Sounds", order = 3)]
         public AudioSource onAttackSound;
         public AudioSource onMoveSound;
         public AudioSource onAggroSound;
@@ -55,6 +59,10 @@ namespace GalacticJanitor.Game
             base.Start();
             baseSpeed = pathfinder.speed;
             spawn = transform.position;
+            if (rigging)
+            {
+                rigging.SetFloat("offset", UnityEngine.Random.Range(0f, 1f));
+            }
         }
 
         void Update()
