@@ -8,6 +8,7 @@ namespace MonoPersistency
     public class GameRegistery
     {
         public RegisterySnapshot m_snapshot;
+        public bool m_firstRegistering = true;
         public DataContainer m_player;
         public Dictionary<int, SceneData> m_scenes { get; private set; }
 

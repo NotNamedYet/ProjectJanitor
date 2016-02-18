@@ -240,6 +240,12 @@ namespace GalacticJanitor.Game
         {
             if (container != null)
             {
+                if (SaveSystem.Registery.m_firstRegistering)
+                {
+                    SaveSystem.Registery.m_firstRegistering = false;
+                    return;
+                }
+
                 Debug.Log("Loading player...");
                 //entity restore
                 m_entity = container.GetValue<EntityBook>("ent");

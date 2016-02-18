@@ -6,17 +6,18 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
 
-    public Canvas quitMenu;
+    public GameObject quitMenu;
+    public GameObject menuButtons;
+    public GameObject commandsPanel;
+
     public Button startGame;
     public Button exitGame;
+    public Button commandsButton;
+    public Button backButton;
 
     // Use this for initialization
     void Start()
     {
-        quitMenu = quitMenu.GetComponent<Canvas>();
-        startGame = startGame.GetComponent<Button>();
-        exitGame = exitGame.GetComponent<Button>();
-        quitMenu.enabled = false;
     }
 
     void Update()
@@ -28,9 +29,14 @@ public class MenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            if (quitMenu.enabled == true)
+            if (quitMenu.activeInHierarchy)
             {
                 NoButtonPress();
+            }
+            else if (commandsPanel.activeInHierarchy)
+            {
+                commandsPanel.SetActive(false);
+                menuButtons.SetActive(true);
             }
             else
             {
@@ -39,16 +45,22 @@ public class MenuScript : MonoBehaviour
         }
     }
 
+    public void CommandsPress()
+    {
+        commandsPanel.SetActive(true);
+        menuButtons.SetActive(false);
+    }
+
     public void QuitGamePress()
     {
-        quitMenu.enabled = true;
+        quitMenu.SetActive(true);
         startGame.enabled = false;
         exitGame.enabled = false;
     }
 
     public void NoButtonPress()
     {
-        quitMenu.enabled = false;
+        quitMenu.SetActive(false);
         startGame.enabled = true;
         exitGame.enabled = true;
     }
@@ -56,7 +68,7 @@ public class MenuScript : MonoBehaviour
     public void NewGamePress()
     {
         //Application.LoadLevel("scn_CharSelection");
-        SceneManager.LoadScene("scn_CharSelection");
+        SceneManager.LoadScene(1);
     }
 
     public void LoadMenu()
@@ -72,7 +84,15 @@ public class MenuScript : MonoBehaviour
 
     public void BackButtonPress()
     {
-        SceneManager.LoadScene("scn_MainMenu");
+        if (commandsPanel.activeInHierarchy)
+        {
+            commandsPanel.SetActive(false);
+            menuButtons.SetActive(true);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
 }
