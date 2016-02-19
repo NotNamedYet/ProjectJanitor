@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    public ContextButton controlsBB;
+    public ContextButton noQB;
 
     public GameObject quitMenu;
     public GameObject menuButtons;
     public GameObject commandsPanel;
 
     public Button startGame;
-    public Button exitGame;
+    public Button loadGame;
     public Button commandsButton;
+    public Button exitGame;
     public Button backButton;
 
     // Use this for initialization
@@ -54,15 +57,14 @@ public class MenuScript : MonoBehaviour
     public void QuitGamePress()
     {
         quitMenu.SetActive(true);
-        startGame.enabled = false;
-        exitGame.enabled = false;
+        InteractableOff();
     }
 
     public void NoButtonPress()
     {
+        noQB.OutContextButton();
         quitMenu.SetActive(false);
-        startGame.enabled = true;
-        exitGame.enabled = true;
+        InteractableOn();
     }
 
     public void NewGamePress()
@@ -86,6 +88,7 @@ public class MenuScript : MonoBehaviour
     {
         if (commandsPanel.activeInHierarchy)
         {
+            controlsBB.OutContextButton();
             commandsPanel.SetActive(false);
             menuButtons.SetActive(true);
         }
@@ -93,6 +96,24 @@ public class MenuScript : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+    }
+
+    public void InteractableOn()
+    {
+        startGame.interactable = true;
+        loadGame.interactable = true;
+        commandsButton.interactable = true;
+        exitGame.interactable = true;
+        menuButtons.GetComponent<AudioSource>().mute = false;
+    }
+
+    public void InteractableOff()
+    {
+        startGame.interactable = false;
+        loadGame.interactable = false;
+        commandsButton.interactable = false;
+        exitGame.interactable = false;
+        menuButtons.GetComponent<AudioSource>().mute = true;
     }
 
 }
