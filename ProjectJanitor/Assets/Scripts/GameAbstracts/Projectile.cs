@@ -11,7 +11,7 @@ namespace GalacticJanitor.Game
         public int baseDamage;
         public float baseSpeed;
 
-        void Awake()
+        protected virtual void Awake()
         {
             transform.SetParent(GameController.ProjectileHolder);
         }
