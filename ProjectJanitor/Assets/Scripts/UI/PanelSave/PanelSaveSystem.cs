@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using GalacticJanitor.Engine;
 using MonoPersistency;
+using System.Collections.Generic;
 
 namespace GalacticJanitor.UI
 {
@@ -16,16 +17,22 @@ namespace GalacticJanitor.UI
         //public Text headerLabel;
         public Text validationButtonLabel;
 
-        [HideInInspector]
+        
         public RegisterySnapshot selectedSnapshot;
 
         //[HideInInspector]
         public bool newSave;
 
-        
+        List<Button> population;
+
+        void Awake()
+        {
+            population = new List<Button>();
+        }
 
         void Start()
         {
+
             if (saveContext())
             {
                 //headerLabel.text = "save game";
@@ -72,15 +79,18 @@ namespace GalacticJanitor.UI
         {
             if (newSave)
             {
+                Debug.Log("NewSave");
                 SaveSystem.SaveAndWrite(true);
             }
             else
             {
                 if (selectedSnapshot != null)
                 {
-                    SaveSystem.SaveAndWrite(false);
+                    Debug.Log("OverrideSave");
+                    SaveSystem.SaveAndWrite(selectedSnapshot);
                 }
             }
+            Refresh();
         }
 
         public void AllowValidation(bool value)
@@ -97,9 +107,10 @@ namespace GalacticJanitor.UI
             {
                 Button button = InstanciateButton();
                 PanelSaveButton psb = button.GetComponent<PanelSaveButton>();
-                psb.panel = this;
+                psb.m_PanelHolder = this;
                 psb.newSave = true;
-                psb.label.text = "new Save";
+                psb.m_LabelText.text = "new Save";
+                psb.m_TimePlayedText.text = "";
             }
             GenerateSnapshotButtons();
         }
@@ -114,9 +125,10 @@ namespace GalacticJanitor.UI
                 Button button = InstanciateButton();
 
                 PanelSaveButton psb = button.GetComponent<PanelSaveButton>();
-                psb.panel = this;
-                psb.label.text = snap.m_identifier;
-                psb.linkedSnap = snap;
+                psb.m_PanelHolder = this;
+                psb.m_LabelText.text = snap.m_currentScene;
+                psb.m_TimePlayedText.text = snap.FormatTimePlayed;
+                psb.m_ContextSnap = snap;
 
                 if (panelContext == PanelContext.SAVE)
                     psb.newSave = false;
@@ -130,10 +142,24 @@ namespace GalacticJanitor.UI
             button.transform.SetParent(dynamicContentHolder.transform);
             button.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
 
+            population.Add(button);
+
             return button;
         }
 
-        
+        public void Refresh()
+        {
+            if (population.Count > 0)
+            {
+                foreach(Button btn in population)
+                {
+                    Destroy(btn.gameObject);
+                }
+                population.Clear();
+            }
+
+            PopupateList();
+        }
 
         public enum PanelContext {
             SAVE,

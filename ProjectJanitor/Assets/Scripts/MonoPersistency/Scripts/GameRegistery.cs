@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using GalacticJanitor.Game;
+using System.Text;
 
 namespace MonoPersistency
 {
@@ -35,6 +36,61 @@ namespace MonoPersistency
         public string m_identifier;
         public string m_currentScene;
         public long m_timePlayed;
+
+        public string FormatTimePlayed
+        {
+            get
+            {
+                return FormatTime();
+            }
+        }
+
+        string FormatTime()
+        {
+            long secs = 0, mins = 0, hrs = 0, days = 0;
+
+            secs = m_timePlayed % 60;
+            mins = m_timePlayed / 60;
+
+            if (mins > 60)
+            {
+                hrs = mins / 60;
+                mins %= 60;
+
+                if (hrs > 60)
+                {
+                    days = hrs / 24;
+                    hrs %= 24;
+                }
+            }
+
+            StringBuilder buffer = new StringBuilder();
+
+            if (days > 0)
+            {
+                buffer.Append(days).Append('d');
+
+                if (hrs > 0)
+                    buffer.Append(' ').Append(hrs).Append('h');
+
+            }
+            else if (hrs > 0)
+            {
+                buffer.Append(hrs).Append('h');
+
+                if (mins > 0)
+                    buffer.Append(' ').Append(mins).Append('m');
+            }
+            else
+            {
+                buffer.Append(mins).Append("m");
+
+                if (secs > 0)
+                    buffer.Append(' ').Append(secs).Append('s');
+            }
+
+            return buffer.ToString();
+        }
     }
 
     [System.Serializable]

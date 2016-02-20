@@ -8,27 +8,28 @@ namespace GalacticJanitor.UI
     public class PanelSaveButton : MonoBehaviour
     {
         
-        public Text label;
-        public RegisterySnapshot linkedSnap;
-        public PanelSaveSystem panel;
+        public Text m_LabelText;
+        public Text m_TimePlayedText;
+        public RegisterySnapshot m_ContextSnap;
+        public PanelSaveSystem m_PanelHolder;
         public bool newSave = true;
 
 
         public void SetSelected()
         {
 
-            if (panel.panelContext == PanelSaveSystem.PanelContext.LOAD)
+            if (m_PanelHolder.panelContext == PanelSaveSystem.PanelContext.LOAD)
             {
-                panel.selectedSnapshot = linkedSnap;
-                panel.AllowValidation(true);
+                m_PanelHolder.selectedSnapshot = m_ContextSnap;
+                m_PanelHolder.AllowValidation(true);
             }
             else
             {
                 if (!newSave)
-                    panel.selectedSnapshot = linkedSnap;
+                    m_PanelHolder.selectedSnapshot = m_ContextSnap;
 
-                panel.newSave = newSave;
-                panel.AllowValidation(true);
+                m_PanelHolder.newSave = newSave;
+                m_PanelHolder.AllowValidation(true);
             }
 
         }
