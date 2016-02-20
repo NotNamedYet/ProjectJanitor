@@ -79,6 +79,7 @@ GameObject:
   - 54: {fileID: 5423960}
   - 135: {fileID: 13561322}
   - 95: {fileID: 9516860}
+  - 208: {fileID: 20864274}
   m_Layer: 8
   m_Name: pfb_SgtHartman
   m_TagString: Player
@@ -549,7 +550,8 @@ MonoBehaviour:
   saveOnDeath: 0
   invincible: 0
   optionalAnimator: {fileID: 9516860}
-  optionalDisplay: {fileID: 0}
+  entityDisplay: {fileID: 0}
+  deathloot: {fileID: 0}
   onDamageSound: {fileID: 0}
   onDieSound: {fileID: 0}
   onArmorBreakSound: {fileID: 0}
@@ -564,8 +566,10 @@ MonoBehaviour:
   justHaveShoot: 0
   timerActiveJustHaveShoote: 0
   timerJustHaveShoot: 0.5
-  display: {fileID: 0}
+  playerDisplay: {fileID: 0}
   m_HUD: {fileID: 0}
+  weapCCarter: {fileID: 0}
+  weapCHartman: {fileID: 0}
   score:
     enemyKilled: 0
 --- !u!114 &11434664
@@ -643,6 +647,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.91
   m_Center: {x: 0, y: 0, z: 0.45}
+--- !u!208 &20864274
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119372}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.62, y: 2.355, z: 1.62}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.47}
+  m_TimeToStationary: 0.5
 --- !u!212 &21211674
 SpriteRenderer:
   m_ObjectHideFlags: 1
