@@ -155,6 +155,7 @@ GameObject:
   - 195: {fileID: 19528746}
   - 54: {fileID: 5419912}
   - 114: {fileID: 11426176}
+  - 114: {fileID: 11474548}
   m_Layer: 10
   m_Name: pfb_AlienAlpha
   m_TagString: Alien
@@ -448,15 +449,16 @@ MonoBehaviour:
   saveOnDeath: 1
   invincible: 0
   optionalAnimator: {fileID: 9538344}
-  optionalDisplay: {fileID: 0}
+  entityDisplay: {fileID: 0}
+  deathloot: {fileID: 0}
   onDamageSound: {fileID: 0}
   onDieSound: {fileID: 0}
   onArmorBreakSound: {fileID: 0}
   onHealSound: {fileID: 0}
   onRepairSound: {fileID: 0}
+  target: {fileID: 0}
   sensor: {fileID: 489386}
   rigging: {fileID: 9538344}
-  target: {fileID: 0}
   lineOfSightMask:
     serializedVersion: 2
     m_Bits: 768
@@ -483,6 +485,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+--- !u!114 &11474548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cf131085d085b488386532b91283d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lootChances: 0.64
+  m_minRandomAmount: 25
+  m_maxRandomAmount: 30
+  m_armor: {fileID: 11442928, guid: 8e829166a827d724f907ad0c15fece41, type: 2}
+  m_health: {fileID: 11445416, guid: dbb89fa07d4554640ace3ad922c53b38, type: 2}
 --- !u!114 &11493476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -814,6 +832,28 @@ Prefab:
       propertyPath: maxDistanceFromSpawn
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_lootChances
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_minRandomAmount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxRandomAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_armor
+      value: 
+      objectReference: {fileID: 11442928, guid: 8e829166a827d724f907ad0c15fece41,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_health
+      value: 
+      objectReference: {fileID: 11445416, guid: dbb89fa07d4554640ace3ad922c53b38,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166484}

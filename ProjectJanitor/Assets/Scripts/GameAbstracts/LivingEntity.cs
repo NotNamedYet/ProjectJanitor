@@ -51,6 +51,9 @@ namespace GalacticJanitor.Game
         [Header("GUI")]
         public EntityResourceDisplay entityDisplay;
 
+        [HideInInspector]
+        public DeathLoot deathloot;
+
         [Header("Entity Sounds")]
         public AudioSource onDamageSound;
         public AudioSource onDieSound;
@@ -206,6 +209,9 @@ namespace GalacticJanitor.Game
 
             if (destroyOnDeath)
             {
+                if (deathloot)
+                    deathloot.SpawnLoot();
+
                 Destroy(gameObject);
             }
         }
