@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
@@ -60,7 +61,7 @@ namespace GalacticJanitor.Game
         void Update()
         {
             UpdateReloadTimer();
-			if (!Engine.GameController.IsPause())
+			if (!GameController.PausedGame)
             {
                 UpdateInput(); 
             }

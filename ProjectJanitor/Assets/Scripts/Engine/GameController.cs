@@ -25,15 +25,6 @@ namespace GalacticJanitor.Engine
         }
 
         /// <summary>
-        /// true if the game is Paused.
-        /// </summary>
-        /// <returns></returns>
-        public static bool IsPause()
-        {
-            return IsPauseGame;
-        }
-
-        /// <summary>
         /// Staticaly return the actual StageLoader for the current scene.
         /// </summary>
         public static StageLoader StageLoader
@@ -120,8 +111,6 @@ namespace GalacticJanitor.Engine
             }
         }
 
-        public bool isInPause = false;
-
         void Awake()
         {
 
@@ -141,7 +130,7 @@ namespace GalacticJanitor.Engine
         {
             if (Input.GetKeyDown("escape"))
             {
-                if (!IsPauseGame) EnterPause();
+                if (!PausedGame) EnterPause();
                 else ExitPause();
             }
         }
@@ -161,14 +150,14 @@ namespace GalacticJanitor.Engine
         public static event PressPauseButton EnterPauseEvent;
         public static event PressPauseButton ExitPauseEvent;
 
-        public static bool IsPauseGame { get; private set; }
+        public static bool PausedGame { get; private set; }
 
         public static void EnterPause()
         {
-            if (!IsPauseGame)
+            if (!PausedGame)
             {
                 Time.timeScale = 0;
-                IsPauseGame = true;
+                PausedGame = true;
                 if(EnterPauseEvent != null)
                 {
                     EnterPauseEvent();
@@ -178,10 +167,10 @@ namespace GalacticJanitor.Engine
 
         public static void ExitPause()
         {
-            if (IsPauseGame)
+            if (PausedGame)
             {
                 Time.timeScale = 1;
-                IsPauseGame = false;
+                PausedGame = false;
                 if(ExitPauseEvent != null)
                 {
                     ExitPauseEvent();

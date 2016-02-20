@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
@@ -10,7 +11,10 @@ namespace GalacticJanitor.Game
 
         void Update()
         {
-            AngleLook(transform.up);
+            if (!GameController.PausedGame)
+            {
+                AngleLook(transform.up);
+            }
         }
 
         void AngleLook(Vector3 forward)
