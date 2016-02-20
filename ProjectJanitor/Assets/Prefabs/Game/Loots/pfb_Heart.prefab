@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.28, y: 0, z: -5.73}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 435902}
@@ -85,6 +85,7 @@ MonoBehaviour:
   useRandomAmount: 1
   minRangeToRandom: 10
   maxRangeToRandom: 20
+  m_spinDistance: 40
 --- !u!212 &21225848
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -145,6 +146,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: amount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_spinDistance
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
