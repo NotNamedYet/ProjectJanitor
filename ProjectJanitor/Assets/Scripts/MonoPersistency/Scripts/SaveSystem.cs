@@ -142,7 +142,7 @@ namespace MonoPersistency
         public static RegisterySnapshot[] LoadSnapshots()
         {
             BinaryFormatter serializer = new BinaryFormatter();
-            List<RegisterySnapshot> snaps = new List<RegisterySnapshot>(1);
+            List<RegisterySnapshot> snaps = new List<RegisterySnapshot>();
             string dirPath = Application.persistentDataPath + "/saves/";
 
             if (!Directory.Exists(dirPath))
@@ -160,6 +160,10 @@ namespace MonoPersistency
                     stream.Close();
                 }
             }
+
+            snaps.Sort();
+            snaps.Reverse();
+
             return snaps.ToArray();
         }
 
@@ -171,6 +175,7 @@ namespace MonoPersistency
 
         private static void WriteRegistery()
         {
+            Registery.m_snapshot.m_lastUpdate = DateTime.Now.ToBinary();
             Write(Registery.m_snapshot.m_identifier);
         }
 
