@@ -8,6 +8,8 @@ namespace GalacticJanitor.Game
 
         public AlienBase alien;
 
+        void Start() { }
+
         void OnTriggerEnter(Collider other)
         {
             if (alien == null) return;
