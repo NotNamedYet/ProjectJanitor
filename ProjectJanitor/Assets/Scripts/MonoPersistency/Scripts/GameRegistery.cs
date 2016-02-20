@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using GalacticJanitor.Game;
 using System.Text;
+using System;
 
 namespace MonoPersistency
 {
@@ -16,6 +17,7 @@ namespace MonoPersistency
         public GameRegistery(string startlevel)
         {
             m_snapshot = new RegisterySnapshot();
+            m_snapshot.m_lastUpdate = DateTime.Now.ToBinary();
             m_snapshot.m_currentScene = startlevel;
             NewID();
             m_scenes = new Dictionary<int, SceneData>();
@@ -31,11 +33,12 @@ namespace MonoPersistency
     } 
 
     [System.Serializable]
-    public class RegisterySnapshot
+    public class RegisterySnapshot : IComparable<RegisterySnapshot>
     {
         public string m_identifier;
         public string m_currentScene;
         public long m_timePlayed;
+        public long m_lastUpdate;
 
         public string FormatTimePlayed
         {
@@ -90,6 +93,11 @@ namespace MonoPersistency
             }
 
             return buffer.ToString();
+        }
+
+        public int CompareTo(RegisterySnapshot other)
+        {
+            return m_lastUpdate.CompareTo(other.m_lastUpdate);
         }
     }
 
