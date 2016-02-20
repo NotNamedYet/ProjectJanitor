@@ -12,7 +12,7 @@ public abstract class ResourceLoot : MonoBehaviour {
     public int maxRangeToRandom;
 
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         if (useRandomAmount)
             amount = MakeRandomAmount(minRangeToRandom, maxRangeToRandom);
