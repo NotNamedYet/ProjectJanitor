@@ -1,65 +1,25 @@
 using UnityEngine;
 using System.Collections;
+using System;
+using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
 
-    public class HeartManager : MonoBehaviour
+    public class HeartManager : ResourceLoot
     {
-
-        public int amount;
-
-        [Tooltip("Check it if you want a random number, use min and maxRangeToRandom")]
-        public bool useRandomAmount;
-        public int minRangeToRandom;
-        public int maxRangeToRandom;
-
-        // Use this for initialization
-        void Start()
+        protected override void OnLoot(PlayerController entity)
         {
-            if (useRandomAmount)
-                amount = MakeRandomAmount(minRangeToRandom, maxRangeToRandom);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            transform.Rotate(new Vector3(0, 1, 0));
-
-            if (amount <= 0)
+            if (entity.Heal(amount))
             {
                 Destroy(gameObject);
+                GameController.NotifyPlayer("Health +" + amount, Color.green, 2);
             }
-        }
 
-        void OnTriggerEnter(Collider other)
-        {
-            if (other.tag == "Player" && other.GetComponent<LivingEntity>())
+            else
             {
-                LivingEntity target = other.GetComponent<LivingEntity>();
-                if (target.Heal(amount))
-                {
-                    Destroy(gameObject);
-                    Debug.Log("I was a heart and i healed a marine with " + amount + " hp");
-                }
-
-                else
-                {
-                    Debug.Log("Marine is full life");
-                }
+                GameController.NotifyPlayer("Health full", Color.green, 2);
             }
-        }
-
-        /// <summary>
-        /// Use to make a random amount, if the flag useRandomAmount is checked.
-        /// </summary>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        /// <returns></returns>
-        public int MakeRandomAmount(int min, int max)
-        {
-            int result = Random.Range(min - 1, max + 1);
-            return result;
         }
     }
 }

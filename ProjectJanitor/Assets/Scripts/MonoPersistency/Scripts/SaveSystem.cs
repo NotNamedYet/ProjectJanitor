@@ -421,7 +421,7 @@ namespace MonoPersistency
                 foreach (RegisterySnapshot rs in snaps)
                 {
                     GUI.Label(new Rect(120, pos, 100, 20), "Sc:" + rs.m_currentScene);
-                    GUI.Label(new Rect(230, pos, 100, 20), "Tp:" + rs.m_timePlayed);
+                    GUI.Label(new Rect(230, pos, 100, 20), "Tp:" + rs.FormatTimePlayed);
                     if (GUI.Button(new Rect(10, pos, 100, 20), "save " + index))
                     {
                         LoadGame(rs);
