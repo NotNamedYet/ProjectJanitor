@@ -6,7 +6,7 @@ namespace GalacticJanitor.Game
     {
         protected override void OnHit(RaycastHit hit)
         {
-            if (hit.collider.tag == "Player")
+            if (hit.collider.CompareTag("Player"))
             {
                 LivingEntity entity = hit.collider.GetComponent<LivingEntity>();
                 entity.TakeDirectDamage(baseDamage);

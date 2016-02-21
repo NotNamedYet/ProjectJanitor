@@ -10,10 +10,10 @@ namespace GalacticJanitor.Game
         [Tooltip("Manage there the ref to aliens you want in the patrol")]
         public List<AlienMoveUnderGrid> patrol;
 
-        void Update()
+        /*void Update()
         {
             if (patrol.Count == 0) Destroy(gameObject); // Each alien have a function to remove itself from patrol List, when it reaches its goal
-        }
+        }*/
 
         public void RunBabiesRun()
         {
