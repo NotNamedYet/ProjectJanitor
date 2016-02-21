@@ -149,7 +149,7 @@ namespace GalacticJanitor.Game
                     Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
                     GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
                     GrenadeController gctrl = grenade.GetComponent<GrenadeController>();
-                    gctrl.grenadeDmg = grenadesDmg;
+                    gctrl.baseDamage = grenadesDmg;
                     gctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
                     magazineGrenade--;
                     playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
@@ -174,7 +174,7 @@ namespace GalacticJanitor.Game
                         Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
                         GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
                         BulletController bctrl = bullet.GetComponent<BulletController>();
-                        bctrl.bulletDmg = bulletsDmg;
+                        bctrl.baseDamage = bulletsDmg;
                         bctrl.SetSource(gameObject); // Use to assign the marine as target to the alien
                         magazineBullet--;
                         canConstantFireNextBullet = false;

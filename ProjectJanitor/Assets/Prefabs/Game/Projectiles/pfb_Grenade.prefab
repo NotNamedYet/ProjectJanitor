@@ -97,10 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdabb5bc51583a4595ee7504b1da47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 136324, guid: f60cdc5a2fea702458d872f0eb665ddf, type: 2}
-  speed: 5
-  destroyTime: 2.5
-  grenadeDmg: 0
+  colliderMask:
+    serializedVersion: 2
+    m_Bits: 1536
+  maxLifetime: 2.5
+  baseDamage: 0
+  baseSpeed: 120
+  explosion: {fileID: 11469828, guid: f60cdc5a2fea702458d872f0eb665ddf, type: 2}
   damageSource: {fileID: 0}
 --- !u!212 &21296938
 SpriteRenderer:
@@ -174,7 +177,8 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: explosion
       value: 
-      objectReference: {fileID: 136324, guid: f60cdc5a2fea702458d872f0eb665ddf, type: 2}
+      objectReference: {fileID: 11469828, guid: f60cdc5a2fea702458d872f0eb665ddf,
+        type: 2}
     - target: {fileID: 0}
       propertyPath: m_Drag
       value: 1
@@ -206,6 +210,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Interpolate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colliderMask.m_Bits
+      value: 1536
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxLifetime
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: baseSpeed
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

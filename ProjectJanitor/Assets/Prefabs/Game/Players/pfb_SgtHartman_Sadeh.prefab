@@ -627,7 +627,10 @@ MonoBehaviour:
   invincible: 0
   optionalAnimator: {fileID: 9516860}
   entityDisplay: {fileID: 0}
+<<<<<<< HEAD
   deathloot: {fileID: 0}
+=======
+>>>>>>> dev01
   onDamageSound: {fileID: 0}
   onDieSound: {fileID: 0}
   onArmorBreakSound: {fileID: 0}
@@ -718,7 +721,7 @@ MonoBehaviour:
   bulletsDmg: 1
   grenadesDmg: 2
   chokes: {fileID: 400326}
-  flashShoot: {fileID: 0}
+  flashShoot: {fileID: 127294, guid: 02c51482417645d43af4d0df8730c8da, type: 2}
   canBurstTimer: 0.2
   canBurstTimerActive: 0
   burstModeIsActive: 0
@@ -1144,6 +1147,10 @@ Prefab:
       propertyPath: m_entity.maxArmor
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flashShoot
+      value: 
+      objectReference: {fileID: 127294, guid: 02c51482417645d43af4d0df8730c8da, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119372}

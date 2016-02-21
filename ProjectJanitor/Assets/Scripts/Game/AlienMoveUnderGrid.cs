@@ -41,7 +41,12 @@ namespace GalacticJanitor.Game
 
         void KillBabie()
         {
-            gameObject.GetComponentInParent<AlienPatrolUnderGridManager>().patrol.Remove(this);
+            GetComponentInParent<AlienPatrolUnderGridManager>().patrol.Remove(this);
+            if (GetComponentInParent<AlienPatrolUnderGridManager>().patrol.Count == 0)
+            {
+                Destroy(GetComponentInParent<AlienPatrolUnderGridManager>().gameObject);
+            }
+
             Destroy(gameObject);
         }
     }

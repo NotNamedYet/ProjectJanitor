@@ -19,7 +19,7 @@ namespace GalacticJanitor.Game
         [Tooltip("Used by particle named \"pfx_FlashShoot\"")]
         public GameObject flashShoot;
 
-        public PlayerAmmo playerAmmo;
+        PlayerAmmo playerAmmo;
 
         // Use this for initialization
         void Start()
@@ -54,7 +54,7 @@ namespace GalacticJanitor.Game
 
                 }
 
-                bul.bulletDmg = bulletsDmg;
+                bul.baseDamage = bulletsDmg;
                 bul.SetSource(gameObject);
                 magazine--;
 
