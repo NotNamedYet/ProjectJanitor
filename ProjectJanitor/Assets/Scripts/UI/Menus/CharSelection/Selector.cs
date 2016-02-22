@@ -10,6 +10,8 @@ public class Selector : MonoBehaviour {
     public Image cursorHighlight;
     public Selector other;
 
+    public Text charName;
+
     public bool selected;
 
     // Use this for initialization
@@ -30,6 +32,9 @@ public class Selector : MonoBehaviour {
         cursorHighlight.GetComponent<Image>().color = Color.red;
         charSel.selectedMarine = marines;
         charSel.startButton.interactable = true;
+        charName.text = marines.ToString();
+        if (charName.text == "SgtHartman") charName.text = "Ricky Sofredo";
+        else charName.text = "Clara Freegirl";
     }
 
     public void SelectedOn()
