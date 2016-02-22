@@ -158,14 +158,10 @@ public class PauseMenu : MonoBehaviour {
     {
         loadPanel.SetActive(false);
     }
-    /*
-        public void QuitPress()
-        {
-            GameController.ExitPause();
-            GameController.LoadScene("scn_MainMenu");
-        }
-    */
 
-    // Use this for initialization
-
+    public void QuitPress()
+    {
+        GameController.ExitPause();
+        SceneManager.LoadScene(0);
+    }
 }
