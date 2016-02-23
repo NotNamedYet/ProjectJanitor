@@ -1,0 +1,4269 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: anm_AlienBoss_Move
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.22029999}
+        inSlope: {x: 0, y: 0, z: -51.6636}
+        outSlope: {x: 0, y: 0, z: -51.6636}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -13.1362}
+        inSlope: {x: 0, y: 0, z: -0.89770126}
+        outSlope: {x: 0, y: 0, z: -0.89770126}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: 11.797899}
+        inSlope: {x: 0, y: 0, z: 0.89770126}
+        outSlope: {x: 0, y: 0, z: 0.89770126}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -0.22029999}
+        inSlope: {x: 0, y: 0, z: -48.072796}
+        outSlope: {x: 0, y: 0, z: -48.072796}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0.1112}
+        inSlope: {x: 0, y: 0, z: -96.1448}
+        outSlope: {x: 0, y: 0, z: -96.1448}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -23.925}
+        inSlope: {x: 0, y: 0, z: 3.5610008}
+        outSlope: {x: 0, y: 0, z: 3.5610008}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: 27.708399}
+        inSlope: {x: 0, y: 0, z: -3.560997}
+        outSlope: {x: 0, y: 0, z: -3.560997}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 0.1112}
+        inSlope: {x: 0, y: 0, z: -110.388794}
+        outSlope: {x: 0, y: 0, z: -110.388794}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.033099998}
+        inSlope: {x: 0, y: 0, z: 102.3292}
+        outSlope: {x: 0, y: 0, z: 102.3292}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 25.5492}
+        inSlope: {x: 0, y: 0, z: -8.117397}
+        outSlope: {x: 0, y: 0, z: -8.117397}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: -33.7328}
+        inSlope: {x: 0, y: 0, z: 8.117401}
+        outSlope: {x: 0, y: 0, z: 8.117401}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -0.033099998}
+        inSlope: {x: 0, y: 0, z: 134.7988}
+        outSlope: {x: 0, y: 0, z: 134.7988}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0.8049}
+        inSlope: {x: 0, y: 0, z: 161.53119}
+        outSlope: {x: 0, y: 0, z: 161.53119}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 41.1877}
+        inSlope: {x: 0, y: 0, z: 11.846596}
+        outSlope: {x: 0, y: 0, z: 11.846596}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: -27.731298}
+        inSlope: {x: 0, y: 0, z: -11.846603}
+        outSlope: {x: 0, y: 0, z: -11.846603}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 0.8049}
+        inSlope: {x: 0, y: 0, z: 114.14479}
+        outSlope: {x: 0, y: 0, z: 114.14479}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.2905}
+        inSlope: {x: 0, y: 0, z: -74.37119}
+        outSlope: {x: 0, y: 0, z: -74.37119}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -18.883299}
+        inSlope: {x: 0, y: 0, z: -1.3253975}
+        outSlope: {x: 0, y: 0, z: -1.3253975}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: 16.9769}
+        inSlope: {x: 0, y: 0, z: 1.3253975}
+        outSlope: {x: 0, y: 0, z: 1.3253975}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -0.2905}
+        inSlope: {x: 0, y: 0, z: -69.0696}
+        outSlope: {x: 0, y: 0, z: -69.0696}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0.0997}
+        inSlope: {x: 0, y: 0, z: 25.5072}
+        outSlope: {x: 0, y: 0, z: 25.5072}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 6.4765}
+        inSlope: {x: 0, y: 0, z: 3.979}
+        outSlope: {x: 0, y: 0, z: 3.979}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: -2.2981}
+        inSlope: {x: 0, y: 0, z: -3.979}
+        outSlope: {x: 0, y: 0, z: -3.979}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 0.0997}
+        inSlope: {x: 0, y: 0, z: 9.5912}
+        outSlope: {x: 0, y: 0, z: 9.5912}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -15.353499}
+        inSlope: {x: 0, y: 0, z: -181.286}
+        outSlope: {x: 0, y: 0, z: -181.286}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -60.675}
+        inSlope: {x: 0, y: 0, z: -29.9216}
+        outSlope: {x: 0, y: 0, z: -29.9216}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: 0.0464}
+        inSlope: {x: 0, y: 0, z: 29.921598}
+        outSlope: {x: 0, y: 0, z: 29.921598}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -15.353499}
+        inSlope: {x: 0, y: 0, z: -61.599598}
+        outSlope: {x: 0, y: 0, z: -61.599598}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 15.8279}
+        inSlope: {x: 0, y: 0, z: 105.8436}
+        outSlope: {x: 0, y: 0, z: 105.8436}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 42.2888}
+        inSlope: {x: 0, y: 0, z: 12.748699}
+        outSlope: {x: 0, y: 0, z: 12.748699}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: 2.1157}
+        inSlope: {x: 0, y: 0, z: -12.748699}
+        outSlope: {x: 0, y: 0, z: -12.748699}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 15.8279}
+        inSlope: {x: 0, y: 0, z: 54.8488}
+        outSlope: {x: 0, y: 0, z: 54.8488}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -0.27249998}
+        inSlope: {x: 0, y: 0, z: 21.185999}
+        outSlope: {x: 0, y: 0, z: 21.185999}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 5.0239997}
+        inSlope: {x: 0, y: 0, z: 7.0619993}
+        outSlope: {x: 0, y: 0, z: 7.0619993}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -0.27249998}
+        inSlope: {x: 0, y: 0, z: -7.062}
+        outSlope: {x: 0, y: 0, z: -7.062}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 44.5841}
+        inSlope: {x: 0, y: 0, z: -72.3156}
+        outSlope: {x: 0, y: 0, z: -72.3156}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 26.5052}
+        inSlope: {x: 0, y: 0, z: -24.105198}
+        outSlope: {x: 0, y: 0, z: -24.105198}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 44.5841}
+        inSlope: {x: 0, y: 0, z: 24.1052}
+        outSlope: {x: 0, y: 0, z: 24.1052}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 25.596498}
+        inSlope: {x: 0, y: 0, z: -68.666}
+        outSlope: {x: 0, y: 0, z: -68.666}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 8.429999}
+        inSlope: {x: 0, y: 0, z: -5.2057}
+        outSlope: {x: 0, y: 0, z: -5.2057}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: 37.5573}
+        inSlope: {x: 0, y: 0, z: 5.205696}
+        outSlope: {x: 0, y: 0, z: 5.205696}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 25.596498}
+        inSlope: {x: 0, y: 0, z: -47.84321}
+        outSlope: {x: 0, y: 0, z: -47.84321}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -26.228498}
+        inSlope: {x: 0, y: 0, z: 19.500793}
+        outSlope: {x: 0, y: 0, z: 19.500793}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -21.3533}
+        inSlope: {x: 0, y: 0, z: 6.500264}
+        outSlope: {x: 0, y: 0, z: 6.500264}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -26.228498}
+        inSlope: {x: 0, y: 0, z: -6.5002646}
+        outSlope: {x: 0, y: 0, z: -6.5002646}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 17.6931}
+        inSlope: {x: 0, y: 0, z: 75.2444}
+        outSlope: {x: 0, y: 0, z: 75.2444}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 36.5042}
+        inSlope: {x: 0, y: 0, z: -0.31459808}
+        outSlope: {x: 0, y: 0, z: -0.31459808}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: -1.4326}
+        inSlope: {x: 0, y: 0, z: 0.3146019}
+        outSlope: {x: 0, y: 0, z: 0.3146019}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 17.6931}
+        inSlope: {x: 0, y: 0, z: 76.5028}
+        outSlope: {x: 0, y: 0, z: 76.5028}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: -50.268097}
+        inSlope: {x: 0, y: 0, z: -17.573212}
+        outSlope: {x: 0, y: 0, z: -17.573212}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: -54.6614}
+        inSlope: {x: 0, y: 0, z: 0.4597969}
+        outSlope: {x: 0, y: 0, z: 0.4597969}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: -45.414997}
+        inSlope: {x: 0, y: 0, z: -0.4597969}
+        outSlope: {x: 0, y: 0, z: -0.4597969}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: -50.268097}
+        inSlope: {x: 0, y: 0, z: -19.4124}
+        outSlope: {x: 0, y: 0, z: -19.4124}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0.48439997}
+        inSlope: {x: 0, y: 0, z: 15.325999}
+        outSlope: {x: 0, y: 0, z: 15.325999}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0, z: 4.3159}
+        inSlope: {x: 0, y: 0, z: 3.5548997}
+        outSlope: {x: 0, y: 0, z: 3.5548997}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0, y: 0, z: 0.2078}
+        inSlope: {x: 0, y: 0, z: -3.5549}
+        outSlope: {x: 0, y: 0, z: -3.5549}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 0.48439997}
+        inSlope: {x: 0, y: 0, z: 1.1063999}
+        outSlope: {x: 0, y: 0, z: 1.1063999}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: -1.2, y: -0, z: 0}
+        outSlope: {x: -1.2, y: -0, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.3, y: -0, z: 0}
+        inSlope: {x: 0.089999974, y: 0, z: 0}
+        outSlope: {x: 0.089999974, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.39, y: 0, z: 0}
+        inSlope: {x: -0.089999974, y: 0, z: 0}
+        outSlope: {x: -0.089999974, y: 0, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: -1.56, y: 0, z: 0}
+        outSlope: {x: -1.56, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0.000000041909516, z: 0}
+        outSlope: {x: 0, y: 0.000000041909516, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0, y: 0.000000010477379, z: 0}
+        inSlope: {x: 0.0000002682209, y: 0.000000015133992, z: 0}
+        outSlope: {x: 0.0000002682209, y: 0.000000015133992, z: 0}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.0000002682209, y: 0.000000004656613, z: 0}
+        inSlope: {x: -0.0000002682209, y: -0.000000015133992, z: 0}
+        outSlope: {x: -0.0000002682209, y: -0.000000015133992, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: -0.0000010728836, y: -0.000000018626451, z: 0}
+        outSlope: {x: -0.0000010728836, y: -0.000000018626451, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -3.02, z: 0}
+        inSlope: {x: -0.0000004172325, y: -0.000039100647, z: -9.9142916e-14}
+        outSlope: {x: -0.0000004172325, y: -0.000039100647, z: -9.9142916e-14}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.00000010430813, y: -3.0200098, z: -2.4785729e-14}
+        inSlope: {x: 0.00000018626451, y: -0.000042915344, z: -3.1002978e-14}
+        outSlope: {x: 0.00000018626451, y: -0.000042915344, z: -3.1002978e-14}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.00000029057264, y: -3.0200331, z: -6.217249e-15}
+        inSlope: {x: -0.00000018626451, y: 0.000042915344, z: 3.1002978e-14}
+        outSlope: {x: -0.00000018626451, y: 0.000042915344, z: 3.1002978e-14}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: -3.02, z: 0}
+        inSlope: {x: -0.0000011622906, y: 0.00013256073, z: 2.4868996e-14}
+        outSlope: {x: -0.0000011622906, y: 0.00013256073, z: 2.4868996e-14}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -2.145, z: 0}
+        inSlope: {x: 0.00010418892, y: -0.00020122528, z: 4.0856207e-13}
+        outSlope: {x: 0.00010418892, y: -0.00020122528, z: 4.0856207e-13}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0.00002604723, y: -2.1450503, z: 1.0214052e-13}
+        inSlope: {x: 0.000019192696, y: -0.0000808239, z: 6.3948846e-14}
+        outSlope: {x: 0.000019192696, y: -0.0000808239, z: 6.3948846e-14}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: -0.000006854534, y: -2.1450305, z: -3.8191672e-14}
+        inSlope: {x: -0.000019192696, y: 0.0000808239, z: -6.3948846e-14}
+        outSlope: {x: -0.000019192696, y: 0.0000808239, z: -6.3948846e-14}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: -2.145, z: 0}
+        inSlope: {x: 0.000027418137, y: 0.00012207031, z: 1.5276669e-13}
+        outSlope: {x: 0.000027418137, y: 0.00012207031, z: 1.5276669e-13}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -1.745, z: 0}
+        inSlope: {x: -0.000025510788, y: -0.00024080276, z: -2.5401903e-12}
+        outSlope: {x: -0.000025510788, y: -0.00024080276, z: -2.5401903e-12}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.000006377697, y: -1.7450602, z: -6.3504757e-13}
+        inSlope: {x: -0.00000017881393, y: -0.000108003616, z: -6.5236705e-13}
+        outSlope: {x: -0.00000017881393, y: -0.000108003616, z: -6.5236705e-13}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.000006198883, y: -1.7450478, z: -1.731948e-14}
+        inSlope: {x: 0.00000017881393, y: 0.000108003616, z: 6.5236705e-13}
+        outSlope: {x: 0.00000017881393, y: 0.000108003616, z: 6.5236705e-13}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: -1.745, z: 0}
+        inSlope: {x: -0.000024795532, y: 0.0001912117, z: 6.927792e-14}
+        outSlope: {x: -0.000024795532, y: 0.0001912117, z: 6.927792e-14}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -1.022, z: 0}
+        inSlope: {x: -0.0003068447, y: -0.00048398972, z: -1.7511326e-11}
+        outSlope: {x: -0.0003068447, y: -0.00048398972, z: -1.7511326e-11}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.00007671118, y: -1.022121, z: -4.3778314e-12}
+        inSlope: {x: -0.000067293644, y: -0.0001513958, z: -4.754419e-12}
+        outSlope: {x: -0.000067293644, y: -0.0001513958, z: -4.754419e-12}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.000009417534, y: -1.0220304, z: -3.7658765e-13}
+        inSlope: {x: 0.000067293644, y: 0.0001513958, z: 4.754419e-12}
+        outSlope: {x: 0.000067293644, y: 0.0001513958, z: 4.754419e-12}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: -1.022, z: 0}
+        inSlope: {x: -0.000037670135, y: 0.000121593475, z: 1.5063506e-12}
+        outSlope: {x: -0.000037670135, y: 0.000121593475, z: 1.5063506e-12}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.029, y: -0.077, z: 0}
+        inSlope: {x: 0.000009834766, y: -0.000009268522, z: 0}
+        outSlope: {x: 0.000009834766, y: -0.000009268522, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.02899754, y: -0.07700232, z: 0}
+        inSlope: {x: 0.000002413988, y: -0.000002220273, z: 0}
+        outSlope: {x: 0.000002413988, y: -0.000002220273, z: 0}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: -0.029000044, y: -0.0769999, z: 0}
+        inSlope: {x: -0.000002413988, y: 0.000002220273, z: 0}
+        outSlope: {x: -0.000002413988, y: 0.000002220273, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.029, y: -0.077, z: 0}
+        inSlope: {x: 0.00000017881393, y: -0.0000003874302, z: 0}
+        outSlope: {x: 0.00000017881393, y: -0.0000003874302, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.64800006, y: 0.30499995, z: 0}
+        inSlope: {x: 0.000012874603, y: 0.000004053116, z: -3.126388e-12}
+        outSlope: {x: 0.000012874603, y: 0.000004053116, z: -3.126388e-12}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0.6480033, y: 0.30500096, z: -7.81597e-13}
+        inSlope: {x: 0.0000030994415, y: 0.000001013279, z: -8.4909857e-13}
+        outSlope: {x: 0.0000030994415, y: 0.000001013279, z: -8.4909857e-13}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.64799994, y: 0.30499995, z: -6.750156e-14}
+        inSlope: {x: -0.0000030994415, y: -0.000001013279, z: 8.4909857e-13}
+        outSlope: {x: -0.0000030994415, y: -0.000001013279, z: 8.4909857e-13}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0.64800006, y: 0.30499995, z: 0}
+        inSlope: {x: 0.00000047683716, y: 0, z: 2.7000624e-13}
+        outSlope: {x: 0.00000047683716, y: 0, z: 2.7000624e-13}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.022, y: -0.191, z: 0}
+        inSlope: {x: 0.000015586615, y: 0.000003993511, z: 0}
+        outSlope: {x: 0.000015586615, y: 0.000003993511, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0.022003897, y: -0.190999, z: 0}
+        inSlope: {x: 0.0000051955385, y: 0.0000013311703, z: 0}
+        outSlope: {x: 0.0000051955385, y: 0.0000013311703, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0.022, y: -0.191, z: 0}
+        inSlope: {x: -0.000005195538, y: -0.0000013311704, z: 0}
+        outSlope: {x: -0.000005195538, y: -0.0000013311704, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.6479896, y: 0.30501968, z: 0}
+        inSlope: {x: 0.000073194504, y: -0.0000044107437, z: 3.637979e-12}
+        outSlope: {x: 0.000073194504, y: -0.0000044107437, z: 3.637979e-12}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0.64800787, y: 0.30501857, z: 9.094947e-13}
+        inSlope: {x: 0.000024398167, y: -0.000001470248, z: 1.2126595e-12}
+        outSlope: {x: 0.000024398167, y: -0.000001470248, z: 1.2126595e-12}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0.6479896, y: 0.30501968, z: 0}
+        inSlope: {x: -0.000024398169, y: 0.0000014702479, z: -1.2126596e-12}
+        outSlope: {x: -0.000024398169, y: 0.0000014702479, z: -1.2126596e-12}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.01699996, y: -0.028996903, z: 0}
+        inSlope: {x: -0.000007651746, y: 0.0000011920929, z: 0}
+        outSlope: {x: -0.000007651746, y: 0.0000011920929, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.017001873, y: -0.028996605, z: 0}
+        inSlope: {x: -0.00000024586916, y: -0.0000006444752, z: 0}
+        outSlope: {x: -0.00000024586916, y: -0.0000006444752, z: 0}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: -0.016998293, y: -0.028997846, z: 0}
+        inSlope: {x: 0.00000024586916, y: 0.0000006444752, z: 0}
+        outSlope: {x: 0.00000024586916, y: 0.0000006444752, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.01699996, y: -0.028996903, z: 0}
+        inSlope: {x: -0.0000066682696, y: 0.0000037699938, z: 0}
+        outSlope: {x: -0.0000066682696, y: 0.0000037699938, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.68600005, y: 0.29599997, z: 0}
+        inSlope: {x: 0.000017881393, y: 0.000020861626, z: -1.9646507e-12}
+        outSlope: {x: 0.000017881393, y: 0.000020861626, z: -1.9646507e-12}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.6859956, y: 0.2960052, z: -4.9116267e-13}
+        inSlope: {x: 0.0000059604645, y: 0.0000069538755, z: -6.548836e-13}
+        outSlope: {x: 0.0000059604645, y: 0.0000069538755, z: -6.548836e-13}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.68600005, y: 0.29599997, z: 0}
+        inSlope: {x: -0.0000059604645, y: -0.000006953875, z: 6.5488354e-13}
+        outSlope: {x: -0.0000059604645, y: -0.000006953875, z: 6.5488354e-13}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.016999738, y: -0.02899949, z: 0}
+        inSlope: {x: -0.00000021606684, y: 0.00000032037497, z: 0}
+        outSlope: {x: -0.00000021606684, y: 0.00000032037497, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.016999792, y: -0.02899941, z: 0}
+        inSlope: {x: -0.0000018198043, y: -0.0000036470592, z: 0}
+        outSlope: {x: -0.0000018198043, y: -0.0000036470592, z: 0}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: -0.017001504, y: -0.029003218, z: -0}
+        inSlope: {x: 0.0000018198043, y: 0.0000036470592, z: 0}
+        outSlope: {x: 0.0000018198043, y: 0.0000036470592, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.016999738, y: -0.02899949, z: 0}
+        inSlope: {x: 0.0000070631504, y: 0.000014908612, z: 0}
+        outSlope: {x: 0.0000070631504, y: 0.000014908612, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.6859997, y: 0.29600027, z: 0}
+        inSlope: {x: -0.0000009536743, y: -0.0000017881393, z: 0}
+        outSlope: {x: -0.0000009536743, y: -0.0000017881393, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: -0.68599993, y: 0.29599983, z: 0}
+        inSlope: {x: 0.000001847744, y: -0.0000011920929, z: -6.963319e-13}
+        outSlope: {x: 0.000001847744, y: -0.0000011920929, z: -6.963319e-13}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: -0.6859976, y: 0.29599953, z: -6.963319e-13}
+        inSlope: {x: -0.000001847744, y: 0.0000011920929, z: 6.963319e-13}
+        outSlope: {x: -0.000001847744, y: 0.0000011920929, z: 6.963319e-13}
+        tangentMode: 0
+      - time: 1
+        value: {x: -0.6859997, y: 0.29600027, z: 0}
+        inSlope: {x: -0.00000834465, y: 0.0000029802322, z: 2.7853275e-12}
+        outSlope: {x: -0.00000834465, y: 0.0000029802322, z: 2.7853275e-12}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: -0.134, z: 0}
+        inSlope: {x: 0.000006057322, y: -0.0000027418137, z: 0}
+        outSlope: {x: 0.000006057322, y: -0.0000027418137, z: 0}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0.0000015143305, y: -0.13400069, z: 0}
+        inSlope: {x: 0.0000024493784, y: -0.000001296401, z: 0}
+        outSlope: {x: 0.0000024493784, y: -0.000001296401, z: 0}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.00000093504786, y: -0.13400061, z: 0}
+        inSlope: {x: -0.0000024493784, y: 0.000001296401, z: 0}
+        outSlope: {x: -0.0000024493784, y: 0.000001296401, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 0, y: -0.134, z: 0}
+        inSlope: {x: -0.0000037401915, y: 0.0000024437904, z: 0}
+        outSlope: {x: -0.0000037401915, y: 0.0000024437904, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 3.5, z: 0}
+        inSlope: {x: 0.000001748403, y: 0, z: 0}
+        outSlope: {x: 0.000001748403, y: 0, z: 0}
+        tangentMode: 0
+      - time: 0.75
+        value: {x: 0.0000013113022, y: 3.5, z: 0}
+        inSlope: {x: 0.000001748403, y: 0, z: 0}
+        outSlope: {x: 0.000001748403, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: _Bust/_Tail/AlienBoss_Tail4
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 1279003162
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 575037757
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 759853161
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 223069153
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 109080944
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 766963367
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2176473815
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2102795111
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3673403756
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3295285888
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3383106903
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2598786169
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 793450789
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 336712009
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 1381537746
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 662838121
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 575037757
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 759853161
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 223069153
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 109080944
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 766963367
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 662838121
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 2176473815
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 2102795111
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 3673403756
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 3295285888
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 3383106903
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 2598786169
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 793450789
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 336712009
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1381537746
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 1279003162
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -1.2
+        outSlope: -1.2
+        tangentMode: 10
+      - time: 0.25
+        value: -0.3
+        inSlope: 0.089999974
+        outSlope: 0.089999974
+        tangentMode: 10
+      - time: 0.75
+        value: 0.39
+        inSlope: -0.089999974
+        outSlope: -0.089999974
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -1.56
+        outSlope: -1.56
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0
+        outSlope: -0
+        tangentMode: 10
+      - time: 0.25
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.22029999
+        inSlope: -51.6636
+        outSlope: -51.6636
+        tangentMode: 10
+      - time: 0.25
+        value: -13.1362
+        inSlope: -0.89770126
+        outSlope: -0.89770126
+        tangentMode: 10
+      - time: 0.75
+        value: 11.797899
+        inSlope: 0.89770126
+        outSlope: 0.89770126
+        tangentMode: 10
+      - time: 1
+        value: -0.22029999
+        inSlope: -48.072796
+        outSlope: -48.072796
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0.0000002682209
+        outSlope: 0.0000002682209
+        tangentMode: 10
+      - time: 0.75
+        value: 0.0000002682209
+        inSlope: -0.0000002682209
+        outSlope: -0.0000002682209
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -0.0000010728836
+        outSlope: -0.0000010728836
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0.000000041909516
+        outSlope: 0.000000041909516
+        tangentMode: 10
+      - time: 0.25
+        value: 0.000000010477379
+        inSlope: 0.000000015133992
+        outSlope: 0.000000015133992
+        tangentMode: 10
+      - time: 0.75
+        value: 0.000000004656613
+        inSlope: -0.000000015133992
+        outSlope: -0.000000015133992
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -0.000000018626451
+        outSlope: -0.000000018626451
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.1112
+        inSlope: -96.1448
+        outSlope: -96.1448
+        tangentMode: 10
+      - time: 0.25
+        value: -23.925
+        inSlope: 3.5610008
+        outSlope: 3.5610008
+        tangentMode: 10
+      - time: 0.75
+        value: 27.708399
+        inSlope: -3.560997
+        outSlope: -3.560997
+        tangentMode: 10
+      - time: 1
+        value: 0.1112
+        inSlope: -110.388794
+        outSlope: -110.388794
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.0000004172325
+        outSlope: -0.0000004172325
+        tangentMode: 10
+      - time: 0.25
+        value: -0.00000010430813
+        inSlope: 0.00000018626451
+        outSlope: 0.00000018626451
+        tangentMode: 10
+      - time: 0.75
+        value: 0.00000029057264
+        inSlope: -0.00000018626451
+        outSlope: -0.00000018626451
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -0.0000011622906
+        outSlope: -0.0000011622906
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -3.02
+        inSlope: -0.000039100647
+        outSlope: -0.000039100647
+        tangentMode: 10
+      - time: 0.25
+        value: -3.0200098
+        inSlope: -0.000042915344
+        outSlope: -0.000042915344
+        tangentMode: 10
+      - time: 0.75
+        value: -3.0200331
+        inSlope: 0.000042915344
+        outSlope: 0.000042915344
+        tangentMode: 10
+      - time: 1
+        value: -3.02
+        inSlope: 0.00013256073
+        outSlope: 0.00013256073
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -9.9142916e-14
+        outSlope: -9.9142916e-14
+        tangentMode: 10
+      - time: 0.25
+        value: -2.4785729e-14
+        inSlope: -3.1002978e-14
+        outSlope: -3.1002978e-14
+        tangentMode: 10
+      - time: 0.75
+        value: -6.217249e-15
+        inSlope: 3.1002978e-14
+        outSlope: 3.1002978e-14
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 2.4868996e-14
+        outSlope: 2.4868996e-14
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.033099998
+        inSlope: 102.3292
+        outSlope: 102.3292
+        tangentMode: 10
+      - time: 0.25
+        value: 25.5492
+        inSlope: -8.117397
+        outSlope: -8.117397
+        tangentMode: 10
+      - time: 0.75
+        value: -33.7328
+        inSlope: 8.117401
+        outSlope: 8.117401
+        tangentMode: 10
+      - time: 1
+        value: -0.033099998
+        inSlope: 134.7988
+        outSlope: 134.7988
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0.00010418892
+        outSlope: 0.00010418892
+        tangentMode: 10
+      - time: 0.25
+        value: 0.00002604723
+        inSlope: 0.000019192696
+        outSlope: 0.000019192696
+        tangentMode: 10
+      - time: 0.75
+        value: -0.000006854534
+        inSlope: -0.000019192696
+        outSlope: -0.000019192696
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0.000027418137
+        outSlope: 0.000027418137
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -2.145
+        inSlope: -0.00020122528
+        outSlope: -0.00020122528
+        tangentMode: 10
+      - time: 0.25
+        value: -2.1450503
+        inSlope: -0.0000808239
+        outSlope: -0.0000808239
+        tangentMode: 10
+      - time: 0.75
+        value: -2.1450305
+        inSlope: 0.0000808239
+        outSlope: 0.0000808239
+        tangentMode: 10
+      - time: 1
+        value: -2.145
+        inSlope: 0.00012207031
+        outSlope: 0.00012207031
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 4.0856207e-13
+        outSlope: 4.0856207e-13
+        tangentMode: 10
+      - time: 0.25
+        value: 1.0214052e-13
+        inSlope: 6.3948846e-14
+        outSlope: 6.3948846e-14
+        tangentMode: 10
+      - time: 0.75
+        value: -3.8191672e-14
+        inSlope: -6.3948846e-14
+        outSlope: -6.3948846e-14
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 1.5276669e-13
+        outSlope: 1.5276669e-13
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.8049
+        inSlope: 161.53119
+        outSlope: 161.53119
+        tangentMode: 10
+      - time: 0.25
+        value: 41.1877
+        inSlope: 11.846596
+        outSlope: 11.846596
+        tangentMode: 10
+      - time: 0.75
+        value: -27.731298
+        inSlope: -11.846603
+        outSlope: -11.846603
+        tangentMode: 10
+      - time: 1
+        value: 0.8049
+        inSlope: 114.14479
+        outSlope: 114.14479
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.000025510788
+        outSlope: -0.000025510788
+        tangentMode: 10
+      - time: 0.25
+        value: -0.000006377697
+        inSlope: -0.00000017881393
+        outSlope: -0.00000017881393
+        tangentMode: 10
+      - time: 0.75
+        value: 0.000006198883
+        inSlope: 0.00000017881393
+        outSlope: 0.00000017881393
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -0.000024795532
+        outSlope: -0.000024795532
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -1.745
+        inSlope: -0.00024080276
+        outSlope: -0.00024080276
+        tangentMode: 10
+      - time: 0.25
+        value: -1.7450602
+        inSlope: -0.000108003616
+        outSlope: -0.000108003616
+        tangentMode: 10
+      - time: 0.75
+        value: -1.7450478
+        inSlope: 0.000108003616
+        outSlope: 0.000108003616
+        tangentMode: 10
+      - time: 1
+        value: -1.745
+        inSlope: 0.0001912117
+        outSlope: 0.0001912117
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -2.5401903e-12
+        outSlope: -2.5401903e-12
+        tangentMode: 10
+      - time: 0.25
+        value: -6.3504757e-13
+        inSlope: -6.5236705e-13
+        outSlope: -6.5236705e-13
+        tangentMode: 10
+      - time: 0.75
+        value: -1.731948e-14
+        inSlope: 6.5236705e-13
+        outSlope: 6.5236705e-13
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 6.927792e-14
+        outSlope: 6.927792e-14
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.2905
+        inSlope: -74.37119
+        outSlope: -74.37119
+        tangentMode: 10
+      - time: 0.25
+        value: -18.883299
+        inSlope: -1.3253975
+        outSlope: -1.3253975
+        tangentMode: 10
+      - time: 0.75
+        value: 16.9769
+        inSlope: 1.3253975
+        outSlope: 1.3253975
+        tangentMode: 10
+      - time: 1
+        value: -0.2905
+        inSlope: -69.0696
+        outSlope: -69.0696
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -0.0003068447
+        outSlope: -0.0003068447
+        tangentMode: 10
+      - time: 0.25
+        value: -0.00007671118
+        inSlope: -0.000067293644
+        outSlope: -0.000067293644
+        tangentMode: 10
+      - time: 0.75
+        value: 0.000009417534
+        inSlope: 0.000067293644
+        outSlope: 0.000067293644
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -0.000037670135
+        outSlope: -0.000037670135
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -1.022
+        inSlope: -0.00048398972
+        outSlope: -0.00048398972
+        tangentMode: 10
+      - time: 0.25
+        value: -1.022121
+        inSlope: -0.0001513958
+        outSlope: -0.0001513958
+        tangentMode: 10
+      - time: 0.75
+        value: -1.0220304
+        inSlope: 0.0001513958
+        outSlope: 0.0001513958
+        tangentMode: 10
+      - time: 1
+        value: -1.022
+        inSlope: 0.000121593475
+        outSlope: 0.000121593475
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -1.7511326e-11
+        outSlope: -1.7511326e-11
+        tangentMode: 10
+      - time: 0.25
+        value: -4.3778314e-12
+        inSlope: -4.754419e-12
+        outSlope: -4.754419e-12
+        tangentMode: 10
+      - time: 0.75
+        value: -3.7658765e-13
+        inSlope: 4.754419e-12
+        outSlope: 4.754419e-12
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 1.5063506e-12
+        outSlope: 1.5063506e-12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.0997
+        inSlope: 25.5072
+        outSlope: 25.5072
+        tangentMode: 10
+      - time: 0.25
+        value: 6.4765
+        inSlope: 3.979
+        outSlope: 3.979
+        tangentMode: 10
+      - time: 0.75
+        value: -2.2981
+        inSlope: -3.979
+        outSlope: -3.979
+        tangentMode: 10
+      - time: 1
+        value: 0.0997
+        inSlope: 9.5912
+        outSlope: 9.5912
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -15.353499
+        inSlope: -181.286
+        outSlope: -181.286
+        tangentMode: 10
+      - time: 0.25
+        value: -60.675
+        inSlope: -29.9216
+        outSlope: -29.9216
+        tangentMode: 10
+      - time: 0.75
+        value: 0.0464
+        inSlope: 29.921598
+        outSlope: 29.921598
+        tangentMode: 10
+      - time: 1
+        value: -15.353499
+        inSlope: -61.599598
+        outSlope: -61.599598
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.029
+        inSlope: 0.000009834766
+        outSlope: 0.000009834766
+        tangentMode: 10
+      - time: 0.25
+        value: -0.02899754
+        inSlope: 0.000002413988
+        outSlope: 0.000002413988
+        tangentMode: 10
+      - time: 0.75
+        value: -0.029000044
+        inSlope: -0.000002413988
+        outSlope: -0.000002413988
+        tangentMode: 10
+      - time: 1
+        value: -0.029
+        inSlope: 0.00000017881393
+        outSlope: 0.00000017881393
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.077
+        inSlope: -0.000009268522
+        outSlope: -0.000009268522
+        tangentMode: 10
+      - time: 0.25
+        value: -0.07700232
+        inSlope: -0.000002220273
+        outSlope: -0.000002220273
+        tangentMode: 10
+      - time: 0.75
+        value: -0.0769999
+        inSlope: 0.000002220273
+        outSlope: 0.000002220273
+        tangentMode: 10
+      - time: 1
+        value: -0.077
+        inSlope: -0.0000003874302
+        outSlope: -0.0000003874302
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 15.8279
+        inSlope: 105.8436
+        outSlope: 105.8436
+        tangentMode: 10
+      - time: 0.25
+        value: 42.2888
+        inSlope: 12.748699
+        outSlope: 12.748699
+        tangentMode: 10
+      - time: 0.75
+        value: 2.1157
+        inSlope: -12.748699
+        outSlope: -12.748699
+        tangentMode: 10
+      - time: 1
+        value: 15.8279
+        inSlope: 54.8488
+        outSlope: 54.8488
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.64800006
+        inSlope: 0.000012874603
+        outSlope: 0.000012874603
+        tangentMode: 10
+      - time: 0.25
+        value: 0.6480033
+        inSlope: 0.0000030994415
+        outSlope: 0.0000030994415
+        tangentMode: 10
+      - time: 0.75
+        value: 0.64799994
+        inSlope: -0.0000030994415
+        outSlope: -0.0000030994415
+        tangentMode: 10
+      - time: 1
+        value: 0.64800006
+        inSlope: 0.00000047683716
+        outSlope: 0.00000047683716
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.30499995
+        inSlope: 0.000004053116
+        outSlope: 0.000004053116
+        tangentMode: 10
+      - time: 0.25
+        value: 0.30500096
+        inSlope: 0.000001013279
+        outSlope: 0.000001013279
+        tangentMode: 10
+      - time: 0.75
+        value: 0.30499995
+        inSlope: -0.000001013279
+        outSlope: -0.000001013279
+        tangentMode: 10
+      - time: 1
+        value: 0.30499995
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -3.126388e-12
+        outSlope: -3.126388e-12
+        tangentMode: 10
+      - time: 0.25
+        value: -7.81597e-13
+        inSlope: -8.4909857e-13
+        outSlope: -8.4909857e-13
+        tangentMode: 10
+      - time: 0.75
+        value: -6.750156e-14
+        inSlope: 8.4909857e-13
+        outSlope: 8.4909857e-13
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 2.7000624e-13
+        outSlope: 2.7000624e-13
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.27249998
+        inSlope: 21.185999
+        outSlope: 21.185999
+        tangentMode: 10
+      - time: 0.25
+        value: 5.0239997
+        inSlope: 7.0619993
+        outSlope: 7.0619993
+        tangentMode: 10
+      - time: 1
+        value: -0.27249998
+        inSlope: -7.062
+        outSlope: -7.062
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.022
+        inSlope: 0.000015586615
+        outSlope: 0.000015586615
+        tangentMode: 10
+      - time: 0.25
+        value: 0.022003897
+        inSlope: 0.0000051955385
+        outSlope: 0.0000051955385
+        tangentMode: 10
+      - time: 1
+        value: 0.022
+        inSlope: -0.000005195538
+        outSlope: -0.000005195538
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.191
+        inSlope: 0.000003993511
+        outSlope: 0.000003993511
+        tangentMode: 10
+      - time: 0.25
+        value: -0.190999
+        inSlope: 0.0000013311703
+        outSlope: 0.0000013311703
+        tangentMode: 10
+      - time: 1
+        value: -0.191
+        inSlope: -0.0000013311704
+        outSlope: -0.0000013311704
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 44.5841
+        inSlope: -72.3156
+        outSlope: -72.3156
+        tangentMode: 10
+      - time: 0.25
+        value: 26.5052
+        inSlope: -24.105198
+        outSlope: -24.105198
+        tangentMode: 10
+      - time: 1
+        value: 44.5841
+        inSlope: 24.1052
+        outSlope: 24.1052
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.6479896
+        inSlope: 0.000073194504
+        outSlope: 0.000073194504
+        tangentMode: 10
+      - time: 0.25
+        value: 0.64800787
+        inSlope: 0.000024398167
+        outSlope: 0.000024398167
+        tangentMode: 10
+      - time: 1
+        value: 0.6479896
+        inSlope: -0.000024398169
+        outSlope: -0.000024398169
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.30501968
+        inSlope: -0.0000044107437
+        outSlope: -0.0000044107437
+        tangentMode: 10
+      - time: 0.25
+        value: 0.30501857
+        inSlope: -0.000001470248
+        outSlope: -0.000001470248
+        tangentMode: 10
+      - time: 1
+        value: 0.30501968
+        inSlope: 0.0000014702479
+        outSlope: 0.0000014702479
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 3.637979e-12
+        outSlope: 3.637979e-12
+        tangentMode: 10
+      - time: 0.25
+        value: 9.094947e-13
+        inSlope: 1.2126595e-12
+        outSlope: 1.2126595e-12
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -1.2126596e-12
+        outSlope: -1.2126596e-12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 25.596498
+        inSlope: -68.666
+        outSlope: -68.666
+        tangentMode: 10
+      - time: 0.25
+        value: 8.429999
+        inSlope: -5.2057
+        outSlope: -5.2057
+        tangentMode: 10
+      - time: 0.75
+        value: 37.5573
+        inSlope: 5.205696
+        outSlope: 5.205696
+        tangentMode: 10
+      - time: 1
+        value: 25.596498
+        inSlope: -47.84321
+        outSlope: -47.84321
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.01699996
+        inSlope: -0.000007651746
+        outSlope: -0.000007651746
+        tangentMode: 10
+      - time: 0.25
+        value: -0.017001873
+        inSlope: -0.00000024586916
+        outSlope: -0.00000024586916
+        tangentMode: 10
+      - time: 0.75
+        value: -0.016998293
+        inSlope: 0.00000024586916
+        outSlope: 0.00000024586916
+        tangentMode: 10
+      - time: 1
+        value: -0.01699996
+        inSlope: -0.0000066682696
+        outSlope: -0.0000066682696
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.028996903
+        inSlope: 0.0000011920929
+        outSlope: 0.0000011920929
+        tangentMode: 10
+      - time: 0.25
+        value: -0.028996605
+        inSlope: -0.0000006444752
+        outSlope: -0.0000006444752
+        tangentMode: 10
+      - time: 0.75
+        value: -0.028997846
+        inSlope: 0.0000006444752
+        outSlope: 0.0000006444752
+        tangentMode: 10
+      - time: 1
+        value: -0.028996903
+        inSlope: 0.0000037699938
+        outSlope: 0.0000037699938
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -26.228498
+        inSlope: 19.500793
+        outSlope: 19.500793
+        tangentMode: 10
+      - time: 0.25
+        value: -21.3533
+        inSlope: 6.500264
+        outSlope: 6.500264
+        tangentMode: 10
+      - time: 1
+        value: -26.228498
+        inSlope: -6.5002646
+        outSlope: -6.5002646
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.68600005
+        inSlope: 0.000017881393
+        outSlope: 0.000017881393
+        tangentMode: 10
+      - time: 0.25
+        value: -0.6859956
+        inSlope: 0.0000059604645
+        outSlope: 0.0000059604645
+        tangentMode: 10
+      - time: 1
+        value: -0.68600005
+        inSlope: -0.0000059604645
+        outSlope: -0.0000059604645
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.29599997
+        inSlope: 0.000020861626
+        outSlope: 0.000020861626
+        tangentMode: 10
+      - time: 0.25
+        value: 0.2960052
+        inSlope: 0.0000069538755
+        outSlope: 0.0000069538755
+        tangentMode: 10
+      - time: 1
+        value: 0.29599997
+        inSlope: -0.000006953875
+        outSlope: -0.000006953875
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -1.9646507e-12
+        outSlope: -1.9646507e-12
+        tangentMode: 10
+      - time: 0.25
+        value: -4.9116267e-13
+        inSlope: -6.548836e-13
+        outSlope: -6.548836e-13
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 6.5488354e-13
+        outSlope: 6.5488354e-13
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 17.6931
+        inSlope: 75.2444
+        outSlope: 75.2444
+        tangentMode: 10
+      - time: 0.25
+        value: 36.5042
+        inSlope: -0.31459808
+        outSlope: -0.31459808
+        tangentMode: 10
+      - time: 0.75
+        value: -1.4326
+        inSlope: 0.3146019
+        outSlope: 0.3146019
+        tangentMode: 10
+      - time: 1
+        value: 17.6931
+        inSlope: 76.5028
+        outSlope: 76.5028
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.016999738
+        inSlope: -0.00000021606684
+        outSlope: -0.00000021606684
+        tangentMode: 10
+      - time: 0.25
+        value: -0.016999792
+        inSlope: -0.0000018198043
+        outSlope: -0.0000018198043
+        tangentMode: 10
+      - time: 0.75
+        value: -0.017001504
+        inSlope: 0.0000018198043
+        outSlope: 0.0000018198043
+        tangentMode: 10
+      - time: 1
+        value: -0.016999738
+        inSlope: 0.0000070631504
+        outSlope: 0.0000070631504
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.02899949
+        inSlope: 0.00000032037497
+        outSlope: 0.00000032037497
+        tangentMode: 10
+      - time: 0.25
+        value: -0.02899941
+        inSlope: -0.0000036470592
+        outSlope: -0.0000036470592
+        tangentMode: 10
+      - time: 0.75
+        value: -0.029003218
+        inSlope: 0.0000036470592
+        outSlope: 0.0000036470592
+        tangentMode: 10
+      - time: 1
+        value: -0.02899949
+        inSlope: 0.000014908612
+        outSlope: 0.000014908612
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: -0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -50.268097
+        inSlope: -17.573212
+        outSlope: -17.573212
+        tangentMode: 10
+      - time: 0.25
+        value: -54.6614
+        inSlope: 0.4597969
+        outSlope: 0.4597969
+        tangentMode: 10
+      - time: 0.75
+        value: -45.414997
+        inSlope: -0.4597969
+        outSlope: -0.4597969
+        tangentMode: 10
+      - time: 1
+        value: -50.268097
+        inSlope: -19.4124
+        outSlope: -19.4124
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.6859997
+        inSlope: -0.0000009536743
+        outSlope: -0.0000009536743
+        tangentMode: 10
+      - time: 0.25
+        value: -0.68599993
+        inSlope: 0.000001847744
+        outSlope: 0.000001847744
+        tangentMode: 10
+      - time: 0.75
+        value: -0.6859976
+        inSlope: -0.000001847744
+        outSlope: -0.000001847744
+        tangentMode: 10
+      - time: 1
+        value: -0.6859997
+        inSlope: -0.00000834465
+        outSlope: -0.00000834465
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.29600027
+        inSlope: -0.0000017881393
+        outSlope: -0.0000017881393
+        tangentMode: 10
+      - time: 0.25
+        value: 0.29599983
+        inSlope: -0.0000011920929
+        outSlope: -0.0000011920929
+        tangentMode: 10
+      - time: 0.75
+        value: 0.29599953
+        inSlope: 0.0000011920929
+        outSlope: 0.0000011920929
+        tangentMode: 10
+      - time: 1
+        value: 0.29600027
+        inSlope: 0.0000029802322
+        outSlope: 0.0000029802322
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: -6.963319e-13
+        outSlope: -6.963319e-13
+        tangentMode: 10
+      - time: 0.75
+        value: -6.963319e-13
+        inSlope: 6.963319e-13
+        outSlope: 6.963319e-13
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 2.7853275e-12
+        outSlope: 2.7853275e-12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.48439997
+        inSlope: 15.325999
+        outSlope: 15.325999
+        tangentMode: 10
+      - time: 0.25
+        value: 4.3159
+        inSlope: 3.5548997
+        outSlope: 3.5548997
+        tangentMode: 10
+      - time: 0.75
+        value: 0.2078
+        inSlope: -3.5549
+        outSlope: -3.5549
+        tangentMode: 10
+      - time: 1
+        value: 0.48439997
+        inSlope: 1.1063999
+        outSlope: 1.1063999
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0.000006057322
+        outSlope: 0.000006057322
+        tangentMode: 10
+      - time: 0.25
+        value: 0.0000015143305
+        inSlope: 0.0000024493784
+        outSlope: 0.0000024493784
+        tangentMode: 10
+      - time: 0.75
+        value: 0.00000093504786
+        inSlope: -0.0000024493784
+        outSlope: -0.0000024493784
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -0.0000037401915
+        outSlope: -0.0000037401915
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.134
+        inSlope: -0.0000027418137
+        outSlope: -0.0000027418137
+        tangentMode: 10
+      - time: 0.25
+        value: -0.13400069
+        inSlope: -0.000001296401
+        outSlope: -0.000001296401
+        tangentMode: 10
+      - time: 0.75
+        value: -0.13400061
+        inSlope: 0.000001296401
+        outSlope: 0.000001296401
+        tangentMode: 10
+      - time: 1
+        value: -0.134
+        inSlope: 0.0000024437904
+        outSlope: 0.0000024437904
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0.000001748403
+        outSlope: 0.000001748403
+        tangentMode: 10
+      - time: 0.75
+        value: 0.0000013113022
+        inSlope: 0.000001748403
+        outSlope: 0.000001748403
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 3.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 3.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 0.75
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftDown/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft/AlienBoss_LowerArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/AlienBoss_Creat
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/_Tail/AlienBoss_Tail4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmRightDown/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmRightUp/AlienBoss_UpperArmRight/AlienBoss_LowerArmRight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/AlienBoss_Breast/_ArmLeftUp/AlienBoss_UpperArmLeft
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: _Bust/_Tail/AlienBoss_Tail4/AlienBoss_Tail3/AlienBoss_Tail2/AlienBoss_Tail1/AlienBoss_TailTip
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events: []

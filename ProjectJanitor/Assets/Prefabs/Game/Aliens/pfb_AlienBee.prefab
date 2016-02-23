@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cf131085d085b488386532b91283d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lootChances: 0.55
+  m_lootChances: 0.4
   m_minRandomAmount: 10
   m_maxRandomAmount: 15
   m_armor: {fileID: 11442928, guid: 8e829166a827d724f907ad0c15fece41, type: 2}
@@ -542,17 +542,17 @@ MonoBehaviour:
   onArmorBreakSound: {fileID: 0}
   onHealSound: {fileID: 0}
   onRepairSound: {fileID: 0}
-  target: {fileID: 0}
+  targetLocked: 0
   sensor: {fileID: 0}
   rigging: {fileID: 9550870}
   lineOfSightMask:
     serializedVersion: 2
     m_Bits: 768
-  maxAttackRange: 5
+  maxAttackRange: 2
   maxDistanceFromSpawn: 200
   attackPerSecond: 1
   enraged: 0
-  remainingHealthToEnrage: 10
+  remainingHealthToEnrage: 5
   enrageModifier: 2
   onAttackSound: {fileID: 0}
   onMoveSound: {fileID: 0}
@@ -596,7 +596,7 @@ NavMeshAgent:
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 200
-  m_StoppingDistance: 5
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -989,7 +989,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_lootChances
-      value: 0.55
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_minRandomAmount
@@ -1028,6 +1028,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_entity.health
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: remainingHealthToEnrage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxAttackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_StoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

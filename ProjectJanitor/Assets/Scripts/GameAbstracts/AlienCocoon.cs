@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace GalacticJanitor.Game
 {
-    [ExecuteInEditMode]
-    [RequireComponent(typeof(SphereCollider))]
+    
     public class AlienCocoon : MonoBehaviour
     {
         public CocoonState currentState = CocoonState.READY;
@@ -98,7 +97,7 @@ namespace GalacticJanitor.Game
             {
                 Transform loc = GetSpawnLoc();
                 AlienBase pop = Instantiate(typeOfAlien, loc.position, loc.rotation) as AlienBase;
-                pop.target = target;
+                pop.SetTarget(target);
                 counter++;
             }
             else

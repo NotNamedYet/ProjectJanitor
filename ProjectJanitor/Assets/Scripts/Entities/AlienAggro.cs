@@ -23,7 +23,7 @@ namespace GalacticJanitor.Game
         {
             if (alien.target == null)
             {
-                alien.target = trackableTarget;
+                alien.SetTarget(trackableTarget);
 
                 /*SOUND*/
                 if (alien.onAggroSound) alien.onAggroSound.Play();
@@ -44,7 +44,7 @@ namespace GalacticJanitor.Game
                 AlienBase spreaded = other.gameObject.GetComponent<AlienBase>();
                 if (spreaded.target == null)
                 {
-                    spreaded.target = alien.target;
+                    spreaded.SetTarget(alien.target);
                 }
             }
         }
