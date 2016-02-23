@@ -6,6 +6,7 @@ namespace GalacticJanitor.Game
     public class WeaponAssaultRifle : MonoBehaviour
     {
 
+        #region Fields
         PlayerController playerController;
         PlayerAmmo playerAmmo;
 
@@ -42,9 +43,22 @@ namespace GalacticJanitor.Game
         [Tooltip("Amplitude use on time between two bullets. Set to zero if you don't want to.")]
         public float nextBulletTimerAmplitude = 0.1f; // Use to make a random effect with the timer
 
-        private float nextBulletTimerActive = 0f; // Timer in real time
-        private float nextBulletTimer; // Timer that can me modifie with nextBulletTimerAmplitude, see the function LaunchTimer()
-        private bool canConstantFireNextBullet = true;
+        public float nextBulletTimerActive = 0f; // Timer in real time
+        public float nextBulletTimer; // Timer that can me modified with nextBulletTimerAmplitude, see the function LaunchTimer()
+        public bool canConstantFireNextBullet = true;
+
+        [Header("Sounds", order = 2)]
+        public AudioClip[] sndFireBullet;
+        public AudioClip sndFireGrenade;
+
+        public AudioClip sndBulletReload;
+        public AudioClip sndGrenadeReload;
+
+        public AudioClip sndBulletEmpty;
+        public AudioClip sndGrenadeEmpty;
+
+        private AudioSource listener;
+        #endregion
 
         // Use this for initialization
         void Start()
@@ -52,15 +66,18 @@ namespace GalacticJanitor.Game
             nextBulletTimer = nextBulletTimerBase;
             playerController = gameObject.GetComponent<PlayerController>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
+            listener = gameObject.GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
         void Update()
         {
             LaunchTimer();
+            //LaunchTimerConstant();
             //BurstActivation();
         }
 
+        #region Fire
         /// <summary>
         /// Handle the timer with the flag canConstantFireNextBullet
         /// </summary>
@@ -78,26 +95,50 @@ namespace GalacticJanitor.Game
             }
         }
 
-        public bool CheckMagazineBullet()
+        private void LaunchTimerConstant()
         {
-            if (magazineBullet > 0)
-                return true;
-            else
-                return false;
+            if (!canConstantFireNextBullet)
+            {
+                nextBulletTimerActive += Time.deltaTime;
+                if (nextBulletTimerActive >= nextBulletTimerBase)
+                {
+                    nextBulletTimerActive = 0f;
+                    canConstantFireNextBullet = true;
+                    //nextBulletTimer = Random.Range(nextBulletTimerBase - nextBulletTimerAmplitude, nextBulletTimerBase + nextBulletTimerAmplitude);
+                }
+            }
         }
 
-        private bool CheckMagazineGrenade()
+        /// <summary>
+        /// When player begin to hold clic to fire, launch the timer. Call the anim to keep the fire animation.
+        /// Is update ONLY when left clic is hold, in ConstantFire().
+        /// </summary>
+        void BurstActivation()
         {
-            if (magazineGrenade > 0)
-                return true;
-            else
-                return false;
+            if (!burstModeIsActive)
+            {
+                canBurstTimerActive += Time.deltaTime;
+                if (canBurstTimerActive >= canBurstTimer)
+                {
+                    burstModeIsActive = true;
+                    canBurstTimerActive = 0f;
+                }
+            }
         }
 
         public void ConstantFire()
         {
+            playerController.justHaveShoot = true; // Launch the fire animation
             if (canConstantFireNextBullet && burstModeIsActive)
-                Fire();
+            {
+                if (CheckMagazineBullet())
+                {
+                    InvokeBullet();
+                }
+                else
+                    PlaySoundEmptyBullet();
+            }
+
             BurstActivation();
         }
 
@@ -112,30 +153,31 @@ namespace GalacticJanitor.Game
 
         public void Fire()
         {
+            playerController.justHaveShoot = true; // Launch the fire animation
+
             if (CheckMagazineBullet())
             {
-                playerController.justHaveShoot = true; // Launch the fire animation
-                Invoke("InvokeBullet", 0.1f)
-;            }
+                Invoke("InvokeBullet", 0.1f);
+            }
 
             else
             {
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponAssaultRifle");
-                // Play empty magazine sound
+                PlaySoundEmptyBullet();
             }
         }
 
         public void FireGrenade()
         {
+            playerController.justHaveShoot = true; // Launch the fire animation
             if (CheckMagazineGrenade())
             {
-                playerController.justHaveShoot = true; // Launch the fire animation
                 Invoke("InvokeGrenade", 0.1f);
             }
             else
             {
                 Debug.Log("OUT OF AMMO and i'm in function AlternateFire (GRENADE) of WeaponAssaultRifle");
-                // Play empty magazine sound
+                PlaySoundEmptyGrenade();
             }
         }
 
@@ -156,10 +198,9 @@ namespace GalacticJanitor.Game
                     PlayFlashShoot();
                     ReloadGrenade();
                     gameObject.GetComponent<WeaponControllerHartman>().playerCanShootAfterReload = false;
+                    PlaySoundFireGrenade();
                 }
             }
-
-            //Play a nice badass sound
         }
 
         void InvokeBullet()
@@ -180,13 +221,11 @@ namespace GalacticJanitor.Game
                         canConstantFireNextBullet = false;
                         playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
                         PlayFlashShoot();
+                        PlaySoundFireBullet();
                     }
                 }
                 //Debug.Log("clipinfo lengt : " + clipInfo.Length);
             }
-            
-
-            //Play a nice badass sound
         }
 
         void PlayFlashShoot()
@@ -198,7 +237,9 @@ namespace GalacticJanitor.Game
                 Destroy(flash, 0.11f); 
             }
         }
+        #endregion
 
+        #region Reload
         public void ReloadMagazine()
         {
             ReloadBullet();
@@ -215,18 +256,19 @@ namespace GalacticJanitor.Game
                 {
                     magazineBullet += ammoNeeded;
                     playerAmmo.ammoCarriedType0 -= ammoNeeded;
+                    PlaySoundReloadBullet();
                 }
                 else // Not enough ammo in player's inventory
                 {
                     if (playerAmmo.ammoCarriedType0 == 0) // No stock of ammo in player's inventory
                     {
                         Debug.Log("Can't reload, out of ammo, i'm in ReloadBullet of WeaponAssaultRifle");
-                        // Play empty magazine's sound, something like that
                     }
                     else
                     {
                         magazineBullet += playerAmmo.ammoCarriedType0;
                         playerAmmo.ammoCarriedType0 = 0;
+                        PlaySoundReloadBullet();
                     }
                 }
             }
@@ -244,18 +286,19 @@ namespace GalacticJanitor.Game
                 {
                     magazineGrenade += ammoNeeded;
                     playerAmmo.ammoCarriedType1 -= ammoNeeded;
+                    PlaySoundReloadGrenade();
                 }
                 else // Not enough ammo in player's inventory
                 {
                     if (playerAmmo.ammoCarriedType1 == 0) // No stock of ammo in player's inventory
                     {
                         Debug.Log("Can't reload, out of ammo, i'm in ReloadGrenade of WeaponAssaultRifle");
-                        // Play empty magazine's sound, something like that
                     }
                     else
                     {
                         magazineGrenade += playerAmmo.ammoCarriedType1;
                         playerAmmo.ammoCarriedType1 = 0;
+                        PlaySoundReloadGrenade();
                     }
                 }
             }
@@ -263,21 +306,64 @@ namespace GalacticJanitor.Game
                 Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadGrenade() of WeaponAssaultRifle");
         }
 
-        /// <summary>
-        /// When player begin to hold clic to fire, launch the timer. Call the anim to keep the fire animation.
-        /// Is update ONLY when left clic is hold, in ConstantFire().
-        /// </summary>
-        void BurstActivation()
+        public bool CheckMagazineBullet()
         {
-            if (!burstModeIsActive)
+            if (magazineBullet > 0)
+                return true;
+            else
+                return false;
+        }
+
+        private bool CheckMagazineGrenade()
+        {
+            if (magazineGrenade > 0)
+                return true;
+            else
+                return false;
+        }
+        #endregion
+
+        #region Sounds
+
+        private void PlaySoundFireBullet()
+        {
+            listener.PlayOneShot(sndFireBullet[Random.Range(0, sndFireBullet.Length)]);
+        }
+
+        private void PlaySoundFireGrenade()
+        {
+            listener.PlayOneShot(sndFireGrenade);
+        }
+
+        private void PlaySoundReloadBullet()
+        {
+            listener.PlayOneShot(sndBulletReload);
+        }
+
+        private void PlaySoundReloadGrenade()
+        {
+            listener.PlayOneShot(sndGrenadeReload);
+        }
+
+        private void PlaySoundEmptyBullet()
+        {
+            if (!listener.isPlaying)
             {
-                canBurstTimerActive += Time.deltaTime;
-                if (canBurstTimerActive >= canBurstTimer)
-                {
-                    burstModeIsActive = true;
-                    canBurstTimerActive = 0f;
-                }
+                listener.PlayOneShot(sndBulletEmpty); 
             }
         }
-    } 
+
+        private void PlaySoundEmptyGrenade()
+        {
+            if (!listener.isPlaying)
+            {
+                listener.PlayOneShot(sndGrenadeEmpty);
+            }
+            
+        }
+
+        #endregion
+
+    }
+
 }
