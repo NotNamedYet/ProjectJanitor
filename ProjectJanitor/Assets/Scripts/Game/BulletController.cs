@@ -24,7 +24,7 @@ namespace GalacticJanitor.Game
 
                 if (entity.target == null)
                 {
-                    entity.target = damageSource.transform;
+                    entity.SetTarget(damageSource.transform);
                 }
             }
             Destroy(gameObject);

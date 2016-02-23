@@ -20,8 +20,8 @@ namespace GalacticJanitor.Game
         protected NavMeshAgent pathfinder;
         EnemyState state = EnemyState.IDLE;
 
-        [HideInInspector]
-        public Transform target;
+        public Transform target { get; private set; }
+        public bool targetLocked;
 
         [Header("Passed params")]
         public Transform sensor;
@@ -65,7 +65,7 @@ namespace GalacticJanitor.Game
             }
         }
 
-        void Update()
+        protected virtual void Update()
         {
             if (rigging)
             {
@@ -261,6 +261,29 @@ namespace GalacticJanitor.Game
                 onMoveSound.Stop();
                 moveSoundLooping = false;
             }
+        }
+
+        public virtual void SetTarget(Transform target)
+        {
+            if (!targetLocked)
+                this.target = target;
+        }
+
+        public void LockTarget()
+        {
+            targetLocked = true;
+        }
+
+        public void LockTarget(Transform target)
+        {
+            UnlockTarget();
+            SetTarget(target);
+            LockTarget();
+        }
+
+        public void UnlockTarget()
+        {
+            targetLocked = false;
         }
 
         /// <summary>

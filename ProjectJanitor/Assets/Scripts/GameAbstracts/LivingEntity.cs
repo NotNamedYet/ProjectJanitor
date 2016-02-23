@@ -36,6 +36,8 @@ namespace GalacticJanitor.Game
             public int armorDamageReduction = 2;
         }
 
+        public int LastDamage { private set; get; }
+
         [Header("Living Behavior")]
         [SerializeField]
         public EntityBook m_entity;
@@ -73,13 +75,14 @@ namespace GalacticJanitor.Game
         /// </br>
         /// </summary>
         /// <param name="damage">health point to loose</param>
-        public void TakeDirectDamage(int damage)
+        /// <param name="ignoreArmor">true to ignore armor damage reduction</param>
+        public virtual void TakeDirectDamage(int damage, bool ignoreArmor)
         {
             if (invincible) return;
 
             if (m_entity.alive)
             {
-                if (m_entity.armor > 0)
+                if (m_entity.armor > 0 && !ignoreArmor)
                 {
                     if (damage <= m_entity.armor)
                     {
@@ -105,6 +108,7 @@ namespace GalacticJanitor.Game
                     }
                 }
 
+                LastDamage = damage;
                 m_entity.health -= damage;
 
                 /*SOUND*/
@@ -124,6 +128,18 @@ namespace GalacticJanitor.Game
                 /*GUI*/
                 UpdateDisplay();
             }
+        }
+
+        /// <summary>
+        /// Inflict the specified amount of damage to this entity. If the entity health falls to 0, the entity die.
+        /// <br>
+        /// Damage are divided by armorDamageReduction
+        /// </br>
+        /// </summary>
+        /// <param name="damage">health point to loose</param>
+        public void TakeDirectDamage(int damage)
+        {
+            TakeDirectDamage(damage, false);
         }
 
         /// <summary>

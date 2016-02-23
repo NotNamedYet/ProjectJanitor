@@ -49,7 +49,7 @@ namespace GalacticJanitor.Game
                     {
                         if (other.GetComponent<AlienBase>().target == null)
                         {
-                            other.GetComponent<AlienBase>().target = damageSource.transform;
+                            other.GetComponent<AlienBase>().SetTarget(damageSource.transform);
                         }
                     }
                 }

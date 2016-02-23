@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &118690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 447084}
+  - 33: {fileID: 3319548}
+  - 65: {fileID: 6519414}
+  - 23: {fileID: 2376892}
+  - 114: {fileID: 11419310}
+  - 114: {fileID: 11483378}
+  - 208: {fileID: 20813838}
+  m_Layer: 8
+  m_Name: pfb_BossCocoon_AlphaAmmo0
+  m_TagString: BossCocoon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &142970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 462162}
+  m_Layer: 8
+  m_Name: Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &447084
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.4, y: 0, z: 172.1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children:
+  - {fileID: 462162}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &462162
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 447084}
+  m_RootOrder: 0
+--- !u!23 &2376892
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118690}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3319548
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118690}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6519414
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11419310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a39b6f2de79cc4bac5d648f65d68e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combat: 0
+  m_health: 100
+  m_boss: {fileID: 0}
+  m_target: {fileID: 0}
+  m_sensor: {fileID: 462162}
+  m_projectile: {fileID: 11401256, guid: d7874fb3f17d3b840aafb24ecf755f19, type: 2}
+  m_projectileSpeed: 0
+  m_projectileDamage: 0
+  m_babies: {fileID: 11436418, guid: c662bb7e0dc15724fb0767518734c695, type: 2}
+  m_babiesAmount: 7
+  m_alienOnDeath: {fileID: 11415924, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+  m_dropAmmo: {fileID: 11482806, guid: 2fa1cd9e2d5289f498a75e3dd5c4d4e0, type: 2}
+  m_minimumDropAmmo: 15
+  m_maximumDropAmmo: 18
+--- !u!114 &11483378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cf131085d085b488386532b91283d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lootChances: 0.5
+  m_minRandomAmount: 10
+  m_maxRandomAmount: 20
+  m_armor: {fileID: 11442928, guid: 8e829166a827d724f907ad0c15fece41, type: 2}
+  m_health: {fileID: 11445416, guid: dbb89fa07d4554640ace3ad922c53b38, type: 2}
+--- !u!208 &20813838
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118690}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_deathSpawns.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_popOnDeath
+      value: 
+      objectReference: {fileID: 11436418, guid: c662bb7e0dc15724fb0767518734c695,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_popAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_deathSpawns.Array.data[0].m_object
+      value: 
+      objectReference: {fileID: 166484, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_deathSpawns.Array.data[0].m_Amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_deathSpawns.Array.data[1].m_object
+      value: 
+      objectReference: {fileID: 142736, guid: 2fa1cd9e2d5289f498a75e3dd5c4d4e0, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_deathSpawns.Array.data[1].m_Amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_deathSpawns.Array.data[2].m_object
+      value: 
+      objectReference: {fileID: 142736, guid: 8594d8cea2ab415499625db8df9178f8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_deathSpawns.Array.data[2].m_Amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_babies
+      value: 
+      objectReference: {fileID: 11436418, guid: c662bb7e0dc15724fb0767518734c695,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_babiesAmount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_alienOnDeath
+      value: 
+      objectReference: {fileID: 11415924, guid: 4b0910b2252c972479e5fb94b1af45b1,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_dropAmmo
+      value: 
+      objectReference: {fileID: 11482806, guid: 2fa1cd9e2d5289f498a75e3dd5c4d4e0,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_minimumDropAmmo
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maximumDropAmmo
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_lootChances
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_minRandomAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxRandomAmount
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 118690}
+  m_IsPrefabParent: 1
