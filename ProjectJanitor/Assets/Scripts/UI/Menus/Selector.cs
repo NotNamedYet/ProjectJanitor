@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Selector : MonoBehaviour {
 
     public CharacterSelector charSel;
+
     public MarinesType marines;
 
     public Image cursorHighlight;

@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    public ContextButton controlsBB;
-    public ContextButton noQB;
+    public ChangeTextColor controlsBB;
+    public ChangeTextColor noQB;
 
     public GameObject quitMenu;
     public GameObject menuButtons;
@@ -62,7 +62,7 @@ public class MenuScript : MonoBehaviour
 
     public void NoButtonPress()
     {
-        noQB.OutContextButton();
+        noQB.OffTrigger();
         quitMenu.SetActive(false);
         InteractableOn();
     }
@@ -88,7 +88,7 @@ public class MenuScript : MonoBehaviour
     {
         if (commandsPanel.activeInHierarchy)
         {
-            controlsBB.OutContextButton();
+            controlsBB.OffTrigger();
             commandsPanel.SetActive(false);
             menuButtons.SetActive(true);
         }

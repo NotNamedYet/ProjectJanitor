@@ -1675,8 +1675,8 @@ GameObject:
   - 222: {fileID: 317964661}
   - 114: {fileID: 317964660}
   - 114: {fileID: 317964659}
-  - 95: {fileID: 317964658}
   - 114: {fileID: 317964662}
+  - 114: {fileID: 317964658}
   m_Layer: 5
   m_Name: NewGame
   m_TagString: Untagged
@@ -1702,23 +1702,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 144}
   m_SizeDelta: {x: 746, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &317964658
-Animator:
-  serializedVersion: 3
+--- !u!114 &317964658
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 317964656}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47f15d138e610354990dc0df0bae1572, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11eb336f41451d40a651d776b9d03c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 252665187}
 --- !u!114 &317964659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,13 +1815,29 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1295112841}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 317964658}
+          m_MethodName: OnTrigger
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 5a6ad48d02c634b579f315c04a42be00,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 317964658}
+          m_MethodName: OffTrigger
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4357,10 +4368,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 848009404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d13f628c0949444a96c03c7b2e1885, type: 3}
+  m_Script: {fileID: 11500000, guid: e11eb336f41451d40a651d776b9d03c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextButton: {fileID: 914824602}
+  text: {fileID: 914824602}
 --- !u!114 &848009407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4378,7 +4389,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 848009406}
-          m_MethodName: InContextButton
+          m_MethodName: OnTrigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4395,7 +4406,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 848009406}
-          m_MethodName: OutContextButton
+          m_MethodName: OffTrigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5155,7 +5166,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 964587536}
-          m_MethodName: InContextButton
+          m_MethodName: OnTrigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5172,7 +5183,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 964587536}
-          m_MethodName: OutContextButton
+          m_MethodName: OffTrigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5278,10 +5289,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 964587530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d13f628c0949444a96c03c7b2e1885, type: 3}
+  m_Script: {fileID: 11500000, guid: e11eb336f41451d40a651d776b9d03c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextButton: {fileID: 1386666432}
+  text: {fileID: 1386666432}
 --- !u!1 &1045966027
 GameObject:
   m_ObjectHideFlags: 0
@@ -6601,8 +6612,8 @@ GameObject:
   - 222: {fileID: 1276610633}
   - 114: {fileID: 1276610632}
   - 114: {fileID: 1276610631}
-  - 95: {fileID: 1276610630}
   - 114: {fileID: 1276610629}
+  - 114: {fileID: 1276610630}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -6644,13 +6655,29 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1295112841}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 1276610630}
+          m_MethodName: OnTrigger
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 5a6ad48d02c634b579f315c04a42be00,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1276610630}
+          m_MethodName: OffTrigger
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -6659,23 +6686,18 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!95 &1276610630
-Animator:
-  serializedVersion: 3
+--- !u!114 &1276610630
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1276610627}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47f15d138e610354990dc0df0bae1572, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11eb336f41451d40a651d776b9d03c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1214541938}
 --- !u!114 &1276610631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7851,8 +7873,8 @@ GameObject:
   - 222: {fileID: 1412463264}
   - 114: {fileID: 1412463263}
   - 114: {fileID: 1412463262}
-  - 95: {fileID: 1412463261}
   - 114: {fileID: 1412463260}
+  - 114: {fileID: 1412463261}
   m_Layer: 5
   m_Name: LoadGame
   m_TagString: Untagged
@@ -7894,13 +7916,29 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1295112841}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 1412463261}
+          m_MethodName: OnTrigger
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 5a6ad48d02c634b579f315c04a42be00,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1412463261}
+          m_MethodName: OffTrigger
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -7909,23 +7947,18 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!95 &1412463261
-Animator:
-  serializedVersion: 3
+--- !u!114 &1412463261
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1412463258}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47f15d138e610354990dc0df0bae1572, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11eb336f41451d40a651d776b9d03c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 954021297}
 --- !u!114 &1412463262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8461,8 +8494,8 @@ GameObject:
   - 222: {fileID: 1602071745}
   - 114: {fileID: 1602071744}
   - 114: {fileID: 1602071743}
-  - 95: {fileID: 1602071742}
   - 114: {fileID: 1602071741}
+  - 114: {fileID: 1602071742}
   m_Layer: 5
   m_Name: QuitGame
   m_TagString: Untagged
@@ -8504,13 +8537,29 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1295112841}
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 1602071742}
+          m_MethodName: OnTrigger
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 5a6ad48d02c634b579f315c04a42be00,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1602071742}
+          m_MethodName: OffTrigger
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -8519,23 +8568,18 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!95 &1602071742
-Animator:
-  serializedVersion: 3
+--- !u!114 &1602071742
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1602071739}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47f15d138e610354990dc0df0bae1572, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11eb336f41451d40a651d776b9d03c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 565002208}
 --- !u!114 &1602071743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9826,10 +9870,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987207548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d13f628c0949444a96c03c7b2e1885, type: 3}
+  m_Script: {fileID: 11500000, guid: e11eb336f41451d40a651d776b9d03c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextButton: {fileID: 1623348012}
+  text: {fileID: 1623348012}
 --- !u!114 &1987207551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9847,7 +9891,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1987207550}
-          m_MethodName: InContextButton
+          m_MethodName: OnTrigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9864,7 +9908,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1987207550}
-          m_MethodName: OutContextButton
+          m_MethodName: OffTrigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
