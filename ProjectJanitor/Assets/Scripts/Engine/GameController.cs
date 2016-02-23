@@ -16,6 +16,8 @@ namespace GalacticJanitor.Engine
 
         private GameObject _projectileHolder;
 
+        public GameSettings settings;
+
         /// <summary>
         /// Return the gameobject that hold this GameController.
         /// </summary>
@@ -119,6 +121,10 @@ namespace GalacticJanitor.Engine
                 DontDestroyOnLoad(transform.root.gameObject);
                 Controller = this;
 
+                if (settings == null)
+                {
+                    settings = new GameSettings();
+                }
             }
             else if (Controller != this)
             {
@@ -141,8 +147,7 @@ namespace GalacticJanitor.Engine
             {
                 Destroy(Player.gameObject);
             }
-        }
-        
+        }        
 
         #region EVENTSMANAGER
 
