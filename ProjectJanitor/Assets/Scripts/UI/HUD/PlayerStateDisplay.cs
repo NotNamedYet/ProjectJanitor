@@ -11,6 +11,10 @@ namespace GalacticJanitor.UI
         public AmmoDisplay ammo1;
         public AmmoDisplay ammo2;
 
+        [Header("Entrave Display")]
+        public GameObject m_entraveDisplay;
+        public ProgressBar m_entraveBar;
+
         public void DisplayInfoWeapon1(int ammoCarried, int ammoInMagazine)
         {
             ammo1.UpdateText(ammoInMagazine, ammoCarried);
@@ -35,5 +39,15 @@ namespace GalacticJanitor.UI
             return isCarter;
         }
 
+        public void DisplayEntrave(bool value)
+        {
+            m_entraveDisplay.gameObject.SetActive(value);
+        }
+
+        public void UpdateEntrave(int remain, int max)
+        {
+            if (m_entraveDisplay.gameObject.activeInHierarchy)
+                m_entraveBar.UpdateProgress(remain, max);
+        }
     }
 }
