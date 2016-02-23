@@ -27,7 +27,6 @@ namespace GalacticJanitor.Game
             // We need the distance to reach for this frame to determine the distance of the raycast colllision
             float moveDistance = baseSpeed * Time.deltaTime;
 
-
             CheckCollision(moveDistance); // Is something there ? ...
             transform.Translate(Vector3.forward * moveDistance); //... Nope ! Run baby run !
         }
@@ -58,7 +57,7 @@ namespace GalacticJanitor.Game
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
-
+            
             if (Physics.Raycast(ray, out hit, distance, colliderMask, QueryTriggerInteraction.Collide))
             {
                 OnHit(hit);

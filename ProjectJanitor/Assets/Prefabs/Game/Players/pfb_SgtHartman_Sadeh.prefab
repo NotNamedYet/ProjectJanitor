@@ -648,6 +648,9 @@ MonoBehaviour:
   weapCHartman: {fileID: 0}
   score:
     enemyKilled: 0
+  immuneEntrave: 0
+  m_entraveSpeedReduction: 5
+  m_maxEntraveTime: 6
 --- !u!114 &11434664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,6 +727,15 @@ MonoBehaviour:
   burstModeIsActive: 0
   nextBulletTimerBase: 0.1
   nextBulletTimerAmplitude: 0.02
+  nextBulletTimerActive: 0
+  nextBulletTimer: 0
+  canConstantFireNextBullet: 1
+  sndFireBullet: []
+  sndFireGrenade: {fileID: 0}
+  sndBulletReload: {fileID: 0}
+  sndGrenadeReload: {fileID: 0}
+  sndBulletEmpty: {fileID: 0}
+  sndGrenadeEmpty: {fileID: 0}
 --- !u!135 &13561322
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1148,6 +1160,14 @@ Prefab:
       propertyPath: flashShoot
       value: 
       objectReference: {fileID: 127294, guid: 02c51482417645d43af4d0df8730c8da, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_entraveSpeedReduction
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxEntraveTime
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119372}

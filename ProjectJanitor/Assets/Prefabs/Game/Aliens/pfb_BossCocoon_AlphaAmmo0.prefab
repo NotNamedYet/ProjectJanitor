@@ -122,7 +122,7 @@ MonoBehaviour:
   m_boss: {fileID: 0}
   m_target: {fileID: 0}
   m_sensor: {fileID: 462162}
-  m_projectile: {fileID: 11401256, guid: d7874fb3f17d3b840aafb24ecf755f19, type: 2}
+  m_projectile: {fileID: 11401256, guid: a8394d16e635b6949bcd85f58404a186, type: 2}
   m_projectileSpeed: 0
   m_projectileDamage: 0
   m_babies: {fileID: 11436418, guid: c662bb7e0dc15724fb0767518734c695, type: 2}
@@ -245,6 +245,11 @@ Prefab:
       propertyPath: m_maxRandomAmount
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_projectile
+      value: 
+      objectReference: {fileID: 11401256, guid: a8394d16e635b6949bcd85f58404a186,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118690}

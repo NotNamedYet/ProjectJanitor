@@ -624,7 +624,7 @@ MonoBehaviour:
     armorDamageReduction: 2
   destroyOnDeath: 0
   saveOnDeath: 0
-  invincible: 1
+  invincible: 0
   optionalAnimator: {fileID: 9516860}
   entityDisplay: {fileID: 0}
   deathloot: {fileID: 0}
@@ -648,6 +648,9 @@ MonoBehaviour:
   weapCHartman: {fileID: 0}
   score:
     enemyKilled: 0
+  immuneEntrave: 0
+  m_entraveSpeedReduction: 5
+  m_maxEntraveTime: 6
 --- !u!114 &11434664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1143,6 +1146,18 @@ Prefab:
       value: 
       objectReference: {fileID: 24300001, guid: 0f2d920a56024fa42a77524076e3d6e0,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: invincible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxEntraveTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_entraveSpeedReduction
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119372}

@@ -53,7 +53,6 @@ namespace GalacticJanitor.Game
         [HideInInspector]public WeaponControllerCarter weapCCarter;
         [HideInInspector]public WeaponControllerHartman weapCHartman;
 
-
         //SCORE
         [System.Serializable]
         [SerializeField]
@@ -290,6 +289,63 @@ namespace GalacticJanitor.Game
         {
             return marinesType == MarinesType.MajCarter;
         }
+
+        //Entrave System
+
+        [Header("Entrave Debuff")]
+        public bool immuneEntrave;
+        public float m_entraveSpeedReduction;
+        public int m_maxEntraveTime;
+
+        bool m_entraved;
+        int m_entraveTime;
+        
+
+        public void Entrave(int sec)
+        {
+            if (!immuneEntrave)
+            {
+                m_entraveTime += sec;
+                if (m_entraveTime > m_maxEntraveTime)
+                    m_entraveTime = m_maxEntraveTime;
+
+                if (!m_entraved)
+                {
+                    StartCoroutine(EntraveRoutine());
+                }
+            }
+        }
+
+        void EnterEntrave()
+        {
+            playerDisplay.DisplayEntrave(true);
+            playerDisplay.UpdateEntrave(m_entraveTime, m_maxEntraveTime);
+            m_entraved = true;
+            speed -= m_entraveSpeedReduction;
+        }
+
+        void ExitEntrave()
+        {
+            playerDisplay.DisplayEntrave(false);
+            speed += m_entraveSpeedReduction;
+            m_entraveTime = 0;
+            m_entraved = false;
+        }
+
+        IEnumerator EntraveRoutine()
+        {
+            EnterEntrave();
+
+            while (m_entraveTime > 0)
+            {
+                yield return new WaitForSeconds(1);
+                m_entraveTime--;
+                playerDisplay.UpdateEntrave(m_entraveTime, m_maxEntraveTime);
+            }
+
+            ExitEntrave();
+        }
+
     }    
 }
 
