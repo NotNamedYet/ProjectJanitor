@@ -36,6 +36,7 @@ namespace MonoPersistency
     public class RegisterySnapshot : IComparable<RegisterySnapshot>
     {
         public string m_identifier;
+        public string m_partyName;
         public string m_currentScene;
         public long m_timePlayed;
         public long m_lastUpdate;

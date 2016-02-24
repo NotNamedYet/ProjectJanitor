@@ -5,11 +5,13 @@ public class CharSelection : MonoBehaviour {
 
     public CharSelController charSelControl;
 
-    public bool isSelected;
+    public MarinesType marines;
 
-	// Use this for initialization
-	void Awake () {
-        ShowCharacter();
+    //public bool isSelected;
+
+    // Use this for initialization
+    void Start () {
+        
     }
 
     // Update is called once per frame
@@ -17,6 +19,7 @@ public class CharSelection : MonoBehaviour {
 
     }
 
+/*
     public void ShowCharacter()
     {
         charSelControl.ShowSelectedChar(this);
@@ -26,7 +29,5 @@ public class CharSelection : MonoBehaviour {
     {
         charSelControl.HideCharacter(this);
     }
-
-
-
+*/
 }
