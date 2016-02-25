@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using MonoPersistency;
+using System.Text.RegularExpressions;
 
 public class CharacterSelector : MonoBehaviour {
 
@@ -20,6 +21,12 @@ public class CharacterSelector : MonoBehaviour {
 	
 	}
 
+/*
+    public bool ValidateCharName(string charName)
+    {
+        return Regex.IsMatch(charName, "[A-Za-az0-9]");
+    }
+*/
     public void LaunchGame()
     {
         SaveSystem.Registery.m_snapshot.m_partyName = charName.text;

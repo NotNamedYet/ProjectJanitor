@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class CharSelController : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class CharSelController : MonoBehaviour {
 
     public CharacterSelector charSelector;
 
+    bool isValidate;
     int i = 0;
     public CharSelection[] tabChar;
 
@@ -21,6 +23,13 @@ public class CharSelController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public void ValidateCharName()
+    {
+        System.Text.RegularExpressions.Regex charNameValidator = new Regex("[A-Za-az0-9]");
+        isValidate = charNameValidator.IsMatch(charSelector.charName.text);
+        //Regex.IsMatch(charName, "[A-Za-az0-9]");
     }
 
     public void ShowDefaultChar()
@@ -39,9 +48,7 @@ public class CharSelController : MonoBehaviour {
         {
             i = 0;
         }
-        tabChar[i].gameObject.SetActive(true);
-        charSelector.selectedMarine = tabChar[i].marines;
-
+        ShowSelectedChar();
         Debug.Log(i + " - " + tabChar.Length);
     }
 
@@ -51,36 +58,20 @@ public class CharSelController : MonoBehaviour {
         if (i > 0)
         {
             i--;
-            tabChar[i].gameObject.SetActive(true);
-            charSelector.selectedMarine = tabChar[i].marines;
         }
         else
         {
             i = (tabChar.Length - 1);
-            tabChar[i].gameObject.SetActive(true);
-            charSelector.selectedMarine = tabChar[i].marines;
         }
+        ShowSelectedChar();
         Debug.Log(i + " - " + tabChar.Length);
     }
 
-    public void RightChangeColor()
-    {
-        right.color = new Color32(43, 161, 233, 255);
-    }
 
-    public void LeftChangeColor()
+    public void ShowSelectedChar()
     {
-        left.color = new Color32(43, 161, 233, 255);
-    }
-
-    public void CancelRightColorChanges()
-    {
-        right.color = new Color32(71, 71, 71, 255);
-    }
-
-    public void CancelLeftColorChanges()
-    {
-        left.color = new Color32(71, 71, 71, 255);
+        tabChar[i].gameObject.SetActive(true);
+        charSelector.selectedMarine = tabChar[i].marines;
     }
 
     /*
