@@ -88,9 +88,9 @@ public class MenuScript : MonoBehaviour
     {
         if (commandsPanel.activeInHierarchy)
         {
-            controlsBB.OffTrigger();
             commandsPanel.SetActive(false);
             menuButtons.SetActive(true);
+            commandsButton.GetComponent<ChangeTextColor>().OffTrigger();
         }
         else
         {

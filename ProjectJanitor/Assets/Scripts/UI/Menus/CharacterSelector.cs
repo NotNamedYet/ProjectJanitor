@@ -11,9 +11,12 @@ public class CharacterSelector : MonoBehaviour {
 
     public InputField charName;
 
+    public Image checkNOK;
+    public Image checkOK;
+
 	// Use this for initialization
 	void Start () {
-	   
+                	   
 	}
 	
 	// Update is called once per frame
@@ -21,12 +24,20 @@ public class CharacterSelector : MonoBehaviour {
 	
 	}
 
-/*
-    public bool ValidateCharName(string charName)
+    public void OnChangeCharName()
     {
-        return Regex.IsMatch(charName, "[A-Za-az0-9]");
+        if(charName.text != "" && charName.text != " ")
+        {
+            startButton.interactable = true;
+            StartCoroutine("DisplayCheckOK");
+        }
+        else
+        {
+            startButton.interactable = false;
+            StartCoroutine("DisplayCheckNOK");
+        }
     }
-*/
+
     public void LaunchGame()
     {
         SaveSystem.Registery.m_snapshot.m_partyName = charName.text;
@@ -35,5 +46,19 @@ public class CharacterSelector : MonoBehaviour {
         //...
         SaveSystem.RegisterPlayer(playerContainer);
         SaveSystem.LoadScene("SampleLab");
+    }
+
+    IEnumerator DisplayCheckOK()
+    {
+        checkOK.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        checkOK.gameObject.SetActive(false);
+    }
+
+    IEnumerator DisplayCheckNOK()
+    {
+        checkNOK.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        checkNOK.gameObject.SetActive(false);
     }
 }
