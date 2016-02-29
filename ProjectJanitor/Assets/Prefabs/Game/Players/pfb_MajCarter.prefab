@@ -80,6 +80,7 @@ GameObject:
   - 135: {fileID: 13546560}
   - 95: {fileID: 9588384}
   - 208: {fileID: 20852002}
+  - 82: {fileID: 8226698}
   m_Layer: 8
   m_Name: pfb_MajCarter
   m_TagString: Player
@@ -653,6 +654,81 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!82 &8226698
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114808}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 0f2d920a56024fa42a77524076e3d6e0,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9588384
 Animator:
   serializedVersion: 3
@@ -786,11 +862,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 11490528, guid: 77c7896ca4c132a4e8ccc3d7b896042a, type: 2}
-  magazine: 30
+  magazine: 0
   bulletsDmg: 1
   chokes1: {fileID: 419786}
   chokes2: {fileID: 496162}
   flashShoot: {fileID: 127294, guid: 02c51482417645d43af4d0df8730c8da, type: 2}
+  sndFire:
+  - {fileID: 8300000, guid: 4e19f3aaa05647b459c1529dc42d03a5, type: 3}
+  - {fileID: 8300000, guid: 92ce0c7fcef317d4a8b69fd672d6b7fb, type: 3}
+  - {fileID: 8300000, guid: 130917ac61ff07e4b959a25b88f6d53c, type: 3}
+  sndEmpty: {fileID: 8300000, guid: f2b39de50b6c347468b9b7a198c08638, type: 3}
+  sndReload: {fileID: 8300000, guid: 28d0ac3fa5667c247954bd06d85c075f, type: 3}
 --- !u!114 &11452898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -821,6 +903,8 @@ MonoBehaviour:
   magazine: 100
   flameDmg: 1
   chokes: {fileID: 439710}
+  sndReload: {fileID: 8300000, guid: 95670b9469c416a49917a456fac97249, type: 3}
+  sndEmpty: {fileID: 8300000, guid: a0d2457cbad049d4185731cd836adcce, type: 3}
 --- !u!135 &13546560
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1186,6 +1270,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: sndFire.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c32e736e89621b54194e8c7c7a65529b, type: 2}
@@ -1263,7 +1351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: magazine
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: flashShoot
@@ -1281,6 +1369,43 @@ Prefab:
       propertyPath: m_maxEntraveTime
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300001, guid: 0f2d920a56024fa42a77524076e3d6e0,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: sndFire.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e19f3aaa05647b459c1529dc42d03a5, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndFire.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 92ce0c7fcef317d4a8b69fd672d6b7fb, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndFire.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 130917ac61ff07e4b959a25b88f6d53c, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndEmpty
+      value: 
+      objectReference: {fileID: 8300000, guid: a0d2457cbad049d4185731cd836adcce, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndReload
+      value: 
+      objectReference: {fileID: 8300000, guid: 95670b9469c416a49917a456fac97249, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114808}

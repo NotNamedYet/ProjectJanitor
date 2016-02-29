@@ -21,16 +21,18 @@ namespace GalacticJanitor.Game
 
         PlayerAmmo playerAmmo;
 
+        [Header("Sounds", order = 1)]
+        public AudioClip[] sndFire;
+        public AudioClip sndEmpty;
+        public AudioClip sndReload;
+
+        private AudioSource listener;
+
         // Use this for initialization
         void Start()
         {
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            listener = GetComponent<AudioSource>();
         }
 
         public void Fire()
@@ -44,7 +46,8 @@ namespace GalacticJanitor.Game
                     Debug.Log("i pulled the trigger with the left gun in \"WeaponDoubleGun\"");
                     bul = Instantiate(bullet, chokes1.position, chokes1.rotation) as BulletController;
                     PlayFlashShoot(chokes1);
-                    
+
+
                 }
                 else
                 {
@@ -57,12 +60,15 @@ namespace GalacticJanitor.Game
                 bul.baseDamage = bulletsDmg;
                 bul.SetSource(gameObject);
                 magazine--;
+                listener.PlayOneShot(sndFire[Random.Range(0, sndFire.Length)]);
 
-                //Play a nice badass sound
                 activeChokes = !activeChokes;
             }
             else
+            {
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponDoubleGun");
+                listener.PlayOneShot(sndEmpty);
+            }
         }
 
         void PlayFlashShoot(Transform chokes)
@@ -93,6 +99,7 @@ namespace GalacticJanitor.Game
                 {
                     magazine += ammoNeeded;
                     playerAmmo.ammoCarriedType0 -= ammoNeeded;
+                    listener.PlayOneShot(sndReload);
                 }
                 else // Not enough ammo in player's inventory
                 {
@@ -105,6 +112,7 @@ namespace GalacticJanitor.Game
                     {
                         magazine += playerAmmo.ammoCarriedType0;
                         playerAmmo.ammoCarriedType0 = 0;
+                        listener.PlayOneShot(sndReload);
                     }
                 }
             }

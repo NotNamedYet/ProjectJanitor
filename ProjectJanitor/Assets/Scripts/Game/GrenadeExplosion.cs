@@ -19,12 +19,17 @@ namespace GalacticJanitor.Game
         public float timerSet = 0.75f;
         float timer;
 
+        public AudioClip sndExplo;
+
         public GameObject damageSource;
+
         
         // Use this for initialization
         void Start()
         {
             timer = Time.time + timerSet;
+
+            GetComponent<AudioSource>().PlayOneShot(sndExplo);
 
             targetsAlreadyTouched = new List<int>();
             explosion = gameObject.GetComponent<ParticleSystem>();
