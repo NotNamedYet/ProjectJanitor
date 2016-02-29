@@ -15,6 +15,8 @@ namespace GalacticJanitor.UI
         public GameObject m_entraveDisplay;
         public ProgressBar m_entraveBar;
 
+        public Image m_combatImage;
+
         public void DisplayInfoWeapon1(int ammoCarried, int ammoInMagazine)
         {
             ammo1.UpdateText(ammoInMagazine, ammoCarried);
@@ -48,6 +50,11 @@ namespace GalacticJanitor.UI
         {
             if (m_entraveDisplay.gameObject.activeInHierarchy)
                 m_entraveBar.UpdateProgress(remain, max);
+        }
+
+        public void ShowCombatVisual(bool value)
+        {
+            m_combatImage.gameObject.SetActive(value);
         }
     }
 }

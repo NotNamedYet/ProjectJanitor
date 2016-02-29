@@ -3,6 +3,8 @@ using System.Collections;
 using System;
 using MonoPersistency;
 using GalacticJanitor.Engine;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ActivableDoor : Interactable {
 

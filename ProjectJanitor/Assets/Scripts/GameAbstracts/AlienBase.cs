@@ -95,6 +95,9 @@ namespace GalacticJanitor.Game
 
         void FixedUpdate()
         {
+            if (target)
+                GameController.Player.UpdateCombat();
+
             CalculateBehavior();
         }
 
