@@ -21,7 +21,7 @@ namespace GalacticJanitor.Game
                     firstAttack ^= true;
 
                     /*SOUND*/
-                    if (onAttackSound) onAttackSound.Play();
+                    //if (onAttackSound) onAttackSound.Play();
                 }
                 if (target.gameObject.tag == "Player")
                 {

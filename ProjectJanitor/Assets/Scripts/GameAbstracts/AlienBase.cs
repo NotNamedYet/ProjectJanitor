@@ -17,6 +17,8 @@ namespace GalacticJanitor.Game
     [RequireComponent(typeof(NavMeshAgent))]
     public class AlienBase : LivingEntity
     {
+
+        #region fields
         protected NavMeshAgent pathfinder;
         EnemyState state = EnemyState.IDLE;
 
@@ -48,6 +50,7 @@ namespace GalacticJanitor.Game
 
         private bool moveSoundLooping;
         private Vector3 spawn;
+        #endregion
 
         void Awake()
         {
@@ -209,8 +212,8 @@ namespace GalacticJanitor.Game
             if (!enraged)
             {
                 if (onEnrageSound) onEnrageSound.Play();
-                if (onMoveSound) onMoveSound.volume = onMoveSound.volume * enrageModifier;
-                if (onAttackSound) onAttackSound.volume = onAttackSound.volume * enrageModifier;
+                //if (onMoveSound) onMoveSound.volume = onMoveSound.volume * enrageModifier;
+                //if (onAttackSound) onAttackSound.volume = onAttackSound.volume * enrageModifier;
 
                 enraged = true;
                 pathfinder.speed = baseSpeed * enrageModifier;
@@ -224,8 +227,8 @@ namespace GalacticJanitor.Game
         {
             if (enraged)
             {
-                if (onMoveSound) onMoveSound.volume = onMoveSound.volume / enrageModifier;
-                if (onAttackSound) onAttackSound.volume = onAttackSound.volume / enrageModifier;
+                //if (onMoveSound) onMoveSound.volume = onMoveSound.volume / enrageModifier;
+                //if (onAttackSound) onAttackSound.volume = onAttackSound.volume / enrageModifier;
 
                 enraged = false;
                 pathfinder.speed = baseSpeed;

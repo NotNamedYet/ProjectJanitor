@@ -67,7 +67,7 @@ namespace GalacticJanitor.Game
             else
             {
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponDoubleGun");
-                listener.PlayOneShot(sndEmpty);
+                if (Input.GetKeyDown(KeyCode.Mouse0)) listener.PlayOneShot(sndEmpty);
             }
         }
 

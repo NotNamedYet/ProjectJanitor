@@ -29,6 +29,12 @@ namespace GalacticJanitor.Game
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : LivingEntity
     {
+
+        [Header("Player Sounds", order = 2)]
+        public AudioClip sndOnLowHp;
+        //[HideInInspector]
+        //public bool isLowHp;
+
         [Header("Player Behavior")]
         public MarinesType marinesType;
         public PlayerAmmo playerAmmo;
@@ -82,6 +88,7 @@ namespace GalacticJanitor.Game
         new void Start()
         {
             LoadData(SaveSystem.GetPlayerData());
+            listener = GetComponent<AudioSource>();
         }
 
         void Awake()
@@ -102,6 +109,25 @@ namespace GalacticJanitor.Game
             GameController.Player = this;
             GameController.TopDownCamera.SetTarget(transform);
             
+        }
+
+        public override void TakeDirectDamage(int damage, bool ignoreArmor)
+        {
+            base.TakeDirectDamage(damage, ignoreArmor);
+            if (m_entity.health < m_entity.maxHealth / 4)
+            {
+                StartCoroutine("CoRoutLowLife");
+            }
+
+        }
+
+        private IEnumerator CoRoutLowLife()
+        {
+            while (m_entity.health < m_entity.maxHealth / 4)
+            {
+                listener.PlayOneShot(sndOnLowHp);
+                yield return new WaitForSeconds(sndOnLowHp.length);
+            }
         }
 
         void Update()
@@ -145,6 +171,7 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// When the flag justHaveShoot is active, play the fire animation.
         /// </summary>
+        #region Animation
         void UpdateTimerPlayerAnimShoot()
         {
             if (justHaveShoot)
@@ -172,17 +199,19 @@ namespace GalacticJanitor.Game
                 else
                     anim.SetBool("playerMove", false);
             }
-            
+
             else // Hartman
             {
                 if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)
                     anim.SetBool("playerMove", true);
-                
+
                 else
                     anim.SetBool("playerMove", false);
             }
-        }
+        } 
+        #endregion
 
+        #region DisplayInfo
         public void DisplayInfoWeapon1(int ammoCarried, int ammoInMagazine)
         {
             if (playerDisplay) playerDisplay.DisplayInfoWeapon1(ammoCarried, ammoInMagazine);
@@ -207,8 +236,10 @@ namespace GalacticJanitor.Game
             }
 
             else playerDisplay.DisplayInfoIndexWeapon(0, false);
-        }
+        } 
+        #endregion
 
+        #region SaveData
         public override void CollectData(DataContainer container)
         {
 
@@ -233,7 +264,7 @@ namespace GalacticJanitor.Game
                 container.Addvalue("ammo0", weapCHartman.assaultRifle.magazineBullet);
                 container.Addvalue("ammo1", weapCHartman.assaultRifle.magazineGrenade);
             }
-            
+
 
             SaveSystem.GetActiveSceneData().m_stage.RegisterPlayerLocation(transform);
         }
@@ -272,7 +303,7 @@ namespace GalacticJanitor.Game
                 //location restore;
                 SaveSystem.GetActiveSceneData().m_stage.RestorePlayerLocation(transform);
             }
-            
+
         }
 
         protected override void Save()
@@ -283,15 +314,10 @@ namespace GalacticJanitor.Game
             Debug.Log("saving player...");
             CollectData(m_data);
             SaveSystem.RegisterPlayer(m_data);
-        }
+        } 
+        #endregion
 
-        public bool isCarter()
-        {
-            return marinesType == MarinesType.MajCarter;
-        }
-
-        //Entrave System
-
+        #region Entrave
         [Header("Entrave Debuff")]
         public bool immuneEntrave;
         public float m_entraveSpeedReduction;
@@ -299,7 +325,7 @@ namespace GalacticJanitor.Game
 
         bool m_entraved;
         int m_entraveTime;
-        
+
 
         public void Entrave(int sec)
         {
@@ -345,8 +371,15 @@ namespace GalacticJanitor.Game
 
             ExitEntrave();
         }
+        #endregion
 
-    }    
+        public bool isCarter()
+        {
+            return marinesType == MarinesType.MajCarter;
+        }
+
+    }
+
 }
 
 public enum MarinesType

@@ -113,7 +113,7 @@ namespace GalacticJanitor.Game
             else
             {
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponFlameThrower");
-                if (!listener.isPlaying) listener.PlayOneShot(sndEmpty);
+                if (Input.GetKeyDown(KeyCode.Mouse0)) listener.PlayOneShot(sndEmpty);
             }
         }
 
