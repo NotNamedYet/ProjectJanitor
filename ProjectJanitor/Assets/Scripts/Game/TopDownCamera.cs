@@ -16,7 +16,10 @@ namespace GalacticJanitor.Game
         public float trackingBoostRange = 5f;
         public bool trackPlayerOnStart = true;
         public bool fixedTarget;
-        
+
+        [Header("Cursor")]
+        public bool m_customCursor = false;
+        public Texture2D m_cursor;
 
         private Transform target;
 
@@ -37,6 +40,9 @@ namespace GalacticJanitor.Game
 
         void Start()
         {
+            if (m_customCursor)
+                Cursor.SetCursor(m_cursor, Vector2.zero, CursorMode.Auto);
+
             if (trackPlayerOnStart)
             {
                 SetTarget(GameController.Player.transform);
@@ -86,6 +92,11 @@ namespace GalacticJanitor.Game
             {
                 transform.position = new Vector3(target.position.x, 10, target.position.z);
             }
+        }
+
+        public bool IsFarFromTarget()
+        {
+            return Vector3.Distance(target.position, new Vector3(transform.position.x, 0, transform.position.z)) > 1f;
         }
     }
 

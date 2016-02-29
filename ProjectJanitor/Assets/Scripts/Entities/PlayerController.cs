@@ -34,6 +34,7 @@ namespace GalacticJanitor.Game
         public PlayerAmmo playerAmmo;
         public float speed = 10;
         public bool freeze;
+        public bool freezed;
 
         Rigidbody body;
         public PlayerRotation rotate; // Ref to the gameObject that must rotate, with the script PlayerRotation
@@ -114,7 +115,7 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (!freeze)
+            if (!freeze && !freezed)
             {
                 Movement(); 
             }
@@ -209,6 +210,13 @@ namespace GalacticJanitor.Game
             else playerDisplay.DisplayInfoIndexWeapon(0, false);
         }
 
+        public bool isCarter()
+        {
+            return marinesType == MarinesType.MajCarter;
+        }
+
+        #region PERSISTENCY
+
         public override void CollectData(DataContainer container)
         {
 
@@ -285,12 +293,54 @@ namespace GalacticJanitor.Game
             SaveSystem.RegisterPlayer(m_data);
         }
 
-        public bool isCarter()
+        #endregion
+
+        #region COMBAT
+
+
+        public bool IsFighting { get; private set; }
+        public bool m_stillCombat;
+
+        [Header("Combat")]
+        [Range(3, 10)]
+        public float m_combatThreshold = 3;
+
+        public void UpdateCombat()
         {
-            return marinesType == MarinesType.MajCarter;
+            m_stillCombat = true;
+
+            if (!IsFighting)
+            {
+                StartCoroutine(CombatRoutine());
+            }
         }
 
-        //Entrave System
+        IEnumerator CombatRoutine()
+        {
+
+            IsFighting = true;
+            GameController.NotifyPlayer("Fight !", Color.red, 1);
+            if (playerDisplay)
+                playerDisplay.ShowCombatVisual(true);
+
+            while (m_stillCombat)
+            {
+                Debug.Log("Combat");
+                m_stillCombat = false;
+                yield return new WaitForSeconds(m_combatThreshold);
+            }
+
+            Debug.Log("end combat...");
+
+            IsFighting = false;
+            GameController.NotifyPlayer("End fight...", Color.red, 2);
+            if (playerDisplay)
+                playerDisplay.ShowCombatVisual(false);
+        }
+
+        #endregion
+
+        #region ENTRAVE
 
         [Header("Entrave Debuff")]
         public bool immuneEntrave;
@@ -346,7 +396,9 @@ namespace GalacticJanitor.Game
             ExitEntrave();
         }
 
-    }    
+        #endregion
+
+    }
 }
 
 public enum MarinesType

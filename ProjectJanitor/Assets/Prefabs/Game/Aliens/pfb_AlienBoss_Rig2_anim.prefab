@@ -616,6 +616,7 @@ GameObject:
   - 65: {fileID: 6525448}
   - 195: {fileID: 19527956}
   - 114: {fileID: 11468746}
+  - 114: {fileID: 11417194}
   m_Layer: 10
   m_Name: pfb_AlienBoss_Rig2_anim
   m_TagString: Alien
@@ -1371,8 +1372,20 @@ MonoBehaviour:
   m_colliderMask:
     serializedVersion: 2
     m_Bits: 256
-  m_leachAmount: 10
+  m_leachAmount: 5
   onAttack: 0
+--- !u!114 &11417194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93f27016bb5f8147bb17fd8b0b21d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
 --- !u!114 &11468746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1389,10 +1402,10 @@ MonoBehaviour:
   entityDisplayName: 
   m_entity:
     alive: 1
-    health: 200
-    maxHealth: 200
-    armor: 0
-    maxArmor: 0
+    health: 100
+    maxHealth: 100
+    armor: 50
+    maxArmor: 50
     armorDamageReduction: 2
   destroyOnDeath: 1
   saveOnDeath: 1
@@ -1430,6 +1443,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_cocoonBoostValue: 10
+  m_onDeathInteractables:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11472412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1445,7 +1461,7 @@ MonoBehaviour:
   m_colliderMask:
     serializedVersion: 2
     m_Bits: 256
-  m_leachAmount: 10
+  m_leachAmount: 5
   onAttack: 0
 --- !u!114 &11473274
 MonoBehaviour:
@@ -1505,7 +1521,7 @@ MonoBehaviour:
   m_colliderMask:
     serializedVersion: 2
     m_Bits: 256
-  m_leachAmount: 10
+  m_leachAmount: 5
   onAttack: 0
 --- !u!114 &11493226
 MonoBehaviour:
@@ -1534,7 +1550,7 @@ MonoBehaviour:
   m_colliderMask:
     serializedVersion: 2
     m_Bits: 256
-  m_leachAmount: 10
+  m_leachAmount: 5
   onAttack: 0
 --- !u!135 &13514942
 SphereCollider:
