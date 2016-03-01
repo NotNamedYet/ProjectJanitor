@@ -156,6 +156,7 @@ GameObject:
   - 54: {fileID: 5419912}
   - 114: {fileID: 11426176}
   - 114: {fileID: 11474548}
+  - 82: {fileID: 8238626}
   m_Layer: 10
   m_Name: pfb_AlienAlpha
   m_TagString: Alien
@@ -407,6 +408,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.79, y: 1.38, z: 5.33}
   m_Center: {x: 0, y: 0, z: -2.41}
+--- !u!82 &8238626
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166484}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24304402, guid: 0f2d920a56024fa42a77524076e3d6e0,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9538344
 Animator:
   serializedVersion: 3
@@ -451,12 +527,13 @@ MonoBehaviour:
   optionalAnimator: {fileID: 9538344}
   entityDisplay: {fileID: 0}
   deathloot: {fileID: 0}
-  onDamageSound: {fileID: 0}
-  onDieSound: {fileID: 0}
-  onArmorBreakSound: {fileID: 0}
-  onHealSound: {fileID: 0}
-  onRepairSound: {fileID: 0}
-  target: {fileID: 0}
+  sndOnHit: {fileID: 0}
+  sndOnDie: {fileID: 0}
+  sndOnBreakingArmor: {fileID: 0}
+  sndOnHeal: {fileID: 0}
+  sndOnRepair: {fileID: 0}
+  listener: {fileID: 0}
+  targetLocked: 0
   sensor: {fileID: 489386}
   rigging: {fileID: 9538344}
   lineOfSightMask:
@@ -468,10 +545,10 @@ MonoBehaviour:
   enraged: 0
   remainingHealthToEnrage: 10
   enrageModifier: 2
-  onAttackSound: {fileID: 0}
-  onMoveSound: {fileID: 0}
-  onAggroSound: {fileID: 0}
-  onEnrageSound: {fileID: 0}
+  sndOnAttack: {fileID: 0}
+  sndOnMove: {fileID: 0}
+  sndOnAggro: {fileID: 0}
+  sndEnrage: {fileID: 0}
   projectile: {fileID: 11401256, guid: d7874fb3f17d3b840aafb24ecf755f19, type: 2}
 --- !u!114 &11426176
 MonoBehaviour:
@@ -858,6 +935,23 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24304402, guid: 0f2d920a56024fa42a77524076e3d6e0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166484}

@@ -33,6 +33,7 @@ namespace GalacticJanitor.Game
         [Header("Player Sounds", order = 2)]
         public AudioClip sndOnLowHp;
         //[HideInInspector]
+        public bool isPlayingLowHpsound;
         //public bool isLowHp;
 
         [Header("Player Behavior")]
@@ -89,6 +90,8 @@ namespace GalacticJanitor.Game
         {
             LoadData(SaveSystem.GetPlayerData());
             listener = GetComponent<AudioSource>();
+            isPlayingLowHpsound = false;
+            if (IsLowHp()) StartCoroutine("CoRoutLowLife");
         }
 
         void Awake()
@@ -114,7 +117,7 @@ namespace GalacticJanitor.Game
         public override void TakeDirectDamage(int damage, bool ignoreArmor)
         {
             base.TakeDirectDamage(damage, ignoreArmor);
-            if (m_entity.health < m_entity.maxHealth / 4)
+            if (IsLowHp() && !isPlayingLowHpsound)
             {
                 StartCoroutine("CoRoutLowLife");
             }
@@ -123,11 +126,21 @@ namespace GalacticJanitor.Game
 
         private IEnumerator CoRoutLowLife()
         {
-            while (m_entity.health < m_entity.maxHealth / 4)
+            isPlayingLowHpsound = true;
+
+            while (IsLowHp() && m_entity.alive)
             {
                 listener.PlayOneShot(sndOnLowHp);
                 yield return new WaitForSeconds(sndOnLowHp.length);
             }
+
+            isPlayingLowHpsound = false;
+        }
+
+        private bool IsLowHp()
+        {
+            if (m_entity.health < m_entity.maxHealth / 4) return true;
+            else return false;
         }
 
         void Update()
