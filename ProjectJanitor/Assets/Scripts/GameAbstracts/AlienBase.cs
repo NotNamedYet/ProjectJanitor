@@ -43,10 +43,10 @@ namespace GalacticJanitor.Game
         public int enrageModifier;
 
         [Header("Alien Sounds", order = 3)]
-        public AudioSource onAttackSound;
-        public AudioSource onMoveSound;
-        public AudioSource onAggroSound;
-        public AudioSource onEnrageSound;
+        public AudioSource sndOnAttack;
+        public AudioSource sndOnMove;
+        public AudioSource sndOnAggro;
+        public AudioSource sndEnrage;
 
         private bool moveSoundLooping;
         private Vector3 spawn;
@@ -211,7 +211,7 @@ namespace GalacticJanitor.Game
         {
             if (!enraged)
             {
-                if (onEnrageSound) onEnrageSound.Play();
+                if (sndEnrage) sndEnrage.Play();
                 //if (onMoveSound) onMoveSound.volume = onMoveSound.volume * enrageModifier;
                 //if (onAttackSound) onAttackSound.volume = onAttackSound.volume * enrageModifier;
 
@@ -253,7 +253,7 @@ namespace GalacticJanitor.Game
 
         void MoveSoundEnable()
         {
-            onMoveSound.Play();
+            sndOnMove.Play();
             moveSoundLooping = true;
         }
 
@@ -261,7 +261,7 @@ namespace GalacticJanitor.Game
         {
             if (moveSoundLooping)
             {
-                onMoveSound.Stop();
+                sndOnMove.Stop();
                 moveSoundLooping = false;
             }
         }

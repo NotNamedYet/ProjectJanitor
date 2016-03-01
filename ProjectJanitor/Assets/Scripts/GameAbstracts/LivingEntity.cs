@@ -67,6 +67,7 @@ namespace GalacticJanitor.Game
         protected virtual void Start()
         {
             UpdateDisplay();
+            listener = GetComponent<AudioSource>();
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace GalacticJanitor.Game
                 m_entity.health -= damage;
 
                 /*SOUND*/
-                if (sndOnHit && !snd_armorIsBreakThisTime) listener.PlayOneShot(sndOnHit);
+                if (sndOnHit && !snd_armorIsBreakThisTime) listener.PlayOneShot(sndOnHit); // If armor is breaking this frame, no hit sound
 
                 /*ANIM*/
                 if (optionalAnimator)
