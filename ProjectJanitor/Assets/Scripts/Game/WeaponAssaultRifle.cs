@@ -347,7 +347,7 @@ namespace GalacticJanitor.Game
 
         private void PlaySoundEmptyBullet()
         {
-            if (!listener.isPlaying)
+            if (Input.GetKeyDown(KeyCode.Mouse0)) // To avoid flood sounds
             {
                 listener.PlayOneShot(sndBulletEmpty); 
             }
@@ -355,7 +355,7 @@ namespace GalacticJanitor.Game
 
         private void PlaySoundEmptyGrenade()
         {
-            if (!listener.isPlaying)
+            if (Input.GetKeyDown(KeyCode.Mouse1)) // To avoid flood sounds
             {
                 listener.PlayOneShot(sndGrenadeEmpty);
             }

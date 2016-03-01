@@ -17,6 +17,8 @@ namespace GalacticJanitor.Game
     [RequireComponent(typeof(NavMeshAgent))]
     public class AlienBase : LivingEntity
     {
+
+        #region fields
         protected NavMeshAgent pathfinder;
         EnemyState state = EnemyState.IDLE;
 
@@ -41,13 +43,13 @@ namespace GalacticJanitor.Game
         public int enrageModifier;
 
         [Header("Alien Sounds", order = 3)]
-        public AudioSource onAttackSound;
-        public AudioSource onMoveSound;
-        public AudioSource onAggroSound;
-        public AudioSource onEnrageSound;
+        public AudioClip sndOnAttack;
+        public AudioClip sndOnMove;
+        public AudioClip sndOnAggro;
+        public AudioClip sndEnrage;
 
-        private bool moveSoundLooping;
         private Vector3 spawn;
+        #endregion
 
         void Awake()
         {
@@ -72,9 +74,6 @@ namespace GalacticJanitor.Game
                 rigging.SetBool("enraged", enraged);
                 rigging.SetFloat("magnitude", pathfinder.velocity.magnitude);
             }
-
-            /*SOUND*/
-            MoveSoundUpdate();
             
             //Enrage state check.
             if (m_entity.health <= remainingHealthToEnrage)
@@ -208,9 +207,9 @@ namespace GalacticJanitor.Game
         {
             if (!enraged)
             {
-                if (onEnrageSound) onEnrageSound.Play();
-                if (onMoveSound) onMoveSound.volume = onMoveSound.volume * enrageModifier;
-                if (onAttackSound) onAttackSound.volume = onAttackSound.volume * enrageModifier;
+                if (sndEnrage) listener.PlayOneShot(sndEnrage);
+                //if (onMoveSound) onMoveSound.volume = onMoveSound.volume * enrageModifier;
+                //if (onAttackSound) onAttackSound.volume = onAttackSound.volume * enrageModifier;
 
                 enraged = true;
                 pathfinder.speed = baseSpeed * enrageModifier;
@@ -224,42 +223,11 @@ namespace GalacticJanitor.Game
         {
             if (enraged)
             {
-                if (onMoveSound) onMoveSound.volume = onMoveSound.volume / enrageModifier;
-                if (onAttackSound) onAttackSound.volume = onAttackSound.volume / enrageModifier;
+                //if (onMoveSound) onMoveSound.volume = onMoveSound.volume / enrageModifier;
+                //if (onAttackSound) onAttackSound.volume = onAttackSound.volume / enrageModifier;
 
                 enraged = false;
                 pathfinder.speed = baseSpeed;
-            }
-        }
-
-        void MoveSoundUpdate()
-        {
-            if (!moveSoundLooping) return;
-
-            if (pathfinder.velocity.magnitude != 0)
-            {
-                if (!moveSoundLooping)
-                    MoveSoundEnable();
-            }
-            else
-            {
-                if (moveSoundLooping)
-                    MoveSoundDisable();
-            }
-        }
-
-        void MoveSoundEnable()
-        {
-            onMoveSound.Play();
-            moveSoundLooping = true;
-        }
-
-        void MoveSoundDisable()
-        {
-            if (moveSoundLooping)
-            {
-                onMoveSound.Stop();
-                moveSoundLooping = false;
             }
         }
 
