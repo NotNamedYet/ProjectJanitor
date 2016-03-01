@@ -808,11 +808,13 @@ MonoBehaviour:
   optionalAnimator: {fileID: 9588384}
   entityDisplay: {fileID: 0}
   deathloot: {fileID: 0}
-  onDamageSound: {fileID: 0}
-  onDieSound: {fileID: 0}
-  onArmorBreakSound: {fileID: 0}
-  onHealSound: {fileID: 0}
-  onRepairSound: {fileID: 0}
+  sndOnHit: {fileID: 8300000, guid: b9d7bc85982bef149ba24bde97bac0ff, type: 3}
+  sndOnDie: {fileID: 8300000, guid: a9727338c2b27f240819ad467f1d70af, type: 3}
+  sndOnBreakingArmor: {fileID: 0}
+  sndOnHeal: {fileID: 0}
+  sndOnRepair: {fileID: 0}
+  listener: {fileID: 0}
+  sndOnLowHp: {fileID: 0}
   marinesType: 0
   playerAmmo: {fileID: 0}
   speed: 15
@@ -1406,6 +1408,14 @@ Prefab:
       propertyPath: sndReload
       value: 
       objectReference: {fileID: 8300000, guid: 95670b9469c416a49917a456fac97249, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndOnHit
+      value: 
+      objectReference: {fileID: 8300000, guid: b9d7bc85982bef149ba24bde97bac0ff, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndOnDie
+      value: 
+      objectReference: {fileID: 8300000, guid: a9727338c2b27f240819ad467f1d70af, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114808}

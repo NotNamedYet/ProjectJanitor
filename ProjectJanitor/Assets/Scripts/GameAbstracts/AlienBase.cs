@@ -43,12 +43,11 @@ namespace GalacticJanitor.Game
         public int enrageModifier;
 
         [Header("Alien Sounds", order = 3)]
-        public AudioSource sndOnAttack;
-        public AudioSource sndOnMove;
-        public AudioSource sndOnAggro;
-        public AudioSource sndEnrage;
+        public AudioClip sndOnAttack;
+        public AudioClip sndOnMove;
+        public AudioClip sndOnAggro;
+        public AudioClip sndEnrage;
 
-        private bool moveSoundLooping;
         private Vector3 spawn;
         #endregion
 
@@ -75,9 +74,6 @@ namespace GalacticJanitor.Game
                 rigging.SetBool("enraged", enraged);
                 rigging.SetFloat("magnitude", pathfinder.velocity.magnitude);
             }
-
-            /*SOUND*/
-            MoveSoundUpdate();
             
             //Enrage state check.
             if (m_entity.health <= remainingHealthToEnrage)
@@ -211,7 +207,7 @@ namespace GalacticJanitor.Game
         {
             if (!enraged)
             {
-                if (sndEnrage) sndEnrage.Play();
+                if (sndEnrage) listener.PlayOneShot(sndEnrage);
                 //if (onMoveSound) onMoveSound.volume = onMoveSound.volume * enrageModifier;
                 //if (onAttackSound) onAttackSound.volume = onAttackSound.volume * enrageModifier;
 
@@ -232,37 +228,6 @@ namespace GalacticJanitor.Game
 
                 enraged = false;
                 pathfinder.speed = baseSpeed;
-            }
-        }
-
-        void MoveSoundUpdate()
-        {
-            if (!moveSoundLooping) return;
-
-            if (pathfinder.velocity.magnitude != 0)
-            {
-                if (!moveSoundLooping)
-                    MoveSoundEnable();
-            }
-            else
-            {
-                if (moveSoundLooping)
-                    MoveSoundDisable();
-            }
-        }
-
-        void MoveSoundEnable()
-        {
-            sndOnMove.Play();
-            moveSoundLooping = true;
-        }
-
-        void MoveSoundDisable()
-        {
-            if (moveSoundLooping)
-            {
-                sndOnMove.Stop();
-                moveSoundLooping = false;
             }
         }
 
