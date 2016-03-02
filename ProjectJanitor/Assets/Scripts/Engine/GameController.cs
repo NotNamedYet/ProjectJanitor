@@ -13,10 +13,19 @@ namespace GalacticJanitor.Engine
         private StageLoader _stageLoader;
         private PlayerController _player;
         private TopDownCamera _topDownCamera;
+        private TimeController _timeController;
 
         private GameObject _projectileHolder;
-
         public GameSettings settings;
+
+
+        public static TimeController TimeController
+        {
+            get
+            {
+                return Controller._timeController;
+            }
+        }
 
         /// <summary>
         /// Return the gameobject that hold this GameController.
@@ -121,6 +130,8 @@ namespace GalacticJanitor.Engine
                 DontDestroyOnLoad(transform.root.gameObject);
                 Controller = this;
 
+                _timeController = new TimeController();
+
                 if (settings == null)
                 {
                     settings = new GameSettings();
@@ -134,7 +145,7 @@ namespace GalacticJanitor.Engine
 
         void Update()
         {
-            if (Input.GetKeyDown("escape"))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (!PausedGame) EnterPause();
                 else ExitPause();
@@ -155,11 +166,34 @@ namespace GalacticJanitor.Engine
         public static event PressPauseButton EnterPauseEvent;
         public static event PressPauseButton ExitPauseEvent;
 
-        public static bool PausedGame { get; private set; }
+        public static bool PauseBlocked
+        {
+            get
+            {
+                return TimeController.IsPauseBlocked(false);
+            }
+        }
+
+        public static bool PausedGame
+        {
+            get
+            {
+                return TimeController.GamePaused;
+            }
+        }
 
         public static void EnterPause()
         {
-            if (!PausedGame)
+            if (!PausedGame && !PauseBlocked)
+            {
+                TimeController.PauseGame(true, true);
+                
+                if (EnterPauseEvent != null)
+                {
+                    EnterPauseEvent();
+                }
+            }
+            /*if (!PausedGame)
             {
                 Time.timeScale = 0;
                 PausedGame = true;
@@ -167,12 +201,23 @@ namespace GalacticJanitor.Engine
                 {
                     EnterPauseEvent();
                 }
-            }
+            }*/
         }
 
         public static void ExitPause()
         {
-            if (PausedGame)
+            if (PausedGame && !PauseBlocked)
+            {
+                TimeController.PauseGame(false, true);
+
+                if (ExitPauseEvent != null)
+                {
+                    ExitPauseEvent();
+                }
+            }
+
+            
+            /*if (PausedGame)
             {
                 Time.timeScale = 1;
                 PausedGame = false;
@@ -180,7 +225,7 @@ namespace GalacticJanitor.Engine
                 {
                     ExitPauseEvent();
                 }
-            }
+            }*/
         }
 
         #endregion
