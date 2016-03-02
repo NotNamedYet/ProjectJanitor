@@ -820,6 +820,7 @@ MonoBehaviour:
   playerAmmo: {fileID: 0}
   speed: 15
   freeze: 0
+  freezed: 0
   rotate: {fileID: 11404998}
   anim: {fileID: 0}
   justHaveShoot: 0
@@ -831,6 +832,7 @@ MonoBehaviour:
   weapCHartman: {fileID: 0}
   score:
     enemyKilled: 0
+  m_combatThreshold: 4
   immuneEntrave: 0
   m_entraveSpeedReduction: 5
   m_maxEntraveTime: 6
@@ -1417,6 +1419,9 @@ Prefab:
       propertyPath: sndOnDie
       value: 
       objectReference: {fileID: 8300000, guid: a9727338c2b27f240819ad467f1d70af, type: 3}
+      propertyPath: m_combatThreshold
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114808}
