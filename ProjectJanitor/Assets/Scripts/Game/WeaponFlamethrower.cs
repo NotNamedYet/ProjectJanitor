@@ -26,12 +26,19 @@ namespace GalacticJanitor.Game
 
         public Transform chokes; // From where the flame go out the flamethrower
 
+        [Header("Sounds", order = 1)]
+        public AudioClip sndReload;
+        public AudioClip sndEmpty;
+
+        private AudioSource listener;
+
         // Use this for initialization
         void Start()
         {
             controller = gameObject.GetComponent<WeaponControllerCarter>();
             playerController = gameObject.GetComponent<PlayerController>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
+            listener = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -59,6 +66,7 @@ namespace GalacticJanitor.Game
                 {
                     magazine += ammoNeeded;
                     playerAmmo.ammoCarriedType1 -= ammoNeeded;
+                    listener.PlayOneShot(sndReload);
                 }
                 else // Not enough ammo in player's inventory
                 {
@@ -71,6 +79,7 @@ namespace GalacticJanitor.Game
                     {
                         magazine += playerAmmo.ammoCarriedType1;
                         playerAmmo.ammoCarriedType1 = 0;
+                        listener.PlayOneShot(sndReload);
                     }
                 }
             }
@@ -102,7 +111,10 @@ namespace GalacticJanitor.Game
                 }
             }
             else
+            {
                 Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponFlameThrower");
+                if (Input.GetKeyDown(KeyCode.Mouse0)) listener.PlayOneShot(sndEmpty);
+            }
         }
 
         /// <summary>

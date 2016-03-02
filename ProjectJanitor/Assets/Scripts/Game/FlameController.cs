@@ -6,6 +6,7 @@ namespace GalacticJanitor.Game
     [RequireComponent(typeof(Collider))]
     public class FlameController : MonoBehaviour
     {
+
         [HideInInspector]
         public int flameDmg;
 
@@ -13,19 +14,27 @@ namespace GalacticJanitor.Game
         public float timer;
         private float timerActive; // Timer in game
 
-        // public Dictionary<int, float> targetsBurning;
         public List<int> targetsBurning;
+
+        [Header("Sounds", order = 1)]
+        public AudioClip sndBegin;
+        public AudioClip sndBurning;
+
+        private AudioSource listener;
+
         // Use this for initialization
         void Start()
         {
-            // targetsBurning = new Dictionary<int, float>();
+            listener = GetComponent<AudioSource>();
             targetsBurning = new List<int>();
+            listener.PlayOneShot(sndBegin);
         }
 
         // Update is called once per frame
         void Update()
         {
             FlameCanDamageTimer();
+            PlaySounds();
         }
 
         private void FlameCanDamageTimer()
@@ -52,6 +61,12 @@ namespace GalacticJanitor.Game
         {
             return flameDmg;
         }
+
+        private void PlaySounds()
+        {
+            if (!listener.isPlaying) listener.PlayOneShot(sndBurning);
+        }
+
     }
 
 }

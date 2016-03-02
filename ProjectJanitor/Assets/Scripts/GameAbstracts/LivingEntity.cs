@@ -57,15 +57,17 @@ namespace GalacticJanitor.Game
         public DeathLoot deathloot;
 
         [Header("Entity Sounds")]
-        public AudioSource onDamageSound;
-        public AudioSource onDieSound;
-        public AudioSource onArmorBreakSound;
-        public AudioSource onHealSound;
-        public AudioSource onRepairSound;
+        public AudioClip sndOnHit;
+        public AudioClip sndOnDie;
+        public AudioClip sndOnBreakingArmor;
+        public AudioClip sndOnHeal;
+        public AudioClip sndOnRepair;
+        public AudioSource listener;
 
         protected virtual void Start()
         {
             UpdateDisplay();
+            listener = GetComponent<AudioSource>();
         }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace GalacticJanitor.Game
 
             if (m_entity.alive)
             {
+                bool snd_armorIsBreakThisTime = false; // Use as flag to avoid double sounds
                 if (m_entity.armor > 0 && !ignoreArmor)
                 {
                     if (damage <= m_entity.armor)
@@ -103,8 +106,11 @@ namespace GalacticJanitor.Game
                         damage = reduced + fullDamage;
 
                         /*SOUND*/
-                        if (onArmorBreakSound)
-                            onArmorBreakSound.Play();
+                        if (sndOnBreakingArmor)
+                        {
+                            listener.PlayOneShot(sndOnBreakingArmor);
+                            snd_armorIsBreakThisTime = true;
+                        }
                     }
                 }
 
@@ -112,8 +118,7 @@ namespace GalacticJanitor.Game
                 m_entity.health -= damage;
 
                 /*SOUND*/
-                if (onDamageSound)
-                    onDamageSound.Play();
+                if (sndOnHit && !snd_armorIsBreakThisTime) listener.PlayOneShot(sndOnHit); // If armor is breaking this frame, no hit sound
 
                 /*ANIM*/
                 if (optionalAnimator)
@@ -157,8 +162,7 @@ namespace GalacticJanitor.Game
                 m_entity.health = m_entity.maxHealth;
 
             /*SOUND*/
-            if (onHealSound)
-                onHealSound.Play();
+            if (sndOnHeal) listener.PlayOneShot(sndOnHeal);
 
             /*GUI*/
             UpdateDisplay();
@@ -190,8 +194,7 @@ namespace GalacticJanitor.Game
                 m_entity.armor = m_entity.maxArmor;
 
             /*SOUND*/
-            if (onRepairSound)
-                onRepairSound.Play();
+            if (sndOnRepair) listener.PlayOneShot(sndOnRepair);
 
             /*GUI*/
             UpdateDisplay();
@@ -217,8 +220,11 @@ namespace GalacticJanitor.Game
             if (saveOnDeath) Save();
 
             /*SOUND*/
-            if (onDieSound)
-                onDieSound.Play();
+            if (sndOnDie)
+            {
+                listener.Stop();
+                listener.PlayOneShot(sndOnDie);
+            }
 
             /*GUI*/
             UpdateDisplay();

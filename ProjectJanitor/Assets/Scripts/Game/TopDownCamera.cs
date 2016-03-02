@@ -1,10 +1,12 @@
 using UnityEngine;
-using System.Collections;
+using UnityEngine.Audio;
+using System.Collections.Generic;
 using GalacticJanitor.Engine;
 
 namespace GalacticJanitor.Game
 {
     //[ExecuteInEditMode]
+    [RequireComponent(typeof(AudioSource))]
     [RequireComponent(typeof(Camera))]
     public class TopDownCamera : MonoBehaviour
     {
@@ -16,10 +18,13 @@ namespace GalacticJanitor.Game
         public float trackingBoostRange = 5f;
         public bool trackPlayerOnStart = true;
         public bool fixedTarget;
-        
 
         private Transform target;
 
+        [Header("Sounds atmosphere and music")]
+        public AudioClip[] musics;
+        public AudioClip[] AtmosphereSounds;
+        public AudioSource listener;
 
         public void SetTarget(Transform target)
         {
@@ -33,6 +38,8 @@ namespace GalacticJanitor.Game
         {
             mainCam = GetComponent<Camera>();
             GameController.TopDownCamera = this;
+
+            listener = GetComponent<AudioSource>();
         }
 
         void Start()
@@ -42,6 +49,8 @@ namespace GalacticJanitor.Game
                 SetTarget(GameController.Player.transform);
                 JumpToTarget();
             }
+
+            PlayMusic();
         }
         
         // Update is called once per frame
@@ -51,6 +60,8 @@ namespace GalacticJanitor.Game
             UpdatePointer();
         }
 
+
+        #region Target
         void FollowTarget()
         {
             if (target != null)
@@ -64,7 +75,7 @@ namespace GalacticJanitor.Game
                 }
 
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, 10, target.position.z), speed * Time.deltaTime);
-            }      
+            }
         }
 
         void UpdatePointer()
@@ -87,6 +98,15 @@ namespace GalacticJanitor.Game
                 transform.position = new Vector3(target.position.x, 10, target.position.z);
             }
         }
+        #endregion
+
+        #region Sounds
+        public void PlayMusic()
+        {
+            listener.clip = musics[0];
+            listener.Play();
+        }
+        #endregion
     }
 
 }

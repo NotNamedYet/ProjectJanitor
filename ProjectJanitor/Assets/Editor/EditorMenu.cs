@@ -137,6 +137,11 @@ public class EditorMenu
             obj.AddComponent<TopDownCamera>();
         }
 
+        if (!cam.GetComponent<AudioSource>())
+        {
+            obj.AddComponent<AudioSource>();
+        }
+
         cam.transform.localPosition = new Vector3(0f, 10f, 0f);
         cam.transform.localRotation = Quaternion.Euler(90f, 0, 0);
         cam.orthographic = true;

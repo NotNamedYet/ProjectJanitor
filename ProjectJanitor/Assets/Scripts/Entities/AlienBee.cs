@@ -20,7 +20,7 @@ namespace GalacticJanitor.Game
                     rigging.SetTrigger("attack");
 
                     /*SOUND*/
-                    if (onAttackSound) onAttackSound.Play();
+                    //if (onAttackSound) onAttackSound.Play();
                 }
                 if (target.gameObject.tag == "Player")
                 {
