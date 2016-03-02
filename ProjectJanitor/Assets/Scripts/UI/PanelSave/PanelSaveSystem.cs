@@ -17,6 +17,7 @@ namespace GalacticJanitor.UI
         //public Text headerLabel;
         public Text validationButtonLabel;
 
+        public PanelSaveHeader header;
         
         public RegisterySnapshot selectedSnapshot;
 
@@ -43,9 +44,11 @@ namespace GalacticJanitor.UI
                 //headerLabel.text = "load game";
                 validationButtonLabel.text = "load";
             }
+        }
 
-            PopupateList();
-            AllowValidation(false);
+        void OnEnable()
+        {
+            Refresh();
         }
 
         // ACTION 
@@ -73,6 +76,7 @@ namespace GalacticJanitor.UI
             {
                 Debug.Log("Nope..");
             }
+            Refresh();
         }
 
         void SaveGame()
@@ -109,7 +113,7 @@ namespace GalacticJanitor.UI
                 PanelSaveButton psb = button.GetComponent<PanelSaveButton>();
                 psb.m_PanelHolder = this;
                 psb.newSave = true;
-                psb.m_LabelText.text = "new Save";
+                psb.m_LabelText.text = "New...";
                 psb.m_TimePlayedText.text = "";
             }
             GenerateSnapshotButtons();
@@ -126,7 +130,7 @@ namespace GalacticJanitor.UI
 
                 PanelSaveButton psb = button.GetComponent<PanelSaveButton>();
                 psb.m_PanelHolder = this;
-                psb.m_LabelText.text = snap.m_currentScene;
+                psb.m_LabelText.text = snap.PartyName;
                 psb.m_TimePlayedText.text = snap.FormatTimePlayed;
                 psb.m_ContextSnap = snap;
 
@@ -149,6 +153,13 @@ namespace GalacticJanitor.UI
 
         public void Refresh()
         {
+            selectedSnapshot = null;
+
+            if (header)
+            {
+                header.DisplayCustomInfo((saveContext())? "Save your game" : "Load a Party", null, null);
+            }
+
             if (population.Count > 0)
             {
                 foreach(Button btn in population)
@@ -157,7 +168,7 @@ namespace GalacticJanitor.UI
                 }
                 population.Clear();
             }
-
+            AllowValidation(false);
             PopupateList();
         }
 
