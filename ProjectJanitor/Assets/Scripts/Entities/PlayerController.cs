@@ -41,6 +41,7 @@ namespace GalacticJanitor.Game
         public PlayerAmmo playerAmmo;
         public float speed = 10;
         public bool freeze;
+        public bool freezed;
 
         Rigidbody body;
         public PlayerRotation rotate; // Ref to the gameObject that must rotate, with the script PlayerRotation
@@ -143,6 +144,13 @@ namespace GalacticJanitor.Game
             else return false;
         }
 
+        protected override void Die()
+        {
+            base.Die();
+            GameController.TimeController.GameOver(true);
+
+        }
+
         void Update()
         {
             rotate.ForceLookAt();
@@ -153,7 +161,7 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (!freeze)
+            if (!freeze && !freezed)
             {
                 Movement(); 
             }
@@ -252,7 +260,8 @@ namespace GalacticJanitor.Game
         } 
         #endregion
 
-        #region SaveData
+        #region PERSISTENCY
+		
         public override void CollectData(DataContainer container)
         {
 
@@ -328,9 +337,70 @@ namespace GalacticJanitor.Game
             CollectData(m_data);
             SaveSystem.RegisterPlayer(m_data);
         } 
+        
         #endregion
 
-        #region Entrave
+        #region COMBAT
+
+        public bool IsFighting { get; private set; }
+        public bool m_stillCombat;
+
+        [Header("Combat")]
+        [Range(3, 10)]
+        public float m_combatThreshold = 3;
+
+        public void UpdateCombat()
+        {
+            m_stillCombat = true;
+
+            if (!IsFighting)
+            {
+                StartCoroutine(CombatRoutine());
+            }
+        }
+
+        void StartCombatState()
+        {
+            IsFighting = true;
+
+            SaveSystem.BlockedSave = true;
+            GameController.NotifyPlayer("Fight !", Color.red, 1);
+
+            if (playerDisplay)
+                playerDisplay.ShowCombatVisual(true);
+        }
+
+        void StopCombatState()
+        {
+            IsFighting = false;
+
+            SaveSystem.BlockedSave = false;
+            GameController.NotifyPlayer("End fight !", Color.red, 2);
+
+            if (playerDisplay)
+                playerDisplay.ShowCombatVisual(false);
+        }
+
+        IEnumerator CombatRoutine()
+        {
+            //Init combat mode
+            StartCombatState();
+
+            //Loop until no Combat Update is called before the end of the combat threshold time.
+            while (m_stillCombat)
+            {
+                m_stillCombat = false;
+                yield return new WaitForSeconds(m_combatThreshold);
+            }
+
+            //Restore non-combat mode
+            StopCombatState();
+        }
+
+        #endregion
+
+        #region ENTRAVE
+
         [Header("Entrave Debuff")]
         public bool immuneEntrave;
         public float m_entraveSpeedReduction;

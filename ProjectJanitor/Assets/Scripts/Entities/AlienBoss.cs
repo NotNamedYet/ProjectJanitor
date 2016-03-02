@@ -15,18 +15,15 @@ namespace GalacticJanitor.Game
         public List<BossCocoon> m_cocoons;
         public int m_cocoonBoostValue = 10;
 
+        [SerializeField]
+        public List<Interactable> m_onDeathInteractables;
+
         bool attackCooldown;
 
         protected override void Start()
         {
             base.Start();
             player = GameController.Player.transform;
-        }
-
-        // Update is called once per frame
-        protected override void Update()
-        {
-            base.Update();
         }
 
         void StartInterphase()
@@ -105,5 +102,20 @@ namespace GalacticJanitor.Game
                 b.Boost(m_cocoonBoostValue / m_cocoons.Count, m_cocoonBoostValue / m_cocoons.Count);
             }
         }
+
+        public GameObject endGameActor;
+
+        protected override void Die()
+        {
+            base.Die();
+
+            if (m_onDeathInteractables != null)
+                foreach (Interactable inter in m_onDeathInteractables)
+                    inter.OnInteract();
+
+            if (endGameActor)
+                endGameActor.SetActive(true);
+        }
+
     } 
 }

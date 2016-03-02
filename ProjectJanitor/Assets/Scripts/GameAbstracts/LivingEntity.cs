@@ -213,7 +213,7 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// Kill the entity. Destroy the gameoject if destroyOnDeath is set to true
         /// </summary>
-        void Die()
+        protected virtual void Die()
         {
             m_entity.alive = false;
 

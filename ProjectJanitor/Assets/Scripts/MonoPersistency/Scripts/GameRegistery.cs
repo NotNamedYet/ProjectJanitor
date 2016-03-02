@@ -35,12 +35,7 @@ namespace MonoPersistency
     [System.Serializable]
     public class RegisterySnapshot : IComparable<RegisterySnapshot>
     {
-        public string m_identifier;
-        public string m_partyName;
-        public string m_currentScene;
-        public long m_timePlayed;
-        public long m_lastUpdate;
-
+        #region Properties
         public string FormatTimePlayed
         {
             get
@@ -48,6 +43,27 @@ namespace MonoPersistency
                 return FormatTime();
             }
         }
+
+        public string PartyName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(m_partyName))
+                    m_partyName = "MissingPartyName";
+
+                return m_partyName;
+            }
+            set { m_partyName = value;}
+        }
+        #endregion
+
+        public string m_identifier;
+        public string m_partyName;
+        public string m_currentScene;
+        public long m_timePlayed;
+        public long m_lastUpdate;
+
+        
 
         string FormatTime()
         {

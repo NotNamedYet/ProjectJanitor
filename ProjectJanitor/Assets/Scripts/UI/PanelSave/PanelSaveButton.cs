@@ -22,16 +22,28 @@ namespace GalacticJanitor.UI
             {
                 m_PanelHolder.selectedSnapshot = m_ContextSnap;
                 m_PanelHolder.AllowValidation(true);
+
+                if (m_PanelHolder.header)
+                    m_PanelHolder.header.FillHeaderInfo(m_ContextSnap);
             }
             else
             {
                 if (!newSave)
+                {
                     m_PanelHolder.selectedSnapshot = m_ContextSnap;
+                    if (m_PanelHolder.header)
+                        m_PanelHolder.header.FillHeaderInfo(m_ContextSnap);
+                }
+                else
+                {
+                    if (m_PanelHolder.header)
+                        m_PanelHolder.header.DisplayCustomInfo("Create new Save", null, null);
+                }
 
                 m_PanelHolder.newSave = newSave;
                 m_PanelHolder.AllowValidation(true);
             }
-
+            
         }
     } 
 }

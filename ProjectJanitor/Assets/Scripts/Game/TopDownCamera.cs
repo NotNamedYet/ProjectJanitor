@@ -19,6 +19,10 @@ namespace GalacticJanitor.Game
         public bool trackPlayerOnStart = true;
         public bool fixedTarget;
 
+        [Header("Cursor")]
+        public bool m_customCursor = false;
+        public Texture2D m_cursor;
+
         private Transform target;
 
         [Header("Sounds atmosphere and music")]
@@ -44,7 +48,10 @@ namespace GalacticJanitor.Game
 
         void Start()
         {
-            if (trackPlayerOnStart)
+            if (m_customCursor)
+                Cursor.SetCursor(m_cursor, Vector2.zero, CursorMode.Auto);
+
+            if (trackPlayerOnStart && GameController.Player)
             {
                 SetTarget(GameController.Player.transform);
                 JumpToTarget();
@@ -107,6 +114,11 @@ namespace GalacticJanitor.Game
             listener.Play();
         }
         #endregion
+
+        public bool IsFarFromTarget()
+        {
+            return Vector3.Distance(target.position, new Vector3(transform.position.x, 0, transform.position.z)) > 1f;
+        }
     }
 
 }

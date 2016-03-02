@@ -4,6 +4,7 @@ using System.Collections;
 //using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 using GalacticJanitor.Engine;
+using MonoPersistency;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -26,15 +27,15 @@ public class PauseMenu : MonoBehaviour {
     void OnEnable()
     {
         //PauseManager.OnPause += TogglePauseMenu;
-        GameController.EnterPauseEvent += ShowPauseMenu;
-        GameController.ExitPauseEvent += HidePauseMenu;
+        //GameController.EnterPauseEvent += ShowPauseMenu;
+        //GameController.ExitPauseEvent += HidePauseMenu;
     }
 
     void OnDisable()
     {
         //PauseManager.OnPause -= TogglePauseMenu;
-        GameController.EnterPauseEvent -= ShowPauseMenu;
-        GameController.ExitPauseEvent -= HidePauseMenu;
+        //GameController.EnterPauseEvent -= ShowPauseMenu;
+        //GameController.ExitPauseEvent -= HidePauseMenu;
     }
 
     void Awake()
@@ -59,8 +60,15 @@ public class PauseMenu : MonoBehaviour {
         }
     */
 
+    public void TogglePauseMenu(bool value)
+    {
+        if (value) ShowPauseMenu();
+        else HidePauseMenu();
+    }
+
     void ShowPauseMenu()
     {
+        saveButton.interactable = !SaveSystem.BlockedSave;
         pauseMenu.SetActive(true);
     }
 

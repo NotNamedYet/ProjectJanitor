@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Collections.Generic;
 using System;
+using GalacticJanitor.Engine;
 
 namespace MonoPersistency
 {
@@ -15,6 +16,7 @@ namespace MonoPersistency
 
         #region SINGLETON
         public static SaveSystem instance { get; private set; }
+        public static bool BlockedSave { get; set; }
 
         /// <summary>
         /// Return the current GameRegistery loaded
@@ -203,6 +205,8 @@ namespace MonoPersistency
             stream.Close();
 
             PausePlayTimer(false);
+            GameController.TimeController.GameOver(false);
+            BlockedSave = false;
             SceneManager.LoadScene(Registery.m_snapshot.m_currentScene);
         }
         #endregion
@@ -397,6 +401,8 @@ namespace MonoPersistency
         public static void LoadScene(string scene)
         {
             UpdateRegistery();
+            BlockedSave = false;
+            GameController.TimeController.GameOver(false);
             SceneManager.LoadScene(scene);
         }
 
