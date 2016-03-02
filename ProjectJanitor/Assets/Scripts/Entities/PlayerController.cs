@@ -105,6 +105,12 @@ namespace GalacticJanitor.Game
             
         }
 
+        protected override void Die()
+        {
+            base.Die();
+            GameController.TimeController.GameOver(true);
+        }
+
         void Update()
         {
             rotate.ForceLookAt();
@@ -297,7 +303,6 @@ namespace GalacticJanitor.Game
 
         #region COMBAT
 
-
         public bool IsFighting { get; private set; }
         public bool m_stillCombat;
 
@@ -315,27 +320,42 @@ namespace GalacticJanitor.Game
             }
         }
 
-        IEnumerator CombatRoutine()
+        void StartCombatState()
         {
-
             IsFighting = true;
+
+            SaveSystem.BlockedSave = true;
             GameController.NotifyPlayer("Fight !", Color.red, 1);
+
             if (playerDisplay)
                 playerDisplay.ShowCombatVisual(true);
+        }
 
+        void StopCombatState()
+        {
+            IsFighting = false;
+
+            SaveSystem.BlockedSave = false;
+            GameController.NotifyPlayer("End fight !", Color.red, 2);
+
+            if (playerDisplay)
+                playerDisplay.ShowCombatVisual(false);
+        }
+
+        IEnumerator CombatRoutine()
+        {
+            //Init combat mode
+            StartCombatState();
+
+            //Loop until no Combat Update is called before the end of the combat threshold time.
             while (m_stillCombat)
             {
-                Debug.Log("Combat");
                 m_stillCombat = false;
                 yield return new WaitForSeconds(m_combatThreshold);
             }
 
-            Debug.Log("end combat...");
-
-            IsFighting = false;
-            GameController.NotifyPlayer("End fight...", Color.red, 2);
-            if (playerDisplay)
-                playerDisplay.ShowCombatVisual(false);
+            //Restore non-combat mode
+            StopCombatState();
         }
 
         #endregion

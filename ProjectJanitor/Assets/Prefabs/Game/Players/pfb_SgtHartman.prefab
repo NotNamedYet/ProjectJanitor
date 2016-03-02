@@ -572,7 +572,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -649,6 +649,7 @@ MonoBehaviour:
   weapCHartman: {fileID: 0}
   score:
     enemyKilled: 0
+  m_stillCombat: 0
   m_combatThreshold: 4
   immuneEntrave: 0
   m_entraveSpeedReduction: 5
@@ -1163,6 +1164,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_combatThreshold
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
