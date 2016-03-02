@@ -21,11 +21,6 @@ namespace GalacticJanitor.Game
 
         private Transform target;
 
-        [Header("Sounds atmosphere and music")]
-        public AudioClip[] musics;
-        public AudioClip[] AtmosphereSounds;
-        public AudioSource listener;
-
         public void SetTarget(Transform target)
         {
             if (target == null || !fixedTarget)
@@ -38,8 +33,6 @@ namespace GalacticJanitor.Game
         {
             mainCam = GetComponent<Camera>();
             GameController.TopDownCamera = this;
-
-            listener = GetComponent<AudioSource>();
         }
 
         void Start()
@@ -49,8 +42,6 @@ namespace GalacticJanitor.Game
                 SetTarget(GameController.Player.transform);
                 JumpToTarget();
             }
-
-            PlayMusic();
         }
         
         // Update is called once per frame
@@ -100,13 +91,6 @@ namespace GalacticJanitor.Game
         }
         #endregion
 
-        #region Sounds
-        public void PlayMusic()
-        {
-            listener.clip = musics[0];
-            listener.Play();
-        }
-        #endregion
     }
 
 }
