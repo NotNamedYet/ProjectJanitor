@@ -50,6 +50,7 @@ public class CharacterSelector : MonoBehaviour {
 
     IEnumerator DisplayCheckOK()
     {
+        checkNOK.gameObject.SetActive(false);
         checkOK.gameObject.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         checkOK.gameObject.SetActive(false);
@@ -57,6 +58,7 @@ public class CharacterSelector : MonoBehaviour {
 
     IEnumerator DisplayCheckNOK()
     {
+        checkOK.gameObject.SetActive(false);
         checkNOK.gameObject.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         checkNOK.gameObject.SetActive(false);
