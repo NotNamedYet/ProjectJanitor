@@ -142,6 +142,7 @@ namespace GalacticJanitor.Game
         {
             if (m_entity.health < m_entity.maxHealth / 4) return true;
             else return false;
+        }
 
         protected override void Die()
         {
