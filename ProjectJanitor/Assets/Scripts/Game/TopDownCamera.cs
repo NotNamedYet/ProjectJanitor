@@ -43,7 +43,7 @@ namespace GalacticJanitor.Game
             if (m_customCursor)
                 Cursor.SetCursor(m_cursor, Vector2.zero, CursorMode.Auto);
 
-            if (trackPlayerOnStart)
+            if (trackPlayerOnStart && GameController.Player)
             {
                 SetTarget(GameController.Player.transform);
                 JumpToTarget();
