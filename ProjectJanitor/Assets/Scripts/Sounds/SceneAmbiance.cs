@@ -74,7 +74,7 @@ namespace GalacticJanitor.Game
             if (playSoundsRandomlyAtStart)
             {
                 _playingRandomlySoundsAmbiance = true;
-                PlaySoundsRdly();
+                Invoke("PlaySoundsRdly", Random.Range(rangeMin, rangeMax));
             }
         }
 
@@ -127,8 +127,19 @@ namespace GalacticJanitor.Game
 
             if (ambiance.Length > index)
             {
+                ResetSettingsOnAudioSrcAmbiance();
                 source.PlayOneShot(ambiance[index]);
             }
+        }
+
+        public void DoRandomSettingsOnAudioSrcAmbiance()
+        {
+            listenerAmbiance.panStereo = Random.Range(-1.0f, 1.0f);
+        }
+
+        public void ResetSettingsOnAudioSrcAmbiance()
+        {
+            listenerAmbiance.panStereo = 0; 
         }
         #endregion
 
@@ -137,7 +148,6 @@ namespace GalacticJanitor.Game
         {
             if (ambiance.Length == soundsThatMustBePlayedRandomly.Length) // again, protection against BAMYA
             {
-                Debug.Log("yolo 1");
                 StartCoroutine(CoroutPlayAmbianceSounds());
             }
         }
@@ -146,11 +156,12 @@ namespace GalacticJanitor.Game
         {
             while(_playingRandomlySoundsAmbiance)
             {
-                Debug.Log("yolo 2");
                 int soundToPlay = ChooseSoundToPlay();
+                DoRandomSettingsOnAudioSrcAmbiance();
                 listenerAmbiance.PlayOneShot(ambiance[soundToPlay]);
                 yield return new WaitForSeconds(ambiance[soundToPlay].length + (Random.Range(rangeMin, rangeMax)));
             }
+            ResetSettingsOnAudioSrcAmbiance();
         }
 
         /// <summary>
@@ -164,7 +175,6 @@ namespace GalacticJanitor.Game
             for (int x = 0; x < soundsThatMustBePlayedRandomly.Length; x++)
             {
                 if (soundsThatMustBePlayedRandomly[x] == true) list.Add(x); // If true, ref the AudioSource in the temporary list
-                Debug.Log("Entrance choosen in the index : " + x);
             }
 
             return (int)list[Random.Range(0, list.Count)];
