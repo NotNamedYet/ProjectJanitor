@@ -96,13 +96,14 @@ namespace GalacticJanitor.Game
 
         internal void Boost(int damage, float speed)
         {
-            m_projectileDamage = damage;
-            m_projectileSpeed = speed;
+            m_projectileDamage += damage;
+            m_projectileSpeed += speed;
         }
 
         internal void SpawnOnDeath()
         {
-            Instantiate(m_alienOnDeath, transform.position, transform.rotation);
+            AlienBase alien = Instantiate(m_alienOnDeath, transform.position, transform.rotation) as AlienBase;
+            m_boss.m_minions.Add(alien);
 
             AmmoBox drop = Instantiate(m_dropAmmo, transform.position, transform.rotation) as AmmoBox;
             drop.useRandomAmount = true;

@@ -18,12 +18,16 @@ namespace GalacticJanitor.Game
         [SerializeField]
         public List<Interactable> m_onDeathInteractables;
 
+        [HideInInspector]
+        public List<AlienBase> m_minions;
+
         bool attackCooldown;
 
         protected override void Start()
         {
             base.Start();
             player = GameController.Player.transform;
+            m_minions = new List<AlienBase>();
         }
 
         void StartInterphase()
@@ -31,6 +35,8 @@ namespace GalacticJanitor.Game
             if (!m_interphase)
             {
                 m_interphase = true;
+
+                EnrageMinions();
 
                 GameController.NotifyPlayer("The Mother calls for retribution !", Color.red, 2);
 
@@ -49,6 +55,7 @@ namespace GalacticJanitor.Game
 
         internal void StopInterphase()
         {
+            TranquilizeMinions();
             GameController.NotifyPlayer("The Mother comes for you...", Color.red, 2);
             m_interphase = false;
             invincible = false;
@@ -99,7 +106,7 @@ namespace GalacticJanitor.Game
         {
             foreach(BossCocoon b in m_cocoons)
             {
-                b.Boost(m_cocoonBoostValue / m_cocoons.Count, m_cocoonBoostValue / m_cocoons.Count);
+                b.Boost(m_cocoonBoostValue / m_cocoons.Count, .5f);
             }
         }
 
@@ -115,6 +122,28 @@ namespace GalacticJanitor.Game
 
             if (endGameActor)
                 endGameActor.SetActive(true);
+        }
+
+        public void EnrageMinions()
+        {
+            foreach(AlienBase minion in m_minions)
+            {
+                if (minion != null)
+                {
+                    minion.Enrage();
+                }
+            }
+        }
+
+        public void TranquilizeMinions()
+        {
+            foreach (AlienBase minion in m_minions)
+            {
+                if (minion != null)
+                {
+                    minion.Traquilize();
+                }
+            }
         }
 
     } 
