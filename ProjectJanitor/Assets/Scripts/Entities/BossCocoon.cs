@@ -103,9 +103,11 @@ namespace GalacticJanitor.Game
         internal void SpawnOnDeath()
         {
             AlienBase alien = Instantiate(m_alienOnDeath, transform.position, transform.rotation) as AlienBase;
+            alien.DisablePersistency();
             m_boss.m_minions.Add(alien);
 
             AmmoBox drop = Instantiate(m_dropAmmo, transform.position, transform.rotation) as AmmoBox;
+            drop.DisablePersistency();
             drop.useRandomAmount = true;
             drop.minRangeToRandom = m_minimumDropAmmo;
             drop.maxRangeToRandom = m_maximumDropAmmo;
@@ -115,6 +117,7 @@ namespace GalacticJanitor.Game
         {
             AlienBase alien = Instantiate(m_babies, transform.position, transform.rotation) as AlienBase;
             alien.LockTarget(m_target);
+            alien.DisablePersistency();
         }
     } 
 }

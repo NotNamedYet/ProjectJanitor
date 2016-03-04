@@ -452,6 +452,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 409808}
   - 95: {fileID: 9509586}
+  - 114: {fileID: 11432214}
   m_Layer: 0
   m_Name: Rigging
   m_TagString: Untagged
@@ -551,7 +552,7 @@ GameObject:
   - 4: {fileID: 426020}
   - 135: {fileID: 13514942}
   - 114: {fileID: 11493226}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Aggro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1273,7 +1274,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189640}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.55, y: 2.36, z: 2.91}
@@ -1354,8 +1355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9bca0afa7ae254dbde0d4ff578885b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_entity: {fileID: 0}
-  m_damageIndex: 2
+  m_entity: {fileID: 11468746}
+  m_damageIndex: 0
   m_reduced: 0
 --- !u!114 &11411372
 MonoBehaviour:
@@ -1386,6 +1387,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+--- !u!114 &11432214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc9288cb6e0594ba97f90af92cf111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ToDestoy: {fileID: 189640}
+  m_Delay: 0
 --- !u!114 &11468746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1397,9 +1411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b92cae950279354e87f188a4bbaa659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specificName: 
+  specificName: The_Mother
+  m_volatile: 0
   bypassBaking: 0
-  entityDisplayName: 
+  entityDisplayName: The Mother
   m_entity:
     alive: 1
     health: 200
@@ -1436,8 +1451,8 @@ MonoBehaviour:
   sndOnAggro: {fileID: 0}
   sndEnrage: {fileID: 0}
   player: {fileID: 0}
-  m_interphase: 0
   m_speedAddition: 2
+  m_minions: []
   m_cocoons:
   - {fileID: 0}
   - {fileID: 0}
@@ -1447,8 +1462,8 @@ MonoBehaviour:
   m_onDeathInteractables:
   - {fileID: 0}
   - {fileID: 0}
-  m_minions: []
-  endGameActor: {fileID: 0}
+  m_endGameActor: {fileID: 0}
+  m_TimeBetweenSpin: 0
 --- !u!114 &11472412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1477,8 +1492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9bca0afa7ae254dbde0d4ff578885b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_entity: {fileID: 0}
-  m_damageIndex: 2
+  m_entity: {fileID: 11468746}
+  m_damageIndex: 0
   m_reduced: 0
 --- !u!114 &11482212
 MonoBehaviour:
@@ -1506,8 +1521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9bca0afa7ae254dbde0d4ff578885b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_entity: {fileID: 0}
-  m_damageIndex: 2
+  m_entity: {fileID: 11468746}
+  m_damageIndex: 0
   m_reduced: 0
 --- !u!114 &11493060
 MonoBehaviour:
@@ -2613,6 +2628,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: lineOfSightMask.m_Bits
       value: 8960
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ToDestoy
+      value: 
+      objectReference: {fileID: 189640}
+    - target: {fileID: 0}
+      propertyPath: entityDisplayName
+      value: The Mother
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: specificName
+      value: The_Mother
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
