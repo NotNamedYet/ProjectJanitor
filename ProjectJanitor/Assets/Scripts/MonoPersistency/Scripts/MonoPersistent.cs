@@ -9,6 +9,8 @@ namespace MonoPersistency
 
         [Tooltip("leave empty to use default MonoPersistent name")]
         public string specificName;
+        [Tooltip("Will not be saved at runtime")]
+        public bool m_volatile;
         public bool bypassBaking;
 
         protected DataContainer m_data;
@@ -35,12 +37,15 @@ namespace MonoPersistency
         /// </summary>
         protected virtual void Save()
         {
-            if (m_data == null)
-                m_data = new DataContainer(gameObject.name);
+            if (!m_volatile)
+            {
+                if (m_data == null)
+                    m_data = new DataContainer(gameObject.name);
 
-            CollectData(m_data);
+                CollectData(m_data);
 
-            SaveSystem.RegisterData(m_data);
+                SaveSystem.RegisterData(m_data);
+            }
         }
 
         /// <summary>
@@ -59,6 +64,11 @@ namespace MonoPersistency
         protected virtual void OnDisable()
         {
             SaveSystem.OnUpdateRegisteryEvent -= Save;
+        }
+
+        public void DisablePersistency()
+        {
+            m_volatile = true;
         }
     } 
 }
