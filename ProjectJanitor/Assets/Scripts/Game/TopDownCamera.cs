@@ -98,14 +98,6 @@ namespace GalacticJanitor.Game
         }
         #endregion
 
-        #region Sounds
-        public void PlayMusic()
-        {
-            listener.clip = musics[0];
-            listener.Play();
-        }
-        #endregion
-
         public bool IsFarFromTarget()
         {
             return Vector3.Distance(target.position, new Vector3(transform.position.x, 0, transform.position.z)) > 1f;
