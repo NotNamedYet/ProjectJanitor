@@ -65,7 +65,7 @@ namespace GalacticJanitor.Game
         {
             if (other.tag == "Player")
             {
-                Debug.Log("I'am a AmmoBox type " + ammoType + " and i was touched by " + marineType);
+                //Debug.Log("I'am a AmmoBox type " + ammoType + " and i was touched by " + marineType);
 
                 PlayerAmmo playerInv = other.gameObject.GetComponent<PlayerAmmo>();
                 playerInv.PickUpAmmo(ammoType, amount);

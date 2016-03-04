@@ -20,7 +20,7 @@ public class LocalDamage : MonoBehaviour {
 	    
 	}
 
-    public void HitEntity(int damage)
+    public void TakeDirectDamage(int damage)
     {
         if (m_entity)
         {

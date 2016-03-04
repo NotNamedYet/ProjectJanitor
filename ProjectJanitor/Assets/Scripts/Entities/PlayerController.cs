@@ -87,10 +87,10 @@ namespace GalacticJanitor.Game
             }
         }
 
-        new void Start()
+        protected override void Start()
         {
             LoadData(SaveSystem.GetPlayerData());
-            listener = GetComponent<AudioSource>();
+            base.Start();
             isPlayingLowHpsound = false;
             if (IsLowHp()) StartCoroutine("CoRoutLowLife");
         }
@@ -101,6 +101,8 @@ namespace GalacticJanitor.Game
             {
                 entityDisplay = playerDisplay;
             }
+
+            listener = GetComponent<AudioSource>();
             anim = gameObject.GetComponent<Animator>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             body = gameObject.GetComponent<Rigidbody>();
@@ -264,8 +266,6 @@ namespace GalacticJanitor.Game
 		
         public override void CollectData(DataContainer container)
         {
-
-            Debug.Log("Create player...");
 
             container.m_spawnable = true;
 

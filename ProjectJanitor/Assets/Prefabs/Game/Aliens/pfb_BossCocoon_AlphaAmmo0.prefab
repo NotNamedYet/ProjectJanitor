@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11419310}
   - 114: {fileID: 11483378}
   - 208: {fileID: 20813838}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: pfb_BossCocoon_AlphaAmmo0
   m_TagString: BossCocoon
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_target: {fileID: 0}
   m_sensor: {fileID: 462162}
   m_projectile: {fileID: 11401256, guid: a8394d16e635b6949bcd85f58404a186, type: 2}
-  m_projectileSpeed: 0
+  m_projectileSpeed: -0.5
   m_projectileDamage: 0
   m_babies: {fileID: 11436418, guid: c662bb7e0dc15724fb0767518734c695, type: 2}
   m_babiesAmount: 7
@@ -250,6 +250,14 @@ Prefab:
       value: 
       objectReference: {fileID: 11401256, guid: a8394d16e635b6949bcd85f58404a186,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_projectileSpeed
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118690}

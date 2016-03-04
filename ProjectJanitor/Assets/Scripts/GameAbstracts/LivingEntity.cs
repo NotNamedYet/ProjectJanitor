@@ -67,7 +67,6 @@ namespace GalacticJanitor.Game
         protected virtual void Start()
         {
             UpdateDisplay();
-            listener = GetComponent<AudioSource>();
         }
 
         /// <summary>

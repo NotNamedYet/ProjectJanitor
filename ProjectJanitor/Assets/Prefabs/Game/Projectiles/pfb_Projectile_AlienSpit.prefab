@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486012}
   - 114: {fileID: 11401256}
+  - 136: {fileID: 13610940}
   m_Layer: 0
   m_Name: pfb_Projectile_AlienSpit
   m_TagString: Untagged
@@ -178,7 +179,22 @@ MonoBehaviour:
     m_Bits: 768
   maxLifetime: 3
   baseDamage: 10
-  baseSpeed: 15
+  baseSpeed: 10
+  isEntraving: 0
+  secondsToEntrave: 0
+--- !u!136 &13610940
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.79
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.33}
 --- !u!198 &19857984
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1796,7 +1812,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: baseSpeed
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colliderMask.m_Bits
@@ -1804,6 +1820,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: VelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
