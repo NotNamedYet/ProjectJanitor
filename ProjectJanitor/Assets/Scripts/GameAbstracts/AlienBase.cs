@@ -80,10 +80,7 @@ namespace GalacticJanitor.Game
             {
                 Enrage();
             }
-            else
-            {
-                Traquilize();
-            }
+            
             
             //sensor traking if target exists
             if (sensor!= null && target) sensor.LookAt(target);
@@ -158,8 +155,6 @@ namespace GalacticJanitor.Game
 
             if (Physics.Raycast(ray, out hit, maxAttackRange, lineOfSightMask, QueryTriggerInteraction.Collide))
             {
-/*DBG*/         Debug.DrawLine(ray.origin, hit.point, Color.blue);
-
                 if (hit.collider.transform == target)
                 {
                     return true;
@@ -206,7 +201,7 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// If not enraged yet, berserk it.
         /// </summary>
-        void Enrage()
+        public void Enrage()
         {
             if (!enraged)
             {
@@ -222,7 +217,7 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// Calm down... Good alien, good... 
         /// </summary>
-        void Traquilize()
+        public void Traquilize()
         {
             if (enraged)
             {
