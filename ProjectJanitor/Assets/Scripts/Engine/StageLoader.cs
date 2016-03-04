@@ -38,6 +38,7 @@ namespace GalacticJanitor.Engine
 
             pClone.transform.SetParent(GameController.asGameObject.transform);
             GameController.Player = pClone;
+            //LoadPlayerData();
             GameController.TopDownCamera.JumpToTarget();
         }
 
@@ -46,10 +47,15 @@ namespace GalacticJanitor.Engine
         {
             GameController.Player.transform.position = playerPosition;
             GameController.Player.transform.rotation = playerRotation;
+            //LoadPlayerData();
             GameController.TopDownCamera.JumpToTarget();
+            GameController.Player.UpdateDisplay();
         }
 
-        
+        void LoadPlayerData()
+        {
+            GameController.Player.LoadData(SaveSystem.GetPlayerData());
+        }
 
         //load from registery info...
         void LoadStage()
