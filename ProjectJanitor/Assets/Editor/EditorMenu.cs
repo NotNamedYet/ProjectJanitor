@@ -163,6 +163,25 @@ public class EditorMenu
         Selection.activeGameObject = obj;
     }
 
+    [MenuItem("GameObject/GalacticJanitor/Add SceneSound", false, 0)]
+    static void SetupSceneSound()
+    {
+        GameObject obj = GameObject.Find("SceneSoundManager");
+
+        if (obj == null) obj = new GameObject("SceneSoundManager");
+
+        if (!obj.GetComponent<SceneAmbiance>())
+        {
+            obj.AddComponent<SceneAmbiance>();
+        }
+
+        if (!obj.GetComponent<AudioSource>())
+        {
+            obj.GetComponent<SceneAmbiance>().listenerMusic = obj.AddComponent<AudioSource>(); // music source
+            obj.GetComponent<SceneAmbiance>().listenerAmbiance = obj.AddComponent<AudioSource>(); // ambiance sounds source
+        }
+    }
+
     private static void CheckWorldDirectory()
     {
         GameObject _world = GameObject.Find("_World");

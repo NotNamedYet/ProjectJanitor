@@ -14,6 +14,7 @@ namespace GalacticJanitor.Engine
         private PlayerController _player;
         private TopDownCamera _topDownCamera;
         private TimeController _timeController;
+        private SceneAmbiance _SceneSounds;
 
         private GameObject _projectileHolder;
         public GameSettings settings;
@@ -54,6 +55,12 @@ namespace GalacticJanitor.Engine
             {
                 Controller._player = value;
             }
+        }
+
+        public static SceneAmbiance SceneSounds
+        {
+            get { return Controller._SceneSounds; }
+            set { Controller._SceneSounds = value; }
         }
 
         /// <summary>
@@ -136,6 +143,7 @@ namespace GalacticJanitor.Engine
                 {
                     settings = new GameSettings();
                 }
+
             }
             else if (Controller != this)
             {
