@@ -6388,6 +6388,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 672fe3f10569c5849b67c932518108c8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &760749965 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11432162, guid: 9d6b19ecddb44a64b945e9bb92bc34b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1377305507}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!4 &761727246 stripped
 Transform:
   m_PrefabParentObject: {fileID: 490748, guid: 710dbbdfb32048b44b9d82a3114228a6, type: 2}
@@ -10517,7 +10523,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 17.55
+  orthographic size: 17.52
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10560,6 +10566,9 @@ MonoBehaviour:
   fixedTarget: 0
   m_customCursor: 0
   m_cursor: {fileID: 0}
+  musics: []
+  AtmosphereSounds: []
+  listener: {fileID: 0}
 --- !u!114 &1185894952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12306,6 +12315,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11426360, guid: 9d6b19ecddb44a64b945e9bb92bc34b8, type: 2}
+      propertyPath: m_combatImage
+      value: 
+      objectReference: {fileID: 760749965}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d6b19ecddb44a64b945e9bb92bc34b8, type: 2}
   m_IsPrefabParent: 0
@@ -13408,7 +13421,7 @@ Prefab:
     - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
       propertyPath: m_cocoons.Array.data[0]
       value: 
-      objectReference: {fileID: 49198502}
+      objectReference: {fileID: 1755266303}
     - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
       propertyPath: m_cocoons.Array.data[1]
       value: 
@@ -13420,7 +13433,7 @@ Prefab:
     - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
       propertyPath: m_cocoons.Array.data[3]
       value: 
-      objectReference: {fileID: 1755266303}
+      objectReference: {fileID: 49198502}
     - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
       propertyPath: m_onDeathInteractables.Array.data[0]
       value: 
@@ -13433,22 +13446,6 @@ Prefab:
       propertyPath: endGameActor
       value: 
       objectReference: {fileID: 203565331}
-    - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
-      propertyPath: m_entity.health
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
-      propertyPath: m_entity.maxHealth
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
-      propertyPath: m_entity.armor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11468746, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
-      propertyPath: m_entity.maxArmor
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc87cb0335632454aa264dd676fc7c6d, type: 2}
   m_IsPrefabParent: 0
