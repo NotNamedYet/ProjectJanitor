@@ -188,7 +188,7 @@ namespace GalacticJanitor.Game
             {
                 if (clipInfo[0].clip.name == "anm_Hartman_Fire")
                 {
-                    Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
+                    //Debug.Log("i pulled the trigger with the GRENADEAssaultRifle in \"WeaponAssaultRifle\"");
                     GameObject grenade = Instantiate(projectileGrenade, chokes.position, chokes.rotation) as GameObject;
                     GrenadeController gctrl = grenade.GetComponent<GrenadeController>();
                     gctrl.baseDamage = grenadesDmg;
@@ -212,7 +212,7 @@ namespace GalacticJanitor.Game
                 {
                     if (clipInfo[0].clip.name == "anm_Hartman_Fire" && CheckMagazineBullet()) // Check if the player is in the good animation and re check ammo
                     {
-                        Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
+                        //Debug.Log("i pulled the trigger with the AssaultRifle in \"WeaponAssaultRifle\"");
                         GameObject bullet = Instantiate(projectileBullet, chokes.position, chokes.rotation) as GameObject;
                         BulletController bctrl = bullet.GetComponent<BulletController>();
                         bctrl.baseDamage = bulletsDmg;
