@@ -7,13 +7,13 @@ namespace GalacticJanitor.Game
         public bool isEntraving;
         public int secondsToEntrave;
 
-        protected override void OnHit(RaycastHit hit)
+        protected override void OnHit(Collider hit)
         {
             
-            if (hit.collider.CompareTag("Player"))
+            if (hit.CompareTag("Player"))
             {
 
-                PlayerController player = hit.collider.GetComponent<PlayerController>();
+                PlayerController player = hit.GetComponent<PlayerController>();
                 player.TakeDirectDamage(baseDamage);
 
                 if (isEntraving)
