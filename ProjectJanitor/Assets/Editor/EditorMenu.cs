@@ -178,7 +178,9 @@ public class EditorMenu
         if (!obj.GetComponent<AudioSource>())
         {
             obj.GetComponent<SceneAmbiance>().listenerMusic = obj.AddComponent<AudioSource>(); // music source
+            obj.GetComponent<SceneAmbiance>().listenerMusic.spatialBlend = 0; // 2D
             obj.GetComponent<SceneAmbiance>().listenerAmbiance = obj.AddComponent<AudioSource>(); // ambiance sounds source
+            obj.GetComponent<SceneAmbiance>().listenerAmbiance.spatialBlend = 1; // 3D
         }
     }
 
