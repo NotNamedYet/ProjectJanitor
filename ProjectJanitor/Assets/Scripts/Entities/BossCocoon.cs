@@ -104,6 +104,9 @@ namespace GalacticJanitor.Game
         {
             AlienBase alien = Instantiate(m_alienOnDeath, transform.position, transform.rotation) as AlienBase;
             alien.DisablePersistency();
+            alien.m_entity.maxHealth *= 2;
+            alien.m_entity.health *= 2;
+            alien.LockTarget(m_target);
             m_boss.m_minions.Add(alien);
 
             AmmoBox drop = Instantiate(m_dropAmmo, transform.position, transform.rotation) as AmmoBox;
@@ -116,6 +119,8 @@ namespace GalacticJanitor.Game
         void SpawnBaby()
         {
             AlienBase alien = Instantiate(m_babies, transform.position, transform.rotation) as AlienBase;
+            alien.m_entity.maxHealth *= 2;
+            alien.m_entity.health *= 2;
             alien.LockTarget(m_target);
             alien.DisablePersistency();
         }

@@ -25,7 +25,7 @@ namespace GalacticJanitor.Game
                     if (other.CompareTag("BossCocoon"))
                     {
                         BossCocoon cocoon = other.GetComponent<BossCocoon>();
-                        m_boss.Heal(cocoon.LifeLeach(m_leachAmount));
+                        m_boss.Heal(cocoon.LifeLeach(m_leachAmount * 10));
                     }
                     else
                     {

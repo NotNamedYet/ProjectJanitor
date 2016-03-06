@@ -89,7 +89,6 @@ namespace GalacticJanitor.Game
 
         protected override void Start()
         {
-            LoadData(SaveSystem.GetPlayerData());
             base.Start();
             isPlayingLowHpsound = false;
             if (IsLowHp()) StartCoroutine("CoRoutLowLife");
@@ -297,8 +296,8 @@ namespace GalacticJanitor.Game
             {
                 if (SaveSystem.Registery.m_firstRegistering)
                 {
+                    CollectData(container);
                     SaveSystem.Registery.m_firstRegistering = false;
-                    return;
                 }
 
                 Debug.Log("Loading player...");
@@ -328,7 +327,7 @@ namespace GalacticJanitor.Game
 
         }
 
-        protected override void Save()
+        public override void Save()
         {
             if (m_data == null)
                 m_data = new DataContainer("##");
@@ -370,7 +369,7 @@ namespace GalacticJanitor.Game
                 playerDisplay.ShowCombatVisual(true);
         }
 
-        void StopCombatState()
+        public void StopCombatState()
         {
             IsFighting = false;
 

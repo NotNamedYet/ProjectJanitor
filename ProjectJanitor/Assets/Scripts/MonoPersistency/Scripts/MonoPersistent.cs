@@ -35,7 +35,7 @@ namespace MonoPersistency
         /// <summary>
         /// Save this object in the Resgistery
         /// </summary>
-        protected virtual void Save()
+        public virtual void Save()
         {
             if (!m_volatile)
             {
