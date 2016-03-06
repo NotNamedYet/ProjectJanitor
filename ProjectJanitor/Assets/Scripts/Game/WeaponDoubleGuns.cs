@@ -13,11 +13,11 @@ namespace GalacticJanitor.Game
         public int bulletsDmg = 1;
 
         public Transform chokes1; // From where the bullet go out the gun
+        public GameObject flash1; // Use to make the flash when shooting, see prefab
         public Transform chokes2;
+        public GameObject flash2;
 
         private bool activeChokes = true; // True = chokes1, false = chokes2
-        [Tooltip("Used by particle named \"pfx_FlashShoot\"")]
-        public GameObject flashShoot;
 
         PlayerAmmo playerAmmo;
 
@@ -45,7 +45,7 @@ namespace GalacticJanitor.Game
                 {
                     Debug.Log("i pulled the trigger with the left gun in \"WeaponDoubleGun\"");
                     bul = Instantiate(bullet, chokes1.position, chokes1.rotation) as BulletController;
-                    PlayFlashShoot(chokes1);
+                    PlayFlashShoot(activeChokes);
 
 
                 }
@@ -53,7 +53,7 @@ namespace GalacticJanitor.Game
                 {
                     Debug.Log("i pulled the trigger with the right gun in \"WeaponDoubleGun\"");
                     bul = Instantiate(bullet, chokes2.position, chokes2.rotation) as BulletController;
-                    PlayFlashShoot(chokes2);
+                    PlayFlashShoot(activeChokes);
 
                 }
 
@@ -71,13 +71,15 @@ namespace GalacticJanitor.Game
             }
         }
 
-        void PlayFlashShoot(Transform chokes)
+        void PlayFlashShoot(bool activeShokesToPlay)
         {
-            if (flashShoot != null)
+            if (flash1 != null && flash2 != null)
             {
-                GameObject flash = Instantiate(flashShoot, chokes.position, chokes.rotation) as GameObject;
+                /*GameObject flash = Instantiate(flashShoot, chokes.position, chokes.rotation) as GameObject;
                 flash.transform.SetParent(chokes.transform);
-                Destroy(flash, 0.11f);
+                Destroy(flash, 0.11f);*/
+                if (activeShokesToPlay) flash1.SetActive(true);
+                else flash2.SetActive(true);
             }
         }
 

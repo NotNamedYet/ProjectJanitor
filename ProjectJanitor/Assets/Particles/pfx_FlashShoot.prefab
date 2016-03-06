@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 410374}
   - 198: {fileID: 19812714}
   - 199: {fileID: 19930296}
+  - 114: {fileID: 11491508}
   m_Layer: 0
   m_Name: pfx_FlashShoot
   m_TagString: Untagged
@@ -29,6 +30,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11491508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f80e4efdf048148ad27e3c68070fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desactivateTimer: 0.12
 --- !u!198 &19812714
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1598,6 +1611,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: desactivateTimer
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

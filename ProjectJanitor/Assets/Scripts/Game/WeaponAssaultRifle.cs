@@ -199,6 +199,9 @@ namespace GalacticJanitor.Game
                     ReloadGrenade();
                     gameObject.GetComponent<WeaponControllerHartman>().playerCanShootAfterReload = false;
                     PlaySoundFireGrenade();
+
+                    /*GUI*/
+                    playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, magazineGrenade);
                 }
             }
         }
@@ -222,6 +225,9 @@ namespace GalacticJanitor.Game
                         playerController.timerActiveJustHaveShoote = 0f; // Use to animation, see PlayerController
                         PlayFlashShoot();
                         PlaySoundFireBullet();
+
+                        /*GUI*/
+                        playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, magazineBullet);
                     }
                 }
                 //Debug.Log("clipinfo lengt : " + clipInfo.Length);
@@ -232,9 +238,11 @@ namespace GalacticJanitor.Game
         {
             if (flashShoot != null)
             {
-                GameObject flash = Instantiate(flashShoot, chokes.position, chokes.rotation) as GameObject;
+                /*GameObject flash = Instantiate(flashShoot, chokes.position, chokes.rotation) as GameObject;
                 flash.transform.SetParent(chokes.transform);
-                Destroy(flash, 0.11f); 
+                Destroy(flash, 0.11f);*/
+                flashShoot.SetActive(true);
+
             }
         }
         #endregion

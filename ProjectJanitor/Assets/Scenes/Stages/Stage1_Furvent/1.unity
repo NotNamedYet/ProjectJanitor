@@ -18556,7 +18556,7 @@ Transform:
   m_Children:
   - {fileID: 922881929}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1001 &1329897788
 Prefab:
   m_ObjectHideFlags: 0
@@ -23361,7 +23361,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 18.34
+  orthographic size: 12.05
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -23402,6 +23402,8 @@ MonoBehaviour:
   trackingBoostRange: 5
   trackPlayerOnStart: 1
   fixedTarget: 0
+  m_customCursor: 0
+  m_cursor: {fileID: 0}
 --- !u!114 &1657745525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24001,7 +24003,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
