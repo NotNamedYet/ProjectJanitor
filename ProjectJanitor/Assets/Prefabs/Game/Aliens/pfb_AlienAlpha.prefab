@@ -529,7 +529,7 @@ MonoBehaviour:
   entityDisplay: {fileID: 0}
   deathloot: {fileID: 0}
   sndOnHit: {fileID: 0}
-  sndOnDie: {fileID: 0}
+  sndOnDie: {fileID: 8300000, guid: bb10ce73f3418ce48921bd3ec41b298f, type: 3}
   sndOnBreakingArmor: {fileID: 0}
   sndOnHeal: {fileID: 0}
   sndOnRepair: {fileID: 0}
@@ -546,10 +546,10 @@ MonoBehaviour:
   enraged: 0
   remainingHealthToEnrage: 50
   enrageModifier: 2
-  sndOnAttack: {fileID: 0}
+  sndOnAttack: {fileID: 8300000, guid: d451c80436e67ee4d8281be5f17373e7, type: 3}
   sndOnMove: {fileID: 0}
   sndOnAggro: {fileID: 0}
-  sndEnrage: {fileID: 0}
+  sndEnrage: {fileID: 8300000, guid: 9570ad71e23b2334eb629836402cb002, type: 3}
   projectile: {fileID: 11401256, guid: d7874fb3f17d3b840aafb24ecf755f19, type: 2}
 --- !u!114 &11426176
 MonoBehaviour:
