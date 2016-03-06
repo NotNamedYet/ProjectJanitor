@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flameDmg: 0
-  timer: 0
+  timer: 0.1
   targetsBurning: 
   sndBegin: {fileID: 8300000, guid: fbb019a5cb677404291bfbabf44843c5, type: 3}
   sndBurning: {fileID: 8300000, guid: 3ff83719c24f6324b9aa436bcacef899, type: 3}
@@ -3327,6 +3327,10 @@ Prefab:
       propertyPath: sndBurning
       value: 
       objectReference: {fileID: 8300000, guid: 3ff83719c24f6324b9aa436bcacef899, type: 3}
+    - target: {fileID: 0}
+      propertyPath: timer
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190324}
