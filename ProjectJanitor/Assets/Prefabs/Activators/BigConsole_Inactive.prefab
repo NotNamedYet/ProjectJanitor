@@ -8,9 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418482}
-  - 114: {fileID: 11439942}
   - 65: {fileID: 6553502}
-  - 65: {fileID: 6560840}
   - 54: {fileID: 5454156}
   m_Layer: 9
   m_Name: BigConsole_Inactive
@@ -87,31 +85,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.76, y: 1, z: 2.3317647}
   m_Center: {x: 0, y: 0, z: -0.0020589828}
---- !u!65 &6560840
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.34, y: 1, z: 1.48}
-  m_Center: {x: 1.1, y: 0, z: -2}
---- !u!114 &11439942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3660e6fad14f9ab449fbd12ee9829507, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_actor: {fileID: 0}
-  m_keyCode: 101
 --- !u!212 &21249818
 SpriteRenderer:
   m_ObjectHideFlags: 1
