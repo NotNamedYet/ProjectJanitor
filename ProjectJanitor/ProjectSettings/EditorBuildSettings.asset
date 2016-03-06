@@ -10,18 +10,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/scn_CharSelection.unity
   - enabled: 1
-    path: Assets/Scenes/Stages/Stage1_Furvent/1.unity
+    path: Assets/Scenes/UI/scn_LoadGame.unity
   - enabled: 1
     path: Assets/Scenes/Lab/SampleLab.unity
   - enabled: 1
-    path: Assets/Scenes/Lab/TransitionLab.unity
+    path: Assets/Scenes/Stages/Stage1_Furvent/1.unity
   - enabled: 1
-    path: Assets/Scenes/Lab/PersistencyLab.unity
-  - enabled: 1
-    path: Assets/Scenes/Stages/Level2_QuarterWest.unity
-  - enabled: 0
-    path: Assets/Tests/MonoPersistent/mono.unity
-  - enabled: 1
-    path: Assets/Scenes/UI/scn_LoadGame.unity
+    path: Assets/Scenes/Stages/Level2_Laboratory.unity
   - enabled: 1
     path: Assets/Scenes/Stages/Level3_BossRoom.unity
+  - enabled: 0
+    path: Assets/Scenes/Stages/Level2_QuarterWest.unity
+  - enabled: 0
+    path: Assets/Scenes/Lab/TransitionLab.unity
+  - enabled: 0
+    path: Assets/Scenes/Lab/PersistencyLab.unity
+  - enabled: 0
+    path: Assets/Tests/MonoPersistent/mono.unity

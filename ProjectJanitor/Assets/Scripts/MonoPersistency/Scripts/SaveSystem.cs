@@ -283,6 +283,7 @@ namespace MonoPersistency
                 {
                     sData.m_datas.Add(key, container);
                 }
+                Debug.Log("Data registered");
             }
             else
             {
@@ -403,6 +404,10 @@ namespace MonoPersistency
             UpdateRegistery();
             BlockedSave = false;
             GameController.TimeController.GameOver(false);
+
+            if (GameController.Player.IsFighting)
+                GameController.Player.StopCombatState();
+
             SceneManager.LoadScene(scene);
         }
 

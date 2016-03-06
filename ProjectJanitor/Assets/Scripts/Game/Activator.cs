@@ -10,12 +10,11 @@ public class Activator : MonoBehaviour {
     public KeyCode m_keyCode;
     private bool m_candidateForAction;
 
-	// Use this for initialization
-	void Start ()
+    void OnEnable()
     {
-	
-	}
-	
+        
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -35,6 +34,7 @@ public class Activator : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+
         if (m_actor.CanInteract && other.CompareTag("Player"))
         {
             m_candidateForAction = true;

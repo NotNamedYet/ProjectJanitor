@@ -644,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specificName: 
+  m_volatile: 0
   bypassBaking: 1
   entityDisplayName: Sergent Hartman
   m_entity:
@@ -754,8 +755,8 @@ MonoBehaviour:
   projectileGrenade: {fileID: 182990, guid: 1c82d868fd840844688fa78b5d83c8a5, type: 2}
   magazineBullet: 75
   magazineGrenade: 1
-  bulletsDmg: 1
-  grenadesDmg: 2
+  bulletsDmg: 10
+  grenadesDmg: 25
   chokes: {fileID: 400326}
   flashShoot: {fileID: 150422}
   canBurstTimer: 0.2
@@ -2765,11 +2766,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: bulletsDmg
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: grenadesDmg
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

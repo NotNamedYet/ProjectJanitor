@@ -1417,8 +1417,8 @@ MonoBehaviour:
   entityDisplayName: The Mother
   m_entity:
     alive: 1
-    health: 200
-    maxHealth: 200
+    health: 1500
+    maxHealth: 1500
     armor: 0
     maxArmor: 0
     armorDamageReduction: 2
@@ -1462,8 +1462,9 @@ MonoBehaviour:
   m_onDeathInteractables:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   m_endGameActor: {fileID: 0}
-  m_TimeBetweenSpin: 0
+  m_TimeBetweenSpin: 10
 --- !u!114 &11472412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2640,6 +2641,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: specificName
       value: The_Mother
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_entity.health
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_entity.maxHealth
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -49,6 +49,7 @@ namespace GalacticJanitor.Game
                 {
                     targetsAlreadyTouched.Add(other.gameObject.GetInstanceID());
                     other.GetComponent<LivingEntity>().TakeDirectDamage(DoDamage());
+                    Debug.Log("Explo touched " + other.name);
 
                     if (other.tag == "Alien" && damageSource != null)
                     {
