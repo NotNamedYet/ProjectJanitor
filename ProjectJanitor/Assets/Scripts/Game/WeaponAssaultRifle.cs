@@ -238,9 +238,11 @@ namespace GalacticJanitor.Game
         {
             if (flashShoot != null)
             {
-                GameObject flash = Instantiate(flashShoot, chokes.position, chokes.rotation) as GameObject;
+                /*GameObject flash = Instantiate(flashShoot, chokes.position, chokes.rotation) as GameObject;
                 flash.transform.SetParent(chokes.transform);
-                Destroy(flash, 0.11f); 
+                Destroy(flash, 0.11f);*/
+                flashShoot.SetActive(true);
+
             }
         }
         #endregion
