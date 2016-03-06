@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_lootChances: 0.4
-  m_minRandomAmount: 10
+  m_minRandomAmount: 5
   m_maxRandomAmount: 15
   m_armor: {fileID: 11442928, guid: 8e829166a827d724f907ad0c15fece41, type: 2}
   m_health: {fileID: 11445416, guid: dbb89fa07d4554640ace3ad922c53b38, type: 2}
@@ -598,12 +598,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specificName: 
+  m_volatile: 0
   bypassBaking: 0
   entityDisplayName: 
   m_entity:
     alive: 1
-    health: 10
-    maxHealth: 10
+    health: 30
+    maxHealth: 30
     armor: 0
     maxArmor: 0
     armorDamageReduction: 0
@@ -629,7 +630,7 @@ MonoBehaviour:
   maxDistanceFromSpawn: 200
   attackPerSecond: 1
   enraged: 0
-  remainingHealthToEnrage: 5
+  remainingHealthToEnrage: 20
   enrageModifier: 2
   sndOnAttack: {fileID: 0}
   sndOnMove: {fileID: 0}
@@ -1070,7 +1071,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_minRandomAmount
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_maxRandomAmount
@@ -1100,15 +1101,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_entity.maxHealth
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_entity.health
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: remainingHealthToEnrage
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxAttackRange

@@ -793,6 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specificName: 
+  m_volatile: 0
   bypassBaking: 1
   entityDisplayName: Major Carter
   m_entity:
@@ -832,6 +833,7 @@ MonoBehaviour:
   weapCHartman: {fileID: 0}
   score:
     enemyKilled: 0
+  m_stillCombat: 0
   m_combatThreshold: 4
   immuneEntrave: 0
   m_entraveSpeedReduction: 5
@@ -868,7 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 11490528, guid: 77c7896ca4c132a4e8ccc3d7b896042a, type: 2}
   magazine: 0
-  bulletsDmg: 1
+  bulletsDmg: 15
   chokes1: {fileID: 419786}
   chokes2: {fileID: 496162}
   flashShoot: {fileID: 127294, guid: 02c51482417645d43af4d0df8730c8da, type: 2}
@@ -1419,8 +1421,9 @@ Prefab:
       propertyPath: sndOnDie
       value: 
       objectReference: {fileID: 8300000, guid: a9727338c2b27f240819ad467f1d70af, type: 3}
-      propertyPath: m_combatThreshold
-      value: 4
+    - target: {fileID: 0}
+      propertyPath: bulletsDmg
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

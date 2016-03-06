@@ -38,7 +38,7 @@ namespace GalacticJanitor.Engine
 
             pClone.transform.SetParent(GameController.asGameObject.transform);
             GameController.Player = pClone;
-            //LoadPlayerData();
+            LoadPlayerData();
             GameController.TopDownCamera.JumpToTarget();
         }
 
@@ -47,7 +47,7 @@ namespace GalacticJanitor.Engine
         {
             GameController.Player.transform.position = playerPosition;
             GameController.Player.transform.rotation = playerRotation;
-            //LoadPlayerData();
+            LoadPlayerData();
             GameController.TopDownCamera.JumpToTarget();
             GameController.Player.UpdateDisplay();
         }
@@ -60,6 +60,12 @@ namespace GalacticJanitor.Engine
         //load from registery info...
         void LoadStage()
         {
+            if (disallowPlayer && GameController.Player)
+            {
+                GameController.DestroyPlayer();
+                return;
+            }
+
             SceneData dScene = SaveSystem.GetActiveSceneData();
             StageData dStage = dScene.m_stage;
 
