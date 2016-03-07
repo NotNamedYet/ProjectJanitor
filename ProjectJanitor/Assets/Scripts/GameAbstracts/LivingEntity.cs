@@ -63,10 +63,14 @@ namespace GalacticJanitor.Game
         public AudioClip sndOnHeal;
         public AudioClip sndOnRepair;
         public AudioSource listener;
+        private bool isPlayingOnHitSnd;
 
         protected virtual void Start()
         {
             UpdateDisplay();
+
+            /*SOUND*/
+            isPlayingOnHitSnd = false;
         }
 
         /// <summary>
@@ -119,7 +123,7 @@ namespace GalacticJanitor.Game
                 OnDamaged();
 
                 /*SOUND*/
-                if (sndOnHit && !snd_armorIsBreakThisTime) listener.PlayOneShot(sndOnHit); // If armor is breaking this frame, no hit sound
+                if (sndOnHit && !snd_armorIsBreakThisTime && !isPlayingOnHitSnd) StartCoroutine(CoroutPlaySndOnHit()); // If armor is breaking this frame, no hit sound
 
                 /*ANIM*/
                 if (optionalAnimator)
@@ -135,6 +139,17 @@ namespace GalacticJanitor.Game
                 UpdateDisplay();
             }
         }
+
+        #region Sounds
+
+        IEnumerator CoroutPlaySndOnHit()
+        {
+            listener.PlayOneShot(sndOnHit);
+            yield return new WaitForSeconds(sndOnHit.length);
+            isPlayingOnHitSnd = false;
+        }
+
+        #endregion
 
         /// <summary>
         /// Inflict the specified amount of damage to this entity. If the entity health falls to 0, the entity die.
