@@ -116,6 +116,8 @@ namespace GalacticJanitor.Game
                 LastDamage = damage;
                 m_entity.health -= damage;
 
+                OnDamaged();
+
                 /*SOUND*/
                 if (sndOnHit && !snd_armorIsBreakThisTime) listener.PlayOneShot(sndOnHit); // If armor is breaking this frame, no hit sound
 
@@ -145,6 +147,8 @@ namespace GalacticJanitor.Game
         {
             TakeDirectDamage(damage, false);
         }
+
+        protected virtual void OnDamaged() { }
 
         /// <summary>
         /// Heal the entity with the given amount. (result cannot exceed max Health value)

@@ -148,9 +148,9 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// Start interphase at 50% of HP
         /// </summary>
-        public new void TakeDirectDamage(int damage, bool ignoreArmor)
+        protected override void OnDamaged()
         {
-            base.TakeDirectDamage(damage, ignoreArmor);
+            base.OnDamaged();
 
             int percent = (m_entity.health * 100 / m_entity.maxHealth);
 
@@ -178,31 +178,10 @@ namespace GalacticJanitor.Game
             m_attackCooldown = false;
         }
 
-        /// <summary>
-        /// Regular targetting + give the order of attack to all cocoons
-        /// </summary>
-        /// <param name="target"></param>
-        public override void SetTarget(Transform target)
+        protected override void OnDeath()
         {
-            base.SetTarget(target);
-
-            if (!m_targetSpreadedToCocoons && m_cocoons != null)
-            {
-                StartCoroutine(SpinAttackRoutine());
-                foreach (BossCocoon b in m_cocoons)
-                    b.StartAttack();
-
-                m_targetSpreadedToCocoons = true;
-            }
-        }
-
-        /// <summary>
-        /// On die... Release the way and kill pending minions
-        /// </summary>
-        protected new void Die()
-        {
-            destroyOnDeath = false; //Make sure that this is true.
-            base.Die();
+            base.OnDeath();
+            destroyOnDeath = false;
 
             if (rigging)
             {
@@ -221,6 +200,25 @@ namespace GalacticJanitor.Game
 
             if (m_endGameActor)
                 m_endGameActor.SetActive(true);
+
+        }
+
+        /// <summary>
+        /// Regular targetting + give the order of attack to all cocoons
+        /// </summary>
+        /// <param name="target"></param>
+        public override void SetTarget(Transform target)
+        {
+            base.SetTarget(target);
+
+            if (!m_targetSpreadedToCocoons && m_cocoons != null)
+            {
+                StartCoroutine(SpinAttackRoutine());
+                foreach (BossCocoon b in m_cocoons)
+                    b.StartAttack();
+
+                m_targetSpreadedToCocoons = true;
+            }
         }
 
         #endregion
