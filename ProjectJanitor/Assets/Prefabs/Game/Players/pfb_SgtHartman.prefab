@@ -390,7 +390,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -508.66095, y: 0, z: -327.8318}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400832}
@@ -666,6 +666,7 @@ MonoBehaviour:
   sndOnHeal: {fileID: 0}
   sndOnRepair: {fileID: 0}
   listener: {fileID: 0}
+  isPlayingOnHitSnd: 0
   sndOnLowHp: {fileID: 0}
   isPlayingLowHpsound: 0
   marinesType: 1
