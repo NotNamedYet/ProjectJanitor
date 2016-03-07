@@ -22,6 +22,10 @@ namespace GalacticJanitor.Game
         public string m_notification;
         public Color m_notificationColor;
 
+        [Header("Using Trigger GO")]
+        public bool useTriggerGoScript;
+        private TriggerGameObject trigger;
+
         private TopDownCamera m_camera;
         private PlayerController m_player;
 
@@ -34,6 +38,12 @@ namespace GalacticJanitor.Game
             m_camera = GameController.TopDownCamera;
             m_player = GameController.Player;
             m_notificationColor.a = 255;
+            if (useTriggerGoScript)
+            {
+                trigger = GetComponent<TriggerGameObject>();
+                if (trigger == null) Debug.Log("If you checked \"useTriggerGoScript\" you must add a TriggerGameObjectScript to this game object.");
+            }
+
         }
 
         // Update is called once per frame
@@ -110,8 +120,12 @@ namespace GalacticJanitor.Game
             {
                 (activator.m_actor as ActivableDoor).m_notify = false;
             }
+
             activator.m_actor.OnInteract();
+
             if (m_notification.Length > 0 && m_notifyPlayer) GameController.NotifyPlayer(m_notification, m_notificationColor, 2);
+
+            if (useTriggerGoScript) trigger.ActiveGO();
         }
 
     } 

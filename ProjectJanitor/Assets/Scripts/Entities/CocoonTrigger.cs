@@ -2,10 +2,15 @@ using UnityEngine;
 using System.Collections;
 using MonoPersistency;
 using System;
+using GalacticJanitor.Engine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(SphereCollider))]
 public class CocoonTrigger : MonoPersistent {
+
+    [Header("Cocoon Settings.")]
+    public bool playSoundOnActivation;
+    public AudioClip snd;
 
     public CocoonSpawner[] m_LinkedCocoons;
     bool m_Active = true;
@@ -34,6 +39,9 @@ public class CocoonTrigger : MonoPersistent {
             if (m_LinkedCocoons.Length > 0)
                 for (int i = 0; i < m_LinkedCocoons.Length; i++)
                     if (m_LinkedCocoons[i]) m_LinkedCocoons[i].TriggerSpawning(other.transform);
+
+            /*SOUND*/
+            if (playSoundOnActivation) GameController.SceneSounds.listenerAmbiance.PlayOneShot(snd);
 
             m_Active = false;
             Save();
