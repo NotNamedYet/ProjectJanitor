@@ -17,6 +17,7 @@ namespace GalacticJanitor.Engine
         private SceneAmbiance _SceneSounds;
 
         private GameObject _projectileHolder;
+        private GameObject _entityHolder;
         public GameSettings settings;
 
 
@@ -112,6 +113,24 @@ namespace GalacticJanitor.Engine
         {
             get { return Controller._topDownCamera; }
             set { Controller._topDownCamera = value; }
+        }
+
+        /// <summary>
+        /// Return the _Projectiles folder in hierachy (creates one if missing at runtime)
+        /// </summary>
+        public static Transform EntityHolder
+        {
+            get
+            {
+                if (!Controller._entityHolder)
+                {
+                    Controller._entityHolder = GameObject.Find("_Entities");
+                    
+                    if (!Controller._entityHolder)
+                        Controller._entityHolder = new GameObject("_Entities");
+                }
+                return Controller._entityHolder.transform;
+            }
         }
 
         /// <summary>

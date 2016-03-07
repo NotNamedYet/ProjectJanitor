@@ -1,24 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using GalacticJanitor.Game;
+using System;
 
 [RequireComponent(typeof(Collider))]
-public class LocalDamage : MonoBehaviour {
+public class LocalDamage : MonoBehaviour, IDamageable {
 
     public LivingEntity m_entity;
     public int m_damageIndex;
     public bool m_reduced;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	    
-	}
 
     public void TakeDirectDamage(int damage)
     {
@@ -39,4 +29,11 @@ public class LocalDamage : MonoBehaviour {
                 m_entity.TakeDirectDamage(damage);
         }
     }
+
+    public void TakeDirectDamage(int damage, bool ignoreArmor)
+    {
+        TakeDirectDamage(damage, false);
+    }
+
+    public void Die(){}
 }

@@ -17,6 +17,7 @@ namespace GalacticJanitor.Game
         protected override void OnHit(RaycastHit hit)
         {
             GrenadeExplosion explo = Instantiate(explosion, transform.position, transform.rotation) as GrenadeExplosion;
+
             explo.explosionDmg = baseDamage;
             explo.damageSource = damageSource;
 

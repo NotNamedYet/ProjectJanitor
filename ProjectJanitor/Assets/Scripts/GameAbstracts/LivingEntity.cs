@@ -12,7 +12,7 @@ using System;
 
 namespace GalacticJanitor.Game
 {
-    public abstract class LivingEntity : Entity
+    public abstract class LivingEntity : Entity, IDamageable
     {
 
         [System.Serializable]
@@ -77,7 +77,7 @@ namespace GalacticJanitor.Game
         /// </summary>
         /// <param name="damage">health point to loose</param>
         /// <param name="ignoreArmor">true to ignore armor damage reduction</param>
-        public virtual void TakeDirectDamage(int damage, bool ignoreArmor)
+        public void TakeDirectDamage(int damage, bool ignoreArmor)
         {
             if (invincible) return;
 
@@ -212,8 +212,9 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// Kill the entity. Destroy the gameoject if destroyOnDeath is set to true
         /// </summary>
-        protected virtual void Die()
+        public void Die()
         {
+
             m_entity.alive = false;
 
             if (saveOnDeath) Save();
@@ -224,6 +225,9 @@ namespace GalacticJanitor.Game
                 listener.Stop();
                 listener.PlayOneShot(sndOnDie);
             }
+
+            //Child ... 
+            OnDeath();
 
             /*GUI*/
             UpdateDisplay();
@@ -236,6 +240,8 @@ namespace GalacticJanitor.Game
                 Destroy(gameObject);
             }
         }
+
+        protected virtual void OnDeath() { }
 
         /// <summary>
         /// Instant kill this entity. Don't overpass destroyOnDeath behavior

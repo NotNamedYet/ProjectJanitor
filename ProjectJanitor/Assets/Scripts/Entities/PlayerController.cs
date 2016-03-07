@@ -116,7 +116,7 @@ namespace GalacticJanitor.Game
             
         }
 
-        public override void TakeDirectDamage(int damage, bool ignoreArmor)
+        public new void TakeDirectDamage(int damage, bool ignoreArmor)
         {
             base.TakeDirectDamage(damage, ignoreArmor);
             if (IsLowHp() && !isPlayingLowHpsound)
@@ -145,11 +145,10 @@ namespace GalacticJanitor.Game
             else return false;
         }
 
-        protected override void Die()
+        protected override void OnDeath()
         {
-            base.Die();
+            base.OnDeath();
             GameController.TimeController.GameOver(true);
-
         }
 
         void Update()

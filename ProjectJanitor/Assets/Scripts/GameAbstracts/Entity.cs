@@ -10,5 +10,10 @@ namespace GalacticJanitor.Game
         [Header("Entity")]
         public string entityDisplayName;
 
+
+        public static implicit operator bool(Entity check)
+        {
+            return check != null;
+        }
     } 
 }
