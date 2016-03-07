@@ -63,7 +63,7 @@ namespace GalacticJanitor.Game
         public AudioClip sndOnHeal;
         public AudioClip sndOnRepair;
         public AudioSource listener;
-        private bool isPlayingOnHitSnd;
+        public bool isPlayingOnHitSnd;
 
         protected virtual void Start()
         {
@@ -144,6 +144,7 @@ namespace GalacticJanitor.Game
 
         IEnumerator CoroutPlaySndOnHit()
         {
+            isPlayingOnHitSnd = true;
             listener.PlayOneShot(sndOnHit);
             yield return new WaitForSeconds(sndOnHit.length);
             isPlayingOnHitSnd = false;
