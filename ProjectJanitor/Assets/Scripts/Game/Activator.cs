@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using GalacticJanitor.UI;
 using GalacticJanitor.Engine;
+using GalacticJanitor.Game;
 
 [ExecuteInEditMode]
 public class Activator : MonoBehaviour {
@@ -9,6 +10,8 @@ public class Activator : MonoBehaviour {
     public Interactable m_actor;
     public KeyCode m_keyCode;
     private bool m_candidateForAction;
+
+    public bool playFocusScript;
 
     void OnEnable()
     {
@@ -22,10 +25,22 @@ public class Activator : MonoBehaviour {
         {
             if (Input.GetKeyDown(m_keyCode))
             {
-                m_actor.OnInteract();
-                if (!m_actor.CanInteract)
+                if (!playFocusScript)
                 {
-                    GameController.TogglePlayerInteractor(false);
+                    m_actor.OnInteract();
+
+                    if (!m_actor.CanInteract)
+                    {
+                        GameController.TogglePlayerInteractor(false);
+                    } 
+                }
+                else
+                {
+                    if (GetComponent<FocusTriggerConsole>())
+                    {
+                        FocusTriggerConsole trigger = GetComponent<FocusTriggerConsole>();
+                        trigger.LaunchFocus(); 
+                    }
                 }
             }
         }

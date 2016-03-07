@@ -19,6 +19,9 @@ namespace GalacticJanitor.Game
         public bool trackPlayerOnStart = true;
         public bool fixedTarget;
 
+        public bool onScrolling;
+        public float scrollingSpeed;
+
         [Header("Cursor")]
         public bool m_customCursor = false;
         public Texture2D m_cursor;
@@ -54,7 +57,9 @@ namespace GalacticJanitor.Game
         // Update is called once per frame
         void Update()
         {
-            FollowTarget();
+            if (!onScrolling) FollowTarget();
+            else ScrollingToTarget(scrollingSpeed);
+
             UpdatePointer();
         }
 
@@ -96,6 +101,15 @@ namespace GalacticJanitor.Game
                 transform.position = new Vector3(target.position.x, 10, target.position.z);
             }
         }
+
+        public void ScrollingToTarget(float speed)
+        {
+            if (target && onScrolling)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, 10, target.position.z), speed * Time.deltaTime);
+            }
+        }
+
         #endregion
 
         public bool IsFarFromTarget()

@@ -15,6 +15,8 @@ namespace GalacticJanitor.Game
         public AudioClip[] ambiance;
         [Tooltip("Do you want play this sound randomly in the scene ? Same index's order to \"ambiance\" list.")]
         public bool[] soundsThatMustBePlayedRandomly;
+        [Tooltip("Custom volum that you want use to the music, use a float between 0 and 1.")]
+        public float volMusic;
 
         public AudioSource listenerMusic;
         public AudioSource listenerAmbiance;
@@ -56,6 +58,8 @@ namespace GalacticJanitor.Game
                 Debug.Log("Problem in SceneAmbianceManager : Do you filled up all the fields in the inspector ? See tooltips please. Asshole");
                 _playingRandomlySoundsAmbiance = false; // Set to false to avoid BAMYA (Bad Allocation Memory in Your Assssss)
             }
+
+            if (volMusic > 1f) volMusic = 1f;
         }
 
         void Start()
@@ -68,6 +72,7 @@ namespace GalacticJanitor.Game
 
             if (playMusicAtStart)
             {
+                listenerMusic.volume = volMusic;
                 PlayMusic(indexMusicAtStart);
             }
 
