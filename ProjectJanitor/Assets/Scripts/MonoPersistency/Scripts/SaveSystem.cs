@@ -283,7 +283,6 @@ namespace MonoPersistency
                 {
                     sData.m_datas.Add(key, container);
                 }
-                Debug.Log("Data registered");
             }
             else
             {

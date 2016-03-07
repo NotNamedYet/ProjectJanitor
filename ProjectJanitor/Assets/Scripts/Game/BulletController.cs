@@ -17,33 +17,30 @@ namespace GalacticJanitor.Game
 
         protected override void OnHit(RaycastHit hit)
         {
-            LocalDamage localDamaged = hit.collider.GetComponent<LocalDamage>();
 
-            if (localDamaged != null)
+            IDamageable damageable = hit.collider.GetComponent(typeof(IDamageable)) as IDamageable;
+
+            if (damageable != null)
             {
-                localDamaged.TakeDirectDamage(baseDamage);
-                Debug.Log("locally damaged");
-                if (localDamaged.m_entity is AlienBase)
-                {
-                    AlienBase alien = localDamaged.m_entity as AlienBase;
+                damageable.TakeDirectDamage(baseDamage);
 
-                    if (alien.target == null)
-                    {
+                if (damageable is LocalDamage)
+                {
+                    AlienBase alien = ((damageable as LocalDamage).m_entity) as AlienBase;
+
+                    if (alien)
                         alien.SetTarget(damageSource.transform);
-                    }
-
                 }
-            }
-            else if (hit.collider.CompareTag("Alien"))
-            {
-                AlienBase entity = hit.collider.GetComponent<AlienBase>(); // Ref to AlienBase to access target field
-                entity.TakeDirectDamage(baseDamage);
-
-                if (entity.target == null)
+                else if (damageable is CocoonSpawner)
                 {
-                    entity.SetTarget(damageSource.transform);
+                    (damageable as CocoonSpawner).TriggerSpawning(damageSource.transform);
                 }
-            }
+                else if (damageable is AlienBase)
+                {
+                    (damageable as AlienBase).SetTarget(damageSource.transform);
+                }
+            } 
+
             Destroy(gameObject);
         }
     }

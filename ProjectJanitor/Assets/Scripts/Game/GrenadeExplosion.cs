@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace GalacticJanitor.Game
 {
     [RequireComponent(typeof(ParticleSystem))]
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(SphereCollider))]
     public class GrenadeExplosion : MonoBehaviour
     {
 
@@ -20,20 +20,30 @@ namespace GalacticJanitor.Game
         float timer;
 
         public AudioClip sndExplo;
-
         public GameObject damageSource;
 
+        SphereCollider sphereCollider;
+        public float blastSpreadingSpeed;
+        public float maxBlastRadius;
         
         // Use this for initialization
         void Start()
         {
+            sphereCollider = GetComponent<SphereCollider>();
             timer = Time.time + timerSet;
 
             GetComponent<AudioSource>().PlayOneShot(sndExplo);
 
             targetsAlreadyTouched = new List<int>();
             explosion = gameObject.GetComponent<ParticleSystem>();
+
             Destroy(gameObject, explosion.duration);
+        }
+
+        void Update()
+        {
+            if (sphereCollider.radius < maxBlastRadius)
+                sphereCollider.radius += (Time.deltaTime * blastSpreadingSpeed);
         }
 
         public void SetSource(GameObject source)
@@ -43,21 +53,32 @@ namespace GalacticJanitor.Game
 
         void OnTriggerEnter(Collider other)
         {
+
+            if (other.CompareTag("Player"))
+                return;
+
             if (Time.time < timer)
             {
-                if (!targetsAlreadyTouched.Contains(other.gameObject.GetInstanceID()) && other.GetComponent<LivingEntity>() != null)
+                if (!targetsAlreadyTouched.Contains(other.gameObject.GetInstanceID()))
                 {
-                    targetsAlreadyTouched.Add(other.gameObject.GetInstanceID());
-                    other.GetComponent<LivingEntity>().TakeDirectDamage(DoDamage());
-                    Debug.Log("Explo touched " + other.name);
+                    IDamageable damageable = other.GetComponent(typeof(IDamageable)) as IDamageable;
 
-                    if (other.tag == "Alien" && damageSource != null)
+                    if (damageable == null)
                     {
-                        if (other.GetComponent<AlienBase>().target == null)
-                        {
-                            other.GetComponent<AlienBase>().SetTarget(damageSource.transform);
-                        }
+                        return;
                     }
+                    targetsAlreadyTouched.Add(other.gameObject.GetInstanceID());
+                    damageable.TakeDirectDamage(DoDamage());
+
+                    //Target spreading.
+                    if (damageable is AlienBase)
+                    {
+                        AlienBase alien = damageable as AlienBase;
+                        alien.SetTarget(damageSource.transform);
+                    }
+
+                    if (damageable is CocoonSpawner)
+                        (damageable as CocoonSpawner).TriggerSpawning(damageSource.transform);
                 }
             }
         }

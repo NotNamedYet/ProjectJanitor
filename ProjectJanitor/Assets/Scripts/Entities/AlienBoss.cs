@@ -148,7 +148,7 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// Start interphase at 50% of HP
         /// </summary>
-        public override void TakeDirectDamage(int damage, bool ignoreArmor)
+        public new void TakeDirectDamage(int damage, bool ignoreArmor)
         {
             base.TakeDirectDamage(damage, ignoreArmor);
 
@@ -199,7 +199,7 @@ namespace GalacticJanitor.Game
         /// <summary>
         /// On die... Release the way and kill pending minions
         /// </summary>
-        protected override void Die()
+        protected new void Die()
         {
             destroyOnDeath = false; //Make sure that this is true.
             base.Die();
