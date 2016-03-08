@@ -874,10 +874,10 @@ MonoBehaviour:
   sndOnHit: {fileID: 8300000, guid: b9d7bc85982bef149ba24bde97bac0ff, type: 3}
   sndOnDie: {fileID: 8300000, guid: a9727338c2b27f240819ad467f1d70af, type: 3}
   sndOnBreakingArmor: {fileID: 0}
-  sndOnHeal: {fileID: 0}
-  sndOnRepair: {fileID: 0}
+  sndOnHeal: {fileID: 8300000, guid: ea3419059098c244b9f01a25cd33ee7d, type: 3}
+  sndOnRepair: {fileID: 8300000, guid: 44b1534b706e4974f9bf4eb5a15cfe30, type: 3}
   listener: {fileID: 0}
-  sndOnLowHp: {fileID: 0}
+  sndOnLowHp: {fileID: 8300000, guid: 13dd476ea4de4f24cbd03523bebef675, type: 3}
   isPlayingLowHpsound: 0
   marinesType: 0
   playerAmmo: {fileID: 0}
