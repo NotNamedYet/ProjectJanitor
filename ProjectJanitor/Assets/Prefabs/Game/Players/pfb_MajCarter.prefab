@@ -877,6 +877,7 @@ MonoBehaviour:
   sndOnHeal: {fileID: 8300000, guid: ea3419059098c244b9f01a25cd33ee7d, type: 3}
   sndOnRepair: {fileID: 8300000, guid: 44b1534b706e4974f9bf4eb5a15cfe30, type: 3}
   listener: {fileID: 0}
+  isPlayingOnHitSnd: 0
   sndOnLowHp: {fileID: 8300000, guid: 13dd476ea4de4f24cbd03523bebef675, type: 3}
   isPlayingLowHpsound: 0
   marinesType: 0
@@ -4591,6 +4592,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: bulletsDmg
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sndOnBreakingArmor
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

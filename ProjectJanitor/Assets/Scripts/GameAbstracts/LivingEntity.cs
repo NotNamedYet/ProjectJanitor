@@ -71,6 +71,7 @@ namespace GalacticJanitor.Game
 
             /*SOUND*/
             isPlayingOnHitSnd = false;
+            listener = GetComponent<AudioSource>();
         }
 
         /// <summary>

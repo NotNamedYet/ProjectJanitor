@@ -1095,7 +1095,7 @@ MonoBehaviour:
   enraged: 0
   remainingHealthToEnrage: 25
   enrageModifier: 3
-  sndOnAttack: {fileID: 0}
+  sndOnAttack: {fileID: 8300000, guid: a6a4c063607dc4f4eb8694008d51a2c9, type: 3}
   sndOnMove: {fileID: 0}
   sndOnAggro: {fileID: 0}
   sndEnrage: {fileID: 8300000, guid: 9c86eb996e709634783fa87f6bb45da0, type: 3}
@@ -2006,6 +2006,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: enrageModifier
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sndOnAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: a6a4c063607dc4f4eb8694008d51a2c9, type: 3}
+    - target: {fileID: 0}
+      propertyPath: invincible
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
