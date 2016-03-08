@@ -10,6 +10,8 @@ public class CocoonTrigger : MonoPersistent {
 
     [Header("Cocoon Settings.")]
     public bool playSoundOnActivation;
+    [Tooltip("Check it if you want play a sound randomly from the scene ambiance manager")]
+    public bool playSoundRandomlyWithSceneSounds;
     public AudioClip snd;
 
     public CocoonSpawner[] m_LinkedCocoons;
@@ -41,7 +43,7 @@ public class CocoonTrigger : MonoPersistent {
                     if (m_LinkedCocoons[i]) m_LinkedCocoons[i].TriggerSpawning(other.transform);
 
             /*SOUND*/
-            if (playSoundOnActivation && snd) GameController.SceneSounds.listenerAmbiance.PlayOneShot(snd);
+            if (playSoundOnActivation && snd) PlaySound();
 
             m_Active = false;
             Save();
@@ -55,4 +57,12 @@ public class CocoonTrigger : MonoPersistent {
     }
 
     public override void LoadData(DataContainer container){}
+
+    #region SOUND
+    private void PlaySound()
+    {
+        if (playSoundRandomlyWithSceneSounds) GameController.SceneSounds.PlayAmbianceSoundRandomlyOneShot();
+        else GameController.SceneSounds.listenerAmbiance.PlayOneShot(snd);
+    }
+    #endregion
 }

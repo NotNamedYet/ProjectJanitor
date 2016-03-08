@@ -5899,7 +5899,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 3ae762fb07457a048a7820fbead8a93f, type: 3}
   m_LinkedCocoons:
   - {fileID: 1844552529}
   - {fileID: 932138046}
@@ -11149,7 +11150,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -11175,7 +11176,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -11223,7 +11224,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -11291,16 +11292,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musics:
   - {fileID: 8300000, guid: 9f2b0a18a4ab36646a0a01fe75500590, type: 3}
-  ambiance: []
-  soundsThatMustBePlayedRandomly: 
+  ambiance:
+  - {fileID: 8300000, guid: 9f52d6012b1bdad4398cbf1aee3dce74, type: 3}
+  - {fileID: 8300000, guid: 3ae762fb07457a048a7820fbead8a93f, type: 3}
+  - {fileID: 8300000, guid: 9b39e04b46da3ee458130bf9949eef17, type: 3}
+  - {fileID: 8300000, guid: 21cb286a67d2c5841a30c6db32956064, type: 3}
+  - {fileID: 8300000, guid: 83a6623a264ad9c44b3c77cceba3320c, type: 3}
+  soundsThatMustBePlayedRandomly: 0101010101
   volMusic: 0.1
-  listenerMusic: {fileID: 232959839}
-  listenerAmbiance: {fileID: 232959838}
   playMusicAtStart: 1
   indexMusicAtStart: 0
-  playSoundsRandomlyAtStart: 0
-  rangeMin: 0
-  rangeMax: 0
+  playSoundsRandomlyAtStart: 1
+  rangeMin: 10
+  rangeMax: 20
+  listenerMusic: {fileID: 232959839}
+  listenerAmbiance: {fileID: 232959838}
 --- !u!4 &232959841
 Transform:
   m_ObjectHideFlags: 0
@@ -11312,7 +11318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
 --- !u!4 &233657182 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470204, guid: 18ffe2ce0292f3d44bda166e369f86f1, type: 2}
@@ -22552,7 +22558,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
 --- !u!1001 &505429809
 Prefab:
   m_ObjectHideFlags: 0
@@ -24658,7 +24664,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 21cb286a67d2c5841a30c6db32956064, type: 3}
   m_LinkedCocoons:
   - {fileID: 1396893066}
   - {fileID: 1005808062}
@@ -34542,19 +34549,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -2.5535127e-15
+      value: -2.553513e-15
       objectReference: {fileID: 0}
     - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7817047
+      value: 0.7817048
       objectReference: {fileID: 0}
     - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.000000093186465
+      value: 0.00000009318647
       objectReference: {fileID: 0}
     - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.62364864
+      value: 0.6236487
       objectReference: {fileID: 0}
     - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
       propertyPath: m_RootOrder
@@ -35613,6 +35620,10 @@ Prefab:
       propertyPath: m_Name
       value: SpawnerBeta (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11495722, guid: bad7b3c5607bcf14d8659c66d7fd2a20, type: 2}
+      propertyPath: m_MaxPoolSize
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bad7b3c5607bcf14d8659c66d7fd2a20, type: 2}
   m_IsPrefabParent: 0
@@ -36552,8 +36563,9 @@ MonoBehaviour:
   specificName: 
   m_volatile: 0
   bypassBaking: 0
-  playSoundOnActivation: 0
-  snd: {fileID: 0}
+  playSoundOnActivation: 1
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 9b39e04b46da3ee458130bf9949eef17, type: 3}
   m_LinkedCocoons:
   - {fileID: 1933931161}
   - {fileID: 1886085405}
@@ -38402,7 +38414,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 9b39e04b46da3ee458130bf9949eef17, type: 3}
   m_LinkedCocoons:
   - {fileID: 532250879}
   - {fileID: 2142394236}
@@ -42631,7 +42644,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 83a6623a264ad9c44b3c77cceba3320c, type: 3}
   m_LinkedCocoons:
   - {fileID: 905780617}
   - {fileID: 12545949}
@@ -42982,6 +42996,48 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &957410672
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -38.72934
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -61.88379
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &960625848
 GameObject:
   m_ObjectHideFlags: 0
@@ -50929,8 +50985,9 @@ MonoBehaviour:
   specificName: 
   m_volatile: 0
   bypassBaking: 0
-  playSoundOnActivation: 0
-  snd: {fileID: 0}
+  playSoundOnActivation: 1
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 9f52d6012b1bdad4398cbf1aee3dce74, type: 3}
   m_LinkedCocoons:
   - {fileID: 1979697137}
   - {fileID: 1682552544}
@@ -54082,6 +54139,52 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &1197071947
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 43.037716
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -63.49274
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470502, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 168570, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+      propertyPath: m_Name
+      value: pfb_AlienBeta (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 892dc759bf22b0944a17b655f642d6b5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1197282169
 Prefab:
   m_ObjectHideFlags: 0
@@ -57949,7 +58052,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!1001 &1277766683
 Prefab:
   m_ObjectHideFlags: 0
@@ -60011,7 +60114,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 9b39e04b46da3ee458130bf9949eef17, type: 3}
   m_LinkedCocoons:
   - {fileID: 104743727}
 --- !u!135 &1321596197
@@ -61181,6 +61285,48 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &1343972532
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.797135
+      objectReference: {fileID: 0}
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -62.307312
+      objectReference: {fileID: 0}
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404856, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4b0910b2252c972479e5fb94b1af45b1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1344962870
 GameObject:
   m_ObjectHideFlags: 0
@@ -65050,7 +65196,7 @@ Transform:
   - {fileID: 569924600}
   - {fileID: 1861225081}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
 --- !u!1 &1422646371
 GameObject:
   m_ObjectHideFlags: 0
@@ -66188,7 +66334,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 3ae762fb07457a048a7820fbead8a93f, type: 3}
   m_LinkedCocoons:
   - {fileID: 1365596171}
   - {fileID: 415546991}
@@ -67664,7 +67811,7 @@ Transform:
   - {fileID: 2061418696}
   - {fileID: 1652988076}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
 --- !u!1 &1489984121
 GameObject:
   m_ObjectHideFlags: 0
@@ -70939,6 +71086,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11495722, guid: bad7b3c5607bcf14d8659c66d7fd2a20, type: 2}
+      propertyPath: m_MaxPoolSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bad7b3c5607bcf14d8659c66d7fd2a20, type: 2}
   m_IsPrefabParent: 0
@@ -72811,7 +72962,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 0}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 21cb286a67d2c5841a30c6db32956064, type: 3}
   m_LinkedCocoons:
   - {fileID: 1589066707}
 --- !u!135 &1601004805
@@ -77080,7 +77232,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 9f52d6012b1bdad4398cbf1aee3dce74, type: 3}
   m_LinkedCocoons:
   - {fileID: 2118226021}
   - {fileID: 476558367}
@@ -85517,7 +85670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
 --- !u!1 &1883363439
 GameObject:
   m_ObjectHideFlags: 0
@@ -85678,7 +85831,8 @@ MonoBehaviour:
   m_volatile: 0
   bypassBaking: 0
   playSoundOnActivation: 1
-  snd: {fileID: 8300000, guid: bda5a10cc8eaf5942a49485abd76c8c0, type: 3}
+  playSoundRandomlyWithSceneSounds: 1
+  snd: {fileID: 8300000, guid: 83a6623a264ad9c44b3c77cceba3320c, type: 3}
   m_LinkedCocoons:
   - {fileID: 1018386436}
   - {fileID: 1660971488}
@@ -95164,7 +95318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
 --- !u!114 &2079483422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96747,7 +96901,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
 --- !u!1001 &2105614961
 Prefab:
   m_ObjectHideFlags: 0
