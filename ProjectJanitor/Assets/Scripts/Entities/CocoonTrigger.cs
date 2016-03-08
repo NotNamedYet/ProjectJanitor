@@ -4,7 +4,6 @@ using MonoPersistency;
 using System;
 using GalacticJanitor.Engine;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(SphereCollider))]
 public class CocoonTrigger : MonoPersistent {
 
@@ -23,17 +22,6 @@ public class CocoonTrigger : MonoPersistent {
         GetComponent<Collider>().isTrigger = true;
 	}
 
-    void Update()
-    {
-#if UNITY_EDITOR
-        if (m_LinkedCocoons != null)
-            foreach(CocoonSpawner c in m_LinkedCocoons)
-            {
-                if (c) Debug.DrawLine(transform.position, c.transform.position, Color.green);
-            }
-#endif
-    }
-	
 	void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
