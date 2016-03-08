@@ -2,10 +2,17 @@ using UnityEngine;
 using System.Collections;
 using MonoPersistency;
 using System;
+using GalacticJanitor.Engine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(SphereCollider))]
 public class CocoonTrigger : MonoPersistent {
+
+    [Header("Cocoon Settings.")]
+    public bool playSoundOnActivation;
+    [Tooltip("Check it if you want play a sound randomly from the scene ambiance manager")]
+    public bool playSoundRandomlyWithSceneSounds;
+    public AudioClip snd;
 
     public CocoonSpawner[] m_LinkedCocoons;
     bool m_Active = true;
@@ -35,6 +42,9 @@ public class CocoonTrigger : MonoPersistent {
                 for (int i = 0; i < m_LinkedCocoons.Length; i++)
                     if (m_LinkedCocoons[i]) m_LinkedCocoons[i].TriggerSpawning(other.transform);
 
+            /*SOUND*/
+            if (playSoundOnActivation && snd) PlaySound();
+
             m_Active = false;
             Save();
             Destroy(gameObject);
@@ -47,4 +57,12 @@ public class CocoonTrigger : MonoPersistent {
     }
 
     public override void LoadData(DataContainer container){}
+
+    #region SOUND
+    private void PlaySound()
+    {
+        if (playSoundRandomlyWithSceneSounds) GameController.SceneSounds.PlayAmbianceSoundRandomlyOneShot();
+        else GameController.SceneSounds.listenerAmbiance.PlayOneShot(snd);
+    }
+    #endregion
 }

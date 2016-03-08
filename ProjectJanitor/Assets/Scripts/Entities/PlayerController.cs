@@ -32,9 +32,8 @@ namespace GalacticJanitor.Game
 
         [Header("Player Sounds", order = 2)]
         public AudioClip sndOnLowHp;
-        //[HideInInspector]
+        [HideInInspector]
         public bool isPlayingLowHpsound;
-        //public bool isLowHp;
 
         [Header("Player Behavior")]
         public MarinesType marinesType;
@@ -101,7 +100,6 @@ namespace GalacticJanitor.Game
                 entityDisplay = playerDisplay;
             }
 
-            listener = GetComponent<AudioSource>();
             anim = gameObject.GetComponent<Animator>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();
             body = gameObject.GetComponent<Rigidbody>();

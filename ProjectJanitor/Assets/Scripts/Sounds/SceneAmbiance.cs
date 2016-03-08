@@ -18,9 +18,6 @@ namespace GalacticJanitor.Game
         [Tooltip("Custom volum that you want use to the music, use a float between 0 and 1.")]
         public float volMusic;
 
-        public AudioSource listenerMusic;
-        public AudioSource listenerAmbiance;
-
         [Header("Scene Music Settings")]
         public bool playMusicAtStart;
         public int indexMusicAtStart;
@@ -46,7 +43,9 @@ namespace GalacticJanitor.Game
             get { return _playingRandomlySoundsAmbiance; }
             set { _playingRandomlySoundsAmbiance = value; }
         }
-        
+
+        public AudioSource listenerMusic;
+        public AudioSource listenerAmbiance;
 
         // Use this for initialization
         void Awake()
@@ -60,6 +59,8 @@ namespace GalacticJanitor.Game
             }
 
             if (volMusic > 1f) volMusic = 1f;
+
+            listenerAmbiance.spatialBlend = 0.0f;
         }
 
         void Start()
@@ -137,9 +138,27 @@ namespace GalacticJanitor.Game
             }
         }
 
+        public void PlayAmbianceSoundRandomlyOneShot()
+        {
+            ResetSettingsOnAudioSrcAmbiance();
+            int soundToPlay = ChooseSoundToPlay();
+            listenerAmbiance.PlayOneShot(ambiance[soundToPlay]);
+        }
+
+        /// <summary>
+        /// Change stereo pan, and if setting between -0.5f and 0.5f, accentuate by 0.5 in the same side.
+        /// </summary>
         public void DoRandomSettingsOnAudioSrcAmbiance()
         {
-            listenerAmbiance.panStereo = Random.Range(-1.0f, 1.0f);
+            float rand = Random.Range(-0.9f, 1.0f);
+
+            if (Mathf.Abs(rand) < 0.5f)
+            {
+                if (rand < 0) rand =- -0.5f;
+                else rand = +0.5f;
+            }
+             
+            listenerAmbiance.panStereo = rand;
         }
 
         public void ResetSettingsOnAudioSrcAmbiance()
@@ -159,6 +178,7 @@ namespace GalacticJanitor.Game
 
         IEnumerator CoroutPlayAmbianceSounds()
         {
+
             while(_playingRandomlySoundsAmbiance)
             {
                 int soundToPlay = ChooseSoundToPlay();
