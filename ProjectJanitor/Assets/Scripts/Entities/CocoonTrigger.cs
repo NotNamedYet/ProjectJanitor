@@ -41,7 +41,7 @@ public class CocoonTrigger : MonoPersistent {
                     if (m_LinkedCocoons[i]) m_LinkedCocoons[i].TriggerSpawning(other.transform);
 
             /*SOUND*/
-            if (playSoundOnActivation) GameController.SceneSounds.listenerAmbiance.PlayOneShot(snd);
+            if (playSoundOnActivation && snd) GameController.SceneSounds.listenerAmbiance.PlayOneShot(snd);
 
             m_Active = false;
             Save();
