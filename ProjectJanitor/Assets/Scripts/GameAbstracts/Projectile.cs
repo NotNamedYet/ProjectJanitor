@@ -29,6 +29,22 @@ namespace GalacticJanitor.Game
             baseDamage += addition;
         }
 
+        /// <summary>
+        /// Set the projectile speed
+        /// </summary>
+        public void SetSpeed(float speed)
+        {
+            baseSpeed = speed;
+        }
+
+        /// <summary>
+        /// Set the projectile Damage
+        /// </summary>
+        public void SetDamage(int damage)
+        {
+            baseDamage = damage;
+        }
+
         protected virtual void Awake()
         {
             transform.SetParent(GameController.ProjectileHolder);

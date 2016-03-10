@@ -14,6 +14,7 @@ namespace GalacticJanitor.Game
             {
 
                 PlayerController player = hit.GetComponent<PlayerController>();
+                Debug.Log(baseDamage);
                 player.TakeDirectDamage(baseDamage);
 
                 if (isEntraving)
