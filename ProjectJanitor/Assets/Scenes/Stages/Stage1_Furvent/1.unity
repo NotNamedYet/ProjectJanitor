@@ -28948,8 +28948,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24304402, guid: 0f2d920a56024fa42a77524076e3d6e0,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -29023,8 +29023,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24336110, guid: 0f2d920a56024fa42a77524076e3d6e0,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -29035,7 +29035,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 1
+  BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -29105,9 +29105,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aa37e3439329cec4dbb890fa4325a390, type: 3}
   - {fileID: 8300000, guid: 952af7de1739fe54a8381ccd61ef32c9, type: 3}
   soundsThatMustBePlayedRandomly: 010101
-  volMusic: 0
   playMusicAtStart: 1
   indexMusicAtStart: 0
+  volMusic: 0.5
   playSoundsRandomlyAtStart: 1
   rangeMin: 12
   rangeMax: 40
