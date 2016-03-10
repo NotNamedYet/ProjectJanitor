@@ -162,7 +162,7 @@ namespace GalacticJanitor.Game
 
             else
             {
-                Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponAssaultRifle");
+                //Debug.Log("OUT OF AMMO and i'm in function Fire of WeaponAssaultRifle");
                 PlaySoundEmptyBullet();
             }
         }
@@ -176,7 +176,7 @@ namespace GalacticJanitor.Game
             }
             else
             {
-                Debug.Log("OUT OF AMMO and i'm in function AlternateFire (GRENADE) of WeaponAssaultRifle");
+                //Debug.Log("OUT OF AMMO and i'm in function AlternateFire (GRENADE) of WeaponAssaultRifle");
                 PlaySoundEmptyGrenade();
             }
         }
@@ -270,7 +270,7 @@ namespace GalacticJanitor.Game
                 {
                     if (playerAmmo.ammoCarriedType0 == 0) // No stock of ammo in player's inventory
                     {
-                        Debug.Log("Can't reload, out of ammo, i'm in ReloadBullet of WeaponAssaultRifle");
+                        //Debug.Log("Can't reload, out of ammo, i'm in ReloadBullet of WeaponAssaultRifle");
                     }
                     else
                     {
@@ -281,7 +281,9 @@ namespace GalacticJanitor.Game
                 }
             }
             else
-                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadBullet() of WeaponAssaultRifle");
+            {
+                //Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadBullet() of WeaponAssaultRifle");
+            }
         }
 
         private void ReloadGrenade()
@@ -300,7 +302,7 @@ namespace GalacticJanitor.Game
                 {
                     if (playerAmmo.ammoCarriedType1 == 0) // No stock of ammo in player's inventory
                     {
-                        Debug.Log("Can't reload, out of ammo, i'm in ReloadGrenade of WeaponAssaultRifle");
+                        //Debug.Log("Can't reload, out of ammo, i'm in ReloadGrenade of WeaponAssaultRifle");
                     }
                     else
                     {
@@ -311,7 +313,9 @@ namespace GalacticJanitor.Game
                 }
             }
             else
-                Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadGrenade() of WeaponAssaultRifle");
+            {
+                //Debug.Log("Magazine is fulled up of ammos, stupid player, i'm in ReloadGrenade() of WeaponAssaultRifle");
+            }
         }
 
         public bool CheckMagazineBullet()
