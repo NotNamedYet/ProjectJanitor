@@ -66,18 +66,16 @@ namespace GalacticJanitor.Engine
                 return;
             }
 
-            SceneData dScene = SaveSystem.GetActiveSceneData();
-            StageData dStage = dScene.m_stage;
+            StageData dStage = SaveSystem.GetActiveSceneData().StageData;
 
-            if (dStage != null)
+            if (!dStage.NewEntry)
             {
                 dStage.TranslateLocation(out playerPosition, out playerRotation);
                 disallowPlayer = dStage.m_disallowPlayer;
             }
             else
             {
-                dStage = new StageData(playerPosition, playerRotation, disallowPlayer);
-                dScene.m_stage = dStage;
+                dStage.RegisterPlayerLocation(playerPosition, playerRotation);
             }
 
             DataContainer dPlayer = SaveSystem.GetPlayerData();
@@ -110,7 +108,9 @@ namespace GalacticJanitor.Engine
                 playerRotation = pTransform.rotation;
             }
 
-            SaveSystem.GetActiveSceneData().m_stage = new StageData(playerPosition, playerRotation, disallowPlayer);
+            StageData data = SaveSystem.GetActiveSceneData().StageData;
+            data.RegisterPlayerLocation(playerPosition, playerRotation);
+            data.m_disallowPlayer = disallowPlayer;
         }
 
 

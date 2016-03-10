@@ -25,6 +25,9 @@ namespace GalacticJanitor.Game
         public float frozenAfterJump;
         [Header("If Interscene")]
         public string sceneDestinationName;
+        public bool overrideLocation;
+        public Vector3 overridedPosition;
+        public Vector3 overridedRotation;
 
         bool stayOff;
         float cooldown = 0;
@@ -88,6 +91,12 @@ namespace GalacticJanitor.Game
                     }
                     else
                     {
+                        if (overrideLocation)
+                        {
+                            StageData stageData = SaveSystem.GetSceneData(sceneDestinationName).StageData;
+                            stageData.RegisterPlayerLocation(overridedPosition, Quaternion.Euler(overridedRotation));
+                            Debug.Log("Pos overrided");
+                        }
                         SaveSystem.LoadScene(sceneDestinationName);
                     }
                 }

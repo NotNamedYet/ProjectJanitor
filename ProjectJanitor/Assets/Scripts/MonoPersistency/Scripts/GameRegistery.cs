@@ -12,7 +12,7 @@ namespace MonoPersistency
         public RegisterySnapshot m_snapshot;
         public bool m_firstRegistering = true;
         public DataContainer m_player;
-        public Dictionary<int, SceneData> m_scenes { get; private set; }
+        public Dictionary<string, SceneData> m_scenes { get; private set; }
 
         public GameRegistery(string startlevel)
         {
@@ -20,7 +20,7 @@ namespace MonoPersistency
             m_snapshot.m_lastUpdate = DateTime.Now.ToBinary();
             m_snapshot.m_currentScene = startlevel;
             NewID();
-            m_scenes = new Dictionary<int, SceneData>();
+            m_scenes = new Dictionary<string, SceneData>();
         }
 
         /// <summary>
@@ -121,13 +121,25 @@ namespace MonoPersistency
     [System.Serializable]
     public class SceneData
     {
-        public int m_sceneIndex;
-        public StageData m_stage;
+        StageData m_stageData;
+        public StageData StageData {
+            get
+            {
+                if (m_stageData == null)
+                    m_stageData = new StageData(Vector3.zero, Quaternion.identity);
+
+                return m_stageData;
+            }
+            set { m_stageData = value; }
+        }
+
+
+        public string m_StageName { get; set; }
         public Dictionary<string, DataContainer> m_datas { get; private set; }
 
-        public SceneData(int buildIndex)
+        public SceneData(string stageName)
         {
-            m_sceneIndex = buildIndex;
+            m_StageName = stageName;
             m_datas = new Dictionary<string, DataContainer>();
         }
     }
@@ -139,11 +151,15 @@ namespace MonoPersistency
         public SerializedVector3 m_playerPos;
         public SerializedQuaternion m_playerRot;
 
-        public StageData(Vector3 playerPos, Quaternion playerRot, bool disallowPlayer)
+        public bool OverridedLocation { get; private set; }
+        public bool NewEntry { get; private set; }
+
+        public StageData(Vector3 playerPos, Quaternion playerRot)
         {
             m_playerPos = Serializer.Serializevector3(playerPos);
             m_playerRot = Serializer.SerializeQuaternion(playerRot);
-            this.m_disallowPlayer = disallowPlayer;
+            m_disallowPlayer = false;
+            NewEntry = true;
         }
 
         /// <summary>
@@ -174,8 +190,37 @@ namespace MonoPersistency
         /// <param name="transform"></param>
         public void RegisterPlayerLocation(Transform transform)
         {
-            m_playerPos = Serializer.Serializevector3(transform.position);
-            m_playerRot = Serializer.SerializeQuaternion(transform.rotation);
+            RegisterPlayerLocation(transform.position, transform.rotation);
         }
+
+        public void RegisterPlayerLocation(Vector3 pos, Quaternion rot)
+        {
+            if (OverridedLocation)
+            {
+                OverridedLocation = false;
+            }
+            else
+            {
+                m_playerPos = Serializer.Serializevector3(pos);
+                m_playerRot = Serializer.SerializeQuaternion(rot);
+                
+            }
+            NewEntry = false;
+        }
+
+
+        /// <summary>
+        /// Translate to a serializable form the given position and rotation
+        /// to register the last player location of this stage
+        /// </summary>
+        public void OverridePlayerLocation(Vector3 pos, Quaternion rot)
+        {
+            m_playerPos = Serializer.Serializevector3(pos);
+            m_playerRot = Serializer.SerializeQuaternion(rot);
+            NewEntry = false;
+            OverridedLocation = true;
+        }
+
+
     }
 }

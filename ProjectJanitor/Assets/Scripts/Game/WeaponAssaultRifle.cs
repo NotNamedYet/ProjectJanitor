@@ -62,7 +62,7 @@ namespace GalacticJanitor.Game
 
         // Use this for initialization
         void Start()
-        {
+        { 
             nextBulletTimer = nextBulletTimerBase;
             playerController = gameObject.GetComponent<PlayerController>();
             playerAmmo = gameObject.GetComponent<PlayerAmmo>();

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using GalacticJanitor.Engine;
 using MonoPersistency;
+using System.Collections.Generic;
 
 namespace GalacticJanitor.Game
 {
@@ -10,10 +11,5 @@ namespace GalacticJanitor.Game
         [Header("Entity")]
         public string entityDisplayName;
 
-
-        public static implicit operator bool(Entity check)
-        {
-            return check != null;
-        }
     } 
 }

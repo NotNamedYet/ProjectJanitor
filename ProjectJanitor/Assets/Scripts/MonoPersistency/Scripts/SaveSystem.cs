@@ -319,20 +319,29 @@ namespace MonoPersistency
         public static SceneData GetActiveSceneData()
         {
             Scene scene = SceneManager.GetActiveScene();
-            SceneData sData;
+            return GetSceneData(scene.name);
+        }
 
-            if (Registery.m_scenes.ContainsKey(scene.buildIndex))
+        /// <summary>
+        /// Return the SceneData of the specified scene
+        /// </summary>
+        /// <returns></returns>
+        public static SceneData GetSceneData(string sceneName)
+        {
+
+            if (Registery.m_scenes.ContainsKey(sceneName))
             {
-                sData = Registery.m_scenes[scene.buildIndex];
+                return Registery.m_scenes[sceneName];
             }
             else
             {
-                sData = new SceneData(scene.buildIndex);
-                Registery.m_scenes.Add(scene.buildIndex, sData);
-            }
+                SceneData data = new SceneData(sceneName);
+                Registery.m_scenes.Add(sceneName, data);
 
-            return sData;
+                return data;
+            }
         }
+
         #endregion
 
         #region PLAYTIME_TIMER
