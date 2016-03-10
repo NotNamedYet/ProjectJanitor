@@ -4256,58 +4256,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 405336, guid: 41ed0f7124c2ae84aabaa3866eeb239e, type: 2}
   m_PrefabInternal: {fileID: 648031076}
---- !u!1001 &651811366
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 836356806}
-    m_Modifications:
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &651811367 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400718, guid: cb3c13d8bf10014458e05a27fff077c1, type: 2}
-  m_PrefabInternal: {fileID: 651811366}
---- !u!114 &651811368 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11462182, guid: cb3c13d8bf10014458e05a27fff077c1,
-    type: 2}
-  m_PrefabInternal: {fileID: 651811366}
-  m_Script: {fileID: 11500000, guid: 15f16ea755fd4ca4aa249494e9068d23, type: 3}
 --- !u!1001 &654201413
 Prefab:
   m_ObjectHideFlags: 0
@@ -4557,7 +4505,7 @@ Transform:
   m_Children:
   - {fileID: 1374972097}
   m_Father: {fileID: 736359313}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!135 &670454384
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4589,7 +4537,7 @@ MonoBehaviour:
   localDestination: {fileID: 0}
   cooldownAfterJump: 1
   frozenAfterJump: 0
-  sceneDestinationName: Level3_BossRoom
+  sceneDestinationName: Floor3_ServerRoom
   overrideLocation: 0
   overridedPosition: {x: 0, y: 0, z: 0}
   overridedRotation: {x: 0, y: 0, z: 0}
@@ -5113,7 +5061,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1326829565}
-  - {fileID: 836356806}
   - {fileID: 670454383}
   - {fileID: 1492551111}
   - {fileID: 1731328152}
@@ -5679,71 +5626,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 445438, guid: c662bb7e0dc15724fb0767518734c695, type: 2}
   m_PrefabInternal: {fileID: 385449571}
---- !u!1 &836356805
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 836356806}
-  - 135: {fileID: 836356808}
-  - 114: {fileID: 836356807}
-  m_Layer: 0
-  m_Name: Teleporter#2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &836356806
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 836356805}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 40}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 651811367}
-  m_Father: {fileID: 736359313}
-  m_RootOrder: 1
---- !u!114 &836356807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 836356805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9427b459453a984990d3ac4ddf8e067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  telepoterVisual: {fileID: 651811368}
-  active: 1
-  delayedActivation: 1
-  delay: 5
-  isLocal: 1
-  localDestination: {fileID: 1326829566}
-  cooldownAfterJump: 7
-  frozenAfterJump: 3
-  sceneDestinationName: Level2_QuarterWest
-  overrideLocation: 0
-  overridedPosition: {x: 0, y: 0, z: 0}
-  overridedRotation: {x: 0, y: 0, z: 0}
---- !u!135 &836356808
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 836356805}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &843215166 stripped
 Transform:
   m_PrefabParentObject: {fileID: 425594, guid: a78e5227b2024494bbec88216f857285, type: 2}
@@ -9280,9 +9162,9 @@ MonoBehaviour:
   telepoterVisual: {fileID: 681454407}
   active: 1
   delayedActivation: 1
-  delay: 5
-  isLocal: 1
-  localDestination: {fileID: 836356807}
+  delay: 2
+  isLocal: 0
+  localDestination: {fileID: 0}
   cooldownAfterJump: 7
   frozenAfterJump: 3
   sceneDestinationName: 
@@ -10330,7 +10212,7 @@ Transform:
   m_Children:
   - {fileID: 140551921}
   m_Father: {fileID: 736359313}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!135 &1492551112
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10362,7 +10244,7 @@ MonoBehaviour:
   localDestination: {fileID: 0}
   cooldownAfterJump: 1
   frozenAfterJump: 0
-  sceneDestinationName: Level2_Laboratory
+  sceneDestinationName: Floor3_ComplexExit
   overrideLocation: 0
   overridedPosition: {x: 0, y: 0, z: 0}
   overridedRotation: {x: 0, y: 0, z: 0}
@@ -12532,7 +12414,7 @@ Transform:
   m_Children:
   - {fileID: 1495672119}
   m_Father: {fileID: 736359313}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!135 &1731328153
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12564,7 +12446,7 @@ MonoBehaviour:
   localDestination: {fileID: 0}
   cooldownAfterJump: 1
   frozenAfterJump: 0
-  sceneDestinationName: TransitionLab
+  sceneDestinationName: Floor2_QuarterWest
   overrideLocation: 0
   overridedPosition: {x: 0, y: 0, z: 0}
   overridedRotation: {x: 0, y: 0, z: 0}
@@ -12769,7 +12651,7 @@ Transform:
   m_Children:
   - {fileID: 1738392992}
   m_Father: {fileID: 736359313}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!135 &1740586774
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12801,7 +12683,7 @@ MonoBehaviour:
   localDestination: {fileID: 0}
   cooldownAfterJump: 1
   frozenAfterJump: 0
-  sceneDestinationName: TransitionLab
+  sceneDestinationName: Floor2_QuarterEast
   overrideLocation: 0
   overridedPosition: {x: 0, y: 0, z: 0}
   overridedRotation: {x: 0, y: 0, z: 0}
