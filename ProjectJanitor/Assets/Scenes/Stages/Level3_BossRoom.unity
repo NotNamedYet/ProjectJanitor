@@ -5879,14 +5879,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 1134405665}
-  active: 0
-  delayedActivation: 0
-  delay: 0
+  active: 1
+  delayedActivation: 1
+  delay: 2
   isLocal: 0
   localDestination: {fileID: 0}
   cooldownAfterJump: 1
   frozenAfterJump: 0
-  sceneDestinationName: 
+  sceneDestinationName: SampleLab
+  overrideLocation: 0
+  overridedPosition: {x: 0, y: 0, z: 0}
+  overridedRotation: {x: 0, y: 0, z: 0}
 --- !u!4 &417917033 stripped
 Transform:
   m_PrefabParentObject: {fileID: 446638, guid: 9b6c16d225e4473498bb30c1a46c2d0d, type: 2}
@@ -17958,7 +17961,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 17.52
+  orthographic size: 17.62
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17999,6 +18002,8 @@ MonoBehaviour:
   trackingBoostRange: 5
   trackPlayerOnStart: 1
   fixedTarget: 0
+  onScrolling: 0
+  scrollingSpeed: 0
   m_customCursor: 0
   m_cursor: {fileID: 0}
 --- !u!114 &1185894952

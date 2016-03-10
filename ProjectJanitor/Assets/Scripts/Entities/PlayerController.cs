@@ -284,7 +284,7 @@ namespace GalacticJanitor.Game
             }
 
 
-            SaveSystem.GetActiveSceneData().m_stage.RegisterPlayerLocation(transform);
+            SaveSystem.GetActiveSceneData().StageData.OverridePlayerLocation(transform.position, transform.rotation);
         }
 
         public override void LoadData(DataContainer container)
@@ -319,7 +319,7 @@ namespace GalacticJanitor.Game
                 }
 
                 //location restore;
-                SaveSystem.GetActiveSceneData().m_stage.RestorePlayerLocation(transform);
+                SaveSystem.GetActiveSceneData().StageData.RestorePlayerLocation(transform);
             }
 
         }

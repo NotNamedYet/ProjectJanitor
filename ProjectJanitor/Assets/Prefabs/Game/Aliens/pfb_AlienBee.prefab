@@ -627,7 +627,7 @@ MonoBehaviour:
   lineOfSightMask:
     serializedVersion: 2
     m_Bits: 768
-  maxAttackRange: 2
+  maxAttackRange: 4
   maxDistanceFromSpawn: 200
   attackPerSecond: 1
   enraged: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   sndOnAggro: {fileID: 0}
   sndEnrage: {fileID: 0}
   damagePerHit: 1
-  dammageDistanceOffset: 2
+  dammageDistanceOffset: 3
 --- !u!114 &11445908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -675,7 +675,7 @@ NavMeshAgent:
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 200
-  m_StoppingDistance: 2
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1118,11 +1118,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxAttackRange
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_StoppingDistance
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
@@ -1252,6 +1252,8 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
       value: 0.99504507
+      propertyPath: dammageDistanceOffset
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
