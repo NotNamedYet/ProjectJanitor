@@ -24,7 +24,7 @@ namespace GalacticJanitor.Game
 
         public GameSettings()
         {
-            Debug.Log("GameSettings is instantiate in GameController");
+            Debug.Log("[System] GameSettings --Loading");
             LoadPrefs();
         }
 
@@ -34,8 +34,8 @@ namespace GalacticJanitor.Game
         /// </summary> 
         public void SavePrefs()
         {
+            Debug.Log("[System] GameSettings --Saving");
             SaveSoundPrefs();
-            Debug.Log("Prefs was saved in GameSettings");
         }
 
         public void SaveSoundPrefs()
@@ -53,7 +53,7 @@ namespace GalacticJanitor.Game
         public void LoadSoundPrefs()
         {
             _masterVol = PlayerPrefs.GetFloat("masterVol");
-            Debug.Log("Sound prefs loaded, master vol is at : " + _masterVol);
+            Debug.Log("[System] GameSettings : MasterVolume: " + _masterVol);
         }
         #endregion
     }

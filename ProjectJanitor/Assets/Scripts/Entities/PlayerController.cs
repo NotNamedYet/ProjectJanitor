@@ -297,7 +297,7 @@ namespace GalacticJanitor.Game
                     SaveSystem.Registery.m_firstRegistering = false;
                 }
 
-                Debug.Log("Loading player...");
+                Debug.Log("[SaveSystem] PlayerData --Loading");
                 //entity restore
                 m_entity = container.GetValue<EntityBook>("ent");
 
@@ -329,8 +329,8 @@ namespace GalacticJanitor.Game
             if (m_data == null)
                 m_data = new DataContainer("##");
 
-            Debug.Log("saving player...");
             CollectData(m_data);
+            Debug.Log("[SaveSystem] PlayerData --Saving");
             SaveSystem.RegisterPlayer(m_data);
         } 
         

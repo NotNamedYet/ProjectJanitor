@@ -23,8 +23,6 @@ public class LocalDamage : MonoBehaviour, IDamageable {
                 damage += m_damageIndex;
             }
 
-            Debug.Log(damage);
-
             if (damage > 0)
                 m_entity.TakeDirectDamage(damage);
         }

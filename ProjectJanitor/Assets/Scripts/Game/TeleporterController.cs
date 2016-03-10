@@ -95,7 +95,6 @@ namespace GalacticJanitor.Game
                         {
                             StageData stageData = SaveSystem.GetSceneData(sceneDestinationName).StageData;
                             stageData.RegisterPlayerLocation(overridedPosition, Quaternion.Euler(overridedRotation));
-                            Debug.Log("Pos overrided");
                         }
                         SaveSystem.LoadScene(sceneDestinationName);
                     }

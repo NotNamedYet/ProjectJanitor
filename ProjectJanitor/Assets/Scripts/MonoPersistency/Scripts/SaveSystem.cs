@@ -27,8 +27,8 @@ namespace MonoPersistency
             {
                 if (instance.m_registery == null)
                 {
+                    Debug.Log("[SaveSystem] Registery --Creation");
                     instance.m_registery = new GameRegistery(instance.m_startingLevel);
-                    Debug.Log("Registery Missing, new one created.");
                 }
                 return instance.m_registery;
             }
