@@ -602,7 +602,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 17
+  m_Radius: 14
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &19528746
 NavMeshAgent:
@@ -1073,6 +1073,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[5].outSlope
       value: -0.020007975
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

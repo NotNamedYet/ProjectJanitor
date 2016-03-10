@@ -15,7 +15,7 @@ GameObject:
   m_Layer: 9
   m_Name: SmallConsole_Activator
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 5c015bf9596f3bc43914ee7c37b8dc77, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_actor: {fileID: 0}
   m_keyCode: 101
+  playFocusScript: 0
 --- !u!212 &21249818
 SpriteRenderer:
   m_ObjectHideFlags: 1
