@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6917303ff48e641af453e6d74d5ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_destroyDelay: 10
+  m_destroyDelay: 9
 --- !u!114 &11473226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dceae2afc1db24983d5679287c2838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TranslationSpeed: 15
+  m_TranslationSpeed: 18
 --- !u!212 &21214506
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1017,11 +1017,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TranslationSpeed
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_destroyDelay
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
