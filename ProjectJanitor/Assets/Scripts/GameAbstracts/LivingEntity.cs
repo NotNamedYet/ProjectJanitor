@@ -84,7 +84,7 @@ namespace GalacticJanitor.Game
         /// <param name="ignoreArmor">true to ignore armor damage reduction</param>
         public void TakeDirectDamage(int damage, bool ignoreArmor)
         {
-            if (invincible) return;
+            if (invincible || damage <= 0) return;
 
             if (m_entity.alive)
             {
