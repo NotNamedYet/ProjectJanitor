@@ -4,7 +4,7 @@ using GalacticJanitor.UI;
 using GalacticJanitor.Engine;
 using GalacticJanitor.Game;
 using MonoPersistency;
-using System;
+//using System;
 
 namespace GalacticJanitor.Game
 {
@@ -34,6 +34,7 @@ namespace GalacticJanitor.Game
         public AudioClip sndOnLowHp;
         [HideInInspector]
         public bool isPlayingLowHpsound;
+        public AudioClip[] sndSteps;
 
         [Header("Player Behavior")]
         public MarinesType marinesType;
@@ -124,19 +125,6 @@ namespace GalacticJanitor.Game
 
         }
 
-        private IEnumerator CoRoutLowLife()
-        {
-            isPlayingLowHpsound = true;
-
-            while (IsLowHp() && m_entity.alive)
-            {
-                listener.PlayOneShot(sndOnLowHp);
-                yield return new WaitForSeconds(sndOnLowHp.length);
-            }
-
-            isPlayingLowHpsound = false;
-        }
-
         private bool IsLowHp()
         {
             if (m_entity.health < m_entity.maxHealth / 4) return true;
@@ -187,6 +175,27 @@ namespace GalacticJanitor.Game
             freeze = _movementCooldown > 0;
         }
 
+
+        #region Sounds
+        public void PlayStepSound()
+        {
+            listener.PlayOneShot(sndSteps[Random.Range(0, sndSteps.Length)], 0.2f);
+        }
+
+        private IEnumerator CoRoutLowLife()
+        {
+            isPlayingLowHpsound = true;
+
+            while (IsLowHp() && m_entity.alive)
+            {
+                listener.PlayOneShot(sndOnLowHp);
+                yield return new WaitForSeconds(sndOnLowHp.length);
+            }
+
+            isPlayingLowHpsound = false;
+        }
+        #endregion
+
         /// <summary>
         /// When the flag justHaveShoot is active, play the fire animation.
         /// </summary>
@@ -210,18 +219,27 @@ namespace GalacticJanitor.Game
         {
             if (marinesType == MarinesType.MajCarter)
             {
-                if (GetComponent<WeaponControllerCarter>().IndexActiveWeapon == 1 && (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)) // If Carter is equiped with flamethrower
+                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
                 {
-                    anim.SetBool("playerMove", true);
+                    anim.SetBool("bobbing", true);
+
+                    if (GetComponent<WeaponControllerCarter>().IndexActiveWeapon == 1)  // If Carter is equiped with flamethrower
+                    {
+                        anim.SetBool("playerMove", true);
+                    }
+
                 }
 
                 else
+                {
                     anim.SetBool("playerMove", false);
+                    anim.SetBool("bobbing", false);
+                }
             }
 
             else // Hartman
             {
-                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0)
+                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
                     anim.SetBool("playerMove", true);
 
                 else
