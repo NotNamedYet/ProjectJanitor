@@ -669,6 +669,11 @@ MonoBehaviour:
   isPlayingOnHitSnd: 0
   sndOnLowHp: {fileID: 8300000, guid: 13dd476ea4de4f24cbd03523bebef675, type: 3}
   isPlayingLowHpsound: 0
+  sndSteps:
+  - {fileID: 8300000, guid: 60e2fa16f54476d4ab109c0c349a22bc, type: 3}
+  - {fileID: 8300000, guid: 463454db7224b1042b17ef1d98b6170b, type: 3}
+  - {fileID: 8300000, guid: 64f7eb1414fe0c3498c82cf66e252cf5, type: 3}
+  - {fileID: 8300000, guid: f77f18627a4e0994087d661fb4a614a7, type: 3}
   marinesType: 1
   playerAmmo: {fileID: 0}
   speed: 15
@@ -2621,6 +2626,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: sndSteps.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2795,6 +2804,22 @@ Prefab:
       propertyPath: m_CarveOnlyStationary
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sndSteps.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 60e2fa16f54476d4ab109c0c349a22bc, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndSteps.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 463454db7224b1042b17ef1d98b6170b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndSteps.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 64f7eb1414fe0c3498c82cf66e252cf5, type: 3}
+    - target: {fileID: 0}
+      propertyPath: sndSteps.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f77f18627a4e0994087d661fb4a614a7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119372}

@@ -15,12 +15,12 @@ namespace GalacticJanitor.Game
         public AudioClip[] ambiance;
         [Tooltip("Do you want play this sound randomly in the scene ? Same index's order to \"ambiance\" list.")]
         public bool[] soundsThatMustBePlayedRandomly;
-        [Tooltip("Custom volum that you want use to the music, use a float between 0 and 1.")]
-        public float volMusic;
 
         [Header("Scene Music Settings")]
         public bool playMusicAtStart;
         public int indexMusicAtStart;
+        [Tooltip("Custom volum that you want use to the music, use a float between 0 and 1.")]
+        public float volMusic;
 
         private int indexMusicPlayed;
         private bool _playingMusic;
