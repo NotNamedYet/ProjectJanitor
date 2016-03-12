@@ -33,7 +33,7 @@ namespace GalacticJanitor.Game
         [Header("Behavior", order = 0)]
         public LayerMask lineOfSightMask;
         public float maxAttackRange;
-        public float maxDistanceFromSpawn;
+        [HideInInspector]public float maxDistanceFromSpawn;
         float baseSpeed;
 
         [Header("Attack behavior", order = 2)]
@@ -168,10 +168,35 @@ namespace GalacticJanitor.Game
         /// </summary>
         void UpdateState()
         {
-            if (Vector3.Distance(transform.position, spawn) > maxDistanceFromSpawn || (target == null && Vector3.Distance(transform.position, spawn) > 2))
+            if (target != null)
             {
-                state = EnemyState.RETURN;
-                target = null;
+                if (GetDistanceFromTarget() < maxAttackRange)
+                {
+                    state = EnemyState.ATTACK;
+                }
+                else
+                {
+                    state = EnemyState.FOLLOW;
+                }
+            }
+            else
+            {
+                state = EnemyState.IDLE;
+            }
+        }
+
+        /*
+        /// <summary>
+        /// Update the tacking state of this enemy.
+        /// </summary>
+        void UpdateState()
+        {
+            //if (Vector3.Distance(transform.position, spawn) > maxDistanceFromSpawn || (target == null && Vector3.Distance(transform.position, spawn) > 2))
+            if (target == null)
+            {
+                if (Vector3.Distance(transform.position, spawn) > 2)
+                    state = EnemyState.RETURN;
+                //target = null;
             }
             else
             {
@@ -192,7 +217,7 @@ namespace GalacticJanitor.Game
                 }
             }
         }
-
+        */
         public float GetDistanceFromTarget()
         {
             return Vector3.Distance(transform.position, target.position);
