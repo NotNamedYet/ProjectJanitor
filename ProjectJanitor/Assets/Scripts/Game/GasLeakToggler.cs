@@ -8,11 +8,12 @@ public class GasLeakToggler : MonoBehaviour {
     public float m_cooldown;
     ParticleSystem m_particleSystem;
     ParticleDamage m_particleDamage;
-
+    AudioSource m_audio;
 
     void Start()
     {
         m_particleSystem = GetComponent<ParticleSystem>();
+        m_audio = GetComponent<AudioSource>();
        
         if (!m_particleSystem)
         {
@@ -46,6 +47,8 @@ public class GasLeakToggler : MonoBehaviour {
     {
         m_particleSystem.Play();
         m_particleDamage.enabled = true;
+        if (m_audio)
+            m_audio.Play();
 
         ParticleSystem.CollisionModule module = m_particleSystem.collision;
         module.enabled = true;

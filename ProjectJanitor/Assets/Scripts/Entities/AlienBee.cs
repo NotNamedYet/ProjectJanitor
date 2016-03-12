@@ -19,8 +19,8 @@ namespace GalacticJanitor.Game
                 {
                     rigging.SetTrigger("attack");
 
-                    /*SOUND*/
-                    //if (onAttackSound) onAttackSound.Play();
+                    if (sndOnAttack && Random.Range(0f, 1f) > .5f)
+                        listener.PlayOneShot(sndOnAttack, .1f);
                 }
                 if (target.gameObject.tag == "Player")
                 {

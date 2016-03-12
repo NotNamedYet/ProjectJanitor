@@ -542,7 +542,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   maxAttackRange: 25
-  maxDistanceFromSpawn: 200
+  maxDistanceFromSpawn: 800
   attackPerSecond: 1
   enraged: 0
   remainingHealthToEnrage: 50
@@ -913,7 +913,7 @@ Prefab:
       objectReference: {fileID: 9538344}
     - target: {fileID: 0}
       propertyPath: maxDistanceFromSpawn
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_lootChances

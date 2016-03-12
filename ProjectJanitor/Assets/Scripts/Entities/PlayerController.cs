@@ -376,23 +376,25 @@ namespace GalacticJanitor.Game
         void StartCombatState()
         {
             IsFighting = true;
-
             SaveSystem.BlockedSave = true;
-            GameController.NotifyPlayer("Fight !", Color.red, 1);
 
+            /*
+            GameController.NotifyPlayer("Fight !", Color.red, 1);
             if (playerDisplay)
                 playerDisplay.ShowCombatVisual(true);
+            */
         }
 
         public void StopCombatState()
         {
             IsFighting = false;
-
             SaveSystem.BlockedSave = false;
-            GameController.NotifyPlayer("End fight !", Color.red, 2);
 
+            /*
+            GameController.NotifyPlayer("End fight !", Color.red, 2);
             if (playerDisplay)
                 playerDisplay.ShowCombatVisual(false);
+            */
         }
 
         IEnumerator CombatRoutine()
