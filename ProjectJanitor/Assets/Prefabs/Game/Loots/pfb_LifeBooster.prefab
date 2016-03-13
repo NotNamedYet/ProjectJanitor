@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &100752
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -18,7 +18,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &120294
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -34,7 +34,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &182820
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -58,6 +58,7 @@ GameObject:
   - 4: {fileID: 480024}
   - 135: {fileID: 13512906}
   - 114: {fileID: 11435030}
+  - 82: {fileID: 8238140}
   m_Layer: 0
   m_Name: pfb_LifeBooster
   m_TagString: Untagged
@@ -67,7 +68,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &184522
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -81,6 +82,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &185806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 486188}
+  m_Layer: 0
+  m_Name: Rig
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &426730
 Transform:
   m_ObjectHideFlags: 1
@@ -89,9 +105,9 @@ Transform:
   m_GameObject: {fileID: 182820}
   m_LocalRotation: {x: 0.03865066, y: 0.70604956, z: -0.7060498, w: 0.03865063}
   m_LocalPosition: {x: -0.39, y: 0, z: 0.12}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.49999997, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 480024}
+  m_Father: {fileID: 486188}
   m_RootOrder: 2
 --- !u!4 &461416
 Transform:
@@ -103,7 +119,7 @@ Transform:
   m_LocalPosition: {x: -1.25, y: 0, z: -0.35}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 480024}
+  m_Father: {fileID: 486188}
   m_RootOrder: 0
 --- !u!4 &470864
 Transform:
@@ -115,7 +131,7 @@ Transform:
   m_LocalPosition: {x: 0.34, y: 0, z: 0.22}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 480024}
+  m_Father: {fileID: 486188}
   m_RootOrder: 3
 --- !u!4 &480024
 Transform:
@@ -127,10 +143,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 461416}
-  - {fileID: 484746}
-  - {fileID: 426730}
-  - {fileID: 470864}
+  - {fileID: 486188}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &484746
@@ -143,8 +156,99 @@ Transform:
   m_LocalPosition: {x: -0.82, y: 0, z: -0.24}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 480024}
+  m_Father: {fileID: 486188}
   m_RootOrder: 1
+--- !u!4 &486188
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185806}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 461416}
+  - {fileID: 484746}
+  - {fileID: 426730}
+  - {fileID: 470864}
+  m_Father: {fileID: 480024}
+  m_RootOrder: 0
+--- !u!82 &8238140
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183910}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24304402, guid: 0f2d920a56024fa42a77524076e3d6e0,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: de0903a50e40c964f87c6b434a658bc2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11435030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,6 +263,7 @@ MonoBehaviour:
   specificName: LifeBoost
   m_volatile: 0
   bypassBaking: 0
+  m_SoundOnPickUp: {fileID: 0}
   m_ResourceType: 0
   m_amount: 50
   m_Limit: 0
@@ -320,6 +425,31 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: de0903a50e40c964f87c6b434a658bc2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24304402, guid: 0f2d920a56024fa42a77524076e3d6e0,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

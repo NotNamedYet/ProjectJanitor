@@ -11,6 +11,7 @@ public class PermaBoostLoot : PersistentLoot {
     public ResourceType m_ResourceType;
     public int m_amount = 50;
     public int m_Limit;
+    public GameObject m_Rig;
 
     protected override bool OnLoot(PlayerController player)
     {
@@ -35,6 +36,12 @@ public class PermaBoostLoot : PersistentLoot {
         player.Heal();
         player.RepairArmor();
         return true;
+    }
+
+    public override void PlaySound()
+    {
+        if (m_Rig) m_Rig.SetActive(false);
+        base.PlaySound();
     }
 }
 
