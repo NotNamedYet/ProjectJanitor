@@ -201,6 +201,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 439530}
   - 95: {fileID: 9556846}
+  - 114: {fileID: 11497468}
   m_Layer: 0
   m_Name: AlienBetaRig
   m_TagString: Untagged
@@ -967,7 +968,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24304402, guid: 0f2d920a56024fa42a77524076e3d6e0,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1090,13 +1091,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   maxAttackRange: 5
-  maxDistanceFromSpawn: 200
+  maxDistanceFromSpawn: 800
   attackPerSecond: 1
   enraged: 0
   remainingHealthToEnrage: 25
   enrageModifier: 3
   sndOnAttack: {fileID: 8300000, guid: a6a4c063607dc4f4eb8694008d51a2c9, type: 3}
-  sndOnMove: {fileID: 0}
+  sndOnMove: {fileID: 8300000, guid: 910913a73ae094844b581f16c0612ff4, type: 3}
   sndOnAggro: {fileID: 0}
   sndEnrage: {fileID: 8300000, guid: 9c86eb996e709634783fa87f6bb45da0, type: 3}
   damagePerHit: 10
@@ -1141,6 +1142,19 @@ MonoBehaviour:
   m_maxRandomAmount: 20
   m_armor: {fileID: 11442928, guid: 8e829166a827d724f907ad0c15fece41, type: 2}
   m_health: {fileID: 11445416, guid: dbb89fa07d4554640ace3ad922c53b38, type: 2}
+--- !u!114 &11497468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9c9bbd731726f4da565f21860dd2d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Beta: {fileID: 11405896}
+  m_FootStepVolume: 0.55
 --- !u!135 &13593946
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1938,7 +1952,7 @@ Prefab:
       objectReference: {fileID: 9556846}
     - target: {fileID: 0}
       propertyPath: maxDistanceFromSpawn
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_lootChances
@@ -2118,6 +2132,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[5].outSlope
       value: -0.020007975
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sndOnMove
+      value: 
+      objectReference: {fileID: 8300000, guid: 910913a73ae094844b581f16c0612ff4, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Beta
+      value: 
+      objectReference: {fileID: 11405896}
+    - target: {fileID: 0}
+      propertyPath: m_FootStepVolume
+      value: 0.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

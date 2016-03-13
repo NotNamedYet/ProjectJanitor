@@ -477,7 +477,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24304402, guid: 0f2d920a56024fa42a77524076e3d6e0,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   entityDisplay: {fileID: 0}
   deathloot: {fileID: 0}
   sndOnHit: {fileID: 0}
-  sndOnDie: {fileID: 8300000, guid: a9b24f86715b7bd4a8adff0da4a823bd, type: 3}
+  sndOnDie: {fileID: 0}
   sndOnBreakingArmor: {fileID: 0}
   sndOnHeal: {fileID: 0}
   sndOnRepair: {fileID: 0}
@@ -628,12 +628,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   maxAttackRange: 4
-  maxDistanceFromSpawn: 200
+  maxDistanceFromSpawn: 800
   attackPerSecond: 1
   enraged: 0
   remainingHealthToEnrage: 20
   enrageModifier: 2
-  sndOnAttack: {fileID: 8300000, guid: 9307369786174b64298c444f0e67b898, type: 3}
+  sndOnAttack: {fileID: 8300000, guid: 6b8b963233a37924383cb70894bc7ee7, type: 3}
   sndOnMove: {fileID: 0}
   sndOnAggro: {fileID: 0}
   sndEnrage: {fileID: 0}
@@ -1048,7 +1048,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxDistanceFromSpawn
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rigging
@@ -1252,9 +1252,23 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
       value: 0.99504507
-      propertyPath: dammageDistanceOffset
-      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sndOnDie
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sndOnHit
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sndOnAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b8b963233a37924383cb70894bc7ee7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118840}

@@ -17,11 +17,14 @@ public class ActivableDoor : Interactable {
     public string m_noticeOff;
     public Color m_noticeColor = Color.white;
     public int m_noticeDuration = 1;
+    public RedWire m_redWire;
 
     void Awake()
     {
         if (m_startOff)
             m_object.SetActive(false);
+
+        UpdateWire();
     }
 
     public override void OnInteract()
@@ -33,6 +36,8 @@ public class ActivableDoor : Interactable {
 
         if (m_notify)
             GameController.NotifyPlayer(m_object.activeInHierarchy ? m_noticeOn : m_noticeOff, m_noticeColor, m_noticeDuration);
+
+        UpdateWire();
     }
 
     public override void CollectData(DataContainer container)
@@ -44,6 +49,13 @@ public class ActivableDoor : Interactable {
     public override void LoadData(DataContainer container)
     {
         CanInteract = container.GetValue<bool>("interact");
-        m_object.SetActive(container.GetValue<bool>("active"));   
+        m_object.SetActive(container.GetValue<bool>("active"));
+        UpdateWire();
+    }
+
+    void UpdateWire()
+    {
+        if (m_redWire)
+            m_redWire.SetSwitch(m_object.activeInHierarchy);
     }
 }
