@@ -11,6 +11,8 @@ public class AlienBetaAnimationBroker : MonoBehaviour {
 
     public void FootStepSound()
     {
+        if (!m_Beta) return;
+
         if (m_Beta.sndOnMove)
             m_Beta.listener.PlayOneShot(m_Beta.sndOnMove, m_FootStepVolume);
     }
