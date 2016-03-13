@@ -8,7 +8,15 @@ public abstract class PersistentLoot : MonoPersistent
 {
 
     protected bool PickedUp { get; set; }
+    protected AudioSource m_audioSource;
+    float destroyDelay = .2f;
 
+    public void Start()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+        if (m_audioSource && m_audioSource.clip)
+            destroyDelay += m_audioSource.clip.length;
+    }
 
     public override void CollectData(DataContainer container)
     {
@@ -26,8 +34,11 @@ public abstract class PersistentLoot : MonoPersistent
             Save();
 
             if (PickedUp)
-                Destroy(gameObject);
-
+            {
+                PlaySound();
+                Destroy(gameObject, destroyDelay);
+                Destroy(this);
+            }
         }
     }
 
@@ -38,4 +49,10 @@ public abstract class PersistentLoot : MonoPersistent
     /// <returns>true if the loot is picked up and the action is performed</returns>
     protected abstract bool OnLoot(PlayerController player);
 
+
+    public virtual void PlaySound()
+    {
+        if (m_audioSource)
+            m_audioSource.Play();
+    }
 }
