@@ -86,7 +86,9 @@ public class CocoonSpawner : Spawner, IDamageable
             m_Pool.RemoveAt(0);
 
             clone.gameObject.SetActive(true);
-            clone.LockTarget(m_Target);
+
+            if(m_Target)
+                clone.LockTarget(m_Target);
         }
         else
         {
@@ -100,7 +102,10 @@ public class CocoonSpawner : Spawner, IDamageable
 
     public void TriggerSpawning(Transform target)
     {
-        m_Target = target;
+        if (target)
+        {
+            m_Target = target; 
+        }
         StopAllCoroutines();
         StartCoroutine(SpawnRoutine());
     }
