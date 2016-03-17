@@ -8,6 +8,7 @@ using GalacticJanitor.Engine;
 public class CocoonTrigger : MonoPersistent {
 
     [Header("Cocoon Settings.")]
+    public bool m_DirectFocus = true;
     public bool playSoundOnActivation;
     [Tooltip("Check it if you want play a sound randomly from the scene ambiance manager")]
     public bool playSoundRandomlyWithSceneSounds;
@@ -28,7 +29,7 @@ public class CocoonTrigger : MonoPersistent {
         {
             if (m_LinkedCocoons.Length > 0)
                 for (int i = 0; i < m_LinkedCocoons.Length; i++)
-                    if (m_LinkedCocoons[i]) m_LinkedCocoons[i].TriggerSpawning(other.transform);
+                    if (m_LinkedCocoons[i]) m_LinkedCocoons[i].TriggerSpawning((m_DirectFocus)?other.transform : null);
 
             /*SOUND*/
             if (playSoundOnActivation && snd) PlaySound();
