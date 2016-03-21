@@ -151,6 +151,11 @@ namespace GalacticJanitor.Game
             {
                 Movement(); 
             }
+            else
+            {
+                anim.SetBool("playerMove", false);
+                if (marinesType == MarinesType.MajCarter) anim.SetBool("bobbing", false);
+            }
         }
 
         void Movement()
@@ -217,33 +222,35 @@ namespace GalacticJanitor.Game
 
         void MovementAnim()
         {
-            if (marinesType == MarinesType.MajCarter)
             {
-                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
+                if (marinesType == MarinesType.MajCarter)
                 {
-                    anim.SetBool("bobbing", true);
-
-                    if (GetComponent<WeaponControllerCarter>().IndexActiveWeapon == 1)  // If Carter is equiped with flamethrower
+                    if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
                     {
-                        anim.SetBool("playerMove", true);
+                        anim.SetBool("bobbing", true);
+
+                        if (GetComponent<WeaponControllerCarter>().IndexActiveWeapon == 1)  // If Carter is equiped with flamethrower
+                        {
+                            anim.SetBool("playerMove", true);
+                        }
+
                     }
 
+                    else
+                    {
+                        anim.SetBool("playerMove", false);
+                        anim.SetBool("bobbing", false);
+                    }
                 }
 
-                else
+                else // Hartman
                 {
-                    anim.SetBool("playerMove", false);
-                    anim.SetBool("bobbing", false);
-                }
-            }
+                    if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
+                        anim.SetBool("playerMove", true);
 
-            else // Hartman
-            {
-                if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
-                    anim.SetBool("playerMove", true);
-
-                else
-                    anim.SetBool("playerMove", false);
+                    else
+                        anim.SetBool("playerMove", false);
+                } 
             }
         } 
         #endregion
