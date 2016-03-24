@@ -68,7 +68,9 @@ namespace GalacticJanitor.Game
                 //Debug.Log("I'am a AmmoBox type " + ammoType + " and i was touched by " + marineType);
 
                 PlayerAmmo playerInv = other.gameObject.GetComponent<PlayerAmmo>();
-                playerInv.PickUpAmmo(ammoType, amount);
+
+                if (ammoType == AmmoType.AmmoType1 && marineType == MarinesType.MajCarter) playerInv.PickUpAmmo(ammoType, amount * 15); // Flamethrower
+                else playerInv.PickUpAmmo(ammoType, amount);
                 amount = 0;
                 Depop();
             }
