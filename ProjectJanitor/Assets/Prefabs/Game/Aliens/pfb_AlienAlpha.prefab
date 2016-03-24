@@ -517,8 +517,8 @@ MonoBehaviour:
   entityDisplayName: 
   m_entity:
     alive: 1
-    health: 100
-    maxHealth: 100
+    health: 80
+    maxHealth: 80
     armor: 20
     maxArmor: 20
     armorDamageReduction: 2
@@ -545,7 +545,7 @@ MonoBehaviour:
   maxDistanceFromSpawn: 800
   attackPerSecond: 1
   enraged: 0
-  remainingHealthToEnrage: 50
+  remainingHealthToEnrage: 30
   enrageModifier: 2
   sndOnAttack: {fileID: 8300000, guid: d451c80436e67ee4d8281be5f17373e7, type: 3}
   sndOnMove: {fileID: 0}

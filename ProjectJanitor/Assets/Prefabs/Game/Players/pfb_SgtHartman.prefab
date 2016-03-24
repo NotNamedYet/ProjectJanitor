@@ -761,8 +761,8 @@ MonoBehaviour:
   projectileGrenade: {fileID: 182990, guid: 1c82d868fd840844688fa78b5d83c8a5, type: 2}
   magazineBullet: 75
   magazineGrenade: 1
-  bulletsDmg: 10
-  grenadesDmg: 25
+  bulletsDmg: 12
+  grenadesDmg: 40
   chokes: {fileID: 400326}
   flashShoot: {fileID: 150422}
   canBurstTimer: 0.2
@@ -2789,8 +2789,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.5
-      propertyPath: m_Extents.x
-      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Extents.z
