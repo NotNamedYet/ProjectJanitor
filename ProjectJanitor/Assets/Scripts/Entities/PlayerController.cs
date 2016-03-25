@@ -184,7 +184,7 @@ namespace GalacticJanitor.Game
         #region Sounds
         public void PlayStepSound()
         {
-            listener.PlayOneShot(sndSteps[Random.Range(0, sndSteps.Length)], 0.2f);
+            listener.PlayOneShot(sndSteps[Random.Range(0, sndSteps.Length)], 0.04f);
         }
 
         private IEnumerator CoRoutLowLife()
