@@ -1493,7 +1493,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1504,7 +1504,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1515,7 +1515,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &1875541525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,12 +1527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7d7feba59e3ef46b90213409aec0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musics: []
+  musics:
+  - {fileID: 8300000, guid: e3e5cccf46faa2543909a12f743277ee, type: 3}
   ambiance: []
   soundsThatMustBePlayedRandomly: 
-  playMusicAtStart: 0
+  playMusicAtStart: 1
   indexMusicAtStart: 0
-  volMusic: 0
+  volMusic: 1
   playSoundsRandomlyAtStart: 0
   rangeMin: 0
   rangeMax: 0
