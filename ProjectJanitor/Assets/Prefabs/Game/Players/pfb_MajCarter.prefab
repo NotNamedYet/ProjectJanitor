@@ -960,8 +960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e970cb542b0d5446b3365a8c1bdd5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCarriedType0: 90
-  ammoCarriedType1: 900
+  ammoCarriedType0: 30
+  ammoCarriedType1: 0
+  sndPickUp: {fileID: 8300000, guid: eba83f4e6e2d04245a31bfefa1305a13, type: 3}
 --- !u!114 &11457290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -988,7 +989,7 @@ MonoBehaviour:
   jetFlame: {fileID: 190324, guid: 32c6c908ab96e014b83847fc6a9091f0, type: 2}
   flameIsActive: 0
   timer: 0.1
-  magazine: 100
+  magazine: 0
   flameDmg: 2
   chokes: {fileID: 439710}
   sndReload: {fileID: 8300000, guid: 95670b9469c416a49917a456fac97249, type: 3}

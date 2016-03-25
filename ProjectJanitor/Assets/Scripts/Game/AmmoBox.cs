@@ -69,7 +69,7 @@ namespace GalacticJanitor.Game
 
                 PlayerAmmo playerInv = other.gameObject.GetComponent<PlayerAmmo>();
 
-                if (ammoType == AmmoType.AmmoType1 && marineType == MarinesType.MajCarter) playerInv.PickUpAmmo(ammoType, amount * 15); // Flamethrower
+                if (ammoType == AmmoType.AmmoType1 && marineType == MarinesType.MajCarter) playerInv.PickUpAmmo(ammoType, amount * 20); // Flamethrower
                 else playerInv.PickUpAmmo(ammoType, amount);
                 amount = 0;
                 Depop();
