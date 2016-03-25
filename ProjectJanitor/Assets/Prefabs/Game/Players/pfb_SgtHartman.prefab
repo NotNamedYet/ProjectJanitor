@@ -729,8 +729,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e970cb542b0d5446b3365a8c1bdd5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCarriedType0: 150
-  ammoCarriedType1: 100
+  ammoCarriedType0: 50
+  ammoCarriedType1: 0
+  sndPickUp: {fileID: 8300000, guid: eba83f4e6e2d04245a31bfefa1305a13, type: 3}
 --- !u!114 &11460442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,10 +760,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileBullet: {fileID: 178482, guid: 77c7896ca4c132a4e8ccc3d7b896042a, type: 2}
   projectileGrenade: {fileID: 182990, guid: 1c82d868fd840844688fa78b5d83c8a5, type: 2}
-  magazineBullet: 75
-  magazineGrenade: 1
-  bulletsDmg: 10
-  grenadesDmg: 25
+  magazineBullet: 50
+  magazineGrenade: 0
+  bulletsDmg: 12
+  grenadesDmg: 40
   chokes: {fileID: 400326}
   flashShoot: {fileID: 150422}
   canBurstTimer: 0.2
@@ -2789,8 +2790,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.5
-      propertyPath: m_Extents.x
-      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Extents.z
