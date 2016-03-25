@@ -57,7 +57,7 @@ namespace GalacticJanitor.Game
 
         public int MakeRandomAmount(int min, int max)
         {
-            int result = UnityEngine.Random.Range(min - 1, max + 1);
+            int result = UnityEngine.Random.Range(min, max + 1);
             return result;
         }
 
