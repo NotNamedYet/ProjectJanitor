@@ -14,6 +14,8 @@ namespace GalacticJanitor.Game
         public int ammoCarriedType0;
         public int ammoCarriedType1;
 
+        public AudioClip sndPickUp;
+
         /// <summary> Use to check if there is ammo in player's inventory.
         /// Take a int to know what type of ammo the function must check.
         /// 1 to weapon1 and 2 to weapon2.
@@ -71,6 +73,14 @@ namespace GalacticJanitor.Game
             }
 
             GameController.NotifyPlayer("+" + amount + " Ammo !", Color.green, 1);
+
+            /*SOUNDS*/
+
+            if (sndPickUp)
+            {
+                AudioSource listener = GetComponent<AudioSource>();
+                listener.PlayOneShot(sndPickUp, 2.5f);
+            }
             
         }
 

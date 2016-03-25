@@ -1068,8 +1068,8 @@ MonoBehaviour:
     alive: 1
     health: 50
     maxHealth: 50
-    armor: 20
-    maxArmor: 20
+    armor: 10
+    maxArmor: 10
     armorDamageReduction: 2
   destroyOnDeath: 1
   saveOnDeath: 1
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   attackPerSecond: 1
   enraged: 0
   remainingHealthToEnrage: 25
-  enrageModifier: 3
+  enrageModifier: 2
   sndOnAttack: {fileID: 8300000, guid: a6a4c063607dc4f4eb8694008d51a2c9, type: 3}
   sndOnMove: {fileID: 8300000, guid: 910913a73ae094844b581f16c0612ff4, type: 3}
   sndOnAggro: {fileID: 0}

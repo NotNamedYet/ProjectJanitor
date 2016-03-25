@@ -13,9 +13,9 @@ namespace GalacticJanitor.Game
         public GameObject projectileBullet;
         public GameObject projectileGrenade;
 
-        [Range(0, 75)]
+        [Range(0, 50)]
         public int magazineBullet;
-        public readonly int magazineSizeBullet = 75;
+        public readonly int magazineSizeBullet = 50;
 
         [Range(0, 1)]
         public int magazineGrenade;

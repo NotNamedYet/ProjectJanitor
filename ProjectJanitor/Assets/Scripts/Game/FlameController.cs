@@ -17,8 +17,9 @@ namespace GalacticJanitor.Game
         public List<int> targetsBurning;
 
         [Header("Sounds", order = 1)]
-        public AudioClip sndBegin;
-        public AudioClip sndBurning;
+        //public AudioClip sndBegin; Deprecated
+        //public AudioClip sndBurning; Deprecated
+        public AudioClip sndFlame;
 
         private AudioSource listener;
 
@@ -27,14 +28,14 @@ namespace GalacticJanitor.Game
         {
             listener = GetComponent<AudioSource>();
             targetsBurning = new List<int>();
-            listener.PlayOneShot(sndBegin);
+            if (sndFlame) listener.PlayOneShot(sndFlame);
         }
 
         // Update is called once per frame
         void Update()
         {
             FlameCanDamageTimer();
-            PlaySounds();
+            //PlaySounds();
         }
 
         private void FlameCanDamageTimer()
@@ -62,10 +63,10 @@ namespace GalacticJanitor.Game
             return flameDmg;
         }
 
-        private void PlaySounds()
+        /*private void PlaySounds()
         {
             if (!listener.isPlaying) listener.PlayOneShot(sndBurning);
-        }
+        }*/
 
     }
 
