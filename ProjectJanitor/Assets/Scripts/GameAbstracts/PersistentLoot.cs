@@ -37,7 +37,8 @@ public abstract class PersistentLoot : MonoPersistent
             {
                 PlaySound();
                 Destroy(gameObject, destroyDelay);
-                Destroy(this);
+                GetComponent<MonoPersistentInitializer>().enabled = false;
+                enabled = false;
             }
         }
     }

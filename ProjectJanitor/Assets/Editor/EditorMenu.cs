@@ -28,6 +28,26 @@ public class EditorMenu
         }
     }
 
+    [MenuItem("GameObject/GalacticJanitor/Add PauseController", false, 0)]
+    static void CreatePauseController()
+    {
+        GameObject pc = GameObject.Find("_PauseController");
+
+        if (pc == null)
+        {
+            pc = new GameObject("_PauseController");   
+        }
+
+        pc.transform.SetParent(null);
+        pc.transform.position = new Vector3(0, 0, 0);
+        
+        if (!pc.GetComponent<PauseController>())
+        {
+            pc.AddComponent<PauseController>();
+        }
+    }
+
+
     [MenuItem("GameObject/GalacticJanitor/Add Teleporter", false, 0)]
     static void AddTeleporter()
     {

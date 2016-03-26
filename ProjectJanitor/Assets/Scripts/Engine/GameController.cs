@@ -170,15 +170,6 @@ namespace GalacticJanitor.Engine
             }
         }
 
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (!PausedGame) EnterPause();
-                else ExitPause();
-            }
-        }
-
         public void _DestroyPlayer()
         {
             if (Player)
