@@ -37,14 +37,12 @@ namespace GalacticJanitor.UI
             m_BuilChar = new char[m_Buffer.Length];
             m_TextComponent.text = "";
 
-            print(m_BuilChar[0]);
-
             if (m_CastOnStart)
                 CastMagic();
         }
 
         //Reset the component to be able to restart it.
-        void Reset()
+        public void ResetEffect()
         {
             StopCoroutine("MagicRoutine");
 
