@@ -38,7 +38,9 @@ namespace GalacticJanitor.Game
 
         public int LifeLeach(int amount)
         {
-            
+            if (!m_boss.m_interphase)
+                return 0;
+
             if (m_babiesAmount > 0)
             {
                 SpawnBaby();

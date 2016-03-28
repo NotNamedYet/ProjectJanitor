@@ -12,7 +12,7 @@ namespace GalacticJanitor.Game
 
         [Header("Phase management")]
         public float m_speedAddition = 2;
-        bool m_interphase;
+        [HideInInspector] public bool m_interphase;
 
         [Header("Minions")]
         [HideInInspector]
