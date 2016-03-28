@@ -11,6 +11,7 @@ public class CocoonSpawner : Spawner, IDamageable
     public int m_MaxPoolSize;
     public float m_TimeBetweenSpawn;
     public bool m_DestroyAfterLast;
+    public Animator m_Rigging;
 
     List<AlienBase> m_Pool;
     Transform m_Target;
@@ -34,6 +35,9 @@ public class CocoonSpawner : Spawner, IDamageable
 
         while (m_Active)
         {
+            if (m_Rigging)
+                yield return new WaitForSeconds(.3f);
+
             UnleachAlien();
             yield return new WaitForSeconds(m_TimeBetweenSpawn);
         }
@@ -84,6 +88,9 @@ public class CocoonSpawner : Spawner, IDamageable
         {
             clone = m_Pool[0];
             m_Pool.RemoveAt(0);
+
+            if (m_Rigging)
+                m_Rigging.SetTrigger("open");
 
             clone.gameObject.SetActive(true);
 
