@@ -22,7 +22,7 @@ public class PermaBoostLoot : PersistentLoot {
                 return false;
 
             player.m_entity.maxHealth += m_amount;
-            GameController.NotifyPlayer("+50 Max HP !", Color.green, 4);
+            GameController.NotifyPlayer("+" + m_amount.ToString() + " Max HP !", Color.green, 4);
         }
         else
         {
@@ -30,11 +30,11 @@ public class PermaBoostLoot : PersistentLoot {
                 return false;
 
             player.m_entity.maxArmor += m_amount;
-            GameController.NotifyPlayer("+50 Max Armor !", Color.green, 4);
+            GameController.NotifyPlayer("+" + m_amount.ToString() + " Max Armor !", Color.green, 4);
         }
         player.UpdateDisplay();
-        player.Heal();
-        player.RepairArmor();
+        if (m_ResourceType == ResourceType.HEALTH) player.Heal();
+        if (m_ResourceType == ResourceType.ARMOR) player.RepairArmor();
         return true;
     }
 

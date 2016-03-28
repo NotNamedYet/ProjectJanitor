@@ -924,7 +924,7 @@ MonoBehaviour:
   flamethrower: {fileID: 0}
   playerAmmo: {fileID: 0}
   playerCanShootAfterReload: 1
-  timerCancelFireAfterReload: 0.5
+  timerCancelFireAfterReload: 0.3
 --- !u!114 &11449848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -990,7 +990,7 @@ MonoBehaviour:
   flameIsActive: 0
   timer: 0.1
   magazine: 0
-  flameDmg: 2
+  flameDmg: 3
   chokes: {fileID: 439710}
   sndReload: {fileID: 8300000, guid: 95670b9469c416a49917a456fac97249, type: 3}
   sndEmpty: {fileID: 8300000, guid: a0d2457cbad049d4185731cd836adcce, type: 3}
@@ -1016,8 +1016,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.62
-  m_Center: {x: 0, y: 0, z: 0.66}
+  m_Radius: 1.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &19875168
 ParticleSystem:
   m_ObjectHideFlags: 1
