@@ -8793,7 +8793,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 17.62
+  orthographic size: 17.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -43718,8 +43718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 1761032803}
-  active: 1
-  delayedActivation: 1
+  active: 0
+  delayedActivation: 0
   delay: 5
   isLocal: 0
   localDestination: {fileID: 0}

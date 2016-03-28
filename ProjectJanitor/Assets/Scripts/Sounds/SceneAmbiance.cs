@@ -54,7 +54,7 @@ namespace GalacticJanitor.Game
             indexMusicPlayed = -1;
             if (ambiance.Length != soundsThatMustBePlayedRandomly.Length) // Check if unity user properly filled the fields
             {
-                Debug.Log("Problem in SceneAmbianceManager : Do you filled up all the fields in the inspector ? See tooltips please. Asshole");
+                Debug.Log("Problem in SceneAmbianceManager : Do you filled up all the fields in the inspector ? See tooltips please.");
                 _playingRandomlySoundsAmbiance = false; // Set to false to avoid BAMYA (Bad Allocation Memory in Your Assssss)
             }
 

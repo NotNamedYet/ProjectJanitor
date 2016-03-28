@@ -233,6 +233,10 @@ namespace GalacticJanitor.Game
                         {
                             anim.SetBool("playerMove", true);
                         }
+                        else
+                        {
+                            anim.SetBool("playerMove", false);
+                        }
 
                     }
 

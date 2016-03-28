@@ -58,7 +58,7 @@ namespace GalacticJanitor.Game
                 GameController.NotifyPlayer("The Mother calls for retribution !", Color.red, 2);
 
                 invincible = true;
-                pathfinder.speed = pathfinder.speed + 2f;
+                pathfinder.speed = pathfinder.speed + 1f;
                 BoostCocoons();
 
                 if (m_cocoons != null && m_cocoons.Count > 0)

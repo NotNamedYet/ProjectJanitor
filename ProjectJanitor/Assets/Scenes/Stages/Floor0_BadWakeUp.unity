@@ -7178,7 +7178,7 @@ MonoBehaviour:
   hartman: {fileID: 11433848, guid: 801d9416cc333264f9a719e5d5e09767, type: 2}
   carter: {fileID: 11428304, guid: 6ee4c0d7b8a294c4b82111a87cbc3359, type: 2}
   disallowPlayer: 0
-  marines: 1
+  marines: 0
   playerPosition: {x: -23, y: 0, z: 6}
 --- !u!4 &393353670
 Transform:
@@ -17846,7 +17846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   telepoterVisual: {fileID: 725277229}
   active: 1
-  delayedActivation: 0
+  delayedActivation: 1
   delay: 0
   isLocal: 0
   localDestination: {fileID: 0}
