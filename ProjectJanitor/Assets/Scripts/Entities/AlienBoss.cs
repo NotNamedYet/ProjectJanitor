@@ -181,6 +181,8 @@ namespace GalacticJanitor.Game
         protected override void OnDeath()
         {
             base.OnDeath();
+
+            /*
             destroyOnDeath = false;
 
             if (rigging)
@@ -192,6 +194,7 @@ namespace GalacticJanitor.Game
             {
                 Destroy(gameObject);
             }
+            */
 
             //Sesame open you... (or not...)
             if (m_onDeathInteractables != null)

@@ -24,6 +24,7 @@ namespace GalacticJanitor.UI
                 GameController.Player.entityDisplay = display;
                 GameController.Player.playerDisplay = display;
                 GameController.Player.UpdateDisplay();
+                GameController.Player.RefreshAmmoHUD();
             }
         }
 
