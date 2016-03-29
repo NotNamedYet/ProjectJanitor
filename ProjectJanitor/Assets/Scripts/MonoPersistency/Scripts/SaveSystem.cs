@@ -169,6 +169,11 @@ namespace MonoPersistency
             return snaps.ToArray();
         }
 
+        public void ResetRegistery()
+        {
+            m_registery = new GameRegistery(m_startingLevel);
+        }
+
         private static void WriteRegistery(bool newSave)
         {
             if (newSave) Registery.NewID();
@@ -413,7 +418,7 @@ namespace MonoPersistency
             BlockedSave = false;
             GameController.TimeController.GameOver(false);
 
-            if (GameController.Player.IsFighting)
+            if (GameController.Player && GameController.Player.IsFighting)
                 GameController.Player.StopCombatState();
 
             SceneManager.LoadScene(scene);

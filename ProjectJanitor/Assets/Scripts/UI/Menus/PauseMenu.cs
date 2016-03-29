@@ -170,6 +170,7 @@ public class PauseMenu : MonoBehaviour {
     public void QuitPress()
     {
         GameController.ExitPause();
-        SceneManager.LoadScene(0);
+        SaveSystem.LoadScene("scn_MainMenu");
+        SaveSystem.instance.ResetRegistery();
     }
 }
