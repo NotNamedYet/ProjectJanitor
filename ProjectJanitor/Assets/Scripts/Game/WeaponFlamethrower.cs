@@ -18,9 +18,9 @@ namespace GalacticJanitor.Game
         private float timerActive = 0f; // Timer in real time
         public float timer = 0.1f; // Timer set
 
-        [Range(0, 50)] // Must be equal to magazineSize
+        [Range(0, 100)] // Must be equal to magazineSize
         public int magazine;
-        public readonly int magazineSize = 50;
+        public readonly int magazineSize = 100;
 
         public int flameDmg = 1;
 
