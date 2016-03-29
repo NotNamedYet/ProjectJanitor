@@ -45,7 +45,7 @@ public class CharacterSelector : MonoBehaviour {
         playerContainer.Addvalue("marine", selectedMarine);
         //...
         SaveSystem.RegisterPlayer(playerContainer);
-        SaveSystem.LoadScene("SampleLab");
+        SaveSystem.LoadScene("scn_IntroScreen");
     }
 
     IEnumerator DisplayCheckOK()
