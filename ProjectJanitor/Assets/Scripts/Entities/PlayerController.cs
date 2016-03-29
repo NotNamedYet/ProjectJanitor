@@ -115,6 +115,15 @@ namespace GalacticJanitor.Game
             
         }
 
+        public void RefreshAmmoHUD()
+        {
+            Debug.Log("func - RefreshAmmoHUD from PlayerController");
+            if (isCarter())
+                weapCCarter.RefreshAmmoHUD();
+            else
+                weapCHartman.RefreshAmmoHUD();
+        }
+
         public new void TakeDirectDamage(int damage, bool ignoreArmor)
         {
             base.TakeDirectDamage(damage, ignoreArmor);

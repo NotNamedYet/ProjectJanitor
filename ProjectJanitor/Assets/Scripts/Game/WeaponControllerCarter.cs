@@ -45,10 +45,16 @@ namespace GalacticJanitor.Game
         void Start()
         {
             StartWeaponDoubleGuns();  // TODO : Change this maybe with savegames
+            RefreshAmmoHUD();
+        }
 
+        public void RefreshAmmoHUD()
+        {
+            Debug.Log("func - RefreshAmmoHUD from WPC");
             /*GUI*/
             if (playerController.playerDisplay)
             {
+                Debug.Log("PlayerDisplay is here...");
                 playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
                 playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
                 playerController.DisplayInfoIndexWeapon(indexActiveWeapon);

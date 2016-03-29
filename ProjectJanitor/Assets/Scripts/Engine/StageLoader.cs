@@ -49,7 +49,7 @@ namespace GalacticJanitor.Engine
             GameController.Player.transform.rotation = playerRotation;
             LoadPlayerData();
             GameController.TopDownCamera.JumpToTarget();
-            GameController.Player.UpdateDisplay();
+          
         }
 
         void LoadPlayerData()

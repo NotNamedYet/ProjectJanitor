@@ -48,7 +48,7 @@ namespace MonoPersistency
                 instance = this;
                 DontDestroyOnLoad(gameObject);
                 _StartPT();
-                snaps = LoadSnapshots();
+                //snaps = LoadSnapshots();
             }
             else
             {
@@ -424,44 +424,12 @@ namespace MonoPersistency
             SceneManager.LoadScene(scene);
         }
 
-        #region DEBUG_GUI
+        
 
         RegisterySnapshot[] snaps;
         RegisterySnapshot selected;
 
-        void OnGUI()
-        {
-            if (GUI.Button(new Rect(10, 10, 100, 20), "NewSave"))
-            {
-                SaveAndWrite(true);
-                snaps = LoadSnapshots();
-            }
-            if (GUI.Button(new Rect(10, 40, 100, 20), "Save"))
-            {
-                SaveAndWrite(false);
-                snaps = LoadSnapshots();
-            }
-
-            float pos = 70;
-            int index = 1;
-
-            if (snaps != null && snaps.Length > 0)
-            {
-                foreach (RegisterySnapshot rs in snaps)
-                {
-                    GUI.Label(new Rect(120, pos, 100, 20), "Sc:" + rs.m_currentScene);
-                    GUI.Label(new Rect(230, pos, 100, 20), "Tp:" + rs.FormatTimePlayed);
-                    if (GUI.Button(new Rect(10, pos, 100, 20), "save " + index))
-                    {
-                        LoadGame(rs);
-                    }
-                    pos += 30;
-                    index++;
-                }
-            }
-
-        }
-        #endregion
+        
 
     }
 }

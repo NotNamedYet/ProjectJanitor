@@ -31,6 +31,11 @@ namespace GalacticJanitor.Game
         // Use this for initialization
         void Start()
         {
+            RefreshAmmoHUD();
+        }
+
+        public void RefreshAmmoHUD()
+        {
             /* GUI */
             if (playerController.playerDisplay)
             {
