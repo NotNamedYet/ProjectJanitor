@@ -48,7 +48,6 @@ namespace MonoPersistency
                 instance = this;
                 DontDestroyOnLoad(gameObject);
                 _StartPT();
-                //snaps = LoadSnapshots();
             }
             else
             {
@@ -423,13 +422,6 @@ namespace MonoPersistency
 
             SceneManager.LoadScene(scene);
         }
-
-        
-
-        RegisterySnapshot[] snaps;
-        RegisterySnapshot selected;
-
-        
 
     }
 }

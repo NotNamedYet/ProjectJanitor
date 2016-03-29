@@ -143,7 +143,7 @@ namespace GalacticJanitor.UI
         Button InstanciateButton()
         {
             Button button = Instantiate(contentButton);
-            button.transform.SetParent(dynamicContentHolder.transform);
+            button.transform.SetParent(dynamicContentHolder.transform, false);
             button.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
 
             population.Add(button);
