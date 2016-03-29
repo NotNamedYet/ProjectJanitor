@@ -184,7 +184,7 @@ namespace GalacticJanitor.Game
         #region Sounds
         public void PlayStepSound()
         {
-            listener.PlayOneShot(sndSteps[Random.Range(0, sndSteps.Length)], 0.2f);
+            listener.PlayOneShot(sndSteps[Random.Range(0, sndSteps.Length)], 0.04f);
         }
 
         private IEnumerator CoRoutLowLife()
@@ -232,6 +232,10 @@ namespace GalacticJanitor.Game
                         if (GetComponent<WeaponControllerCarter>().IndexActiveWeapon == 1)  // If Carter is equiped with flamethrower
                         {
                             anim.SetBool("playerMove", true);
+                        }
+                        else
+                        {
+                            anim.SetBool("playerMove", false);
                         }
 
                     }

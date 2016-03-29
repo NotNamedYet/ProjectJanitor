@@ -50,10 +50,10 @@ namespace GalacticJanitor.Game
             if (playerController.playerDisplay)
             {
                 playerController.DisplayInfoWeapon1(playerAmmo.ammoCarriedType0, doubleGuns.magazine);
-            playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
-            playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
-            playerController.playerDisplay.ammo1.DisplayBullet();
-            playerController.playerDisplay.ammo2.DisplayFlame();
+                playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
+                playerController.DisplayInfoIndexWeapon(indexActiveWeapon);
+                playerController.playerDisplay.ammo1.DisplayBullet();
+                playerController.playerDisplay.ammo2.DisplayFlame();
             }
         }
 
@@ -83,8 +83,8 @@ namespace GalacticJanitor.Game
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-				if (playerCanShootAfterReload)
-                {
+				//if (playerCanShootAfterReload)
+                //{
 					Reload();
                     playerCanShootAfterReload = false;
 
@@ -94,7 +94,7 @@ namespace GalacticJanitor.Game
 
                     else
 					playerController.DisplayInfoWeapon2(playerAmmo.ammoCarriedType1, flamethrower.magazine);
-				}
+				//}
 
             }
 

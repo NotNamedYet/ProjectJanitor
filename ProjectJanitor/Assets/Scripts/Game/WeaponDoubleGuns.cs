@@ -60,7 +60,7 @@ namespace GalacticJanitor.Game
                 bul.baseDamage = bulletsDmg;
                 bul.SetSource(gameObject);
                 magazine--;
-                listener.PlayOneShot(sndFire[Random.Range(0, sndFire.Length)]);
+                listener.PlayOneShot(sndFire[Random.Range(0, sndFire.Length)], 0.35f);
 
                 activeChokes = !activeChokes;
             }

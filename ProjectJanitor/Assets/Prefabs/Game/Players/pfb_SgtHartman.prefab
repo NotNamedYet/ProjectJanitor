@@ -746,7 +746,7 @@ MonoBehaviour:
   assaultRifle: {fileID: 0}
   playerAmmo: {fileID: 0}
   playerCanShootAfterReload: 1
-  timerCancelFireAfterReload: 0.5
+  timerCancelFireAfterReload: 0.3
 --- !u!114 &11465632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -792,8 +792,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.91
-  m_Center: {x: 0, y: 0, z: 0.45}
+  m_Radius: 1.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &19859546
 ParticleSystem:
   m_ObjectHideFlags: 1
