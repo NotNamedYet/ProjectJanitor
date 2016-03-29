@@ -570,6 +570,7 @@ GameObject:
   - 114: {fileID: 508581174}
   - 114: {fileID: 508581173}
   - 114: {fileID: 508581177}
+  - 114: {fileID: 508581178}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -671,6 +672,19 @@ MonoBehaviour:
   - 3
   - 3
   - 3
+--- !u!114 &508581178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 508581172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2bae59826ffbf449254c3ae3e127f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextScene: scn_MainMenu
+  _delay: 80
 --- !u!1 &534700032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,7 +2267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musics:
-  - {fileID: 8300000, guid: e3e5cccf46faa2543909a12f743277ee, type: 3}
+  - {fileID: 8300000, guid: 4f2120255eaa24045b8994ddae6b7862, type: 3}
   ambiance: []
   soundsThatMustBePlayedRandomly: 
   playMusicAtStart: 1
