@@ -254,15 +254,5 @@ namespace GalacticJanitor.Engine
         {
             Gizmos.DrawIcon(transform.position, "ico_Tools01.png", true);
         }
-
-
-        void OnGUI()
-        {
-            if (Player)
-            {
-                GUI.Label(new Rect(Screen.width - 210, 10, 200, 20), "-PlayerPos : " + Player.transform.position.ToString());
-                GUI.Label(new Rect(Screen.width - 210, 30, 200, 20), "-Stage : " + SceneManager.GetActiveScene().name);
-            }
-        }
     } 
 }
