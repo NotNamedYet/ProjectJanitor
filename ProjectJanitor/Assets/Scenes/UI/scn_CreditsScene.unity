@@ -721,7 +721,7 @@ RectTransform:
   - {fileID: 1456586616}
   - {fileID: 1285008352}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1265,7 +1265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1285008351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1396,50 @@ Transform:
   - {fileID: 435376816}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &1541294488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1541294490}
+  - 114: {fileID: 1541294489}
+  m_Layer: 0
+  m_Name: _StageLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1541294489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1541294488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c8ce3f43775d84e8d76124ef962cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hartman: {fileID: 0}
+  carter: {fileID: 0}
+  disallowPlayer: 1
+  marines: 0
+  playerPosition: {x: 0, y: 0, z: 0}
+--- !u!4 &1541294490
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1541294488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.833492, y: 23.11012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &1664851945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1820162025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,8 +2141,8 @@ MonoBehaviour:
   fixedTarget: 0
   onScrolling: 0
   scrollingSpeed: 0
-  m_customCursor: 0
-  m_cursor: {fileID: 0}
+  m_customCursor: 1
+  m_cursor: {fileID: 2800000, guid: abcc083d09dbf674ebbec88f68b29445, type: 3}
 --- !u!82 &1889630885
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2297,7 +2341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1945970845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2615,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &2136675060
 GameObject:
   m_ObjectHideFlags: 0
