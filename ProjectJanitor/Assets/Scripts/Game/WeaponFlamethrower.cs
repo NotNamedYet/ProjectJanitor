@@ -96,17 +96,18 @@ namespace GalacticJanitor.Game
         {
             if (CheckMagazine())
             {
-                Debug.Log("i pulled the trigger with the FlameThrower in \"WeaponFlameThrower\"");
                 flame = Instantiate(jetFlame, chokes.position, chokes.rotation) as GameObject;
-                if (flame == null)
+
+                if (flame != null)
                 {
-                    Debug.Log("Problem with instantiation of Flame in function Fire in WeaponFlameThrower");
-                }
-                else
-                {
-                    flame.transform.parent = chokes.transform; // Attach the GameObject with the effect particle (and maybe collider?) to the weapon
-                    flame.GetComponent<FlameController>().flameDmg = this.flameDmg;
-                    flame.GetComponent<FlameController>().timer = this.timer;
+                    flame.transform.SetParent(chokes.transform); // Attach the GameObject with the effect particle (and maybe collider?) to the weapon
+
+                    FlameController flameCtrl = flame.GetComponent<FlameController>();
+
+                    flameCtrl.flameDmg = flameDmg;
+                    flameCtrl.timer = timer;
+                    flameCtrl.damageSource = playerController.gameObject;
+
                     flameIsActive = true;
                 }
             }

@@ -9,7 +9,7 @@ namespace GalacticJanitor.Game
 
         [HideInInspector]
         public int flameDmg;
-
+        public GameObject damageSource;
         private bool canDamageThisFrame;
         public float timer;
         private float timerActive; // Timer in game
@@ -50,11 +50,25 @@ namespace GalacticJanitor.Game
 
         void OnTriggerStay(Collider other)
         {
-            if (!targetsBurning.Contains(other.gameObject.GetInstanceID()) && other.GetComponent<LivingEntity>() && other.tag != "Player")
+            if (other.CompareTag("Player"))
+                return;
+
+            if (!targetsBurning.Contains(other.gameObject.GetInstanceID()))
             {
                 targetsBurning.Add(other.gameObject.GetInstanceID());
-                other.GetComponent<LivingEntity>().TakeDirectDamage(DoDamage());
-                Debug.Log(other.tag);
+
+                IDamageable damageable = other.GetComponent(typeof(IDamageable)) as IDamageable;
+
+                if (damageable != null)
+                {
+                    damageable.TakeDirectDamage(DoDamage());
+
+                    if (damageable is AlienBase)
+                        (damageable as AlienBase).SetTarget(damageSource.transform);
+
+                    if (damageable is CocoonSpawner)
+                        (damageable as CocoonSpawner).TriggerSpawning(damageSource.transform);
+                }
             }
         }
 
