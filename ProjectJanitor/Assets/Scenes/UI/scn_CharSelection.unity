@@ -818,9 +818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7326cca8d9b1774e88810c6afabc656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCursor: {fileID: 2800000, guid: abcc083d09dbf674ebbec88f68b29445, type: 3}
-  cursorSizeX: 20
-  cursorSizeY: 20
+  m_customCursor: 1
+  m_cursor: {fileID: 2800000, guid: abcc083d09dbf674ebbec88f68b29445, type: 3}
 --- !u!1 &547704916
 GameObject:
   m_ObjectHideFlags: 0

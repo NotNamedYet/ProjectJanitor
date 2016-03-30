@@ -3,17 +3,13 @@ using System.Collections;
 
 public class Cursor_Modified : MonoBehaviour {
 
-    public Texture newCursor;
-    public int cursorSizeX = 20;
-    public int cursorSizeY = 20;
+    public bool m_customCursor = false;
+    public Texture2D m_cursor;
 
-	// Use this for initialization
-	void Start () {
-        Cursor.visible = false;	
-	}
-	
-    void OnGUI()
-    {
-        GUI.DrawTexture(new Rect(Event.current.mousePosition.x - cursorSizeX / 2, Event.current.mousePosition.y - cursorSizeY / 2, cursorSizeX, cursorSizeY), newCursor);
+    // Use this for initialization
+    void Start () {
+        if (m_customCursor)
+            Cursor.SetCursor(m_cursor, Vector2.zero, CursorMode.Auto);
     }
+
 }
