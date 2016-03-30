@@ -7,6 +7,7 @@ public class TrublizeController : MonoBehaviour {
 
     public GameObject[] paragraph;
     public GameObject standByText;
+    public GameObject skipButton;
 
     public float[] delay;
 
@@ -14,6 +15,7 @@ public class TrublizeController : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
+        skipButton.SetActive(true);
         StartCoroutine(Wait());
     }
 	
@@ -32,6 +34,7 @@ public class TrublizeController : MonoBehaviour {
             paragraph[i].SetActive(true);
             yield return new WaitForSeconds(delay[i]);
         }
+        skipButton.SetActive(false);
         StartCoroutine(Blink());
     }
 

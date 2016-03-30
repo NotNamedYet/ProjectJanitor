@@ -26,7 +26,8 @@ public class CreditsController : MonoBehaviour
     {
         if (i == paragraph.Length && isEnd == true)
         {
-            textDefilement.transform.Translate(0, Time.deltaTime * 2, 0);
+            //textDefilement.transform.Translate(0, Time.deltaTime * 2, 0);
+
         }
     }
 
