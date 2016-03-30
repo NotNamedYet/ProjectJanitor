@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using MonoPersistency;
 
 public class CreditsController_v3 : MonoBehaviour {
 
@@ -38,6 +39,7 @@ public class CreditsController_v3 : MonoBehaviour {
         if (i == section.Length && isEnd == true)
         {
             SceneManager.LoadScene("scn_MainMenu");
+            SaveSystem.instance.ResetRegistery();
         }
     }
 
