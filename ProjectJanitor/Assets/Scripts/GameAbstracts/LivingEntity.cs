@@ -124,7 +124,10 @@ namespace GalacticJanitor.Game
                 OnDamaged();
 
                 /*SOUND*/
-                if (sndOnHit && !snd_armorIsBreakThisTime && !isPlayingOnHitSnd) StartCoroutine(CoroutPlaySndOnHit()); // If armor is breaking this frame, no hit sound
+                if (sndOnHit && !snd_armorIsBreakThisTime && !isPlayingOnHitSnd)
+                {
+                    StartCoroutine(CoroutPlaySndOnHit()); // If armor is breaking this frame, no hit sound
+                }
 
                 /*ANIM*/
                 if (optionalAnimator)
@@ -146,7 +149,10 @@ namespace GalacticJanitor.Game
         IEnumerator CoroutPlaySndOnHit()
         {
             isPlayingOnHitSnd = true;
-            listener.PlayOneShot(sndOnHit);
+
+            if (gameObject.CompareTag("Player")) listener.PlayOneShot(sndOnHit); // Sound at 1f to player
+            else listener.PlayOneShot(sndOnHit, 0.25f); // Sound at 0.25 to others entities
+
             yield return new WaitForSeconds(sndOnHit.length);
             isPlayingOnHitSnd = false;
         }
